@@ -14,12 +14,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.75rem;
+
+    &--centered {
+      justify-content: center;
+    }
   }
 
   &__title {
     font-weight: 600;
     color: var(--neutral-white);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+
+    &--flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--warning {
+      color: var(--semantic-warning);
+    }
+  }
+
+  &__body {
+    padding: 1rem 0;
   }
 
   &__items {
@@ -44,6 +63,10 @@
 
     &:hover {
       transform: translateX(4px);
+    }
+
+    &--spaced {
+      margin-top: 1.5rem;
     }
   }
 
