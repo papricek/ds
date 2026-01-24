@@ -1,0 +1,147 @@
+.Box {
+  background-color: var(--brand-dark);
+  padding: 1rem 2rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 1rem;
+  color: var(--light-bg-color);
+
+  @media (max-width: 767px) {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: 600;
+    color: var(--neutral-white);
+    margin-bottom: 1rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (max-width: 767px) {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    padding: 1rem;
+    background-color: hsl(var(--brand-accent-h), calc(var(--brand-accent-s) - 15%), calc(var(--brand-accent-l) - 2%));
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+
+    @media (max-width: 767px) {
+      padding: 0.75rem;
+    }
+
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
+
+  &__item-content {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 767px) {
+      gap: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__item-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 3rem;
+    max-width: 5rem;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    i {
+      font-size: 1.25rem;
+    }
+
+    small {
+      color: var(--light-gray);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+
+  &__item-main {
+    flex: 1;
+  }
+
+  &__item-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  &__item-actions {
+    text-align: left;
+
+    .btn {
+      padding: 0.25rem 0.75rem;
+    }
+  }
+
+  &--compact {
+    padding: 0.75rem 1rem;
+
+    @media (max-width: 767px) {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .Box__items {
+      gap: 0.5rem;
+      padding: 0;
+
+      @media (max-width: 767px) {
+        gap: 0.25rem;
+      }
+    }
+
+    .Box__item {
+      padding: 0.75rem;
+      margin-bottom: 0;
+
+      @media (max-width: 767px) {
+        padding: 0.5rem;
+      }
+    }
+
+    .Box__item-text {
+      margin-bottom: 0;
+    }
+  }
+
+  &--light {
+    background-color: var(--neutral-white);
+    color: var(--dark-blue);
+    border-color: var(--border-light);
+
+    .Box__title {
+      color: var(--dark-blue);
+    }
+  }
+}
