@@ -533,9 +533,55 @@
   }
 
   &--offcanvas {
-    .offcanvas-body .form-check {
-      background-color: transparent !important;
-      border: none !important;
+    .offcanvas {
+      background-color: var(--dark-bg-color) !important;
+      border-left: 2px solid var(--light-gray);
+      box-shadow: -4px 0 12px var(--shadow-light);
+    }
+
+    .offcanvas *,
+    .offcanvas *::before,
+    .offcanvas *::after {
+      background-color: var(--transparent);
+    }
+
+    .offcanvas-header {
+      background-color: var(--dark-header-bg) !important;
+      border-bottom: 2px solid var(--light-gray);
+      padding: 1.5rem 2rem;
+
+      .offcanvas-title {
+        color: var(--light-bg-color);
+        font-weight: 700;
+        font-size: var(--fs-md);
+
+        i {
+          color: var(--cta-base-color);
+        }
+      }
+
+      .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+        opacity: 0.8;
+        padding: 0.5rem;
+
+        &:hover {
+          opacity: 1;
+          background-color: var(--white-1);
+          border-radius: 0.25rem;
+        }
+      }
+    }
+
+    .offcanvas-body {
+      color: var(--light-bg-color);
+      padding: 2rem;
+      background-color: var(--dark-bg-color) !important;
+
+      .form-check {
+        background-color: transparent !important;
+        border: none !important;
+      }
     }
 
     .FilterPanel__search-section {
