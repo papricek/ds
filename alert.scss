@@ -1,0 +1,151 @@
+.Alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  text-align: center;
+  font-size: var(--fs-sm);
+
+  &--success {
+    background-color: var(--semantic-success);
+    color: var(--neutral-white);
+    border-color: var(--semantic-success);
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--warning {
+    background-color: var(--semantic-warning);
+    color: var(--neutral-white);
+    border-color: var(--semantic-warning);
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--danger {
+    background-color: var(--semantic-danger);
+    color: var(--neutral-white);
+    border-color: var(--semantic-danger);
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--info {
+    background-color: var(--semantic-info);
+    color: var(--neutral-white);
+    border-color: var(--semantic-info);
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--primary {
+    background-color: var(--brand-primary);
+    color: var(--neutral-white);
+    border-color: var(--brand-primary);
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--dismissible {
+    padding-right: 3rem;
+    position: relative;
+  }
+
+  &--centered {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &--full-width {
+    border-radius: 0;
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+body > .Alert {
+  border-radius: 0;
+}
+
+.Sessions .Alert {
+  margin-bottom: 1rem;
+}
+
+.alert-cta {
+  @extend .Alert;
+  @extend .Alert--primary;
+}
+
+.alert {
+  &.Alert--success {
+    @extend .Alert--success;
+  }
+
+  &.Alert--warning {
+    @extend .Alert--warning;
+  }
+
+  &.Alert--danger {
+    @extend .Alert--danger;
+  }
+
+  &.Alert--info {
+    @extend .Alert--info;
+  }
+
+  &.Alert--primary {
+    @extend .Alert--primary;
+  }
+}
+
+.alert-success {
+  background-color: var(--semantic-success);
+  color: var(--neutral-white);
+  border-color: var(--semantic-success);
+}
+
+.alert-warning {
+  background-color: var(--semantic-warning);
+  color: var(--neutral-white);
+  border-color: var(--semantic-warning);
+}
+
+.alert-danger {
+  background-color: var(--semantic-danger);
+  color: var(--neutral-white);
+  border-color: var(--semantic-danger);
+}
+
+.alert-info {
+  background-color: var(--semantic-info);
+  color: var(--neutral-white);
+  border-color: var(--semantic-info);
+}
