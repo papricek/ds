@@ -1,0 +1,44 @@
+.Pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+
+  .pagination {
+    .page-item {
+      margin: 0 0.25rem;
+
+      .page-link {
+        background-color: var(--navy-blue);
+        border: 1px solid var(--light-gray);
+        color: var(--neutral-white);
+        border-radius: 0.25rem;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: var(--cta-base-color);
+          border-color: var(--cta-base-color);
+          color: var(--neutral-white);
+        }
+      }
+
+      &.active .page-link {
+        background-color: var(--cta-base-color);
+        border-color: var(--cta-base-color);
+        color: var(--neutral-white);
+      }
+
+      &.disabled .page-link {
+        opacity: 0.5;
+        color: var(--light-gray);
+        background-color: hsl(var(--brand-accent-h), calc(var(--brand-accent-s) - 15%), calc(var(--brand-accent-l) - 2%));
+        border-color: var(--light-gray);
+      }
+    }
+  }
+}
+
+.Admin__pagination {
+  @extend .Pagination;
+}
