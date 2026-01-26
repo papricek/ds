@@ -196,4 +196,25 @@
       background-color: var(--success-color);
     }
   }
+
+  &--border-success {
+    border-left: 3px solid var(--semantic-success);
+  }
+
+  &--border-warning {
+    border-left: 3px solid var(--semantic-warning);
+  }
+
+  &--border-danger {
+    border-left: 3px solid var(--semantic-danger);
+  }
+
+  &--border-info {
+    border-left: 3px solid var(--semantic-info);
+  }
+
+  &--border-purple {
+    border-left: 3px solid hsl(270, 73%, 62%);
+  }
 }
+
