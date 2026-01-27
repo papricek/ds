@@ -1,0 +1,238 @@
+.ts-wrapper {
+  position: relative;
+
+  &.single .ts-control,
+  &.multi .ts-control {
+    background-color: var(--dark-blue) !important;
+    border-color: var(--light-gray) !important;
+    color: var(--white) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.75rem !important;
+    min-height: 42px !important;
+    box-shadow: none !important;
+
+    &:focus,
+    &.focus {
+      background-color: var(--dark-blue) !important;
+      border-color: var(--cta-base-color) !important;
+      box-shadow: 0 0 0 0.2rem var(--orange-transparent) !important;
+      color: var(--white) !important;
+    }
+
+    &.disabled {
+      background-color: var(--navy-blue) !important;
+      opacity: 0.6;
+    }
+  }
+
+  .ts-control {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    input {
+      color: var(--white) !important;
+      background-color: transparent !important;
+
+      &::placeholder {
+        color: var(--light-gray) !important;
+        opacity: 0.7;
+      }
+    }
+
+    .item {
+      background-color: var(--navy-blue) !important;
+      color: var(--white) !important;
+      border: 1px solid var(--light-gray) !important;
+      border-radius: 4px !important;
+      padding: 0.25rem 0.5rem !important;
+      margin: 0.125rem !important;
+      font-size: 0.875rem !important;
+    }
+
+    .remove {
+      border-left: 1px solid var(--light-gray) !important;
+      color: var(--white) !important;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: var(--cta-base-color) !important;
+        color: var(--white) !important;
+        opacity: 1;
+      }
+    }
+
+    .clear-button {
+      color: var(--white) !important;
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+        color: var(--cta-base-color) !important;
+      }
+    }
+
+    .dropdown-header {
+      background-color: var(--navy-blue) !important;
+      border-bottom: 1px solid var(--light-gray) !important;
+      color: var(--white) !important;
+    }
+  }
+
+  .ts-dropdown {
+    background-color: var(--dark-blue) !important;
+    border: 1px solid var(--light-gray) !important;
+    border-radius: 8px !important;
+    margin-top: 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1050 !important;
+    position: absolute !important;
+
+    .ts-dropdown-content {
+      max-height: 300px !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--navy-blue);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--light-gray);
+        border-radius: 4px;
+
+        &:hover {
+          background: var(--cta-base-color);
+        }
+      }
+
+      .option {
+        color: var(--white) !important;
+        padding: 0.625rem 0.75rem !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        transition: all 0.2s ease;
+
+        &:last-child {
+          border-bottom: none !important;
+        }
+
+        &.active {
+          background-color: var(--navy-blue) !important;
+          color: var(--white) !important;
+        }
+
+        &:hover {
+          background-color: var(--navy-blue) !important;
+          color: var(--white) !important;
+        }
+
+        &.selected {
+          background-color: var(--cta-base-color) !important;
+          color: var(--white) !important;
+          font-weight: 500;
+
+          &:hover {
+            background-color: var(--orange) !important;
+          }
+        }
+
+        &.create {
+          color: var(--cta-base-color) !important;
+
+          &:hover {
+            background-color: var(--navy-blue) !important;
+          }
+        }
+      }
+
+      .no-results,
+      .no-results:hover {
+        color: var(--light-gray) !important;
+        padding: 0.75rem !important;
+        background-color: transparent !important;
+      }
+
+      .optgroup-header {
+        background-color: var(--navy-blue) !important;
+        color: var(--white) !important;
+        font-weight: 600;
+        padding: 0.5rem 0.75rem !important;
+        border-bottom: 1px solid var(--light-gray) !important;
+      }
+
+      .optgroup .option {
+        padding-left: 1.5rem !important;
+      }
+    }
+
+    .ts-dropdown-input {
+      background-color: var(--navy-blue) !important;
+      border: none !important;
+      border-bottom: 1px solid var(--light-gray) !important;
+      color: var(--white) !important;
+      padding: 0.75rem !important;
+
+      &::placeholder {
+        color: var(--light-gray) !important;
+      }
+    }
+  }
+
+  &.plugin-remove_button {
+    .item {
+      padding-right: 1.75rem !important;
+    }
+  }
+}
+
+.Form--dark {
+  .ts-wrapper {
+    &.single .ts-control,
+    &.multi .ts-control {
+      background-color: var(--dark-blue) !important;
+      border-color: var(--light-gray) !important;
+      color: var(--white) !important;
+
+      &:focus,
+      &.focus {
+        background-color: var(--dark-blue) !important;
+        border-color: var(--cta-base-color) !important;
+        box-shadow: none !important;
+        color: var(--white) !important;
+      }
+    }
+
+    .ts-dropdown {
+      background-color: var(--dark-blue) !important;
+      border-color: var(--light-gray) !important;
+
+      .ts-dropdown-content {
+        .option {
+          color: var(--white) !important;
+
+          &.active {
+            background-color: var(--navy-blue) !important;
+            color: var(--white) !important;
+          }
+
+          &:hover {
+            background-color: var(--navy-blue) !important;
+            color: var(--white) !important;
+          }
+
+          &.selected {
+            background-color: var(--cta-base-color) !important;
+            color: var(--white) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
