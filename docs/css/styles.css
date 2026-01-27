@@ -131,16 +131,27 @@ body {
   margin-bottom: 3rem;
 }
 
-.showcase-header h1 {
-  font-size: var(--fs-xxl);
-  margin: 0 0 1rem 0;
-  color: var(--brand-primary);
+.showcase-header img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 .showcase-header p {
   font-size: var(--fs-md);
   color: var(--light-gray);
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .showcase-header img {
+    max-width: 360px;
+  }
+
+  .showcase-header p {
+    font-size: var(--fs-sm);
+  }
 }
 
 .showcase-section {
