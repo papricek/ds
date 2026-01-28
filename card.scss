@@ -134,3 +134,122 @@
   color: var(--neutral-white);
 }
 
+.Card--energy-overview {
+  padding: 0.5rem 0;
+
+  .Card__chart {
+    position: relative;
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+
+  .Card__circle {
+    width: 100%;
+    height: auto;
+    transform: rotate(-90deg);
+
+    &-bg {
+      fill: none;
+      stroke: var(--white-1);
+      stroke-width: 8;
+    }
+
+    &-progress {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+      transition: stroke-dasharray 0.3s ease;
+
+      &--full {
+        stroke: var(--success-green);
+      }
+
+      &--medium {
+        stroke: var(--warning-color);
+      }
+
+      &--low {
+        stroke: var(--danger-red);
+      }
+    }
+  }
+
+  .Card__chart-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .Card__percentage {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .Card__percentage-text {
+    font-size: 0.65rem;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+  }
+
+  .Card__balance {
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    line-height: 1;
+  }
+
+  .Card__energy-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Card__energy-metric {
+    text-align: left;
+
+    &-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    &-label {
+      font-size: 0.7rem;
+      color: var(--light-gray);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+
+      i {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .Card__battery {
+    padding-top: 1rem;
+    border-top: 1px solid var(--white-1);
+
+    &-label {
+      font-size: 0.75rem;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      font-weight: 500;
+    }
+
+    &-value {
+      font-size: 0.875rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+  }
+}
