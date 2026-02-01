@@ -104,6 +104,11 @@
       object-fit: cover;
     }
   }
+
+  &--accent-bg {
+    background-color: var(--brand-accent);
+    border-color: var(--brand-accent);
+  }
 }
 
 .card {
