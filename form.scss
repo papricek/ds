@@ -408,6 +408,217 @@
     }
   }
 
+  &__filter-card-container {
+    position: relative;
+
+    &.is-loading {
+      .Form__filter-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.is-collapsed {
+      .Form__filter-panel {
+        display: none;
+      }
+    }
+  }
+
+  &__filter-panel {
+    display: block;
+  }
+
+  &__filter-toggle {
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__filter-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 12, 26, 0.6);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 2;
+
+    i {
+      font-size: 2rem;
+      color: var(--white);
+    }
+  }
+
+  &__filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__filter-label {
+    color: var(--light-gray);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+  }
+
+  &__granularity-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__granularity-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &.visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  }
+
+  &__granularity-btn {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.625rem 0.75rem;
+    background: var(--white-05);
+    color: var(--white-75);
+    border: 1px solid var(--white-1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-bottom: 0;
+
+    &:hover {
+      background: var(--white-08);
+      border-color: var(--white-15);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    i {
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__granularity-input:checked + &__granularity-btn {
+    background: var(--cta-base-color);
+    color: var(--white);
+    border-color: var(--cta-base-color);
+    font-weight: 600;
+    box-shadow: 0 2px 8px var(--orange-transparent);
+
+    &:hover {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--orange-transparent);
+    }
+
+    i {
+      transform: scale(1.1);
+    }
+  }
+
+  &__granularity-text {
+    @media (max-width: 575px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__filter-card {
+      .row.g-3 {
+        gap: 1rem !important;
+      }
+
+      .col-lg-4:first-child {
+        order: 1;
+      }
+
+      .col-lg-4:nth-child(2) {
+        order: 2;
+      }
+
+      .col-lg-4:last-child {
+        order: 3;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__granularity-buttons {
+      gap: 0.375rem;
+    }
+
+    &__granularity-btn {
+      padding: 0.5rem 0.625rem;
+      font-size: 0.75rem;
+
+      i {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__filter-label {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 575px) {
+    &__granularity-btn {
+      min-width: 2.5rem;
+      padding: 0.5rem;
+      justify-content: center;
+
+      i {
+        margin: 0;
+      }
+    }
+
+    &__granularity-buttons {
+      justify-content: stretch;
+
+      label {
+        flex: 1;
+      }
+    }
+
+    &__filter-card {
+      .form-select,
+      .form-control {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+  }
+
   &--pricing {
     .row {
       margin-bottom: 0;
