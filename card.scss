@@ -109,6 +109,11 @@
     background-color: var(--brand-accent);
     border-color: var(--brand-accent);
   }
+
+  &--accent-bg-transparent {
+    background-color: rgba(var(--brand-accent-rgb), 0.15);
+    border-color: var(--brand-accent);
+  }
 }
 
 .card {
