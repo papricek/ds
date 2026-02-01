@@ -286,21 +286,32 @@
     box-shadow: 0 0 0 0.2rem rgba(var(--semantic-danger-rgb), 0.25);
   }
 
-  .btn-group {
+  .btn-group--selection {
     .btn {
-      border-color: var(--light-gray);
-      color: var(--dark-blue);
-      background-color: var(--white);
+      border: 2px solid var(--brand-accent);
+      color: var(--white);
+      background-color: transparent;
       padding: 0.75rem 1.5rem;
 
       &:hover {
-        background-color: var(--light-bg-color);
+        background-color: rgba(var(--brand-accent-rgb), 0.2);
       }
 
       &.active {
         background-color: var(--cta-base-color);
         border-color: var(--cta-base-color);
         color: var(--white);
+      }
+    }
+
+    .btn-check:checked + .btn {
+      background-color: var(--cta-base-color);
+      border-color: var(--cta-base-color);
+      color: var(--white);
+
+      &:hover {
+        background-color: var(--orange-hover);
+        border-color: var(--orange-hover);
       }
     }
 
