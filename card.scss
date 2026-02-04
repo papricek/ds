@@ -89,10 +89,24 @@
 
   &__no-data {
     color: var(--light-gray);
-    
+
     i {
       opacity: 0.5;
     }
+  }
+
+  &__no-data-icon {
+    font-size: 2rem;
+  }
+
+  &__small-text {
+    font-weight: normal;
+  }
+
+  &__metric-sublabel {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 0.125rem;
   }
 
   &__image-container {
