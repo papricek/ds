@@ -189,6 +189,10 @@
       background-color: var(--cta-secondary-color);
     }
 
+    &--combined {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--cta-secondary-color) 100%);
+    }
+
     &--confirmed {
       background-color: var(--cta-secondary-color);
     }
