@@ -189,6 +189,85 @@
       padding-right: 1.75rem !important;
     }
   }
+
+}
+
+.ts-wrapper--light {
+  &.single .ts-control,
+  &.multi .ts-control {
+    background-color: #fff !important;
+    border: 1px solid #dee2e6 !important;
+    color: #212529 !important;
+    min-height: calc(3.5rem + 2px) !important;
+    padding: 1rem 0.75rem !important;
+
+    &:focus,
+    &.focus {
+      background-color: #fff !important;
+      border-color: #86b7fe !important;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+      color: #212529 !important;
+    }
+  }
+
+  .ts-control {
+    input {
+      color: #212529 !important;
+
+      &::placeholder {
+        color: #6c757d !important;
+        opacity: 1;
+      }
+    }
+
+    .item {
+      background-color: transparent !important;
+      border: none !important;
+      color: #212529 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: inherit !important;
+    }
+  }
+
+  .ts-dropdown {
+    background-color: #fff !important;
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+
+    .ts-dropdown-content {
+      .option {
+        color: #212529 !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+
+        &:last-child {
+          border-bottom: none !important;
+        }
+
+        &.active,
+        &:hover {
+          background-color: #f8f9fa !important;
+          color: #212529 !important;
+        }
+
+        &.selected {
+          background-color: #0d6efd !important;
+          color: #fff !important;
+
+          &:hover {
+            background-color: #0b5ed7 !important;
+          }
+        }
+      }
+
+      .no-results,
+      .no-results:hover {
+        color: #6c757d !important;
+        background-color: transparent !important;
+      }
+    }
+  }
 }
 
 .Form--dark {
