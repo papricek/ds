@@ -417,6 +417,1190 @@
       </div>
     </section>
 
+    <!-- ============================================= -->
+    <!-- FORMS                                         -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Forms</h2>
+      <p>Form components for dark-themed interfaces with floating labels, validation, and specialized controls.</p>
+
+      <h3>Dark Form Inputs</h3>
+      <div class="example-box">
+        <div class="Form">
+          <div class="Form__title">Account Settings</div>
+          <div class="Form__text">Update your account information below.</div>
+          <div class="Form__group">
+            <label class="Form__label Form__label--required">Full Name</label>
+            <input type="text" class="Form__input" placeholder="Enter your full name" value="Jan Novak">
+          </div>
+          <div class="Form__group">
+            <label class="Form__label Form__label--required">Email Address</label>
+            <input type="email" class="Form__input" placeholder="Enter your email">
+          </div>
+          <div class="Form__group">
+            <label class="Form__label">Company</label>
+            <input type="text" class="Form__input" placeholder="Company name (optional)">
+          </div>
+          <div class="Form__group">
+            <label class="Form__label">Role</label>
+            <select class="Form__input">
+              <option>Administrator</option>
+              <option>Manager</option>
+              <option>User</option>
+            </select>
+          </div>
+          <div class="Form__group">
+            <label class="Form__label">Notes</label>
+            <textarea class="Form__input" placeholder="Additional notes..." style="min-height: 80px; resize: vertical;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <h3>Granularity Buttons</h3>
+      <div class="example-box">
+        <div class="Form__filter-label">Time Period</div>
+        <div class="Form__granularity-buttons" style="margin-top: 0.5rem;">
+          <label class="Form__granularity-btn active">Hourly</label>
+          <label class="Form__granularity-btn">Daily</label>
+          <label class="Form__granularity-btn">Weekly</label>
+          <label class="Form__granularity-btn">Monthly</label>
+          <label class="Form__granularity-btn">Yearly</label>
+        </div>
+      </div>
+
+      <h3>Role Selector</h3>
+      <div class="example-box">
+        <div class="Form__role-buttons">
+          <button class="Form__role-btn active">Admin</button>
+          <button class="Form__role-btn">Manager</button>
+          <button class="Form__role-btn">User</button>
+          <button class="Form__role-btn">Viewer</button>
+        </div>
+      </div>
+
+      <h3>Checkbox Group</h3>
+      <div class="example-box">
+        <div class="Form__filter-label" style="margin-bottom: 0.5rem;">Notifications</div>
+        <div class="Form__checkbox-group">
+          <label><input type="checkbox" checked> Email notifications</label>
+          <label><input type="checkbox" checked> Push notifications</label>
+          <label><input type="checkbox"> SMS alerts</label>
+          <label><input type="checkbox"> Weekly digest</label>
+        </div>
+      </div>
+
+      <h3>Form Actions</h3>
+      <div class="example-box">
+        <div class="Form__actions">
+          <button class="Button Button--outlined Button--primary">Cancel</button>
+          <button class="Button Button--primary">Save Changes</button>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="Form"&gt;
+  &lt;div class="Form__group"&gt;
+    &lt;label class="Form__label Form__label--required"&gt;Name&lt;/label&gt;
+    &lt;input type="text" class="Form__input" placeholder="..."&gt;
+  &lt;/div&gt;
+  &lt;div class="Form__granularity-buttons"&gt;
+    &lt;label class="Form__granularity-btn active"&gt;Daily&lt;/label&gt;
+    &lt;label class="Form__granularity-btn"&gt;Monthly&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- MODALS                                        -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Modals</h2>
+      <p>Modal dialogs for confirmations, forms, and payment details. Shown inline for preview.</p>
+
+      <h3>Basic Modal</h3>
+      <div class="example-box">
+        <div class="modal-content" style="max-width: 500px;">
+          <div class="modal-header">
+            <span class="modal-title">Confirm Action</span>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p style="margin: 0;">Are you sure you want to proceed with this action? This cannot be undone.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="Button Button--outlined Button--primary Button--small">Cancel</button>
+            <button class="Button Button--danger Button--small">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Modal with Form</h3>
+      <div class="example-box">
+        <div class="modal-content" style="max-width: 500px;">
+          <div class="modal-header">
+            <span class="modal-title">Add New Member</span>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="Form">
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Name</label>
+                <input type="text" class="Form__input" placeholder="Member name">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Email</label>
+                <input type="email" class="Form__input" placeholder="member@example.com">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label">Role</label>
+                <div class="Form__role-buttons" style="height: 44px;">
+                  <button class="Form__role-btn active">Admin</button>
+                  <button class="Form__role-btn">User</button>
+                  <button class="Form__role-btn">Viewer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="Button Button--outlined Button--primary Button--small">Cancel</button>
+            <button class="Button Button--primary Button--small">Add Member</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Payment Details Modal</h3>
+      <div class="example-box">
+        <div class="modal-content" style="max-width: 500px;">
+          <div class="modal-header">
+            <span class="modal-title">Payment Information</span>
+            <button class="modal-close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="Modal__payment-details">
+              <div class="Modal__payment-item">
+                <span class="Modal__payment-label">Account Number</span>
+                <span class="Modal__payment-value">CZ65 0800 0000 1920 0014 5399</span>
+              </div>
+              <div class="Modal__payment-item">
+                <span class="Modal__payment-label">Variable Symbol</span>
+                <span class="Modal__payment-value">2024001234</span>
+              </div>
+              <div class="Modal__payment-item">
+                <span class="Modal__payment-label">Amount</span>
+                <span class="Modal__payment-value Modal__payment-value--amount">12,450 CZK</span>
+              </div>
+              <div class="Modal__payment-item">
+                <span class="Modal__payment-label">Due Date</span>
+                <span class="Modal__payment-value">15. 3. 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="Button Button--outlined Button--primary Button--small">Close</button>
+            <button class="Button Button--success Button--small">Mark as Paid</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TABS                                          -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Tabs</h2>
+      <p>Tab navigation for switching between views, with primary and secondary styles.</p>
+
+      <h3>Primary Tabs</h3>
+      <div class="example-box">
+        <div class="Tabs">
+          <nav class="nav-tabs">
+            <a class="nav-link active">Overview</a>
+            <a class="nav-link">Production</a>
+            <a class="nav-link">Consumption</a>
+            <a class="nav-link">Sharing</a>
+          </nav>
+          <div class="Tabs__content">
+            <p style="margin: 0; color: var(--light-gray);">Tab content area. The active tab is highlighted with a bottom border.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Secondary Tabs</h3>
+      <div class="example-box">
+        <div class="Tabs">
+          <nav class="nav-tabs-secondary">
+            <a class="nav-link active">All</a>
+            <a class="nav-link">Active</a>
+            <a class="nav-link">Pending</a>
+            <a class="nav-link">Archived</a>
+          </nav>
+        </div>
+      </div>
+
+      <h3>Tabs with Content</h3>
+      <div class="example-box">
+        <div class="Tabs">
+          <nav class="nav-tabs">
+            <a class="nav-link active">Members</a>
+            <a class="nav-link">Invoices</a>
+            <a class="nav-link">Settings</a>
+          </nav>
+          <div class="Tabs__content">
+            <div class="Listing">
+              <div class="Listing__item">
+                <div class="Listing__content Listing__content--single-line">
+                  <div class="Listing__main">
+                    <div class="Listing__status Listing__status--admin">A</div>
+                    <div class="Listing__info">
+                      <div class="Listing__name">Jana Svobodova</div>
+                    </div>
+                  </div>
+                  <span class="Badge Badge--success Badge--pill">Active</span>
+                </div>
+              </div>
+              <div class="Listing__item">
+                <div class="Listing__content Listing__content--single-line">
+                  <div class="Listing__main">
+                    <div class="Listing__status Listing__status--user">U</div>
+                    <div class="Listing__info">
+                      <div class="Listing__name">Petr Dvorak</div>
+                    </div>
+                  </div>
+                  <span class="Badge Badge--warning Badge--pill">Pending</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="Tabs"&gt;
+  &lt;nav class="nav-tabs"&gt;
+    &lt;a class="nav-link active"&gt;Tab 1&lt;/a&gt;
+    &lt;a class="nav-link"&gt;Tab 2&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;div class="Tabs__content"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- NAVIGATION                                    -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Navigation</h2>
+      <p>Horizontal and vertical navigation patterns for application menus.</p>
+
+      <h3>Horizontal Navigation</h3>
+      <div class="example-box">
+        <nav class="Nav">
+          <ul class="Nav__list">
+            <li class="Nav__item"><a class="Nav__link active">Dashboard</a></li>
+            <li class="Nav__item"><a class="Nav__link">Partners</a></li>
+            <li class="Nav__item"><a class="Nav__link">Reports</a></li>
+            <li class="Nav__item"><a class="Nav__link">Invoices</a></li>
+            <li class="Nav__item"><a class="Nav__link">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <h3>Vertical Navigation</h3>
+      <div class="example-box">
+        <nav class="Nav Nav--vertical" style="max-width: 280px;">
+          <ul class="Nav__list">
+            <li class="Nav__item"><a class="Nav__link active">Dashboard</a></li>
+            <li class="Nav__item"><a class="Nav__link">Energy Overview</a></li>
+            <li class="Nav__item"><a class="Nav__link">Data Management</a></li>
+            <li class="Nav__item"><a class="Nav__link">Partners</a></li>
+            <div class="Nav__divider"></div>
+            <li class="Nav__item"><a class="Nav__link">Settings</a></li>
+            <li class="Nav__item"><a class="Nav__link" style="color: var(--semantic-danger);">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PAGINATION                                    -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Pagination</h2>
+      <p>Pagination controls for navigating through data lists and tables.</p>
+
+      <h3>Default Pagination</h3>
+      <div class="example-box">
+        <div class="Pagination">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link">&laquo;</a></li>
+            <li class="page-item"><a class="page-link">1</a></li>
+            <li class="page-item active"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">4</a></li>
+            <li class="page-item"><a class="page-link">5</a></li>
+            <li class="page-item"><a class="page-link">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ICONS                                         -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Icons</h2>
+      <p>Icon containers with size variants and semantic color backgrounds.</p>
+
+      <h3>Icon Sizes</h3>
+      <div class="example-box">
+        <div class="showcase-flex-row">
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--small Icon--production">S</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Small</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--production">M</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Medium</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--large Icon--production">L</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Large</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--xlarge Icon--production">XL</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">X-Large</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Semantic Color Icons</h3>
+      <div class="example-box">
+        <div class="showcase-flex-row">
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--production">P</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Production</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--consumption">C</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Consumption</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--sharing">S</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Sharing</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--success">&#10003;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Success</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--warning">!</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Warning</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--danger">&#10005;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Danger</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Icon Icon--circular Icon--medium Icon--info">i</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Info</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="Icon Icon--circular Icon--medium Icon--success"&gt;
+  &lt;i class="bi bi-check"&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- STAT CARDS                                    -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Stat Cards</h2>
+      <p>Metric display cards used in dashboards to show key statistics.</p>
+
+      <h3>Stat Card Grid</h3>
+      <div class="example-box">
+        <div class="StatCardGrid">
+          <div class="StatCard">
+            <div class="StatCard__icon" style="background-color: var(--brand-primary);">&#9889;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Total Production</div>
+              <div class="StatCard__value">1,234 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+          <div class="StatCard">
+            <div class="StatCard__icon" style="background-color: var(--brand-secondary);">&#8595;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Total Consumption</div>
+              <div class="StatCard__value">987 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+          <div class="StatCard">
+            <div class="StatCard__icon" style="background-color: var(--brand-accent);">&#8596;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Energy Shared</div>
+              <div class="StatCard__value">456 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Compact Stat Cards</h3>
+      <div class="example-box">
+        <div class="StatCardGrid">
+          <div class="StatCard StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-success);">&#10003;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Active</div>
+              <div class="StatCard__value">24</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-warning);">&#8987;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Pending</div>
+              <div class="StatCard__value">7</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-danger);">&#10005;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Errors</div>
+              <div class="StatCard__value">2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Border Variants</h3>
+      <div class="example-box">
+        <div class="showcase-flex-col">
+          <div class="StatCard StatCard--compact StatCard--border-success">
+            <div class="StatCard__content">
+              <div class="StatCard__label">Revenue</div>
+              <div class="StatCard__value">+12,450 CZK</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-warning">
+            <div class="StatCard__content">
+              <div class="StatCard__label">Pending Payments</div>
+              <div class="StatCard__value">3,200 CZK</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-danger">
+            <div class="StatCard__content">
+              <div class="StatCard__label">Overdue</div>
+              <div class="StatCard__value">1,800 CZK</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-info">
+            <div class="StatCard__content">
+              <div class="StatCard__label">Total Balance</div>
+              <div class="StatCard__value">45,670 CZK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- STATUS BUTTONS                                -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Status Buttons</h2>
+      <p>Outlined buttons indicating process states with semantic colors.</p>
+
+      <h3>Status Button States</h3>
+      <div class="example-box">
+        <div class="showcase-flex-row">
+          <button class="StatusButton StatusButton--pending">&#9679; Pending</button>
+          <button class="StatusButton StatusButton--running">&#9654; Running</button>
+          <button class="StatusButton StatusButton--success">&#10003; Success</button>
+          <button class="StatusButton StatusButton--error">&#10005; Error</button>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;button class="StatusButton StatusButton--success"&gt;
+  &lt;i class="bi bi-check-circle"&gt;&lt;/i&gt; Success
+&lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- BOX                                           -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Box</h2>
+      <p>Content containers with items, icons, and actions. Multiple density levels.</p>
+
+      <h3>Default Box</h3>
+      <div class="example-box">
+        <div class="Box">
+          <div class="Box__title">Energy Sources</div>
+          <div class="Box__items">
+            <div class="Box__item">
+              <div class="Box__item-content">
+                <div class="Box__item-icon">
+                  &#9728;
+                  <small>Solar</small>
+                </div>
+                <div class="Box__item-main">
+                  <div class="Box__item-text">Rooftop solar panels - 12.5 kWp installed capacity producing an average of 35 kWh/day.</div>
+                  <div class="Box__item-actions">
+                    <button class="Button Button--primary Button--small">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Box__item">
+              <div class="Box__item-content">
+                <div class="Box__item-icon">
+                  &#127744;
+                  <small>Wind</small>
+                </div>
+                <div class="Box__item-main">
+                  <div class="Box__item-text">Small wind turbine - 3 kW rated power, suitable for supplementary generation.</div>
+                  <div class="Box__item-actions">
+                    <button class="Button Button--outlined Button--primary Button--small">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Compact Box</h3>
+      <div class="example-box">
+        <div class="Box Box--compact">
+          <div class="Box__title">Notifications</div>
+          <div class="Box__items">
+            <div class="Box__item">
+              <div class="Box__item-text">New member joined your energy community.</div>
+            </div>
+            <div class="Box__item">
+              <div class="Box__item-text">Monthly report is ready for download.</div>
+            </div>
+            <div class="Box__item">
+              <div class="Box__item-text">System maintenance scheduled for Sunday.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Box Variants</h3>
+      <div class="example-box">
+        <div class="showcase-grid-2">
+          <div class="Box Box--accent-bg Box--compact">
+            <div class="Box__title">Accent Background</div>
+            <div class="Box__items">
+              <div class="Box__item">
+                <div class="Box__item-text">Content on accent background.</div>
+              </div>
+            </div>
+          </div>
+          <div class="Box Box--supercompact">
+            <div class="Box__title">Supercompact</div>
+            <div class="Box__items">
+              <div class="Box__item"><div class="Box__item-text">Item one</div></div>
+              <div class="Box__item"><div class="Box__item-text">Item two</div></div>
+              <div class="Box__item"><div class="Box__item-text">Item three</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Box with Warning Title</h3>
+      <div class="example-box">
+        <div class="Box Box--compact">
+          <div class="Box__title Box__title--warning">&#9888; Attention Required</div>
+          <div class="Box__items">
+            <div class="Box__item">
+              <div class="Box__item-text">Your energy sharing agreement expires in 14 days. Please renew to continue.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- LISTINGS                                      -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Listings</h2>
+      <p>List components for partners, invoices, and data items with status indicators, badges, and actions.</p>
+
+      <h3>Listing with Status &amp; Actions</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Solar Park Alpha</div>
+                  <div class="Listing__subtitle">Energy supplier &middot; Prague</div>
+                </div>
+                <div class="Listing__amount">4,520 kWh</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="Listing__badges">
+                  <span class="Listing__badge Listing__badge--success">Active</span>
+                  <span class="Listing__badge Listing__badge--info">Premium</span>
+                </div>
+                <div class="Listing__actions">
+                  <a class="Listing__action Listing__action--primary">View</a>
+                  <a class="Listing__action Listing__action--secondary">Edit</a>
+                  <a class="Listing__action Listing__action--danger">Remove</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">C</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Residence Beta</div>
+                  <div class="Listing__subtitle">Energy consumer &middot; Brno</div>
+                </div>
+                <div class="Listing__amount Listing__amount--orange">2,180 kWh</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="Listing__badges">
+                  <span class="Listing__badge Listing__badge--warning">Pending</span>
+                  <span class="Listing__badge Listing__badge--secondary">Standard</span>
+                </div>
+                <div class="Listing__actions">
+                  <a class="Listing__action Listing__action--primary">View</a>
+                  <a class="Listing__action Listing__action--success">Approve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Single-Line Listing</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Invoice #2024-0042</div>
+                </div>
+              </div>
+              <div class="Listing__amount">12,450 CZK</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Invoice #2024-0043</div>
+                </div>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">8,900 CZK</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Invoice #2024-0044</div>
+                </div>
+              </div>
+              <div class="Listing__amount">5,200 CZK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Compact Listing</h3>
+      <div class="example-box">
+        <div class="Listing Listing--compact">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__info"><div class="Listing__name">Point A - Solar</div></div>
+              </div>
+              <span class="Badge Badge--success Badge--small">Online</span>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__info"><div class="Listing__name">Point B - Wind</div></div>
+              </div>
+              <span class="Badge Badge--warning Badge--small">Syncing</span>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__info"><div class="Listing__name">Point C - Battery</div></div>
+              </div>
+              <span class="Badge Badge--danger Badge--small">Offline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Empty State</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__empty">
+            <div class="Listing__empty-icon">&#128269;</div>
+            <div class="Listing__empty-title">No Results Found</div>
+            <div class="Listing__empty-description">Try adjusting your search or filter criteria to find what you're looking for.</div>
+            <button class="Button Button--primary Button--small">Clear Filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ADVANCED TABLES                               -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Advanced Tables</h2>
+      <p>Extended table features with row states, cell formatting, inline badges, and sortable headers.</p>
+
+      <h3>Table with Row States &amp; Badges</h3>
+      <div class="example-box">
+        <table class="Table">
+          <thead>
+            <tr class="Table__header">
+              <th class="Table__header--sortable">Name &#8593;</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th class="Table__cell--numeric">Production</th>
+              <th class="Table__cell--numeric">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="Table__row Table__row--success">
+              <td>Community Alpha</td>
+              <td><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td><span class="Table__badge Table__badge--success">Active</span></td>
+              <td class="Table__cell--numeric Table__cell--positive">+1,245 kWh</td>
+              <td class="Table__cell--numeric">24,500 CZK</td>
+            </tr>
+            <tr class="Table__row">
+              <td>Community Beta</td>
+              <td><span class="Table__badge Table__badge--customer">Customer</span></td>
+              <td><span class="Table__badge Table__badge--success">Active</span></td>
+              <td class="Table__cell--numeric">890 kWh</td>
+              <td class="Table__cell--numeric">12,300 CZK</td>
+            </tr>
+            <tr class="Table__row Table__row--warning">
+              <td>Community Gamma</td>
+              <td><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td><span class="Table__badge Table__badge--warning">Pending</span></td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric Table__cell--negative">-3,200 CZK</td>
+            </tr>
+            <tr class="Table__row Table__row--danger">
+              <td>Community Delta</td>
+              <td><span class="Table__badge Table__badge--customer">Customer</span></td>
+              <td><span class="Table__badge Table__badge--danger">Error</span></td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric Table__cell--negative">-1,800 CZK</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="Table__footer">
+              <th colspan="3">Total</th>
+              <th class="Table__cell--numeric">2,135 kWh</th>
+              <th class="Table__cell--numeric">31,800 CZK</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <h3>Small &amp; Hoverable Table</h3>
+      <div class="example-box">
+        <table class="Table Table--small Table--hoverable">
+          <thead>
+            <tr class="Table__header">
+              <th>Date</th>
+              <th>Code</th>
+              <th class="Table__cell--numeric">Amount</th>
+              <th class="Table__cell--centered">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="Table__row">
+              <td>2026-02-15</td>
+              <td><code class="Table__cell--code">INV-0042</code></td>
+              <td class="Table__cell--numeric">4,520 CZK</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+              </td>
+            </tr>
+            <tr class="Table__row">
+              <td>2026-02-10</td>
+              <td><code class="Table__cell--code">INV-0041</code></td>
+              <td class="Table__cell--numeric">2,180 CZK</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+              </td>
+            </tr>
+            <tr class="Table__row">
+              <td>2026-02-01</td>
+              <td><code class="Table__cell--code">INV-0040</code></td>
+              <td class="Table__cell--numeric">8,900 CZK</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;table class="Table Table--small Table--hoverable"&gt;
+  &lt;thead&gt;
+    &lt;tr class="Table__header"&gt;
+      &lt;th class="Table__header--sortable"&gt;Name&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class="Table__row Table__row--success"&gt;
+      &lt;td class="Table__cell--positive"&gt;+100&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ADVANCED CARDS                                -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Advanced Cards</h2>
+      <p>Card variants with metric displays, accent backgrounds, and combined content.</p>
+
+      <h3>Card with Metric Grid</h3>
+      <div class="example-box">
+        <div class="Card">
+          <div class="Card__title">Energy Metrics</div>
+          <div class="Card__metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+            <div class="Card__metric">
+              <div class="Card__metric-icon" style="background-color: var(--brand-primary);">&#9889;</div>
+              <div class="Card__metric-content">
+                <div class="Card__metric-label">Production</div>
+                <div class="Card__metric-value">1,245 kWh</div>
+                <div class="Card__metric-sublabel" style="color: var(--semantic-success);">+12% vs last month</div>
+              </div>
+            </div>
+            <div class="Card__metric">
+              <div class="Card__metric-icon" style="background-color: var(--brand-secondary);">&#8595;</div>
+              <div class="Card__metric-content">
+                <div class="Card__metric-label">Consumption</div>
+                <div class="Card__metric-value">987 kWh</div>
+                <div class="Card__metric-sublabel" style="color: var(--semantic-danger);">-3% vs last month</div>
+              </div>
+            </div>
+            <div class="Card__metric">
+              <div class="Card__metric-icon" style="background-color: var(--semantic-success);">&#8596;</div>
+              <div class="Card__metric-content">
+                <div class="Card__metric-label">Shared</div>
+                <div class="Card__metric-value">258 kWh</div>
+                <div class="Card__metric-sublabel" style="color: var(--semantic-success);">+8% vs last month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Accent Card Variants</h3>
+      <div class="example-box">
+        <div class="showcase-grid-2">
+          <div class="Card Card--accent-bg">
+            <div class="Card__title">Accent Card</div>
+            <p style="margin: 0;">Card with solid accent background color for emphasis.</p>
+          </div>
+          <div class="Card Card--accent-bg-transparent">
+            <div class="Card__title">Transparent Accent</div>
+            <p style="margin: 0;">Card with transparent accent background for subtle highlighting.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>No Data State</h3>
+      <div class="example-box">
+        <div class="Card">
+          <div class="Card__title">Historical Data</div>
+          <div class="Card__no-data">
+            <div class="Card__no-data-icon">&#128202;</div>
+            <p style="margin: 0.5rem 0 0;">No data available for the selected period.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FILTER PANEL                                  -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Filter Panel</h2>
+      <p>Sidebar filter panels for data views with toggles, groups, and search.</p>
+
+      <h3>Filter Panel (Static Preview)</h3>
+      <div class="example-box">
+        <div class="FilterPanel__container" style="max-width: 320px;">
+          <div class="FilterPanel__header">
+            <div class="FilterPanel__title">&#9776; Filters</div>
+          </div>
+          <div class="FilterPanel__body">
+            <div class="FilterPanel__section">
+              <div class="Form__filter-label" style="margin-bottom: 0.5rem;">View Mode</div>
+              <div class="FilterPanel__toggle">
+                <label class="active">Groups</label>
+                <label>Addresses</label>
+              </div>
+            </div>
+            <div class="FilterPanel__section">
+              <div class="Form__filter-label" style="margin-bottom: 0.5rem;">Community Groups</div>
+              <div class="FilterPanel__group">
+                <div class="FilterPanel__group-name">Solar Community A</div>
+                <div class="FilterPanel__group-meta">12 members &middot; Prague</div>
+              </div>
+              <div class="FilterPanel__group">
+                <div class="FilterPanel__group-name">Wind Farm B</div>
+                <div class="FilterPanel__group-meta">8 members &middot; Brno</div>
+              </div>
+              <div class="FilterPanel__group">
+                <div class="FilterPanel__group-name">Mixed Energy C</div>
+                <div class="FilterPanel__group-meta">15 members &middot; Ostrava</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- COMBINED PATTERNS                             -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Combined Patterns</h2>
+      <p>Real-world layout combinations showing how components work together.</p>
+
+      <h3>Dashboard Overview</h3>
+      <div class="example-box">
+        <div class="StatCardGrid" style="margin-bottom: 1.5rem;">
+          <div class="StatCard StatCard--compact StatCard--border-success">
+            <div class="StatCard__icon" style="background-color: var(--semantic-success);">&#9889;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Production</div>
+              <div class="StatCard__value">1,245 kWh</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-warning">
+            <div class="StatCard__icon" style="background-color: var(--semantic-warning);">&#8595;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Consumption</div>
+              <div class="StatCard__value">987 kWh</div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-info">
+            <div class="StatCard__icon" style="background-color: var(--semantic-info);">&#8596;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Shared</div>
+              <div class="StatCard__value">258 kWh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Tabs" style="margin-bottom: 1rem;">
+          <nav class="nav-tabs">
+            <a class="nav-link active">Members</a>
+            <a class="nav-link">Invoices</a>
+            <a class="nav-link">Activity</a>
+          </nav>
+        </div>
+
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Solar Park Alpha</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Active</span>
+              </div>
+              <div class="Listing__amount">4,520 kWh</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">C</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Residence Beta</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--warning">Pending</span>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">2,180 kWh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Pagination" style="margin-top: 1rem;">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link">&laquo;</a></li>
+            <li class="page-item active"><a class="page-link">1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">&raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Card with Box Inside</h3>
+      <div class="example-box">
+        <div class="Card">
+          <div class="Card__title">Community Overview</div>
+          <div class="Card__metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div class="Card__metric">
+              <div class="Card__metric-icon" style="background-color: var(--brand-primary);">&#9889;</div>
+              <div class="Card__metric-content">
+                <div class="Card__metric-label">Members</div>
+                <div class="Card__metric-value">24</div>
+              </div>
+            </div>
+            <div class="Card__metric">
+              <div class="Card__metric-icon" style="background-color: var(--semantic-success);">&#10003;</div>
+              <div class="Card__metric-content">
+                <div class="Card__metric-label">Active</div>
+                <div class="Card__metric-value">21</div>
+              </div>
+            </div>
+          </div>
+          <div class="Box Box--compact Box--accent-bg" style="border: none;">
+            <div class="Box__title">Recent Activity</div>
+            <div class="Box__items">
+              <div class="Box__item" style="background-color: var(--white-1);">
+                <div class="Box__item-text">New member "Solar Farm D" joined the community.</div>
+              </div>
+              <div class="Box__item" style="background-color: var(--white-1);">
+                <div class="Box__item-text">Monthly allocation recalculated for February 2026.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Alert + Table Combination</h3>
+      <div class="example-box">
+        <div class="Alert Alert--warning" style="margin-bottom: 1rem;">
+          <strong>Notice:</strong> 2 partners have overdue invoices requiring attention.
+        </div>
+        <table class="Table Table--small Table--hoverable">
+          <thead>
+            <tr class="Table__header">
+              <th>Partner</th>
+              <th>Invoice</th>
+              <th class="Table__cell--numeric">Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="Table__row Table__row--danger">
+              <td>Community Delta</td>
+              <td><code class="Table__cell--code">INV-0038</code></td>
+              <td class="Table__cell--numeric Table__cell--negative">-1,800 CZK</td>
+              <td><span class="Table__badge Table__badge--danger">Overdue</span></td>
+            </tr>
+            <tr class="Table__row Table__row--warning">
+              <td>Community Epsilon</td>
+              <td><code class="Table__cell--code">INV-0039</code></td>
+              <td class="Table__cell--numeric">3,200 CZK</td>
+              <td><span class="Table__badge Table__badge--warning">Pending</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- UPDATED COMPONENT REFERENCE                   -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Component Classes</h2>
+      <p>All components follow BEM naming convention for consistency.</p>
+
+      <h3>Available Components</h3>
+      <div class="example-box">
+        <ul style="columns: 2; column-gap: 2rem; color: var(--white-85);">
+          <li><code>.Button</code> - Buttons &amp; actions</li>
+          <li><code>.Badge</code> - Status labels</li>
+          <li><code>.Alert</code> - Feedback messages</li>
+          <li><code>.Card</code> - Content containers</li>
+          <li><code>.Table</code> - Data tables</li>
+          <li><code>.Form</code> - Form elements</li>
+          <li><code>.Modal</code> - Dialog overlays</li>
+          <li><code>.Tabs</code> - Tab navigation</li>
+          <li><code>.Nav</code> - App navigation</li>
+          <li><code>.Pagination</code> - Page controls</li>
+          <li><code>.Icon</code> - Icon containers</li>
+          <li><code>.StatCard</code> - Metric cards</li>
+          <li><code>.StatusButton</code> - State buttons</li>
+          <li><code>.Box</code> - Content boxes</li>
+          <li><code>.Listing</code> - List items</li>
+          <li><code>.FilterPanel</code> - Filter sidebar</li>
+        </ul>
+      </div>
+
+      <h3>Modifier Pattern</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>.Button--primary / --secondary / --success / --danger / --warning / --info
+.Button--outlined / --small / --large / --rounded
+
+.Badge--success / --warning / --danger / --pill / --small / --large
+
+.Table--transparent / --small / --hoverable / --collapsible
+.Table__row--success / --warning / --danger / --highlighted / --grouped
+.Table__cell--numeric / --positive / --negative / --code
+
+.Card--accent-bg / --accent-bg-transparent
+.Card__metric / __metric-icon / __metric-label / __metric-value
+
+.StatCard--compact / --border-success / --border-warning / --border-danger
+.StatusButton--pending / --running / --success / --error
+
+.Icon--circular / --small / --medium / --large / --xlarge
+.Icon--production / --consumption / --sharing / --success / --warning
+
+.Box--compact / --supercompact / --light / --accent-bg
+.Listing--compact / .Listing__action--primary / --secondary / --danger
+.Listing__badge--success / --warning / --info / --secondary
+
+.Nav--vertical / .FilterPanel__toggle / .FilterPanel__group</code></pre>
+      </div>
+    </section>
+
     <footer style="text-align: center; padding: 3rem 0; border-top: 2px solid var(--light-gray); margin-top: 3rem; color: var(--light-gray);">
       <p>Design System - Built with Rails &amp; SCSS</p>
       <p style="font-size: var(--fs-xs); margin-top: 0.5rem;">
