@@ -1545,6 +1545,1442 @@
     </section>
 
     <!-- ============================================= -->
+    <!-- ENERGY DASHBOARD MOCKUP                       -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Energy Dashboard Mockup</h2>
+      <p>A full dashboard page layout combining Toolbar, KPI cards, tabs, data table, and pagination into a realistic energy management view.</p>
+
+      <h3>Complete Dashboard</h3>
+      <div class="example-box">
+
+        <!-- Toolbar -->
+        <div class="Toolbar" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 1rem; background-color: var(--dark-blue); border: 1px solid var(--white-1); border-radius: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-weight: 700; font-size: var(--fs-md); color: var(--white);">&#9889; Energy Dashboard</span>
+            <span class="Badge Badge--success Badge--pill">Live</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <input type="text" class="Form__input" placeholder="&#128269; Search metering points..." style="width: 240px; padding: 0.5rem 0.75rem; font-size: var(--fs-xs); margin: 0;">
+            <button class="Button Button--outlined Button--primary Button--small">&#8635; Refresh</button>
+            <button class="Button Button--primary Button--small">+ Add Source</button>
+          </div>
+        </div>
+
+        <!-- KPI Cards Row -->
+        <div class="KPICard" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="StatCard StatCard--compact StatCard--border-success">
+            <div class="StatCard__icon" style="background-color: var(--semantic-success);">&#9728;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Production</div>
+              <div class="StatCard__value">3,842 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-warning">
+            <div class="StatCard__icon" style="background-color: var(--semantic-warning);">&#8595;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Consumption</div>
+              <div class="StatCard__value">2,716 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact StatCard--border-info">
+            <div class="StatCard__icon" style="background-color: var(--semantic-info);">&#8596;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Sharing</div>
+              <div class="StatCard__value">1,126 <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+          <div class="StatCard StatCard--compact" style="border-left: 3px solid hsl(270, 73%, 62%);">
+            <div class="StatCard__icon" style="background-color: hsl(270, 73%, 62%);">&#9830;</div>
+            <div class="StatCard__content">
+              <div class="StatCard__label">Revenue</div>
+              <div class="StatCard__value">18,450 <span class="StatCard__unit">CZK</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="Tabs" style="margin-bottom: 0;">
+          <nav class="nav-tabs">
+            <a class="nav-link active">Overview</a>
+            <a class="nav-link">Details</a>
+          </nav>
+        </div>
+
+        <!-- Table -->
+        <table class="Table Table--hoverable" style="margin-bottom: 0;">
+          <thead>
+            <tr class="Table__header">
+              <th class="Table__header--sortable">Metering Point &#8593;</th>
+              <th>Type</th>
+              <th>Community</th>
+              <th>Status</th>
+              <th class="Table__cell--numeric">Production</th>
+              <th class="Table__cell--numeric">Consumption</th>
+              <th class="Table__cell--numeric">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="Table__row Table__row--success">
+              <td>CZ-MP-001-SOLAR</td>
+              <td><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td>Solar Community Prague</td>
+              <td><span class="Table__badge Table__badge--success">Active</span></td>
+              <td class="Table__cell--numeric Table__cell--positive">+1,245 kWh</td>
+              <td class="Table__cell--numeric">312 kWh</td>
+              <td class="Table__cell--numeric Table__cell--positive">+8,420 CZK</td>
+            </tr>
+            <tr class="Table__row">
+              <td>CZ-MP-002-ROOF</td>
+              <td><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td>Rooftop Collective Brno</td>
+              <td><span class="Table__badge Table__badge--success">Active</span></td>
+              <td class="Table__cell--numeric Table__cell--positive">+987 kWh</td>
+              <td class="Table__cell--numeric">154 kWh</td>
+              <td class="Table__cell--numeric Table__cell--positive">+5,930 CZK</td>
+            </tr>
+            <tr class="Table__row Table__row--warning">
+              <td>CZ-MP-003-WIND</td>
+              <td><span class="Table__badge Table__badge--customer">Customer</span></td>
+              <td>Wind Farm Ostrava</td>
+              <td><span class="Table__badge Table__badge--warning">Pending</span></td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric">1,890 kWh</td>
+              <td class="Table__cell--numeric Table__cell--negative">-3,200 CZK</td>
+            </tr>
+            <tr class="Table__row">
+              <td>CZ-MP-004-BATT</td>
+              <td><span class="Table__badge Table__badge--customer">Customer</span></td>
+              <td>Solar Community Prague</td>
+              <td><span class="Table__badge Table__badge--success">Active</span></td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric">360 kWh</td>
+              <td class="Table__cell--numeric">2,100 CZK</td>
+            </tr>
+            <tr class="Table__row Table__row--danger">
+              <td>CZ-MP-005-GRID</td>
+              <td><span class="Table__badge Table__badge--secondary">Grid</span></td>
+              <td>Rooftop Collective Brno</td>
+              <td><span class="Table__badge Table__badge--danger">Error</span></td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric">0 kWh</td>
+              <td class="Table__cell--numeric Table__cell--negative">-1,800 CZK</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="Table__footer">
+              <th colspan="4">Total (5 metering points)</th>
+              <th class="Table__cell--numeric">2,232 kWh</th>
+              <th class="Table__cell--numeric">2,716 kWh</th>
+              <th class="Table__cell--numeric">11,450 CZK</th>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Pagination -->
+        <div class="Pagination" style="margin-top: 1rem;">
+          <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link">&laquo;</a></li>
+            <li class="page-item active"><a class="page-link">1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">4</a></li>
+            <li class="page-item"><a class="page-link">&raquo;</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SETTINGS PAGE MOCKUP                          -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Settings Page Mockup</h2>
+      <p>A settings page layout combining navigation, avatar, form inputs, checkbox preferences, and action buttons.</p>
+
+      <h3>Account Settings</h3>
+      <div class="example-box">
+
+        <!-- Horizontal Nav -->
+        <nav class="Nav" style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--white-1); padding-bottom: 0;">
+          <ul class="Nav__list">
+            <li class="Nav__item"><a class="Nav__link active">&#9881; Profile</a></li>
+            <li class="Nav__item"><a class="Nav__link">&#128274; Security</a></li>
+            <li class="Nav__item"><a class="Nav__link">&#128276; Notifications</a></li>
+            <li class="Nav__item"><a class="Nav__link">&#128179; Billing</a></li>
+          </ul>
+        </nav>
+
+        <!-- Content area with two columns -->
+        <div style="display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start;">
+
+          <!-- Left column: Form in a Card -->
+          <div class="Card">
+            <div class="Card__title">Profile Information</div>
+            <div class="Form">
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Full Name</label>
+                <input type="text" class="Form__input" value="Jan Novak">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Email Address</label>
+                <input type="email" class="Form__input" value="jan.novak@wattlink.cz">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label">Company</label>
+                <input type="text" class="Form__input" value="Solar Community Prague s.r.o.">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label">Role in Community</label>
+                <select class="Form__input">
+                  <option>Community Administrator</option>
+                  <option>Energy Manager</option>
+                  <option>Member</option>
+                  <option>Viewer</option>
+                </select>
+              </div>
+
+              <div class="Form__subtitle">Notification Preferences</div>
+              <div class="Form__checkbox-group">
+                <label><input type="checkbox" checked> Email me when new members join the community</label>
+                <label><input type="checkbox" checked> Monthly energy production and sharing reports</label>
+                <label><input type="checkbox" checked> Alerts when metering points go offline</label>
+                <label><input type="checkbox"> Weekly digest of energy allocation changes</label>
+                <label><input type="checkbox"> SMS alerts for billing events</label>
+              </div>
+
+              <div class="Form__actions">
+                <button class="Button Button--outlined Button--primary">Cancel</button>
+                <button class="Button Button--primary">Save Changes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Avatar + Info Card -->
+          <div class="Card" style="text-align: center;">
+            <div style="margin-bottom: 1rem;">
+              <div class="Avatar" style="width: 96px; height: 96px; border-radius: 50%; background-color: var(--brand-accent); display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: var(--white); border: 3px solid var(--brand-primary); position: relative;">
+                JN
+                <!-- Status indicator -->
+                <span style="position: absolute; bottom: 4px; right: 4px; width: 16px; height: 16px; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--brand-dark);"></span>
+              </div>
+            </div>
+            <div style="font-size: var(--fs-md); font-weight: 700; color: var(--white); margin-bottom: 0.25rem;">Jan Novak</div>
+            <div style="font-size: var(--fs-xs); color: var(--light-gray); margin-bottom: 1rem;">Community Administrator</div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--white-1);">
+                <span style="color: var(--light-gray); font-size: var(--fs-xs);">Member since</span>
+                <span style="color: var(--white); font-size: var(--fs-xs); font-weight: 600;">Mar 2024</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--white-1);">
+                <span style="color: var(--light-gray); font-size: var(--fs-xs);">Communities</span>
+                <span style="color: var(--white); font-size: var(--fs-xs); font-weight: 600;">3</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                <span style="color: var(--light-gray); font-size: var(--fs-xs);">Metering Points</span>
+                <span style="color: var(--white); font-size: var(--fs-xs); font-weight: 600;">7</span>
+              </div>
+            </div>
+            <button class="Button Button--outlined Button--primary Button--small" style="margin-top: 1rem; width: 100%;">&#128247; Change Photo</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ONBOARDING WIZARD MOCKUP                      -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Onboarding Wizard</h2>
+      <p>A step-by-step wizard for onboarding new energy community members, showing step indicators, progress, and form content.</p>
+
+      <h3>Community Registration Wizard</h3>
+      <div class="example-box">
+
+        <!-- Step Indicator -->
+        <div class="StepIndicator" style="display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 2rem;">
+          <!-- Step 1 - Completed -->
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 100px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--semantic-success); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white); font-size: 1rem; border: 2px solid var(--semantic-success);">&#10003;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--semantic-success); margin-top: 0.5rem; font-weight: 600;">Community Info</div>
+          </div>
+          <!-- Connector 1-2 -->
+          <div style="flex: 1; height: 2px; background-color: var(--semantic-success); margin: 0 0.25rem; margin-bottom: 1.5rem; max-width: 120px;"></div>
+          <!-- Step 2 - Active -->
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 100px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--brand-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white); font-size: 1rem; border: 2px solid var(--brand-primary); box-shadow: 0 0 12px rgba(var(--brand-primary-rgb), 0.4);">2</div>
+            <div style="font-size: var(--fs-xxs); color: var(--brand-primary); margin-top: 0.5rem; font-weight: 600;">Energy Sources</div>
+          </div>
+          <!-- Connector 2-3 -->
+          <div style="flex: 1; height: 2px; background-color: var(--white-2); margin: 0 0.25rem; margin-bottom: 1.5rem; max-width: 120px;"></div>
+          <!-- Step 3 - Upcoming -->
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 100px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--white-1); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white-5); font-size: 1rem; border: 2px solid var(--white-2);">3</div>
+            <div style="font-size: var(--fs-xxs); color: var(--white-5); margin-top: 0.5rem; font-weight: 500;">Members</div>
+          </div>
+          <!-- Connector 3-4 -->
+          <div style="flex: 1; height: 2px; background-color: var(--white-2); margin: 0 0.25rem; margin-bottom: 1.5rem; max-width: 120px;"></div>
+          <!-- Step 4 - Upcoming -->
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 100px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--white-1); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white-5); font-size: 1rem; border: 2px solid var(--white-2);">4</div>
+            <div style="font-size: var(--fs-xxs); color: var(--white-5); margin-top: 0.5rem; font-weight: 500;">Confirmation</div>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="ProgressBar" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: var(--fs-xs); color: var(--light-gray); font-weight: 500;">Overall Progress</span>
+            <span style="font-size: var(--fs-xs); color: var(--brand-primary); font-weight: 700;">50%</span>
+          </div>
+          <div style="width: 100%; height: 8px; background-color: var(--white-1); border-radius: 4px; overflow: hidden;">
+            <div style="width: 50%; height: 100%; background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); border-radius: 4px; transition: width 0.4s ease;"></div>
+          </div>
+        </div>
+
+        <!-- Step Content Card -->
+        <div class="Card" style="margin-bottom: 1.5rem;">
+          <div class="Card__title">&#9728; Step 2: Configure Energy Sources</div>
+          <p style="color: var(--light-gray); margin-bottom: 1.5rem;">Register the solar panels and other generation assets for your energy community.</p>
+
+          <div class="Form">
+            <div class="Form__group">
+              <label class="Form__label Form__label--required">Source Name</label>
+              <input type="text" class="Form__input" value="Rooftop Solar Array - Building A">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Installed Capacity</label>
+                <input type="text" class="Form__input" placeholder="e.g. 12.5 kWp" value="12.5 kWp">
+              </div>
+              <div class="Form__group">
+                <label class="Form__label Form__label--required">Metering Point EAN</label>
+                <input type="text" class="Form__input" placeholder="859182400..." value="859182400712345678">
+              </div>
+            </div>
+            <div class="Form__group">
+              <label class="Form__label">Source Type</label>
+              <div class="Form__granularity-buttons">
+                <label class="Form__granularity-btn active">&#9728; Solar</label>
+                <label class="Form__granularity-btn">&#127744; Wind</label>
+                <label class="Form__granularity-btn">&#128267; Hydro</label>
+                <label class="Form__granularity-btn">&#128267; Biomass</label>
+                <label class="Form__granularity-btn">&#9879; Other</label>
+              </div>
+            </div>
+            <div class="Form__group">
+              <label class="Form__label">Expected Annual Production</label>
+              <input type="text" class="Form__input" placeholder="Estimated kWh per year" value="11,200 kWh">
+            </div>
+          </div>
+
+          <!-- Info alert inside card -->
+          <div class="Alert Alert--info" style="margin-top: 1rem; margin-bottom: 0;">
+            <strong>Tip:</strong> You can add more energy sources after completing the wizard from the Dashboard settings.
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <button class="Button Button--outlined Button--primary">&#8592; Back to Community Info</button>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: var(--fs-xs); color: var(--light-gray);">Step 2 of 4</span>
+            <button class="Button Button--primary">Continue to Members &#8594;</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PROGRESS BARS                                 -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Progress Bars</h2>
+      <p>Progress bars visualize completion, data import status, and energy usage levels.</p>
+
+      <h3>Basic Progress Levels</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">25% Complete</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill" style="width: 25%; background-color: var(--brand-primary);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">50% Complete</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill" style="width: 50%; background-color: var(--brand-primary);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">75% Complete</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill" style="width: 75%; background-color: var(--brand-primary);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">100% Complete</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill" style="width: 100%; background-color: var(--brand-primary);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Color Variants</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">Success</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill ProgressBar__fill--success" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">Warning</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill ProgressBar__fill--warning" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">Danger</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill ProgressBar__fill--danger" style="width: 35%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">Info</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill ProgressBar__fill--info" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.375rem;">Brand Primary</div>
+            <div class="ProgressBar">
+              <div class="ProgressBar__fill ProgressBar__fill--primary" style="width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Striped Variant</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--success ProgressBar__fill--striped" style="width: 65%;"></div>
+          </div>
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--warning ProgressBar__fill--striped" style="width: 45%;"></div>
+          </div>
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--primary ProgressBar__fill--striped" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Progress Bars with Labels</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--success" style="width: 72%;">
+              <span class="ProgressBar__label">72%</span>
+            </div>
+          </div>
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--primary" style="width: 48%;">
+              <span class="ProgressBar__label">48%</span>
+            </div>
+          </div>
+          <div class="ProgressBar">
+            <div class="ProgressBar__fill ProgressBar__fill--danger" style="width: 91%;">
+              <span class="ProgressBar__label">91%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Real-World: Data Import Progress</h3>
+      <div class="example-box">
+        <div class="Card">
+          <div class="Card__title">&#9889; Data Import Progress</div>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.5rem;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
+                <span style="font-size: var(--fs-xs); color: var(--white-85);">Meter Readings &mdash; Solar Park Alpha</span>
+                <span style="font-size: var(--fs-xxs); color: var(--semantic-success); font-weight: 600;">100%</span>
+              </div>
+              <div class="ProgressBar">
+                <div class="ProgressBar__fill ProgressBar__fill--success" style="width: 100%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
+                <span style="font-size: var(--fs-xs); color: var(--white-85);">Consumption Data &mdash; Residence Beta</span>
+                <span style="font-size: var(--fs-xxs); color: var(--brand-primary); font-weight: 600;">68%</span>
+              </div>
+              <div class="ProgressBar">
+                <div class="ProgressBar__fill ProgressBar__fill--primary" style="width: 68%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
+                <span style="font-size: var(--fs-xs); color: var(--white-85);">Billing Records &mdash; Community Gamma</span>
+                <span style="font-size: var(--fs-xxs); color: var(--semantic-warning); font-weight: 600;">34%</span>
+              </div>
+              <div class="ProgressBar">
+                <div class="ProgressBar__fill ProgressBar__fill--warning ProgressBar__fill--striped" style="width: 34%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
+                <span style="font-size: var(--fs-xs); color: var(--white-85);">Grid Export Logs &mdash; Wind Farm Delta</span>
+                <span style="font-size: var(--fs-xxs); color: var(--semantic-danger); font-weight: 600;">12%</span>
+              </div>
+              <div class="ProgressBar">
+                <div class="ProgressBar__fill ProgressBar__fill--danger ProgressBar__fill--striped" style="width: 12%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="ProgressBar"&gt;
+  &lt;div class="ProgressBar__fill ProgressBar__fill--success" style="width: 72%;"&gt;
+    &lt;span class="ProgressBar__label"&gt;72%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Striped variant --&gt;
+&lt;div class="ProgressBar"&gt;
+  &lt;div class="ProgressBar__fill ProgressBar__fill--warning ProgressBar__fill--striped"
+       style="width: 45%;"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- LOADING SKELETONS                             -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Loading Skeletons</h2>
+      <p>Skeleton placeholders indicate loading states while content is being fetched.</p>
+
+      <h3>Text Skeleton Lines</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div class="Skeleton Skeleton--text" style="width: 90%;"></div>
+          <div class="Skeleton Skeleton--text" style="width: 75%;"></div>
+          <div class="Skeleton Skeleton--text" style="width: 60%;"></div>
+        </div>
+      </div>
+
+      <h3>Circle Skeleton (Avatar Placeholder)</h3>
+      <div class="example-box">
+        <div class="showcase-flex-row">
+          <div style="text-align: center;">
+            <div class="Skeleton Skeleton--circle" style="width: 3rem; height: 3rem;"></div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Small</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Skeleton Skeleton--circle" style="width: 4rem; height: 4rem;"></div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Medium</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="Skeleton Skeleton--circle" style="width: 5rem; height: 5rem;"></div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Large</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Rectangle Skeleton (Card Placeholder)</h3>
+      <div class="example-box">
+        <div class="Skeleton Skeleton--rect" style="width: 100%; height: 120px; border-radius: 0.75rem;"></div>
+      </div>
+
+      <h3>Loading Card Example</h3>
+      <div class="example-box">
+        <div class="Card">
+          <div class="Skeleton Skeleton--text" style="width: 40%; height: 1.5rem; margin-bottom: 1.25rem;"></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background-color: var(--white-05); border-radius: 0.5rem;">
+              <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+              <div style="flex: 1;">
+                <div class="Skeleton Skeleton--text" style="width: 60%; height: 0.6rem; margin-bottom: 0.5rem;"></div>
+                <div class="Skeleton Skeleton--text" style="width: 80%; height: 1rem;"></div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background-color: var(--white-05); border-radius: 0.5rem;">
+              <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+              <div style="flex: 1;">
+                <div class="Skeleton Skeleton--text" style="width: 55%; height: 0.6rem; margin-bottom: 0.5rem;"></div>
+                <div class="Skeleton Skeleton--text" style="width: 70%; height: 1rem;"></div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background-color: var(--white-05); border-radius: 0.5rem;">
+              <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+              <div style="flex: 1;">
+                <div class="Skeleton Skeleton--text" style="width: 50%; height: 0.6rem; margin-bottom: 0.5rem;"></div>
+                <div class="Skeleton Skeleton--text" style="width: 65%; height: 1rem;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="Skeleton Skeleton--rect" style="width: 100%; height: 60px; border-radius: 0.5rem;"></div>
+        </div>
+      </div>
+
+      <h3>Loading List Example</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main" style="flex: 1;">
+                <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                  <div class="Skeleton Skeleton--text" style="width: 45%; height: 0.875rem;"></div>
+                </div>
+              </div>
+              <div class="Skeleton Skeleton--text" style="width: 5rem; height: 0.875rem;"></div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main" style="flex: 1;">
+                <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                  <div class="Skeleton Skeleton--text" style="width: 55%; height: 0.875rem;"></div>
+                </div>
+              </div>
+              <div class="Skeleton Skeleton--text" style="width: 4rem; height: 0.875rem;"></div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main" style="flex: 1;">
+                <div class="Skeleton Skeleton--circle" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                  <div class="Skeleton Skeleton--text" style="width: 35%; height: 0.875rem;"></div>
+                </div>
+              </div>
+              <div class="Skeleton Skeleton--text" style="width: 6rem; height: 0.875rem;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;!-- Text lines --&gt;
+&lt;div class="Skeleton Skeleton--text" style="width: 90%;"&gt;&lt;/div&gt;
+&lt;div class="Skeleton Skeleton--text" style="width: 75%;"&gt;&lt;/div&gt;
+
+&lt;!-- Circle (avatar placeholder) --&gt;
+&lt;div class="Skeleton Skeleton--circle" style="width: 3rem; height: 3rem;"&gt;&lt;/div&gt;
+
+&lt;!-- Rectangle (card placeholder) --&gt;
+&lt;div class="Skeleton Skeleton--rect" style="width: 100%; height: 120px;"&gt;&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- KPI DASHBOARD CARDS                           -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>KPI Dashboard Cards</h2>
+      <p>Specialized cards for key performance indicators with trend arrows and compact layouts.</p>
+
+      <h3>KPI Card Row</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+          <div class="KPICard">
+            <div class="KPICard__label">Monthly Revenue</div>
+            <div class="KPICard__value">124,500 CZK</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +12%</div>
+          </div>
+          <div class="KPICard">
+            <div class="KPICard__label">Active Sites</div>
+            <div class="KPICard__value">47</div>
+            <div class="KPICard__trend KPICard__trend--down">&#9660; -2%</div>
+          </div>
+          <div class="KPICard">
+            <div class="KPICard__label">Energy Shared</div>
+            <div class="KPICard__value">8,640 kWh</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +24%</div>
+          </div>
+          <div class="KPICard">
+            <div class="KPICard__label">Cost Savings</div>
+            <div class="KPICard__value">31,200 CZK</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +8%</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Compact KPI Cards</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+          <div class="KPICard KPICard--compact">
+            <div class="KPICard__label">Peak Output</div>
+            <div class="KPICard__value">12.4 kW</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +5%</div>
+          </div>
+          <div class="KPICard KPICard--compact">
+            <div class="KPICard__label">Grid Feed-in</div>
+            <div class="KPICard__value">3,210 kWh</div>
+            <div class="KPICard__trend KPICard__trend--down">&#9660; -7%</div>
+          </div>
+          <div class="KPICard KPICard--compact">
+            <div class="KPICard__label">Self-Consumption</div>
+            <div class="KPICard__value">78%</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +3%</div>
+          </div>
+          <div class="KPICard KPICard--compact">
+            <div class="KPICard__label">CO&#8322; Offset</div>
+            <div class="KPICard__value">2.4 t</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +15%</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>KPI Card with Sparkline Area</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div class="KPICard">
+            <div class="KPICard__label">Production This Week</div>
+            <div class="KPICard__value">1,845 kWh</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +18% vs last week</div>
+            <div class="KPICard__sparkline">
+              <svg viewBox="0 0 120 32" preserveAspectRatio="none" style="width: 100%; height: 32px;">
+                <polyline points="0,28 15,24 30,26 45,18 60,20 75,12 90,14 105,8 120,4" fill="none" stroke="var(--semantic-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="KPICard">
+            <div class="KPICard__label">Consumption This Week</div>
+            <div class="KPICard__value">1,320 kWh</div>
+            <div class="KPICard__trend KPICard__trend--down">&#9660; -4% vs last week</div>
+            <div class="KPICard__sparkline">
+              <svg viewBox="0 0 120 32" preserveAspectRatio="none" style="width: 100%; height: 32px;">
+                <polyline points="0,8 15,12 30,10 45,16 60,14 75,20 90,18 105,24 120,22" fill="none" stroke="var(--semantic-danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="KPICard">
+            <div class="KPICard__label">Net Balance</div>
+            <div class="KPICard__value">+525 kWh</div>
+            <div class="KPICard__trend KPICard__trend--up">&#9650; +32% vs last week</div>
+            <div class="KPICard__sparkline">
+              <svg viewBox="0 0 120 32" preserveAspectRatio="none" style="width: 100%; height: 32px;">
+                <polyline points="0,22 15,20 30,24 45,16 60,18 75,10 90,12 105,6 120,2" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="KPICard"&gt;
+  &lt;div class="KPICard__label"&gt;Monthly Revenue&lt;/div&gt;
+  &lt;div class="KPICard__value"&gt;124,500 CZK&lt;/div&gt;
+  &lt;div class="KPICard__trend KPICard__trend--up"&gt;&amp;#9650; +12%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Compact variant --&gt;
+&lt;div class="KPICard KPICard--compact"&gt;...&lt;/div&gt;
+
+&lt;!-- With sparkline area --&gt;
+&lt;div class="KPICard"&gt;
+  ...
+  &lt;div class="KPICard__sparkline"&gt;
+    &lt;svg viewBox="0 0 120 32"&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TOOLBARS                                      -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Toolbars</h2>
+      <p>Toolbars group actions, search, and controls in a horizontal bar above content areas.</p>
+
+      <h3>Basic Toolbar</h3>
+      <div class="example-box">
+        <div class="Toolbar">
+          <div class="Toolbar__group">
+            <button class="Button Button--primary Button--small">&#43; Add New</button>
+            <button class="Button Button--outlined Button--primary Button--small">&#8635; Refresh</button>
+          </div>
+          <div class="Toolbar__separator"></div>
+          <div class="Toolbar__group">
+            <button class="Button Button--secondary Button--small">&#9776; Bulk Actions</button>
+            <button class="Button Button--outlined Button--primary Button--small">&#8681; Download</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Toolbar with Search, Filters &amp; Actions</h3>
+      <div class="example-box">
+        <div class="Toolbar">
+          <div class="Toolbar__group" style="flex: 1;">
+            <div style="position: relative; flex: 1; max-width: 320px;">
+              <input type="text" class="Form__input" placeholder="&#128269; Search partners..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
+            </div>
+          </div>
+          <div class="Toolbar__group">
+            <button class="Button Button--outlined Button--primary Button--small">&#9660; Status</button>
+            <button class="Button Button--outlined Button--primary Button--small">&#9660; Type</button>
+            <button class="Button Button--outlined Button--primary Button--small">&#9660; Region</button>
+          </div>
+          <div class="Toolbar__separator"></div>
+          <div class="Toolbar__group">
+            <button class="Button Button--primary Button--small">&#43; New Partner</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Toolbar with Tabs Below</h3>
+      <div class="example-box">
+        <div class="Toolbar" style="margin-bottom: 0; border-radius: 0.5rem 0.5rem 0 0;">
+          <div class="Toolbar__group">
+            <span style="color: var(--white-85); font-weight: 600; font-size: var(--fs-sm);">Energy Overview</span>
+          </div>
+          <div class="Toolbar__group">
+            <button class="Button Button--outlined Button--primary Button--small">&#8681; Export CSV</button>
+            <button class="Button Button--primary Button--small">&#9998; Configure</button>
+          </div>
+        </div>
+        <div class="Tabs" style="margin-bottom: 0;">
+          <nav class="nav-tabs">
+            <a class="nav-link active">Production</a>
+            <a class="nav-link">Consumption</a>
+            <a class="nav-link">Sharing</a>
+            <a class="nav-link">Balance</a>
+          </nav>
+          <div class="Tabs__content">
+            <p style="margin: 0; color: var(--light-gray);">Content for the selected tab is displayed here. The toolbar provides global actions while tabs switch between data views.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Real-World: Data Management Toolbar</h3>
+      <div class="example-box">
+        <div class="Toolbar">
+          <div class="Toolbar__group" style="flex: 1;">
+            <div style="position: relative; flex: 1; max-width: 280px;">
+              <input type="text" class="Form__input" placeholder="&#128269; Search meters, sites..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
+            </div>
+          </div>
+          <div class="Toolbar__group">
+            <div class="Form__granularity-buttons" style="margin: 0;">
+              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Hourly</label>
+              <label class="Form__granularity-btn active" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Daily</label>
+              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Monthly</label>
+              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Yearly</label>
+            </div>
+          </div>
+          <div class="Toolbar__separator"></div>
+          <div class="Toolbar__group">
+            <button class="Button Button--outlined Button--primary Button--small">&#8681; Export</button>
+            <button class="Button Button--outlined Button--primary Button--small">&#9881; Settings</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="Toolbar"&gt;
+  &lt;div class="Toolbar__group"&gt;
+    &lt;button class="Button Button--primary Button--small"&gt;Add&lt;/button&gt;
+    &lt;button class="Button Button--outlined Button--primary Button--small"&gt;Refresh&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="Toolbar__separator"&gt;&lt;/div&gt;
+  &lt;div class="Toolbar__group"&gt;
+    &lt;button class="Button Button--secondary Button--small"&gt;Export&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- DARK vs LIGHT COMPARISON                      -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Dark vs Light Comparison</h2>
+      <p>Components support both dark (default) and light variants. Theming is driven by CSS custom properties defined on <code>:root</code>, making it straightforward to override brand colors or switch palettes per application.</p>
+
+      <h3>Box &mdash; Dark vs Light</h3>
+      <div class="example-box">
+        <div class="showcase-grid-2">
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Default (Dark)</div>
+            <div class="Box Box--compact">
+              <div class="Box__title">Energy Sources</div>
+              <div class="Box__items">
+                <div class="Box__item">
+                  <div class="Box__item-text">Solar array &mdash; 12.5 kWp capacity</div>
+                </div>
+                <div class="Box__item">
+                  <div class="Box__item-text">Wind turbine &mdash; 3 kW rated power</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Light Variant</div>
+            <div class="Box Box--light Box--compact">
+              <div class="Box__title">Energy Sources</div>
+              <div class="Box__items">
+                <div class="Box__item" style="background-color: rgba(0,0,0,0.04);">
+                  <div class="Box__item-text">Solar array &mdash; 12.5 kWp capacity</div>
+                </div>
+                <div class="Box__item" style="background-color: rgba(0,0,0,0.04);">
+                  <div class="Box__item-text">Wind turbine &mdash; 3 kW rated power</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Card &mdash; Default vs Accent Variants</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Default Card</div>
+            <div class="Card">
+              <div class="Card__title">Community Stats</div>
+              <p style="margin: 0; color: var(--light-gray); font-size: var(--fs-xs);">Default dark background with subtle border. Ideal for dashboards and data-heavy views.</p>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Accent Background</div>
+            <div class="Card Card--accent-bg">
+              <div class="Card__title">Community Stats</div>
+              <p style="margin: 0; color: var(--white-85); font-size: var(--fs-xs);">Solid accent background for emphasis and featured sections. High visual weight.</p>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Accent Transparent</div>
+            <div class="Card Card--accent-bg-transparent">
+              <div class="Card__title">Community Stats</div>
+              <p style="margin: 0; color: var(--white-85); font-size: var(--fs-xs);">Translucent accent background for subtle highlighting without overpowering adjacent content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Theming via CSS Custom Properties</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>/* Override brand colors per-application */
+:root {
+  --theme-brand-primary: hsla(33, 100%, 61%, 1);    /* Wattlink orange */
+  --theme-brand-secondary: hsla(169, 47%, 49%, 1);  /* Wattlink teal   */
+  --theme-brand-dark: hsla(240, 75%, 13%, 1);       /* Deep navy       */
+  --theme-brand-accent: hsla(240, 93%, 29%, 1);     /* Royal blue      */
+}
+
+/* All components inherit from these properties automatically.
+   Switch .Box--light for a white-background variant. */</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PRICING PLANS                                 -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Pricing Plans</h2>
+      <p>Pricing card patterns for energy service tiers with feature comparison and call-to-action buttons.</p>
+
+      <h3>Three-Tier Pricing</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; align-items: stretch;">
+
+          <!-- Basic Plan -->
+          <div class="PricingCard" style="background-color: var(--white-05); border: 2px solid var(--white-1); border-radius: 1rem; padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <div style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-gray); font-weight: 600; margin-bottom: 0.5rem;">Basic</div>
+              <div style="font-size: var(--fs-xl); font-weight: 900; color: var(--white);">990 <span style="font-size: var(--fs-xs); font-weight: 500; color: var(--light-gray);">CZK/month</span></div>
+              <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.25rem;">Billed annually at 11,880 CZK</div>
+            </div>
+            <div style="flex: 1; margin-bottom: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Up to 5 metering points
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Daily data granularity
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Email support (48h SLA)
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> 6-month data retention
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-5); font-size: var(--fs-xs);">
+                <span style="color: var(--white-25);">&#10005;</span> API access
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: var(--white-5); font-size: var(--fs-xs);">
+                <span style="color: var(--white-25);">&#10005;</span> Custom reporting
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <button class="Button Button--outlined Button--primary" style="width: 100%;">Get Started</button>
+            </div>
+          </div>
+
+          <!-- Professional Plan (Featured) -->
+          <div class="PricingCard PricingCard--featured" style="background-color: rgba(var(--brand-primary-rgb), 0.08); border: 2px solid var(--brand-primary); border-radius: 1rem; padding: 2rem 1.5rem; display: flex; flex-direction: column; position: relative; transform: scale(1.03);">
+            <div style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background-color: var(--brand-primary); color: var(--white); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 1rem; border-radius: 0 0 0.5rem 0.5rem;">Most Popular</div>
+            <div style="text-align: center; margin-bottom: 1.5rem; margin-top: 0.5rem;">
+              <div style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-primary); font-weight: 600; margin-bottom: 0.5rem;">Professional</div>
+              <div style="font-size: var(--fs-xl); font-weight: 900; color: var(--white);">2,490 <span style="font-size: var(--fs-xs); font-weight: 500; color: var(--light-gray);">CZK/month</span></div>
+              <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.25rem;">Billed annually at 29,880 CZK</div>
+            </div>
+            <div style="flex: 1; margin-bottom: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Up to 50 metering points
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Hourly data granularity
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Priority support (4h SLA)
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> 24-month data retention
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Full REST API access
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Custom reporting
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <button class="Button Button--primary" style="width: 100%;">Start Free Trial</button>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="PricingCard" style="background-color: var(--white-05); border: 2px solid var(--white-1); border-radius: 1rem; padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <div style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-gray); font-weight: 600; margin-bottom: 0.5rem;">Enterprise</div>
+              <div style="font-size: var(--fs-xl); font-weight: 900; color: var(--white);">6,990 <span style="font-size: var(--fs-xs); font-weight: 500; color: var(--light-gray);">CZK/month</span></div>
+              <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.25rem;">Billed annually at 83,880 CZK</div>
+            </div>
+            <div style="flex: 1; margin-bottom: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Unlimited metering points
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> 15-minute interval data
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Dedicated support (1h SLA)
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Unlimited data retention
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--white-08); color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> Full API + Webhooks
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; color: var(--white-85); font-size: var(--fs-xs);">
+                <span style="color: var(--semantic-success);">&#10003;</span> White-label &amp; SSO
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <button class="Button Button--outlined Button--primary" style="width: 100%;">Contact Sales</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ACTIVITY TIMELINE                             -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Activity Timeline</h2>
+      <p>Chronological activity feed for energy community events, combining timeline markers with badges and avatars.</p>
+
+      <h3>Energy Community Feed</h3>
+      <div class="example-box">
+        <div class="Timeline" style="position: relative; padding-left: 2.5rem;">
+          <!-- Vertical line -->
+          <div style="position: absolute; left: 0.9rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--white-1);"></div>
+
+          <!-- Item 1: New member joined -->
+          <div style="position: relative; padding-bottom: 2rem;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">&#10003;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Today, 14:32</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">New member joined the community</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 0.65rem; font-weight: 700; flex-shrink: 0;">MK</span>
+              Martin Kovarik registered residence at Vinohrady, Prague.
+              <span class="Badge Badge--success Badge--small">Verified</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Monthly report -->
+          <div style="position: relative; padding-bottom: 2rem;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-info); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">&#9993;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Today, 09:00</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">Monthly report generated</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5;">
+              January 2026 energy allocation report is ready. Total shared: <strong style="color: var(--white);">12,480 kWh</strong> across 34 members.
+              <span class="Badge Badge--info Badge--small" style="margin-left: 0.25rem;">PDF</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Energy sharing started -->
+          <div style="position: relative; padding-bottom: 2rem;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">&#9889;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Yesterday, 16:45</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">Energy sharing activated</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background-color: var(--brand-primary); color: var(--white); font-size: 0.65rem; font-weight: 700; flex-shrink: 0;">SP</span>
+              Solar Park Dejvice began sharing surplus production with 8 connected households.
+              <span class="Badge Badge--success Badge--small">Active</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Payment received -->
+          <div style="position: relative; padding-bottom: 2rem;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">&#8364;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Yesterday, 10:12</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">Payment received</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5;">
+              Invoice <code style="font-size: 0.8em;">INV-2026-0089</code> paid by Bytovy dum Karlin.
+              Amount: <strong style="color: var(--semantic-success);">18,750 CZK</strong>
+              <span class="Badge Badge--success Badge--small" style="margin-left: 0.25rem;">Paid</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Maintenance scheduled (warning) -->
+          <div style="position: relative; padding-bottom: 2rem;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-warning); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">&#9888;</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Feb 14, 08:00</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">Maintenance scheduled</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5;">
+              Planned inverter firmware update for Solar Park Dejvice on <strong style="color: var(--white);">Feb 20, 02:00 - 04:00</strong>. Expect temporary production interruption.
+              <span class="Badge Badge--warning Badge--small" style="margin-left: 0.25rem;">Scheduled</span>
+            </div>
+          </div>
+
+          <!-- Item 6: Meter sync issue (warning) -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -2.5rem; top: 0.15rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background-color: var(--semantic-warning); border: 2px solid var(--dark-bg-color); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--white);">!</div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-bottom: 0.25rem;">Feb 13, 22:15</div>
+            <div style="font-size: var(--fs-sm); font-weight: 700; color: var(--white); margin-bottom: 0.375rem;">Meter data sync delayed</div>
+            <div style="font-size: var(--fs-xs); color: var(--white-7); line-height: 1.5; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background-color: var(--semantic-warning); color: var(--white); font-size: 0.65rem; font-weight: 700; flex-shrink: 0;">RB</span>
+              Metering point RB-0047 at Residence Beta delayed by 3 hours. Auto-retry in progress.
+              <span class="Badge Badge--warning Badge--small">Retrying</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TEAM / USER PROFILES                          -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Team / User Profiles</h2>
+      <p>User profile patterns combining avatars, cards, badges, and listing components for team management views.</p>
+
+      <h3>Avatar Sizes &amp; Status</h3>
+      <div class="example-box">
+        <div class="showcase-flex-row" style="gap: 1.5rem;">
+          <div style="text-align: center;">
+            <div style="position: relative; display: inline-block;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background-color: var(--brand-primary); color: var(--white); font-size: 0.6rem; font-weight: 700;">JN</div>
+              <div style="position: absolute; bottom: -1px; right: -1px; width: 0.6rem; height: 0.6rem; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--dark-bg-color);"></div>
+            </div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Small</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="position: relative; display: inline-block;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 0.9rem; font-weight: 700;">PD</div>
+              <div style="position: absolute; bottom: 0; right: 0; width: 0.75rem; height: 0.75rem; border-radius: 50%; background-color: var(--semantic-success); border: 2px solid var(--dark-bg-color);"></div>
+            </div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Medium</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="position: relative; display: inline-block;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 50%; background-color: var(--brand-accent); color: var(--white); font-size: 1.2rem; font-weight: 700;">KS</div>
+              <div style="position: absolute; bottom: 1px; right: 1px; width: 0.9rem; height: 0.9rem; border-radius: 50%; background-color: var(--semantic-warning); border: 2px solid var(--dark-bg-color);"></div>
+            </div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Large</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="position: relative; display: inline-block;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 5rem; height: 5rem; border-radius: 50%; background-color: var(--semantic-info); color: var(--white); font-size: 1.5rem; font-weight: 700;">LV</div>
+              <div style="position: absolute; bottom: 2px; right: 2px; width: 1rem; height: 1rem; border-radius: 50%; background-color: var(--semantic-danger); border: 2px solid var(--dark-bg-color);"></div>
+            </div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">X-Large</div>
+          </div>
+          <!-- Stacked avatars -->
+          <div style="text-align: center;">
+            <div style="display: flex; align-items: center;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-primary); color: var(--white); font-size: 0.7rem; font-weight: 700; border: 2px solid var(--dark-bg-color); margin-right: -0.6rem; z-index: 4;">JN</div>
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 0.7rem; font-weight: 700; border: 2px solid var(--dark-bg-color); margin-right: -0.6rem; z-index: 3;">PD</div>
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-accent); color: var(--white); font-size: 0.7rem; font-weight: 700; border: 2px solid var(--dark-bg-color); margin-right: -0.6rem; z-index: 2;">KS</div>
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--white-2); color: var(--white-7); font-size: 0.65rem; font-weight: 600; border: 2px solid var(--dark-bg-color); z-index: 1;">+5</div>
+            </div>
+            <div style="font-size: var(--fs-xxs); color: var(--light-gray); margin-top: 0.5rem;">Stacked</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Profile Cards</h3>
+      <div class="example-box">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+          <div class="Card" style="text-align: center; padding: 1.5rem;">
+            <div class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 4.5rem; height: 4.5rem; border-radius: 50%; background-color: var(--brand-primary); color: var(--white); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">JN</div>
+            <div class="Card__title" style="font-size: var(--fs-md); margin-bottom: 0.25rem;">Jan Novak</div>
+            <div style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 0.75rem;">jan.novak@wattlink.cz</div>
+            <div style="margin-bottom: 1rem;">
+              <span class="Badge Badge--primary Badge--pill">Administrator</span>
+              <span class="Badge Badge--success Badge--pill" style="margin-left: 0.25rem;">Active</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; justify-content: center;">
+              <a class="Listing__action Listing__action--primary" style="font-size: var(--fs-xxs);">&#9998; Edit</a>
+              <a class="Listing__action Listing__action--secondary" style="font-size: var(--fs-xxs);">&#9993; Message</a>
+            </div>
+          </div>
+
+          <div class="Card" style="text-align: center; padding: 1.5rem;">
+            <div class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 4.5rem; height: 4.5rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">ES</div>
+            <div class="Card__title" style="font-size: var(--fs-md); margin-bottom: 0.25rem;">Eva Svobodova</div>
+            <div style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 0.75rem;">eva.svobodova@wattlink.cz</div>
+            <div style="margin-bottom: 1rem;">
+              <span class="Badge Badge--secondary Badge--pill">Manager</span>
+              <span class="Badge Badge--success Badge--pill" style="margin-left: 0.25rem;">Active</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; justify-content: center;">
+              <a class="Listing__action Listing__action--primary" style="font-size: var(--fs-xxs);">&#9998; Edit</a>
+              <a class="Listing__action Listing__action--secondary" style="font-size: var(--fs-xxs);">&#9993; Message</a>
+            </div>
+          </div>
+
+          <div class="Card" style="text-align: center; padding: 1.5rem;">
+            <div class="Avatar" style="display: inline-flex; align-items: center; justify-content: center; width: 4.5rem; height: 4.5rem; border-radius: 50%; background-color: var(--brand-accent); color: var(--white); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">TD</div>
+            <div class="Card__title" style="font-size: var(--fs-md); margin-bottom: 0.25rem;">Tomas Dvorak</div>
+            <div style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 0.75rem;">tomas.dvorak@wattlink.cz</div>
+            <div style="margin-bottom: 1rem;">
+              <span class="Badge Badge--info Badge--pill">Technician</span>
+              <span class="Badge Badge--warning Badge--pill" style="margin-left: 0.25rem;">Away</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; justify-content: center;">
+              <a class="Listing__action Listing__action--primary" style="font-size: var(--fs-xxs);">&#9998; Edit</a>
+              <a class="Listing__action Listing__action--secondary" style="font-size: var(--fs-xxs);">&#9993; Message</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <h3>Team Member List</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-primary); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">JN</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Jan Novak</div>
+                  <div class="Listing__subtitle">Last active: 2 minutes ago</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--info">Admin</span>
+                <span class="Listing__badge Listing__badge--success">Online</span>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">ES</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Eva Svobodova</div>
+                  <div class="Listing__subtitle">Last active: 15 minutes ago</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">Manager</span>
+                <span class="Listing__badge Listing__badge--success">Online</span>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--brand-accent); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">TD</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Tomas Dvorak</div>
+                  <div class="Listing__subtitle">Last active: 3 hours ago</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">Technician</span>
+                <span class="Listing__badge Listing__badge--warning">Away</span>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--semantic-info); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">LV</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Lucie Veselova</div>
+                  <div class="Listing__subtitle">Last active: 2 days ago</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">Viewer</span>
+                <span style="display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: var(--fs-xxs); font-weight: 500; background-color: var(--white-1); color: var(--light-gray);">Offline</span>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: var(--semantic-warning); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">MK</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Martin Kovarik</div>
+                  <div class="Listing__subtitle">Last active: just now</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">User</span>
+                <span class="Listing__badge Listing__badge--success">Online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- NOTIFICATION CENTER                           -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Notification Center</h2>
+      <p>Notification panel patterns with categorized items, read/unread states, and quick actions.</p>
+
+      <h3>Notification Panel</h3>
+      <div class="example-box">
+        <div class="Box" style="max-width: 520px;">
+          <div class="Box__header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-weight: 700; font-size: var(--fs-md); color: var(--white);">Notifications</span>
+              <span class="Badge Badge--primary Badge--pill">6</span>
+            </div>
+            <button class="Button Button--outlined Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: var(--fs-xxs);">Mark all read</button>
+          </div>
+
+          <div class="Box__items" style="gap: 0.5rem;">
+
+            <!-- Unread: Energy alert (danger border) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-danger); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--semantic-danger); color: var(--white); font-size: 0.9rem; font-weight: 700; flex-shrink: 0;">&#9888;</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--white);">Grid overload detected</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">3 min ago</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-7); margin-top: 0.25rem; line-height: 1.4;">Metering point SP-0012 exceeded threshold at 98.5% capacity. Automatic load reduction initiated.</div>
+                <div style="margin-top: 0.5rem;">
+                  <button class="Button Button--danger Button--small" style="padding: 0.1rem 0.5rem; font-size: 0.7rem;">Review Now</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unread: Payment (success border) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-success); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--semantic-success); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">PD</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--white);">Payment received</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">25 min ago</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-7); margin-top: 0.25rem; line-height: 1.4;">Petr Dvorak paid <strong style="color: var(--semantic-success);">8,450 CZK</strong> for invoice INV-2026-0091.</div>
+                <div style="margin-top: 0.5rem;">
+                  <button class="Button Button--outlined Button--primary Button--small" style="padding: 0.1rem 0.5rem; font-size: 0.7rem;">View Invoice</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unread: New member (info border) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-info); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--brand-secondary); color: var(--white); font-size: 0.75rem; font-weight: 700; flex-shrink: 0;">MK</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 700; color: var(--white);">New member application</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">1 hour ago</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-7); margin-top: 0.25rem; line-height: 1.4;">Martin Kovarik submitted a request to join Solar Community Vinohrady with 2 metering points.</div>
+                <div style="margin-top: 0.5rem; display: flex; gap: 0.375rem;">
+                  <button class="Button Button--success Button--small" style="padding: 0.1rem 0.5rem; font-size: 0.7rem;">Approve</button>
+                  <button class="Button Button--outlined Button--primary Button--small" style="padding: 0.1rem 0.5rem; font-size: 0.7rem;">Review</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Read: Maintenance (warning border, muted) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-warning); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start; opacity: 0.55;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--semantic-warning); color: var(--white); font-size: 0.9rem; font-weight: 700; flex-shrink: 0;">&#9881;</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 600; color: var(--white-7);">Scheduled maintenance reminder</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">Yesterday</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-5); margin-top: 0.25rem; line-height: 1.4;">Inverter firmware update for Solar Park Dejvice on Feb 20, 02:00 - 04:00 CET.</div>
+              </div>
+            </div>
+
+            <!-- Read: Report (info border, muted) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-info); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start; opacity: 0.55;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--semantic-info); color: var(--white); font-size: 0.9rem; font-weight: 700; flex-shrink: 0;">&#9993;</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 600; color: var(--white-7);">Monthly report ready</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">2 days ago</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-5); margin-top: 0.25rem; line-height: 1.4;">January 2026 community energy allocation report has been generated and is available for download.</div>
+              </div>
+            </div>
+
+            <!-- Read: System (success border, muted) -->
+            <div class="Box__item" style="border-left: 3px solid var(--semantic-success); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; align-items: flex-start; opacity: 0.55;">
+              <div class="Avatar" style="display: flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--brand-accent); color: var(--white); font-size: 0.9rem; font-weight: 700; flex-shrink: 0;">&#10003;</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                  <div style="font-size: var(--fs-xs); font-weight: 600; color: var(--white-7);">Sharing allocation completed</div>
+                  <div style="font-size: 0.65rem; color: var(--light-gray); white-space: nowrap;">3 days ago</div>
+                </div>
+                <div style="font-size: var(--fs-xxs); color: var(--white-5); margin-top: 0.25rem; line-height: 1.4;">February energy sharing quotas have been calculated and distributed to all 34 community members.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
     <!-- UPDATED COMPONENT REFERENCE                   -->
     <!-- ============================================= -->
     <section class="showcase-section">
@@ -1570,6 +3006,13 @@
           <li><code>.Box</code> - Content boxes</li>
           <li><code>.Listing</code> - List items</li>
           <li><code>.FilterPanel</code> - Filter sidebar</li>
+          <li><code>.ProgressBar</code> - Progress indicators</li>
+          <li><code>.Skeleton</code> - Loading placeholders</li>
+          <li><code>.KPICard</code> - KPI dashboard cards</li>
+          <li><code>.Toolbar</code> - Action toolbars</li>
+          <li><code>.Avatar</code> - User avatars</li>
+          <li><code>.PricingCard</code> - Pricing tiers</li>
+          <li><code>.Timeline</code> - Activity feeds</li>
         </ul>
       </div>
 
@@ -1597,7 +3040,21 @@
 .Listing--compact / .Listing__action--primary / --secondary / --danger
 .Listing__badge--success / --warning / --info / --secondary
 
-.Nav--vertical / .FilterPanel__toggle / .FilterPanel__group</code></pre>
+.Nav--vertical / .FilterPanel__toggle / .FilterPanel__group
+
+.ProgressBar__fill--success / --warning / --danger / --info / --primary
+.ProgressBar__fill--striped / .ProgressBar__label
+
+.Skeleton--text / --circle / --rect
+
+.KPICard--compact / .KPICard__trend--up / --down
+.KPICard__sparkline
+
+.Toolbar__group / .Toolbar__separator
+
+.PricingCard / .PricingCard--featured
+.Timeline / .Timeline__item / .Timeline__marker
+.Avatar / .Avatar--small / --medium / --large / --xlarge</code></pre>
       </div>
     </section>
 
