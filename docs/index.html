@@ -1037,25 +1037,36 @@
     <!-- ============================================= -->
     <section class="showcase-section">
       <h2>Listings</h2>
-      <p>List components for partners, invoices, and data items with status indicators, badges, and actions.</p>
+      <p>List components for partners, invoices, metering points, and data items with status indicators, badges, actions, and advanced interaction patterns.</p>
 
-      <h3>Listing with Status &amp; Actions</h3>
+      <!-- 1. Partner Listing with Full Details -->
+      <h3>Partner Listing with Full Details</h3>
       <div class="example-box">
         <div class="Listing">
+          <!-- Supplier partner -->
           <div class="Listing__item">
             <div class="Listing__content">
               <div class="Listing__main">
                 <div class="Listing__status Listing__status--supplier">S</div>
                 <div class="Listing__info">
-                  <div class="Listing__name">Solar Park Alpha</div>
-                  <div class="Listing__subtitle">Energy supplier &middot; Prague</div>
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Solar Park Moravsko</div>
+                    <span class="Listing__badge Listing__badge--success">Active</span>
+                    <span class="Listing__badge Listing__badge--info">Premium</span>
+                  </div>
+                  <div class="Listing__company-name">Moravsk&#225; Energetika s.r.o.</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Brno, Czech Republic</span>
+                    <span class="Listing__meta-item">&#128197; Since Jan 2024</span>
+                    <span class="Listing__meta-item">ID: SPM-00142</span>
+                  </div>
                 </div>
-                <div class="Listing__amount">4,520 kWh</div>
+                <div class="Listing__amount">12,840 kWh</div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="Listing__badges">
-                  <span class="Listing__badge Listing__badge--success">Active</span>
-                  <span class="Listing__badge Listing__badge--info">Premium</span>
+                  <span class="Listing__badge Listing__badge--success">&#9889; Producing</span>
+                  <span class="Listing__badge Listing__badge--info">Tier 1</span>
                 </div>
                 <div class="Listing__actions">
                   <a class="Listing__action Listing__action--primary">View</a>
@@ -1065,19 +1076,28 @@
               </div>
             </div>
           </div>
+          <!-- Customer partner -->
           <div class="Listing__item">
             <div class="Listing__content">
               <div class="Listing__main">
                 <div class="Listing__status Listing__status--customer">C</div>
                 <div class="Listing__info">
-                  <div class="Listing__name">Residence Beta</div>
-                  <div class="Listing__subtitle">Energy consumer &middot; Brno</div>
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Bytov&#253; d&#367;m Vinohrady</div>
+                    <span class="Listing__badge Listing__badge--warning">Pending</span>
+                  </div>
+                  <div class="Listing__company-name">SVJ Vinohrady 1842</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Prague 2</span>
+                    <span class="Listing__meta-item">&#128197; Since Mar 2024</span>
+                    <span class="Listing__meta-item">ID: BDV-00087</span>
+                  </div>
                 </div>
-                <div class="Listing__amount Listing__amount--orange">2,180 kWh</div>
+                <div class="Listing__amount Listing__amount--orange">3,210 kWh</div>
               </div>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="Listing__badges">
-                  <span class="Listing__badge Listing__badge--warning">Pending</span>
+                  <span class="Listing__badge Listing__badge--warning">&#8987; Awaiting contract</span>
                   <span class="Listing__badge Listing__badge--secondary">Standard</span>
                 </div>
                 <div class="Listing__actions">
@@ -1087,10 +1107,126 @@
               </div>
             </div>
           </div>
+          <!-- Combined partner (supplier + customer) -->
+          <div class="Listing__item">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--combined">&#8644;</div>
+                <div class="Listing__info">
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Komunitn&#237; Energetika Olomouc</div>
+                    <span class="Listing__badge Listing__badge--success">Active</span>
+                    <span class="Listing__badge Listing__badge--info">Combined</span>
+                  </div>
+                  <div class="Listing__company-name">KEO Energy a.s.</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Olomouc</span>
+                    <span class="Listing__meta-item">&#128197; Since Nov 2023</span>
+                    <span class="Listing__meta-item">ID: KEO-00031</span>
+                  </div>
+                </div>
+                <div class="Listing__amount">8,460 kWh</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="Listing__badges">
+                  <span class="Listing__badge Listing__badge--success">&#9889; Producing</span>
+                  <span class="Listing__badge Listing__badge--success">&#9889; Consuming</span>
+                </div>
+                <div class="Listing__actions">
+                  <a class="Listing__action Listing__action--primary">View</a>
+                  <a class="Listing__action Listing__action--secondary">Edit</a>
+                  <a class="Listing__action Listing__action--success">Invoice</a>
+                  <a class="Listing__action Listing__action--danger">Remove</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Supplier partner with large amount -->
+          <div class="Listing__item">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">V&#283;trn&#253; park Kru&#353;n&#233; hory</div>
+                    <span class="Listing__badge Listing__badge--success">Active</span>
+                  </div>
+                  <div class="Listing__company-name">Wind CZ s.r.o.</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; &#218;st&#237; nad Labem</span>
+                    <span class="Listing__meta-item">&#128197; Since Jun 2023</span>
+                    <span class="Listing__meta-item">ID: VPK-00009</span>
+                  </div>
+                </div>
+                <div class="Listing__amount">41,200 kWh</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="Listing__badges">
+                  <span class="Listing__badge Listing__badge--success">&#9889; Producing</span>
+                  <span class="Listing__badge Listing__badge--info">Tier 2</span>
+                  <span class="Listing__badge Listing__badge--secondary">Wind</span>
+                </div>
+                <div class="Listing__actions">
+                  <a class="Listing__action Listing__action--primary">View</a>
+                  <a class="Listing__action Listing__action--secondary">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <h3>Single-Line Listing</h3>
+      <!-- 2. Selectable Listing -->
+      <h3>Selectable Listing</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item Listing__item--selectable">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--admin">
+                  <span class="Listing__status-icon Listing__status-icon--default">&#9733;</span>
+                  <span class="Listing__status-icon Listing__status-icon--selected">&#10003;</span>
+                </div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Admin &mdash; Jan Nov&#225;k</div>
+                  <div class="Listing__subtitle">System administrator &middot; Full access</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item Listing__item--selectable Listing__item--selected">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--user">
+                  <span class="Listing__status-icon Listing__status-icon--default">&#9679;</span>
+                  <span class="Listing__status-icon Listing__status-icon--selected">&#10003;</span>
+                </div>
+                <div class="Listing__info">
+                  <div class="Listing__name">User &mdash; Petra Kov&#225;&#345;ov&#225;</div>
+                  <div class="Listing__subtitle">Community member &middot; Read &amp; write</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item Listing__item--selectable">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">
+                  <span class="Listing__status-icon Listing__status-icon--default">S</span>
+                  <span class="Listing__status-icon Listing__status-icon--selected">&#10003;</span>
+                </div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Supplier &mdash; Sol&#225;rna Jihlava</div>
+                  <div class="Listing__subtitle">Energy supplier &middot; Vyso&#269;ina</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Single-Line Invoices -->
+      <h3>Single-Line Invoices</h3>
       <div class="example-box">
         <div class="Listing">
           <div class="Listing__item">
@@ -1098,21 +1234,27 @@
               <div class="Listing__main">
                 <div class="Listing__status Listing__status--confirmed">&#10003;</div>
                 <div class="Listing__info">
-                  <div class="Listing__name">Invoice #2024-0042</div>
+                  <div class="Listing__name">INV-2026-0142</div>
                 </div>
               </div>
-              <div class="Listing__amount">12,450 CZK</div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Paid</span>
+              </div>
+              <div class="Listing__amount">24,800 CZK</div>
             </div>
           </div>
-          <div class="Listing__item">
+          <div class="Listing__item Listing__item--highlighted">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__status Listing__status--pending">&#33;</div>
                 <div class="Listing__info">
-                  <div class="Listing__name">Invoice #2024-0043</div>
+                  <div class="Listing__name">INV-2026-0143</div>
                 </div>
               </div>
-              <div class="Listing__amount Listing__amount--orange">8,900 CZK</div>
+              <div class="Listing__badges">
+                <span class="Badge Badge--danger Badge--small">Overdue</span>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">18,350 CZK</div>
             </div>
           </div>
           <div class="Listing__item">
@@ -1120,45 +1262,420 @@
               <div class="Listing__main">
                 <div class="Listing__status Listing__status--confirmed">&#10003;</div>
                 <div class="Listing__info">
-                  <div class="Listing__name">Invoice #2024-0044</div>
+                  <div class="Listing__name">INV-2026-0144</div>
                 </div>
               </div>
-              <div class="Listing__amount">5,200 CZK</div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Paid</span>
+              </div>
+              <div class="Listing__amount">9,620 CZK</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--gray-secondary);">&#9998;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0145</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">Draft</span>
+              </div>
+              <div class="Listing__amount">5,100 CZK</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">&#9993;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0146</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--info">Sent</span>
+              </div>
+              <div class="Listing__amount">31,400 CZK</div>
             </div>
           </div>
         </div>
       </div>
 
-      <h3>Compact Listing</h3>
+      <!-- 4. Compact Metering Points -->
+      <h3>Compact Metering Points</h3>
       <div class="example-box">
         <div class="Listing Listing--compact">
           <div class="Listing__item">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__info"><div class="Listing__name">Point A - Solar</div></div>
+                <div class="Listing__status Listing__status--supplier">&#9788;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">FVE St&#345;e&#353;ovice &mdash; 42 kWp</div>
+                </div>
               </div>
-              <span class="Badge Badge--success Badge--small">Online</span>
+              <div class="Listing__meta">
+                <span class="Listing__meta-item">Last: 14:32</span>
+              </div>
+              <span class="Listing__badge Listing__badge--success">&#9679; Online</span>
             </div>
           </div>
           <div class="Listing__item">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__info"><div class="Listing__name">Point B - Wind</div></div>
+                <div class="Listing__status Listing__status--customer">&#9889;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Byt Praha 3 &mdash; 8.2 kW</div>
+                </div>
               </div>
-              <span class="Badge Badge--warning Badge--small">Syncing</span>
+              <div class="Listing__meta">
+                <span class="Listing__meta-item">Last: 14:30</span>
+              </div>
+              <span class="Listing__badge Listing__badge--success">&#9679; Online</span>
             </div>
           </div>
           <div class="Listing__item">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__info"><div class="Listing__name">Point C - Battery</div></div>
+                <div class="Listing__status Listing__status--confirmed">&#127744;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">V&#283;trn&#225; turb&#237;na Karlov &mdash; 120 kW</div>
+                </div>
               </div>
-              <span class="Badge Badge--danger Badge--small">Offline</span>
+              <div class="Listing__meta">
+                <span class="Listing__meta-item">Last: 14:28</span>
+              </div>
+              <span class="Listing__badge Listing__badge--warning">&#8635; Syncing</span>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">&#128267;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Baterie Hostiva&#345; &mdash; 25 kWh</div>
+                </div>
+              </div>
+              <div class="Listing__meta">
+                <span class="Listing__meta-item">Last: 12:05</span>
+              </div>
+              <span class="Listing__badge Listing__badge--secondary">&#9675; Offline</span>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 5. Listing with Details Panel -->
+      <h3>Listing with Details Panel</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item Listing__item--expandable is-expanded">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">&#9788;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">FVE Pardubice &mdash; Rooftop Array</div>
+                  <div class="Listing__subtitle">Solar photovoltaic &middot; 68 kWp installed</div>
+                </div>
+                <div class="Listing__amount">6,480 kWh</div>
+              </div>
+            </div>
+            <div class="Listing__details">
+              <dl>
+                <dt>EAN</dt>
+                <dd>859182400107284561</dd>
+                <dt>Capacity</dt>
+                <dd>68 kWp (DC) / 60 kW (AC)</dd>
+                <dt>Billing Period</dt>
+                <dd>01.01.2026 &ndash; 31.01.2026</dd>
+                <dt>Last Reading</dt>
+                <dd>16.02.2026, 14:22 CET</dd>
+                <dt>Meter Type</dt>
+                <dd>Landis+Gyr E450 (smart meter)</dd>
+                <dt>Grid Operator</dt>
+                <dd>&#268;EZ Distribuce, a.s.</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="Listing__item Listing__item--expandable">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">&#9889;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Administrativn&#237; budova CTPark</div>
+                  <div class="Listing__subtitle">Commercial consumer &middot; 145 kW peak demand</div>
+                </div>
+                <div class="Listing__amount Listing__amount--orange">11,920 kWh</div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item Listing__item--expandable is-expanded">
+            <div class="Listing__content">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--combined">&#8644;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Komunita Z&#225;b&#345;eh &mdash; prosumer</div>
+                  <div class="Listing__subtitle">Energy community &middot; 12 members</div>
+                </div>
+                <div class="Listing__amount">4,150 kWh</div>
+              </div>
+            </div>
+            <div class="Listing__details">
+              <dl>
+                <dt>EAN</dt>
+                <dd>859182400209385102</dd>
+                <dt>Members</dt>
+                <dd>12 active / 2 pending</dd>
+                <dt>Billing Period</dt>
+                <dd>01.02.2026 &ndash; 28.02.2026</dd>
+                <dt>Last Reading</dt>
+                <dd>16.02.2026, 13:55 CET</dd>
+                <dt>Net Balance</dt>
+                <dd>+1,240 kWh (surplus)</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Listing with Inline Progress -->
+      <h3>Listing with Inline Progress</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Data import &mdash; January 2026</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Complete</span>
+              </div>
+              <div class="Listing__amount">100%</div>
+            </div>
+            <div class="Listing__progress">
+              <div class="Listing__progress-fill Listing__progress-fill--success" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Data import &mdash; February 2026</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--warning">In progress</span>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">64%</div>
+            </div>
+            <div class="Listing__progress">
+              <div class="Listing__progress-fill Listing__progress-fill--warning" style="width: 64%;"></div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">&#9788;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Capacity utilization &mdash; FVE Brno</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--info">87% of peak</span>
+              </div>
+              <div class="Listing__amount">87%</div>
+            </div>
+            <div class="Listing__progress">
+              <div class="Listing__progress-fill" style="width: 87%;"></div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">&#128267;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Battery storage &mdash; Hostiva&#345;</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">23% charged</span>
+              </div>
+              <div class="Listing__amount">23%</div>
+            </div>
+            <div class="Listing__progress">
+              <div class="Listing__progress-fill Listing__progress-fill--danger" style="width: 23%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Listing with Drag Handles -->
+      <h3>Listing with Drag Handles</h3>
+      <div class="example-box">
+        <div class="Listing Listing--compact">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__drag-handle"></div>
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--brand-accent); width: 1.75rem; height: 1.75rem; font-size: 0.7rem; border: 1px solid var(--neutral-white);">1</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Self-consumption Priority</div>
+                </div>
+              </div>
+              <div class="Listing__amount">100%</div>
+            </div>
+          </div>
+          <div class="Listing__item Listing__item--highlighted">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__drag-handle"></div>
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--brand-accent); width: 1.75rem; height: 1.75rem; font-size: 0.7rem; border: 1px solid var(--neutral-white);">2</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Community Sharing Pool</div>
+                </div>
+              </div>
+              <div class="Listing__amount" style="color: var(--brand-primary);">75%</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__drag-handle"></div>
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--brand-accent); width: 1.75rem; height: 1.75rem; font-size: 0.7rem; border: 1px solid var(--neutral-white);">3</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Battery Storage Charge</div>
+                </div>
+              </div>
+              <div class="Listing__amount">60%</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__drag-handle"></div>
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--brand-accent); width: 1.75rem; height: 1.75rem; font-size: 0.7rem; border: 1px solid var(--neutral-white);">4</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Grid Export Surplus</div>
+                </div>
+              </div>
+              <div class="Listing__amount">40%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Status Variant Gallery -->
+      <h3>Status Variant Gallery</h3>
+      <div class="example-box">
+        <div class="Listing Listing--compact">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--admin">&#9733;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--admin</code> &mdash; System administrator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--accountant">&#9998;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--accountant</code> &mdash; Finance &amp; billing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--sales">&#9878;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--sales</code> &mdash; Sales representative</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--superadmin">&#9881;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--superadmin</code> &mdash; Super administrator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--user">&#9679;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--user</code> &mdash; Standard user</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--supplier</code> &mdash; Energy supplier</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">C</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--customer</code> &mdash; Energy customer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--combined">&#8644;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--combined</code> &mdash; Supplier + customer (gradient)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--confirmed</code> &mdash; Confirmed / paid</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name"><code>--pending</code> &mdash; Awaiting action</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Empty State -->
       <h3>Empty State</h3>
       <div class="example-box">
         <div class="Listing">
@@ -1167,6 +1684,56 @@
             <div class="Listing__empty-title">No Results Found</div>
             <div class="Listing__empty-description">Try adjusting your search or filter criteria to find what you're looking for.</div>
             <button class="Button Button--primary Button--small">Clear Filters</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Listing with Pagination -->
+      <h3>Listing with Pagination</h3>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">&#9788;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">FVE Liberec &mdash; 32 kWp</div>
+                </div>
+              </div>
+              <div class="Listing__amount">2,840 kWh</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">&#9889;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Bytov&#253; d&#367;m Plze&#328;</div>
+                </div>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">1,650 kWh</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--combined">&#8644;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">Komunita Jihlava &mdash; prosumer</div>
+                </div>
+              </div>
+              <div class="Listing__amount">5,100 kWh</div>
+            </div>
+          </div>
+          <div class="Listing__pagination">
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link">&#8592; Prev</a></li>
+              <li class="page-item active"><a class="page-link">1</a></li>
+              <li class="page-item"><a class="page-link">2</a></li>
+              <li class="page-item"><a class="page-link">3</a></li>
+              <li class="page-item"><a class="page-link">4</a></li>
+              <li class="page-item"><a class="page-link">Next &#8594;</a></li>
+            </ul>
           </div>
         </div>
       </div>
