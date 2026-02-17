@@ -176,6 +176,18 @@
       }
     }
 
+    .FilterPanel__export-csv {
+      border: 1px solid var(--light-gray);
+      color: var(--light-gray);
+      background-color: transparent;
+
+      &:hover {
+        color: var(--white);
+        border-color: var(--white-2);
+        background-color: rgba(var(--neutral-white-rgb), 0.08);
+      }
+    }
+
     .FilterPanel__granularity-controls label {
       font-size: var(--fs-xs);
       padding: 0.5rem 0.75rem;
@@ -581,6 +593,18 @@
       .form-check {
         background-color: transparent !important;
         border: none !important;
+      }
+
+      .FilterPanel__export-csv {
+        border: 1px solid var(--light-gray);
+        color: var(--light-gray);
+        background-color: transparent;
+
+        &:hover {
+          color: var(--white);
+          border-color: var(--white-2);
+          background-color: rgba(var(--neutral-white-rgb), 0.08);
+        }
       }
     }
 
