@@ -1737,6 +1737,199 @@
           </div>
         </div>
       </div>
+
+      <!-- 11. Responsive Listing -->
+      <h3>Responsive Listing</h3>
+      <p style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 1rem;">Add <code>Listing--responsive</code> to stack content vertically on mobile. Actions become a full-width toolbar. Resize your browser to see the effect.</p>
+      <div class="example-box">
+        <div class="Listing Listing--responsive">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Solar Park Moravsko</div>
+                    <span class="Listing__badge Listing__badge--success">Active</span>
+                  </div>
+                  <div class="Listing__company-name">Moravsk&#225; Energetika s.r.o.</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Brno</span>
+                    <span class="Listing__meta-item">&#9889; 68 kWp</span>
+                    <span class="Listing__meta-item">ID: SPM-00142</span>
+                  </div>
+                </div>
+              </div>
+              <div class="Listing__amount">12,840 kWh</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">View</a>
+                <a class="Listing__action Listing__action--secondary">Edit</a>
+                <a class="Listing__action Listing__action--danger">Remove</a>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">C</div>
+                <div class="Listing__info">
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Bytov&#253; d&#367;m Vinohrady</div>
+                    <span class="Listing__badge Listing__badge--warning">Pending</span>
+                  </div>
+                  <div class="Listing__company-name">SVJ Vinohrady 1842</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Prague 2</span>
+                    <span class="Listing__meta-item">&#9889; 8.2 kW</span>
+                  </div>
+                </div>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">3,210 kWh</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">View</a>
+                <a class="Listing__action Listing__action--success">Approve</a>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--combined">&#8644;</div>
+                <div class="Listing__info">
+                  <div class="Listing__primary-line">
+                    <div class="Listing__name">Komunita Z&#225;b&#345;eh</div>
+                    <span class="Listing__badge Listing__badge--success">Active</span>
+                    <span class="Listing__badge Listing__badge--info">Combined</span>
+                  </div>
+                  <div class="Listing__company-name">KEO Energy a.s.</div>
+                  <div class="Listing__meta">
+                    <span class="Listing__meta-item">&#9906; Olomouc</span>
+                    <span class="Listing__meta-item">&#9889; 120 kW</span>
+                    <span class="Listing__meta-item">12 members</span>
+                  </div>
+                </div>
+              </div>
+              <div class="Listing__amount">8,460 kWh</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">View</a>
+                <a class="Listing__action Listing__action--secondary">Edit</a>
+                <a class="Listing__action Listing__action--success">Invoice</a>
+                <a class="Listing__action Listing__action--danger">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Compact Responsive Listing -->
+      <h3>Compact Responsive Listing</h3>
+      <p style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 1rem;">Combine <code>Listing--compact</code> with <code>Listing--responsive</code> for a minimalistic mobile layout with tighter spacing and stacked actions.</p>
+      <div class="example-box">
+        <div class="Listing Listing--compact Listing--responsive">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0142</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Paid</span>
+              </div>
+              <div class="Listing__amount">24,800 CZK</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">Detail</a>
+                <a class="Listing__action Listing__action--secondary">PDF</a>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--pending">!</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0143</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--warning">Overdue</span>
+              </div>
+              <div class="Listing__amount Listing__amount--orange">18,350 CZK</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">Detail</a>
+                <a class="Listing__action Listing__action--secondary">PDF</a>
+                <a class="Listing__action Listing__action--success">Pay</a>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--confirmed">&#10003;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0144</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--success">Paid</span>
+              </div>
+              <div class="Listing__amount">9,620 CZK</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">Detail</a>
+                <a class="Listing__action Listing__action--secondary">PDF</a>
+              </div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status" style="background-color: var(--gray-secondary);">&#9998;</div>
+                <div class="Listing__info">
+                  <div class="Listing__name">INV-2026-0145</div>
+                </div>
+              </div>
+              <div class="Listing__badges">
+                <span class="Listing__badge Listing__badge--secondary">Draft</span>
+              </div>
+              <div class="Listing__amount">5,100 CZK</div>
+              <div class="Listing__actions">
+                <a class="Listing__action Listing__action--primary">Edit</a>
+                <a class="Listing__action Listing__action--danger">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Responsive Listing Usage -->
+      <h3>Responsive Listing Usage</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;!-- Full responsive listing with actions --&gt;
+&lt;div class="Listing Listing--responsive"&gt;
+  &lt;div class="Listing__item"&gt;
+    &lt;div class="Listing__content Listing__content--single-line"&gt;
+      &lt;div class="Listing__main"&gt;
+        &lt;div class="Listing__status Listing__status--supplier"&gt;S&lt;/div&gt;
+        &lt;div class="Listing__info"&gt;
+          &lt;div class="Listing__name"&gt;Item Name&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="Listing__amount"&gt;1,234 kWh&lt;/div&gt;
+      &lt;div class="Listing__actions"&gt;
+        &lt;a class="Listing__action Listing__action--primary"&gt;View&lt;/a&gt;
+        &lt;a class="Listing__action Listing__action--secondary"&gt;Edit&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Compact + responsive combo --&gt;
+&lt;div class="Listing Listing--compact Listing--responsive"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+      </div>
+
     </section>
 
     <!-- ============================================= -->
@@ -3604,7 +3797,7 @@
 .Icon--production / --consumption / --sharing / --success / --warning
 
 .Box--compact / --supercompact / --light / --accent-bg
-.Listing--compact / .Listing__action--primary / --secondary / --danger
+.Listing--compact / --responsive / .Listing__action--primary / --secondary / --danger
 .Listing__badge--success / --warning / --info / --secondary
 
 .Nav--vertical / .FilterPanel__toggle / .FilterPanel__group
