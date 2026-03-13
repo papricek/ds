@@ -1,26 +1,29 @@
-# Rails Design System
+# Wattlink Design System
 
-A comprehensive design system for Rails applications featuring modern, accessible components with a dark theme.
+Design system for the Wattlink family of energy management applications. Dark-themed, SCSS-based component library following BEM conventions.
 
-## Overview
-
-This design system provides a collection of reusable SCSS components following BEM naming conventions. It includes buttons, badges, alerts, cards, tables, forms, and more.
+**[Live Showcase](https://papricek.github.io/ds/)**
 
 ## Components
 
-- **Buttons** - Multiple variants (primary, secondary, success, danger, warning, info), sizes, and states
-- **Badges** - Status indicators with semantic colors and pill variants
+- **Buttons** - Primary, secondary, success, danger, warning, info variants with outlined, rounded, and size modifiers
+- **Badges** - Status indicators with semantic colors, sizes, and pill variants
 - **Alerts** - Contextual feedback messages
-- **Cards** - Flexible content containers
-- **Tables** - Data tables with hover states and nested content
-- **Forms** - Form elements with validation states
-- **Navigation** - Navigation components
-- **Modals** - Modal dialogs
-- **And more...**
+- **Cards** - Content containers with metrics, accent variants, and no-data states
+- **Tables** - Data tables with row states, cell formatting, sortable headers, badges, and footer
+- **Forms** - Inputs, labels, granularity buttons, role selectors, checkbox groups, filter labels
+- **Modals** - Dialog overlays with payment details and form combinations
+- **Tabs** - Primary and secondary tab navigation
+- **Navigation** - Horizontal and vertical navigation with dividers
+- **Pagination** - Page controls with active and disabled states
+- **Icons** - Circular icon containers in 4 sizes with 7 semantic color variants
+- **Stat Cards** - Dashboard metric cards with compact and border variants
+- **Status Buttons** - Process state indicators (pending, running, success, error)
+- **Box** - Content boxes with items, icons, actions, and compact/supercompact/accent variants
+- **Listings** - List items with status indicators, badges, actions, and empty states
+- **Filter Panel** - Sidebar filters with toggles, groups, and search
 
 ## Color System
-
-The design system uses a comprehensive color palette with CSS custom properties:
 
 ### Brand Colors
 - Primary: Orange (`hsla(33, 100%, 61%, 1)`)
@@ -29,69 +32,40 @@ The design system uses a comprehensive color palette with CSS custom properties:
 - Dark: Deep Blue (`hsla(240, 75%, 13%, 1)`)
 
 ### Semantic Colors
-- Success: Green
-- Warning: Orange
-- Danger: Red
-- Info: Blue
+- Success, Warning, Danger, Info
 
-All colors can be customized via CSS custom properties for easy theming.
-
-## Documentation Site
-
-A live showcase of all components is available in the `/docs` directory. View it at:
-`https://<your-username>.github.io/<repository-name>/`
-
-## GitHub Pages Setup
-
-### Option 1: Public Repository (Free)
-
-1. Make your repository public in GitHub settings
-2. Go to **Settings** → **Pages**
-3. Under **Source**:
-   - Branch: `main`
-   - Folder: `/docs`
-4. Click **Save**
-5. Your site will be live at `https://<username>.github.io/<repository>/`
-
-### Option 2: Private Repository (Requires GitHub Pro/Team/Enterprise)
-
-1. Keep your repository private
-2. Follow the same steps as Option 1
-3. GitHub Pages for private repos requires a paid plan
+All colors are customizable via CSS custom properties for per-tenant theming.
 
 ## Project Structure
 
 ```
 .
-├── docs/                    # Compiled showcase site for GitHub Pages
-│   ├── css/
-│   │   └── styles.css      # Compiled CSS
-│   ├── index.html          # Showcase page
-│   └── README.md
-├── alert.scss              # Alert component
-├── app.scss                # Application layout
-├── badge.scss              # Badge component
-├── box.scss                # Box component
-├── button.scss             # Button component
-├── card.scss               # Card component
-├── configuration.scss      # CSS variables and theme
-├── filter_panel.scss       # Filter panel component
-├── form.scss               # Form elements
-├── icon.scss               # Icon styles
-├── listing.scss            # Listing component
-├── modal.scss              # Modal component
-├── nav.scss                # Navigation component
-├── pagination.scss         # Pagination component
-├── stat_card.scss          # Statistics card
-├── status_button.scss      # Status button
-├── table.scss              # Table component
-├── tabs.scss               # Tabs component
-└── tom_select.scss         # Tom Select styles
+├── docs/                    # Showcase site (GitHub Pages)
+│   ├── css/styles.css       # Standalone showcase CSS
+│   ├── index.html           # Component showcase
+│   └── logo_white.svg
+├── configuration.scss       # CSS variables and theme
+├── button.scss              # Button component
+├── badge.scss               # Badge component
+├── alert.scss               # Alert component
+├── card.scss                # Card component
+├── table.scss               # Table component
+├── form.scss                # Form elements
+├── modal.scss               # Modal component
+├── tabs.scss                # Tabs component
+├── nav.scss                 # Navigation component
+├── pagination.scss          # Pagination component
+├── icon.scss                # Icon styles
+├── stat_card.scss           # Statistics card
+├── status_button.scss       # Status button
+├── box.scss                 # Box component
+├── listing.scss             # Listing component
+├── filter_panel.scss        # Filter panel component
+├── app.scss                 # Application layout
+└── tom_select.scss          # Tom Select overrides
 ```
 
 ## Usage in Rails
-
-Import the SCSS files in your application:
 
 ```scss
 @import "configuration";
@@ -101,33 +75,23 @@ Import the SCSS files in your application:
 @import "card";
 @import "table";
 @import "form";
-// ... other components
+// ... other components as needed
 ```
-
-Or import them individually as needed.
-
-## Updating the Documentation
-
-When you make changes to the SCSS files:
-
-1. Update the corresponding styles in `docs/css/styles.css`
-2. Update examples in `docs/index.html` if you add new components or variants
-3. Commit and push your changes
-4. GitHub Pages will automatically rebuild
 
 ## BEM Naming Convention
 
-This design system follows BEM (Block Element Modifier) methodology:
-
 - **Block**: `.Button`, `.Card`, `.Badge`
-- **Element**: `.Button__icon`, `.Card__title`
-- **Modifier**: `.Button--primary`, `.Badge--success`
+- **Element**: `.Card__title`, `.Listing__action`
+- **Modifier**: `.Button--primary`, `.StatCard--compact`, `.Table__row--success`
+
+## GitHub Pages
+
+The showcase is served from the `/docs` folder on the `main` branch. To enable:
+
+1. Go to **Settings** > **Pages**
+2. Source: `main` branch, `/docs` folder
+3. Save
 
 ## Browser Support
 
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- CSS custom properties required
-
-## License
-
-[Your License Here]
+Modern browsers (Chrome, Firefox, Safari, Edge). Requires CSS custom properties.
