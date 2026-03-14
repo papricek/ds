@@ -1823,7 +1823,7 @@
 
       <!-- 12. Compact Responsive Listing -->
       <h3>Compact Responsive Listing</h3>
-      <p style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 1rem;">Combine <code>Listing--compact</code> with <code>Listing--responsive</code> for a minimalistic mobile layout with tighter spacing and stacked actions.</p>
+      <p style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 1rem;">Combine <code>Listing--compact</code> with <code>Listing--responsive</code> for a space-efficient mobile layout. Content stays inline on one row with the name truncated via ellipsis, while actions form a compact footer. Resize to see.</p>
       <div class="example-box">
         <div class="Listing Listing--compact Listing--responsive">
           <div class="Listing__item">
@@ -2031,9 +2031,57 @@
         </table>
       </div>
 
+      <h3>Responsive Table</h3>
+      <p style="color: var(--light-gray); font-size: var(--fs-xs); margin-bottom: 1rem;">Add <code>Table--responsive</code> to convert rows into stacked cards on mobile. Each <code>&lt;td&gt;</code> uses <code>data-label</code> to show the column header. Resize your browser to see the effect.</p>
+      <div class="example-box">
+        <table class="Table Table--responsive">
+          <thead>
+            <tr class="Table__header">
+              <th>Name</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th class="Table__cell--numeric">Production</th>
+              <th class="Table__cell--actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="Table__row">
+              <td data-label="Name">Solar Park Moravsko</td>
+              <td data-label="Type"><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td data-label="Status"><span class="Table__badge Table__badge--success">Active</span></td>
+              <td data-label="Production" class="Table__cell--numeric Table__cell--positive">+1,245 kWh</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+                <button class="Button Button--secondary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">Edit</button>
+              </td>
+            </tr>
+            <tr class="Table__row">
+              <td data-label="Name">Bytov&#253; d&#367;m Vinohrady</td>
+              <td data-label="Type"><span class="Table__badge Table__badge--customer">Customer</span></td>
+              <td data-label="Status"><span class="Table__badge Table__badge--warning">Pending</span></td>
+              <td data-label="Production" class="Table__cell--numeric">890 kWh</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+              </td>
+            </tr>
+            <tr class="Table__row">
+              <td data-label="Name">Komunita Z&#225;b&#345;eh</td>
+              <td data-label="Type"><span class="Table__badge Table__badge--supplier">Supplier</span></td>
+              <td data-label="Status"><span class="Table__badge Table__badge--danger">Error</span></td>
+              <td data-label="Production" class="Table__cell--numeric Table__cell--negative">0 kWh</td>
+              <td class="Table__cell--actions">
+                <button class="Button Button--primary Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">View</button>
+                <button class="Button Button--danger Button--small" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;">Fix</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h3>Usage Example</h3>
       <div class="example-box" style="background-color: var(--white-1);">
-        <pre><code>&lt;table class="Table Table--small Table--hoverable"&gt;
+        <pre><code>&lt;!-- Standard table with row states --&gt;
+&lt;table class="Table Table--small Table--hoverable"&gt;
   &lt;thead&gt;
     &lt;tr class="Table__header"&gt;
       &lt;th class="Table__header--sortable"&gt;Name&lt;/th&gt;
@@ -2042,6 +2090,28 @@
   &lt;tbody&gt;
     &lt;tr class="Table__row Table__row--success"&gt;
       &lt;td class="Table__cell--positive"&gt;+100&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- Responsive table (cards on mobile) --&gt;
+&lt;table class="Table Table--responsive"&gt;
+  &lt;thead&gt;
+    &lt;tr class="Table__header"&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+      &lt;th&gt;Amount&lt;/th&gt;
+      &lt;th class="Table__cell--actions"&gt;Actions&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class="Table__row"&gt;
+      &lt;td data-label="Name"&gt;Item Name&lt;/td&gt;
+      &lt;td data-label="Status"&gt;Active&lt;/td&gt;
+      &lt;td data-label="Amount"&gt;1,234 CZK&lt;/td&gt;
+      &lt;td class="Table__cell--actions"&gt;
+        &lt;button class="Button Button--primary"&gt;View&lt;/button&gt;
+      &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>

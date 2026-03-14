@@ -797,35 +797,69 @@
 .Listing--responsive.Listing--compact {
   .Listing__content--single-line {
     @media (max-width: 767px) {
-      flex-direction: column;
-      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
       gap: 0.375rem;
+    }
+  }
+
+  .Listing__main {
+    @media (max-width: 767px) {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .Listing__info {
+    @media (max-width: 767px) {
+      min-width: 0;
+    }
+  }
+
+  .Listing__name {
+    @media (max-width: 767px) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .Listing__amount {
     @media (max-width: 767px) {
-      padding-left: 2.25rem;
+      padding-left: 0;
       font-size: var(--fs-xs);
+      font-weight: 600;
+      margin-left: auto;
+      flex-shrink: 0;
     }
   }
 
   .Listing__badges {
     @media (max-width: 767px) {
-      padding-left: 2.25rem;
+      padding-left: 0;
+      flex-shrink: 0;
     }
   }
 
   .Listing__actions {
     @media (max-width: 767px) {
+      width: 100%;
+      border-top: 1px solid var(--white-1);
       padding-top: 0.375rem;
-      margin-top: 0.125rem;
+      margin-top: 0;
+      display: flex;
+      gap: 0.25rem;
     }
   }
 
   .Listing__action {
     @media (max-width: 767px) {
-      padding: 0.375rem 0.375rem;
+      flex: 1;
+      justify-content: center;
+      text-align: center;
+      padding: 0.3rem 0.25rem;
+      font-size: var(--fs-xxs);
     }
   }
 }
