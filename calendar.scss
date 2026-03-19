@@ -230,6 +230,19 @@
     }
   }
 
+  @media (max-width: 991px) {
+    &__event {
+      font-size: 0.6875rem;
+      gap: 0.25rem;
+    }
+
+    &__event-action {
+      width: 1.25rem;
+      height: 1.25rem;
+      font-size: 0.5625rem;
+    }
+  }
+
   @media (max-width: 767px) {
     border-radius: 0.5rem;
 
@@ -263,7 +276,7 @@
       padding: 0.125rem 0.25rem;
       font-size: 0.625rem;
       min-height: 1.25rem;
-      gap: 0.25rem;
+      gap: 0.125rem;
     }
 
     &__event-actions {
@@ -273,6 +286,55 @@
     &__day--today .Calendar__day-number {
       width: 1.25rem;
       height: 1.25rem;
+      font-size: 0.5625rem;
+    }
+  }
+
+  @media (max-width: 479px) {
+    border-radius: 0.375rem;
+    border-width: 1px;
+
+    &__header {
+      padding: 0.5rem 0.75rem;
+    }
+
+    &__title {
+      font-size: var(--fs-xs);
+    }
+
+    &__day-name {
+      padding: 0.25rem 0.125rem;
+      font-size: 0.5625rem;
+      letter-spacing: 0;
+    }
+
+    &__day {
+      padding: 0.125rem 0.1875rem;
+    }
+
+    &__day-number {
+      font-size: 0.5625rem;
+    }
+
+    &__week-events {
+      padding: 0.0625rem 0 0.25rem;
+    }
+
+    &__event {
+      padding: 0.0625rem 0.1875rem;
+      font-size: 0.5625rem;
+      min-height: 1rem;
+      border-left-width: 2px;
+    }
+
+    &__event-title {
+      font-weight: 600;
+    }
+
+    &__day--today .Calendar__day-number {
+      width: 1.125rem;
+      height: 1.125rem;
+      font-size: 0.5rem;
     }
   }
 }

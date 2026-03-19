@@ -3811,6 +3811,268 @@
     </section>
 
     <!-- ============================================= -->
+    <!-- CALENDAR                                      -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Calendar</h2>
+      <p>Full-page month calendar with multi-day event spanning, lane stacking for overlapping events, and inline actions. Server-rendered, no JavaScript required.</p>
+
+      <h3>Month View with Events</h3>
+      <div class="example-box">
+        <div class="Calendar">
+          <div class="Calendar__header">
+            <a href="#" class="Calendar__nav">&#9664;</a>
+            <div class="Calendar__title">Březen 2026</div>
+            <a href="#" class="Calendar__nav">&#9654;</a>
+          </div>
+          <div class="Calendar__day-names">
+            <div class="Calendar__day-name">Po</div>
+            <div class="Calendar__day-name">Út</div>
+            <div class="Calendar__day-name">St</div>
+            <div class="Calendar__day-name">Čt</div>
+            <div class="Calendar__day-name">Pá</div>
+            <div class="Calendar__day-name">So</div>
+            <div class="Calendar__day-name">Ne</div>
+          </div>
+          <div class="Calendar__body">
+
+            <!-- Week 1: Feb 23 - Mar 1 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">23</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">24</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">25</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">26</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">27</span></div>
+                <div class="Calendar__day Calendar__day--outside Calendar__day--weekend"><span class="Calendar__day-number">28</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">1</span></div>
+              </div>
+            </div>
+
+            <!-- Week 2: Mar 2 - Mar 8 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day"><span class="Calendar__day-number">2</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">3</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">4</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">5</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">6</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">7</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">8</span></div>
+              </div>
+              <div class="Calendar__week-events">
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--primary" style="grid-column: 1 / span 2;">
+                    <span class="Calendar__event-title">Sprint planning</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#9998;</a>
+                    </div>
+                  </div>
+                  <div class="Calendar__event Calendar__event--success" style="grid-column: 3 / span 3;">
+                    <span class="Calendar__event-title">Energy audit</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#128065;</a>
+                      <a href="#" class="Calendar__event-action">&#9998;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week 3: Mar 9 - Mar 15 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day"><span class="Calendar__day-number">9</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">10</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">11</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">12</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">13</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">14</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">15</span></div>
+              </div>
+              <div class="Calendar__week-events">
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--warning" style="grid-column: 1 / span 5;">
+                    <span class="Calendar__event-title">Maintenance window</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#128065;</a>
+                      <button class="Calendar__event-action" style="color: var(--semantic-danger);">&#10005;</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week 4: Mar 16 - Mar 22 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day"><span class="Calendar__day-number">16</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">17</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">18</span></div>
+                <div class="Calendar__day Calendar__day--today"><span class="Calendar__day-number">19</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">20</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">21</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">22</span></div>
+              </div>
+              <div class="Calendar__week-events">
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--info" style="grid-column: 1 / span 5;">
+                    <span class="Calendar__event-title">Billing cycle</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#128065;</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--secondary" style="grid-column: 4 / span 4;">
+                    <span class="Calendar__event-title">Team retreat</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#9998;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week 5: Mar 23 - Mar 29 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day"><span class="Calendar__day-number">23</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">24</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">25</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">26</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">27</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">28</span></div>
+                <div class="Calendar__day Calendar__day--weekend"><span class="Calendar__day-number">29</span></div>
+              </div>
+              <div class="Calendar__week-events">
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--danger" style="grid-column: 3 / span 1;">
+                    <span class="Calendar__event-title">Deadline</span>
+                  </div>
+                  <div class="Calendar__event Calendar__event--accent" style="grid-column: 5 / span 3;">
+                    <span class="Calendar__event-title">EDC data sync</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#128065;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week 6: Mar 30 - Apr 5 -->
+            <div class="Calendar__week">
+              <div class="Calendar__week-days">
+                <div class="Calendar__day"><span class="Calendar__day-number">30</span></div>
+                <div class="Calendar__day"><span class="Calendar__day-number">31</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">1</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">2</span></div>
+                <div class="Calendar__day Calendar__day--outside"><span class="Calendar__day-number">3</span></div>
+                <div class="Calendar__day Calendar__day--outside Calendar__day--weekend"><span class="Calendar__day-number">4</span></div>
+                <div class="Calendar__day Calendar__day--outside Calendar__day--weekend"><span class="Calendar__day-number">5</span></div>
+              </div>
+              <div class="Calendar__week-events">
+                <div class="Calendar__event-row">
+                  <div class="Calendar__event Calendar__event--primary Calendar__event--continues-after" style="grid-column: 1 / span 7;">
+                    <span class="Calendar__event-title">Q2 energy contract renewal period</span>
+                    <div class="Calendar__event-actions">
+                      <a href="#" class="Calendar__event-action">&#128065;</a>
+                      <a href="#" class="Calendar__event-action">&#9998;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <h3>Event Color Variants</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 0.375rem; max-width: 500px;">
+          <div class="Calendar__event Calendar__event--primary" style="position: relative;">
+            <span class="Calendar__event-title">Primary (brand orange)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--secondary" style="position: relative;">
+            <span class="Calendar__event-title">Secondary (brand teal)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--accent" style="position: relative;">
+            <span class="Calendar__event-title">Accent (brand navy)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--success" style="position: relative;">
+            <span class="Calendar__event-title">Success (green)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--warning" style="position: relative;">
+            <span class="Calendar__event-title">Warning (amber)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--danger" style="position: relative;">
+            <span class="Calendar__event-title">Danger (red)</span>
+          </div>
+          <div class="Calendar__event Calendar__event--info" style="position: relative;">
+            <span class="Calendar__event-title">Info (blue)</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Continuation Markers</h3>
+      <p>Events spanning multiple weeks get split with visual continuation indicators (rounded corners removed on the continuation side).</p>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 0.375rem; max-width: 500px;">
+          <div class="Calendar__event Calendar__event--info Calendar__event--continues-after" style="position: relative;">
+            <span class="Calendar__event-title">Continues to next week &#8594;</span>
+          </div>
+          <div class="Calendar__event Calendar__event--info Calendar__event--continues-before" style="position: relative;">
+            <span class="Calendar__event-title">&#8592; Continued from previous week</span>
+          </div>
+          <div class="Calendar__event Calendar__event--info Calendar__event--continues-before Calendar__event--continues-after" style="position: relative;">
+            <span class="Calendar__event-title">&#8592; Full-week span &#8594;</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Events with Action Buttons</h3>
+      <div class="example-box">
+        <div style="display: flex; flex-direction: column; gap: 0.375rem; max-width: 500px;">
+          <div class="Calendar__event Calendar__event--success" style="position: relative;">
+            <span class="Calendar__event-title">Event with view &amp; edit actions</span>
+            <div class="Calendar__event-actions">
+              <a href="#" class="Calendar__event-action">&#128065;</a>
+              <a href="#" class="Calendar__event-action">&#9998;</a>
+            </div>
+          </div>
+          <div class="Calendar__event Calendar__event--warning" style="position: relative;">
+            <span class="Calendar__event-title">Event with delete action</span>
+            <div class="Calendar__event-actions">
+              <button class="Calendar__event-action" style="color: var(--semantic-danger);">&#10005;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Usage (Rails Helper)</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;%= calendar_month(
+  date: @date,
+  events: @events,
+  prev_path: my_path(date: @date.prev_month),
+  next_path: my_path(date: @date.next_month)
+) do |event| %&gt;
+  &lt;span class="Calendar__event-title"&gt;&lt;%= event.title %&gt;&lt;/span&gt;
+  &lt;div class="Calendar__event-actions"&gt;
+    &lt;%= link_to icon("eye"), event, class: "Calendar__event-action" %&gt;
+    &lt;%= link_to icon("pencil"), edit_event_path(event), class: "Calendar__event-action" %&gt;
+  &lt;/div&gt;
+&lt;% end %&gt;
+
+Events must respond to:
+  .starts_on  (Date)
+  .ends_on    (Date)
+  .color      (optional: "primary" | "secondary" | "accent" | "success" | "warning" | "danger" | "info")</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
     <!-- UPDATED COMPONENT REFERENCE                   -->
     <!-- ============================================= -->
     <section class="showcase-section">
@@ -3843,6 +4105,7 @@
           <li><code>.Avatar</code> - User avatars</li>
           <li><code>.PricingCard</code> - Pricing tiers</li>
           <li><code>.Timeline</code> - Activity feeds</li>
+          <li><code>.Calendar</code> - Month calendar</li>
         </ul>
       </div>
 
@@ -3884,7 +4147,13 @@
 
 .PricingCard / .PricingCard--featured
 .Timeline / .Timeline__item / .Timeline__marker
-.Avatar / .Avatar--small / --medium / --large / --xlarge</code></pre>
+.Avatar / .Avatar--small / --medium / --large / --xlarge
+
+.Calendar / .Calendar__header / __title / __nav / __nav--placeholder
+.Calendar__day--outside / --today / --weekend
+.Calendar__event--primary / --secondary / --accent / --success / --warning / --danger / --info
+.Calendar__event--continues-before / --continues-after
+.Calendar__event-title / .Calendar__event-actions / .Calendar__event-action</code></pre>
       </div>
     </section>
 
