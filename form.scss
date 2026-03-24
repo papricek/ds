@@ -790,6 +790,14 @@
   }
 }
 
+.review-type-check {
+  display: none;
+}
+
+.btn-check:checked + .btn .review-type-check {
+  display: inline;
+}
+
 .invalid-feedback {
   font-size: 0.75rem;
   margin-top: 0.5rem;
