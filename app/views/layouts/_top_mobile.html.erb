@@ -19,18 +19,20 @@
           <%= t("navigation.dashboard") %>
         <% end %>
       </li>
-      <li class="Nav__item">
-        <%= link_to addresses_path, class: "Nav__link #{'active' if controller_path == 'addresses'}" do %>
-          <i class="fas fa-location-dot"></i>
-          <%= t("navigation.addresses") %>
-        <% end %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to billings_path, class: "Nav__link #{'active' if controller_path == 'billings'}" do %>
-          <i class="fas fa-file-invoice"></i>
-          <%= t("navigation.billings") %>
-        <% end %>
-      </li>
+      <% unless Current.user.manager_or_superadmin? %>
+        <li class="Nav__item">
+          <%= link_to addresses_path, class: "Nav__link #{'active' if controller_path == 'addresses'}" do %>
+            <i class="fas fa-location-dot"></i>
+            <%= t("navigation.addresses") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to billings_path, class: "Nav__link #{'active' if controller_path == 'billings'}" do %>
+            <i class="fas fa-file-invoice"></i>
+            <%= t("navigation.billings") %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
     <% if Current.user.manager_or_superadmin? %>
       <hr class="Nav__divider">
