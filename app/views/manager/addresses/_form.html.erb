@@ -67,7 +67,7 @@
   </div>
 
   <div class="Form__actions">
-    <%= link_to t("common.cancel"), manager_addresses_path, class: "Button Button--secondary" %>
-    <%= f.submit @address.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    <%= link_to t("common.cancel"), manager_addresses_path, class: "Form__btn-link" %>
+    <%= f.submit @address.new_record? ? t("common.create") : t("common.save"), class: "Form__btn", data: { disable_with: disable_with } %>
   </div>
 <% end %>

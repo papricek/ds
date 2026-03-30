@@ -29,8 +29,8 @@
     </div>
 
     <div class="Form__actions">
-      <%= link_to t("common.cancel"), manager_billings_path, class: "Button Button--secondary" %>
-      <%= f.submit t("common.create"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+      <%= link_to t("common.cancel"), manager_billings_path, class: "Form__btn-link" %>
+      <%= f.submit t("common.create"), class: "Form__btn", data: { disable_with: disable_with } %>
     </div>
   <% end %>
 </div>
