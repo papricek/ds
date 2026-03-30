@@ -521,6 +521,7 @@ DEPENDENCIES
   sidekiq
   sidekiq-scheduler
   simple_command
+  sprockets-rails
   stimulus-rails
   thruster
   turbo-rails
