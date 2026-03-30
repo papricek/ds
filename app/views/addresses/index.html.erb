@@ -1,38 +1,31 @@
 <% content_for :title, t("navigation.addresses") %>
 
-<div class="Card">
-  <% if @addresses.any? %>
-    <div class="Table">
-      <table>
-        <thead>
-          <tr>
-            <th><%= t("addresses.ean") %></th>
-            <th><%= t("addresses.role") %></th>
-            <th><%= t("addresses.label") %></th>
-            <th><%= t("addresses.street") %></th>
-            <th><%= t("addresses.city") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @addresses.each do |address| %>
-            <tr>
-              <td><%= copyable_field(address.ean) %></td>
-              <td>
-                <span class="Badge Badge--<%= address.role %>">
-                  <%= t("addresses.roles.#{address.role}") %>
-                </span>
-              </td>
-              <td><%= address.label %></td>
-              <td><%= address.street %></td>
-              <td><%= address.city %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% else %>
-    <div class="p-4 text-center" style="color: var(--white-5);">
-      <%= t("addresses.no_addresses") %>
+<div class="Listing Listing--responsive">
+  <% @addresses.each do |address| %>
+    <div class="Listing__item">
+      <div class="Listing__content Listing__content--single-line">
+        <div class="Listing__main">
+          <div class="Listing__status Listing__status--<%= address.customer? ? 'customer' : 'supplier' %>">
+            <i class="fas <%= address.customer? ? 'fa-house' : 'fa-solar-panel' %>"></i>
+          </div>
+          <div class="Listing__info">
+            <div class="Listing__info-primary"><%= copyable_field(address.ean) %></div>
+            <div class="Listing__info-secondary"><%= [address.label, address.street, address.city].compact_blank.join(", ") %></div>
+          </div>
+          <div class="Listing__badges">
+            <span class="Listing__badge Listing__badge--<%= address.customer? ? 'success' : 'warning' %>">
+              <%= t("addresses.roles.#{address.role}") %>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
+
+<% if @addresses.empty? %>
+  <div class="Listing__empty">
+    <div class="Listing__empty-icon"><i class="fas fa-location-dot"></i></div>
+    <div class="Listing__empty-description"><%= t("addresses.no_addresses") %></div>
+  </div>
+<% end %>

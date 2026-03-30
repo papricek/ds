@@ -1,47 +1,49 @@
 <% content_for :title, t("superadmin.accounts.title") %>
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="text-white mb-0"><%= t("superadmin.accounts.title") %></h1>
-  <%= link_to new_superadmin_account_path, class: "Button Button--primary" do %>
-    <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
+<div class="d-flex justify-content-end mb-3">
+  <%= link_to new_superadmin_account_path, class: "Listing__action Listing__action--primary" do %>
+    <i class="fas fa-plus"></i> <%= t("common.create") %>
   <% end %>
 </div>
 
-<div class="Listing">
+<div class="Listing Listing--responsive">
   <% @accounts.each do |account| %>
     <div class="Listing__item">
-      <div class="Listing__content">
-        <div class="Listing__info">
-          <div class="Listing__info-primary"><%= account.name %></div>
-          <div class="Listing__info-secondary"><%= account.subdomain %></div>
+      <div class="Listing__content Listing__content--single-line">
+        <div class="Listing__main">
+          <div class="Listing__status">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="Listing__info">
+            <div class="Listing__info-primary">
+              <%= link_to account.name, superadmin_account_path(account) %>
+            </div>
+            <div class="Listing__info-secondary"><%= account.subdomain.presence || "—" %></div>
+          </div>
+          <div class="Listing__badges">
+            <span class="Listing__badge Listing__badge--<%= account.light? ? 'info' : 'success' %>">
+              <%= t("superadmin.accounts.plans.#{account.plan}") %>
+            </span>
+            <span class="Listing__badge Listing__badge--secondary">
+              <i class="fas fa-users"></i> <%= account.users.count %>
+            </span>
+          </div>
         </div>
-        <div class="ms-2">
-          <span class="Badge Badge--<%= account.light? ? 'neutral' : 'info' %> Badge--small">
-            <%= t("superadmin.accounts.plans.#{account.plan || 'light'}") %>
-          </span>
+        <div class="Listing__actions">
+          <%= link_to edit_superadmin_account_path(account), class: "Listing__action Listing__action--secondary" do %>
+            <i class="fas fa-pen"></i> <%= t("common.edit") %>
+          <% end %>
+          <%= link_to superadmin_account_path(account), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Listing__action Listing__action--danger" do %>
+            <i class="fas fa-trash"></i> <%= t("common.delete") %>
+          <% end %>
         </div>
-        <div class="ms-2" style="color: var(--white-5);">
-          <i class="fas fa-users me-1"></i> <%= account.users.count %>
-          <i class="fas fa-location-dot ms-2 me-1"></i> <%= account.addresses.count %>
-        </div>
-      </div>
-      <div class="Listing__action">
-        <%= link_to superadmin_account_path(account), class: "Button Button--secondary Button--small" do %>
-          <i class="fas fa-eye"></i>
-        <% end %>
-        <%= link_to edit_superadmin_account_path(account), class: "Button Button--edit Button--small" do %>
-          <i class="fas fa-pen"></i>
-        <% end %>
-        <%= link_to superadmin_account_path(account), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
 <% if @accounts.respond_to?(:total_pages) && @accounts.total_pages > 1 %>
-  <div class="Listing__pagination mt-3">
+  <div class="Listing__pagination">
     <%= paginate @accounts, theme: "bootstrap-5" %>
   </div>
 <% end %>
