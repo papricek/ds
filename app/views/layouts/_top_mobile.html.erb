@@ -1,0 +1,94 @@
+<div class="App__offcanvas offcanvas offcanvas-end d-lg-none" tabindex="-1" id="appOffcanvas">
+  <div class="offcanvas-header">
+    <div class="dropdown-header">
+      <div class="dropdown-header__avatar">
+        <i class="fas <%= user_icon_class_for_role(Current.user.role) %>"></i>
+      </div>
+      <div class="dropdown-header__info">
+        <div class="dropdown-header__name"><%= Current.user.name %></div>
+        <div class="dropdown-header__role"><%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %></div>
+      </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="Nav__list Nav__list--vertical">
+      <li class="Nav__item">
+        <%= link_to dashboards_path, class: "Nav__link #{active_if('dashboards')}" do %>
+          <i class="fas fa-chart-line"></i>
+          <%= t("navigation.dashboard") %>
+        <% end %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to addresses_path, class: "Nav__link #{'active' if controller_path == 'addresses'}" do %>
+          <i class="fas fa-location-dot"></i>
+          <%= t("navigation.addresses") %>
+        <% end %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to billings_path, class: "Nav__link #{'active' if controller_path == 'billings'}" do %>
+          <i class="fas fa-file-invoice"></i>
+          <%= t("navigation.billings") %>
+        <% end %>
+      </li>
+    </ul>
+    <% if Current.user.manager_or_superadmin? %>
+      <hr class="Nav__divider">
+      <ul class="Nav__list Nav__list--vertical">
+        <li class="Nav__item">
+          <%= link_to manager_users_path, class: "Nav__link #{active_if('manager/users')}" do %>
+            <i class="fas fa-users"></i>
+            <%= t("navigation.users") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to manager_addresses_path, class: "Nav__link #{active_if('manager/addresses')}" do %>
+            <i class="fas fa-location-dot"></i>
+            <%= t("navigation.addresses") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to manager_groups_path, class: "Nav__link #{active_if('manager/groups')}" do %>
+            <i class="fas fa-layer-group"></i>
+            <%= t("navigation.groups") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to manager_sharings_path, class: "Nav__link #{active_if('manager/sharings')}" do %>
+            <i class="fas fa-share-nodes"></i>
+            <%= t("navigation.sharings") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to manager_billings_path, class: "Nav__link #{active_if('manager/billings')}" do %>
+            <i class="fas fa-file-invoice"></i>
+            <%= t("navigation.billings") %>
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to edit_manager_settings_path, class: "Nav__link #{active_if('manager/settings')}" do %>
+            <i class="fas fa-gear"></i>
+            <%= t("navigation.settings") %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+    <hr class="Nav__divider">
+    <ul class="Nav__list Nav__list--vertical">
+      <li class="Nav__item">
+        <%= link_to edit_settings_user_path, class: "Nav__link" do %>
+          <i class="fas fa-pen-to-square"></i>
+          <%= t("navigation.profile") %>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="Nav__list Nav__list--vertical Nav__list--bottom">
+      <li class="Nav__item">
+        <%= link_to session_path, data: { turbo_method: :delete }, class: "Nav__link Nav__link--muted" do %>
+          <i class="fas fa-arrow-right-from-bracket"></i>
+          <%= t("sessions.logout") %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

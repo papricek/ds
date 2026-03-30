@@ -49,6 +49,14 @@ module ApplicationHelper
     "active" if params[:controller].include?(controller_name.to_s)
   end
 
+  def user_icon_class_for_role(role)
+    case role
+    when "manager" then "fa-shield-halved"
+    when "user" then "fa-user"
+    else "fa-circle-user"
+    end
+  end
+
   def copyable_field(value)
     return if value.blank?
 

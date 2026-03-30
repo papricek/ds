@@ -11,52 +11,30 @@
           <%= t("navigation.dashboard") %>
         <% end %>
       </li>
-      <% if Current.user.manager_or_superadmin? %>
-        <li class="Nav__item">
-          <%= link_to manager_users_path, class: "Nav__link #{active_if('users')}" do %>
-            <i class="fas fa-users me-2"></i>
-            <%= t("navigation.users") %>
-          <% end %>
-        </li>
-      <% end %>
       <li class="Nav__item">
-        <%= link_to addresses_path, class: "Nav__link #{active_if('addresses')}" do %>
+        <%= link_to addresses_path, class: "Nav__link #{'active' if controller_path == 'addresses'}" do %>
           <i class="fas fa-location-dot me-2"></i>
           <%= t("navigation.addresses") %>
         <% end %>
       </li>
-      <% if Current.user.manager_or_superadmin? %>
-        <li class="Nav__item">
-          <%= link_to manager_groups_path, class: "Nav__link #{active_if('groups')}" do %>
-            <i class="fas fa-layer-group me-2"></i>
-            <%= t("navigation.groups") %>
-          <% end %>
-        </li>
-        <li class="Nav__item">
-          <%= link_to manager_sharings_path, class: "Nav__link #{active_if('sharings')}" do %>
-            <i class="fas fa-share-nodes me-2"></i>
-            <%= t("navigation.sharings") %>
-          <% end %>
-        </li>
-      <% end %>
       <li class="Nav__item">
-        <%= link_to billings_path, class: "Nav__link #{active_if('billings')}" do %>
+        <%= link_to billings_path, class: "Nav__link #{'active' if controller_path == 'billings'}" do %>
           <i class="fas fa-file-invoice me-2"></i>
           <%= t("navigation.billings") %>
         <% end %>
       </li>
       <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
-          <%= link_to edit_manager_settings_path, class: "Nav__link #{active_if('settings')}" do %>
-            <i class="fas fa-gear me-2"></i>
-            <%= t("navigation.settings") %>
+          <%= link_to manager_users_path, class: "Nav__link #{'active' if controller_path.start_with?('manager')}" do %>
+            <i class="fas fa-shield-halved me-2"></i>
+            <%= t("navigation.manager") %>
           <% end %>
         </li>
       <% end %>
       <% if Current.user.superadmin? %>
         <li class="Nav__item">
           <%= link_to superadmin_accounts_path, class: "Nav__link #{active_if('superadmin')}" do %>
-            <i class="fas fa-shield-halved me-2"></i>
+            <i class="fas fa-crown me-2"></i>
             Superadmin
           <% end %>
         </li>
@@ -72,15 +50,29 @@
     </button>
     <ul class="dropdown-menu dropdown-menu-end">
       <div class="dropdown-header">
+        <div class="dropdown-header__avatar">
+          <i class="fas <%= user_icon_class_for_role(Current.user.role) %>"></i>
+        </div>
         <div class="dropdown-header__info">
           <div class="dropdown-header__name"><%= Current.user.name %></div>
-          <div class="dropdown-header__role">
-            <span class="Badge Badge--sm">
-              <%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %>
-            </span>
-          </div>
+          <div class="dropdown-header__role"><%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %></div>
         </div>
       </div>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <%= link_to edit_settings_user_path, class: "dropdown-item" do %>
+          <i class="fas fa-pen-to-square"></i>
+          <%= t("navigation.profile") %>
+        <% end %>
+      </li>
+      <% if Current.user.superadmin? %>
+        <li>
+          <%= link_to superadmin_accounts_path, class: "dropdown-item" do %>
+            <i class="fas fa-crown"></i>
+            Superadmin
+          <% end %>
+        </li>
+      <% end %>
       <li><hr class="dropdown-divider"></li>
       <li>
         <%= link_to session_path, data: { turbo_method: :delete }, class: "dropdown-item dropdown-item--muted" do %>
@@ -91,3 +83,5 @@
     </ul>
   </div>
 </div>
+
+<%= render "layouts/top_mobile" %>

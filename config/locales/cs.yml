@@ -55,6 +55,7 @@ cs:
     billings: "Vyúčtování"
     settings: "Nastavení"
     profile: "Profil"
+    manager: "Správa"
   users:
     name: "Jméno"
     email: "E-mail"

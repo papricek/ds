@@ -1,27 +1,46 @@
-<div class="mb-4">
-  <nav class="Nav">
-    <ul class="Nav__list">
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.users"), manager_users_path, class: "Nav__link #{'active' if active_if('manager/users')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.addresses"), manager_addresses_path, class: "Nav__link #{'active' if active_if('manager/addresses')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.groups"), manager_groups_path, class: "Nav__link #{'active' if active_if('manager/groups')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.sharings"), manager_sharings_path, class: "Nav__link #{'active' if active_if('manager/sharings')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.billings"), manager_billings_path, class: "Nav__link #{'active' if active_if('manager/billings')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("manager.navigation.settings"), edit_manager_settings_path, class: "Nav__link #{'active' if active_if('manager/settings')}" %>
-      </li>
-      <li class="Nav__item">
-        <%= link_to t("help.title"), manager_help_path, class: "Nav__link #{'active' if active_if('manager/help')}" %>
-      </li>
-    </ul>
-  </nav>
+<div class="Tabs mb-4">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_users_path, class: "nav-link #{'active' if controller_path == 'manager/users'}" do %>
+        <%= icon("users", font_style: "fas") %>
+        <%= t("manager.navigation.users") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_addresses_path, class: "nav-link #{'active' if controller_path == 'manager/addresses'}" do %>
+        <%= icon("location-dot", font_style: "fas") %>
+        <%= t("manager.navigation.addresses") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_groups_path, class: "nav-link #{'active' if controller_path.start_with?('manager/group')}" do %>
+        <%= icon("layer-group", font_style: "fas") %>
+        <%= t("manager.navigation.groups") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_sharings_path, class: "nav-link #{'active' if controller_path == 'manager/sharings'}" do %>
+        <%= icon("share-nodes", font_style: "fas") %>
+        <%= t("manager.navigation.sharings") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_billings_path, class: "nav-link #{'active' if controller_path == 'manager/billings'}" do %>
+        <%= icon("file-invoice", font_style: "fas") %>
+        <%= t("manager.navigation.billings") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to edit_manager_settings_path, class: "nav-link #{'active' if controller_path == 'manager/settings'}" do %>
+        <%= icon("gear", font_style: "fas") %>
+        <%= t("manager.navigation.settings") %>
+      <% end %>
+    </li>
+    <li class="nav-item" role="presentation">
+      <%= link_to manager_help_path, class: "nav-link #{'active' if controller_path == 'manager/help'}" do %>
+        <%= icon("circle-question", font_style: "fas") %>
+        <%= t("help.title") %>
+      <% end %>
+    </li>
+  </ul>
 </div>
