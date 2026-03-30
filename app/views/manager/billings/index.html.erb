@@ -3,14 +3,14 @@
 <%= render "manager/shared/navigation" %>
 
 <div class="d-flex justify-content-end gap-2 mb-3">
-  <%= link_to export_manager_billings_path(format: :csv), class: "Listing__action Listing__action--secondary" do %>
-    <i class="fas fa-download"></i> CSV
+  <%= link_to export_manager_billings_path(format: :csv), class: "Button Button--secondary" do %>
+    <i class="fas fa-download me-1"></i> CSV
   <% end %>
-  <%= link_to batch_new_manager_billings_path, class: "Listing__action Listing__action--secondary" do %>
-    <i class="fas fa-layer-group"></i> <%= t("billings.batch") %>
+  <%= link_to batch_new_manager_billings_path, class: "Button Button--secondary" do %>
+    <i class="fas fa-layer-group me-1"></i> <%= t("billings.batch") %>
   <% end %>
-  <%= link_to new_manager_billing_path, class: "Listing__action Listing__action--primary" do %>
-    <i class="fas fa-plus"></i> <%= t("common.create") %>
+  <%= link_to new_manager_billing_path, class: "Button Button--primary" do %>
+    <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
   <% end %>
 </div>
 
