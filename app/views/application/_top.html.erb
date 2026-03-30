@@ -1,0 +1,85 @@
+<button class="App__nav-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#appOffcanvas">
+  <i class="fas fa-bars"></i>
+</button>
+
+<div class="App__nav-wrapper d-none d-lg-flex">
+  <nav class="Nav">
+    <ul class="Nav__list">
+      <li class="Nav__item">
+        <%= link_to dashboards_path, class: "Nav__link #{active_if('dashboards')}" do %>
+          <i class="fa-regular fa-chart-line me-2"></i>
+          Přehled
+        <% end %>
+      </li>
+      <% if Current.user.manager? %>
+        <li class="Nav__item">
+          <%= link_to users_path, class: "Nav__link #{active_if('users')}" do %>
+            <i class="fa-regular fa-users me-2"></i>
+            Uživatelé
+          <% end %>
+        </li>
+      <% end %>
+      <li class="Nav__item">
+        <%= link_to addresses_path, class: "Nav__link #{active_if('addresses')}" do %>
+          <i class="fa-regular fa-location-dot me-2"></i>
+          Adresy
+        <% end %>
+      </li>
+      <% if Current.user.manager? %>
+        <li class="Nav__item">
+          <%= link_to groups_path, class: "Nav__link #{active_if('groups')}" do %>
+            <i class="fa-regular fa-layer-group me-2"></i>
+            Skupiny
+          <% end %>
+        </li>
+        <li class="Nav__item">
+          <%= link_to sharings_path, class: "Nav__link #{active_if('sharings')}" do %>
+            <i class="fa-regular fa-share-nodes me-2"></i>
+            Sdílení
+          <% end %>
+        </li>
+      <% end %>
+      <li class="Nav__item">
+        <%= link_to billings_path, class: "Nav__link #{active_if('billings')}" do %>
+          <i class="fa-regular fa-file-invoice me-2"></i>
+          Vyúčtování
+        <% end %>
+      </li>
+      <% if Current.user.manager? %>
+        <li class="Nav__item">
+          <%= link_to settings_path, class: "Nav__link #{active_if('settings')}" do %>
+            <i class="fa-regular fa-gear me-2"></i>
+            Nastavení
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+
+<div class="App__header-user d-none d-lg-block">
+  <div class="dropdown">
+    <button class="btn-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-regular fa-user"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <div class="dropdown-header">
+        <div class="dropdown-header__info">
+          <div class="dropdown-header__name"><%= Current.user.name %></div>
+          <div class="dropdown-header__role">
+            <span class="Badge Badge--sm">
+              <%= Current.user.manager? ? "Správce" : "Uživatel" %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <%= link_to session_path, data: { turbo_method: :delete }, class: "dropdown-item dropdown-item--muted" do %>
+          <i class="fa-regular fa-arrow-right-from-bracket"></i>
+          Odhlásit se
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

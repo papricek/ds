@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <%= render "layouts/head" %>
+
+  <body>
+    <%= render "layouts/flash" %>
+
+    <div class="App">
+      <div class="App__main">
+        <header class="App__header">
+          <div class="App__header-container">
+            <div class="App__header-content">
+              <%= link_to dashboards_path, class: "App__brand" do %>
+                <%= app_logo_tag %>
+              <% end %>
+
+              <%= render "application/top" %>
+            </div>
+          </div>
+        </header>
+
+        <div class="App__container">
+          <div class="App__content">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

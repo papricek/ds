@@ -1,0 +1,24 @@
+<div class="Sessions">
+  <div class="Sessions__row">
+    <div class="Sessions__column Sessions__column--left">
+      <div class="Sessions__main">
+        <div class="Sessions__image">
+          <%= link_to root_path do %>
+            <span class="Sessions__logo fw-bold text-white" style="font-size: 2rem; font-family: Manrope, sans-serif;">LiteLink</span>
+          <% end %>
+          <div class="Sessions__container">
+            <div class="Sessions__content">
+              <%= render "layouts/flash" %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Sessions__column Sessions__column--right">
+      <div class="Sessions__billboard">
+        <span class="fw-bold text-white" style="font-size: 3rem; font-family: Manrope, sans-serif; opacity: 0.3;">LiteLink</span>
+      </div>
+    </div>
+  </div>
+</div>

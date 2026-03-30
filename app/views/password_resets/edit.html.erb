@@ -1,0 +1,25 @@
+<% content_for :title, "Nové heslo" %>
+
+<%= render "layouts/session" do %>
+  <h2 class="Sessions__title">Nastavení nového hesla</h2>
+
+  <p class="Sessions__text">Zadejte své nové heslo.</p>
+
+  <%= form_with model: @user, url: password_reset_path(params[:id]), html: { class: "Form" } do |f| %>
+    <div class="Form__group form-floating">
+      <%= f.password_field :password, class: "Form__input form-control #{error_class_for(@user, :password)}", placeholder: "Heslo" %>
+      <%= f.label :password, "Heslo", class: "Form__label" %>
+      <%= error_message_for(@user, :password) %>
+    </div>
+
+    <div class="Form__group form-floating">
+      <%= f.password_field :password_confirmation, class: "Form__input form-control #{error_class_for(@user, :password_confirmation)}", placeholder: "Potvrzení hesla" %>
+      <%= f.label :password_confirmation, "Potvrzení hesla", class: "Form__label" %>
+      <%= error_message_for(@user, :password_confirmation) %>
+    </div>
+
+    <div class="Sessions__submit mt-4">
+      <%= f.submit "Nastavit heslo", class: "Btn__cta Btn__cta--large w-100" %>
+    </div>
+  <% end %>
+<% end %>

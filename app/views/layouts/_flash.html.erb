@@ -1,0 +1,8 @@
+<% flash.each do |type, message| %>
+  <div class="Alert <%= flash_to_alert(type) %> Alert--dismissible" role="alert">
+    <div class="Alert__content"><%= message %></div>
+    <button type="button" class="Alert__close" data-controller="dismissable" data-action="click->dismissable#dismiss">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<% content_for :title, "Obnova hesla" %>
+
+<%= render "layouts/session" do %>
+  <h2 class="Sessions__title">Obnova hesla</h2>
+
+  <p class="Sessions__text">Zadejte svůj e-mail a my vám pošleme odkaz pro obnovení hesla.</p>
+
+  <%= form_with url: password_resets_path, method: :post, html: { class: "Form" } do |f| %>
+    <div class="Form__group form-floating">
+      <%= f.text_field :email, class: "Form__input form-control", placeholder: "E-mail", required: true, autofocus: true %>
+      <%= f.label :email, "E-mail", class: "Form__label" %>
+    </div>
+
+    <div class="Sessions__submit mt-4">
+      <%= f.submit "Odeslat odkaz", class: "Btn__cta Btn__cta--large w-100" %>
+    </div>
+  <% end %>
+
+  <div class="Sessions__password-actions mt-3 text-center">
+    <%= link_to "Zpět na přihlášení", new_session_path, class: "Sessions__text" %>
+  </div>
+<% end %>

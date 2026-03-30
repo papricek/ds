@@ -1,0 +1,159 @@
+cs:
+  common:
+    save: "Uložit"
+    saving: "Ukládám..."
+    cancel: "Zrušit"
+    delete: "Smazat"
+    edit: "Upravit"
+    create: "Vytvořit"
+    back: "Zpět"
+    yes: "Ano"
+    no: "Ne"
+    copy: "Kopírovat"
+    search: "Hledat"
+    actions: "Akce"
+    login_required: "Pro přístup se prosím přihlaste."
+    not_authorized: "K této akci nemáte oprávnění."
+    not_found: "Záznam nebyl nalezen."
+    confirm_delete: "Opravdu chcete smazat tento záznam?"
+  sessions:
+    title: "Přihlášení"
+    email: "E-mail"
+    password: "Heslo"
+    login: "Přihlásit se"
+    logout: "Odhlásit se"
+    logged_in: "Byli jste úspěšně přihlášeni."
+    logged_out: "Byli jste odhlášeni."
+    invalid_credentials: "Neplatný e-mail nebo heslo."
+    forgot_password: "Zapomněli jste heslo?"
+  password_resets:
+    title: "Obnovení hesla"
+    email_sent: "Pokud existuje účet s tímto e-mailem, odeslali jsme vám odkaz pro obnovení hesla."
+    invalid_token: "Neplatný nebo vypršelý odkaz pro obnovení hesla."
+    password_updated: "Heslo bylo úspěšně změněno."
+    new_password: "Nové heslo"
+    confirm_password: "Potvrzení hesla"
+    send_link: "Odeslat odkaz"
+    reset_password: "Nastavit nové heslo"
+  dashboards:
+    title: "Přehled"
+    consumption: "Spotřeba"
+    production: "Výroba"
+    sharing: "Sdílení"
+    no_data: "Zatím žádná data"
+  navigation:
+    dashboard: "Přehled"
+    users: "Uživatelé"
+    addresses: "Adresy"
+    groups: "Skupiny"
+    sharings: "Sdílení"
+    billings: "Vyúčtování"
+    settings: "Nastavení"
+    profile: "Profil"
+  users:
+    name: "Jméno"
+    email: "E-mail"
+    phone: "Telefon"
+    role: "Role"
+    password: "Heslo"
+    password_confirmation: "Potvrzení hesla"
+    created: "Uživatel byl vytvořen."
+    updated: "Uživatel byl aktualizován."
+    destroyed: "Uživatel byl smazán."
+    roles:
+      manager: "Správce"
+      user: "Uživatel"
+  addresses:
+    ean: "EAN"
+    role: "Role"
+    street: "Ulice"
+    city: "Město"
+    zip: "PSČ"
+    label: "Označení"
+    created: "Adresa byla vytvořena."
+    updated: "Adresa byla aktualizována."
+    destroyed: "Adresa byla smazána."
+    roles:
+      customer: "Odběratel"
+      supplier: "Výrobce"
+  billings:
+    title: "Vyúčtování"
+    receipt: "Doklad"
+    period: "Období"
+    status: "Stav"
+    amount: "Částka"
+    download: "Stáhnout"
+    mark_paid: "Označit jako zaplaceno"
+    created: "Vyúčtování bylo vytvořeno."
+    batch_created: "Hromadné vyúčtování bylo vytvořeno."
+    statuses:
+      active: "Aktivní"
+      paid: "Zaplaceno"
+  groups:
+    title: "Skupiny"
+    name: "Název"
+    identifier: "Identifikátor"
+    members: "Členové"
+    created: "Skupina byla vytvořena."
+    updated: "Skupina byla aktualizována."
+    destroyed: "Skupina byla smazána."
+  sharings:
+    title: "Sdílení"
+    from_ean: "Z EAN (výrobce)"
+    to_ean: "Na EAN (odběratel)"
+    price: "Cena (Kč/kWh)"
+    status: "Stav"
+    created: "Sdílení bylo vytvořeno."
+    updated: "Sdílení bylo aktualizováno."
+    destroyed: "Sdílení bylo smazáno."
+    statuses:
+      pending: "Čekající"
+      active: "Aktivní"
+      inactive: "Neaktivní"
+  settings:
+    title: "Nastavení"
+    account_name: "Název účtu"
+    logo: "Logo"
+    issue_day: "Den vystavení"
+    due_days: "Splatnost (dny)"
+    updated: "Nastavení bylo aktualizováno."
+    change_password: "Změna hesla"
+    current_password: "Současné heslo"
+  manager:
+    navigation:
+      dashboard: "Přehled"
+      users: "Uživatelé"
+      addresses: "Adresy"
+      groups: "Skupiny"
+      sharings: "Sdílení"
+      billings: "Vyúčtování"
+      settings: "Nastavení"
+  activerecord:
+    models:
+      user: "Uživatel"
+      address: "Adresa"
+      billing: "Vyúčtování"
+      group: "Skupina"
+      sharing: "Sdílení"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "je již používán"
+              invalid: "není platný e-mail"
+            name:
+              blank: "je povinné"
+        address:
+          attributes:
+            ean:
+              taken: "je již používán v tomto účtu"
+              blank: "je povinné"
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d.%m."
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"
+      short: "%d.%m. %H:%M"

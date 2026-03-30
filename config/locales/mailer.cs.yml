@@ -1,0 +1,11 @@
+cs:
+  mailer:
+    welcome:
+      subject: "Vítejte v LiteLink"
+      greeting: "Dobrý den, %{name}!"
+      body: "Váš účet byl vytvořen. Můžete se přihlásit pomocí svého e-mailu a hesla."
+    reset_password:
+      subject: "Obnovení hesla"
+      greeting: "Dobrý den, %{name}!"
+      body: "Obdrželi jsme žádost o obnovení hesla. Klikněte na odkaz níže pro nastavení nového hesla."
+      link: "Nastavit nové heslo"

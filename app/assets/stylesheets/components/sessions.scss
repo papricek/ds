@@ -1,0 +1,227 @@
+.Sessions {
+  @extend .container-fluid;
+  background-color: var(--dark-blue);
+
+  &__row {
+    @extend .row;
+  }
+
+  &__column--left {
+    @extend .col-lg-4;
+    padding: 0;
+    height: auto;
+  }
+
+  &__column--right {
+    @extend .col-lg-8;
+    @extend .d-none;
+    @extend .d-lg-block;
+    height: auto;
+  }
+
+
+  &__logo {
+    width: 90%;
+    margin-top: 0.5rem;
+    margin: 1rem 0 0 1rem;
+
+    @media (max-width: 768px) {
+      width: 300px;
+    }
+  }
+
+  &__main {
+    background: transparent radial-gradient(closest-side at 65% 50%, var(--custom-orange) 0%, var(--custom-blue) 140%) 0% 0% no-repeat padding-box;
+    @media (max-width: 576px) {
+      background: transparent radial-gradient(closest-side at 57% 25%, var(--custom-orange) 0%, var(--custom-brown) 51%, var(--custom-blue) 100%) 0% 0% no-repeat padding-box;
+    }
+  }
+
+  &__image {
+    &--main-domain {
+      background-repeat: no-repeat;
+      background-image: asset-url("blesky.png");
+      background-size: 100%;
+
+      @media (max-width: 400px) {
+        background-position: top 5% right 50%;
+      }
+
+      @media (min-width: 401px) and (max-width: 450px) {
+        background-position: top 10% right 50%;
+      }
+
+      @media (min-width: 451px) and (max-width: 500px) {
+        background-position: top 5% right 50%;
+      }
+
+      @media (min-width: 501px) and (max-width: 550px) {
+        background-position: top -10% right 50%;
+      }
+
+      @media (min-width: 551px) and (max-width: 600px) {
+        background-position: top -20% right 50%;
+      }
+
+      @media (min-width: 601px) and (max-width: 650px) {
+        background-position: top -40% right 50%;
+      }
+
+      @media (min-width: 651px) and (max-width: 699px) {
+        background-position: top -70% right 50%;
+      }
+
+      @media (min-width: 700px) and (max-width: 767px) {
+        background-position: top -90% right 50%;
+      }
+
+      @media (min-width: 768px){
+        background-position: top -40% right 50%;
+      }
+
+      @media (min-width: 992px) {
+        background: var(--dark-blue);
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: calc(100svh - 120px);
+    padding: 0rem;
+  }
+
+  &__content {
+    padding: 2rem;
+    padding-bottom: 0;
+    border-radius: 0;
+    max-width: 100%;
+    margin-top: 15%;
+    margin-bottom: 2rem;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: transparent;
+
+    @media (max-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  &__text {
+    @extend .mb-4;
+
+    &--without-margin {
+      margin-bottom: 0 !important;
+    }
+
+    font-size: var(--fs-sm);
+    color: var(--orange);
+
+    a {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    &--custom {
+      font-size: var(--fs-xs);
+      text-align: left;
+    }
+  }
+
+  &__actions {
+    @extend .d-flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+    @extend .mb-3;
+    margin-top: 0.5rem;
+  }
+
+  &__link {
+    @extend .text-decoration-none;
+  }
+
+  &__submit {
+    .Btn__cta {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__password-actions {
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__password-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--orange);
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--cta-base-color);
+      opacity: 0.8;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  &__billboard {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    &--wattlink-only::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 200px;
+      bottom: 200px;
+      z-index: 0;
+      background: transparent radial-gradient(closest-side at 50% 50%, var(--custom-orange) 0%, var(--custom-blue) 90%) 0% 0% no-repeat padding-box;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 90%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    &__title {
+      color: var(--white);
+      font-size: 3rem;
+      text-align: center;
+      z-index: 10000;
+      position: absolute;
+      top: 80%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
