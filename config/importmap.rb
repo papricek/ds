@@ -7,7 +7,6 @@ pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.6/dist/esm/inde
 pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.3.3/dist/js/bootstrap.esm.js"
 
 pin "chart.js", to: "https://ga.jspm.io/npm:chart.js@4.4.7/dist/chart.js"
-pin "chart.js/auto", to: "https://ga.jspm.io/npm:chart.js@4.4.7/auto/auto.js"
 pin "@kurkle/color", to: "https://ga.jspm.io/npm:@kurkle/color@0.3.4/dist/color.esm.js"
 
 pin "flatpickr", to: "https://ga.jspm.io/npm:flatpickr@4.6.13/dist/esm/index.js"

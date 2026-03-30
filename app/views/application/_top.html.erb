@@ -7,55 +7,58 @@
     <ul class="Nav__list">
       <li class="Nav__item">
         <%= link_to dashboards_path, class: "Nav__link #{active_if('dashboards')}" do %>
-          <i class="fa-regular fa-chart-line me-2"></i>
-          Přehled
+          <i class="fas fa-chart-line me-2"></i>
+          <%= t("navigation.dashboard") %>
         <% end %>
       </li>
       <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to manager_users_path, class: "Nav__link #{active_if('users')}" do %>
-            <i class="fa-regular fa-users me-2"></i>
-            Uživatelé
+            <i class="fas fa-users me-2"></i>
+            <%= t("navigation.users") %>
           <% end %>
         </li>
       <% end %>
       <li class="Nav__item">
         <%= link_to addresses_path, class: "Nav__link #{active_if('addresses')}" do %>
-          <i class="fa-regular fa-location-dot me-2"></i>
-          Adresy
+          <i class="fas fa-location-dot me-2"></i>
+          <%= t("navigation.addresses") %>
         <% end %>
       </li>
       <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to manager_groups_path, class: "Nav__link #{active_if('groups')}" do %>
-            <i class="fa-regular fa-layer-group me-2"></i>
-            Skupiny
+            <i class="fas fa-layer-group me-2"></i>
+            <%= t("navigation.groups") %>
           <% end %>
         </li>
         <li class="Nav__item">
           <%= link_to manager_sharings_path, class: "Nav__link #{active_if('sharings')}" do %>
-            <i class="fa-regular fa-share-nodes me-2"></i>
-            Sdílení
+            <i class="fas fa-share-nodes me-2"></i>
+            <%= t("navigation.sharings") %>
           <% end %>
         </li>
       <% end %>
       <li class="Nav__item">
         <%= link_to billings_path, class: "Nav__link #{active_if('billings')}" do %>
-          <i class="fa-regular fa-file-invoice me-2"></i>
-          Vyúčtování
+          <i class="fas fa-file-invoice me-2"></i>
+          <%= t("navigation.billings") %>
         <% end %>
       </li>
       <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to edit_manager_settings_path, class: "Nav__link #{active_if('settings')}" do %>
-            <i class="fa-regular fa-gear me-2"></i>
-            Nastavení
+            <i class="fas fa-gear me-2"></i>
+            <%= t("navigation.settings") %>
           <% end %>
         </li>
       <% end %>
       <% if Current.user.superadmin? %>
         <li class="Nav__item">
-          <%= link_to "Superadmin", superadmin_accounts_path, class: "Nav__link #{active_if('superadmin')}" %>
+          <%= link_to superadmin_accounts_path, class: "Nav__link #{active_if('superadmin')}" do %>
+            <i class="fas fa-shield-halved me-2"></i>
+            Superadmin
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -65,7 +68,7 @@
 <div class="App__header-user d-none d-lg-block">
   <div class="dropdown">
     <button class="btn-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fa-regular fa-user"></i>
+      <i class="fas fa-user"></i>
     </button>
     <ul class="dropdown-menu dropdown-menu-end">
       <div class="dropdown-header">
@@ -73,7 +76,7 @@
           <div class="dropdown-header__name"><%= Current.user.name %></div>
           <div class="dropdown-header__role">
             <span class="Badge Badge--sm">
-              <%= Current.user.manager? ? "Správce" : "Uživatel" %>
+              <%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %>
             </span>
           </div>
         </div>
@@ -81,8 +84,8 @@
       <li><hr class="dropdown-divider"></li>
       <li>
         <%= link_to session_path, data: { turbo_method: :delete }, class: "dropdown-item dropdown-item--muted" do %>
-          <i class="fa-regular fa-arrow-right-from-bracket"></i>
-          Odhlásit se
+          <i class="fas fa-arrow-right-from-bracket"></i>
+          <%= t("sessions.logout") %>
         <% end %>
       </li>
     </ul>
