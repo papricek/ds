@@ -45,5 +45,11 @@ Rails.application.routes.draw do
     resource :help, path: "napoveda", only: [ :show ], controller: "help"
   end
 
+  namespace :superadmin, path: "superadmin", constraints: SuperadminConstraint.new do
+    resources :accounts, path: "ucty" do
+      resources :users, path: "uzivatele", only: [ :new, :create, :edit, :update, :destroy ]
+    end
+  end
+
   get "up" => "rails/health#show", as: :rails_health_check
 end

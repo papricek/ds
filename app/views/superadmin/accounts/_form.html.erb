@@ -1,0 +1,41 @@
+<%= form_with(model: [:superadmin, @account], url: url, class: "Form") do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :name, t("superadmin.accounts.name"), class: "Form__label Form__label--required" %>
+        <%= f.text_field :name, class: "Form__input #{error_class_for(@account, :name)}" %>
+        <%= error_message_for(@account, :name) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :subdomain, t("superadmin.accounts.subdomain"), class: "Form__label" %>
+        <%= f.text_field :subdomain, class: "Form__input #{error_class_for(@account, :subdomain)}" %>
+        <%= error_message_for(@account, :subdomain) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :plan, t("superadmin.accounts.plan"), class: "Form__label" %>
+        <%= f.select :plan, [
+          [t("superadmin.accounts.plans.light"), "light"],
+          [t("superadmin.accounts.plans.full"), "full"]
+        ], {}, class: "Form__input" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :logo, t("settings.logo"), class: "Form__label" %>
+        <%= f.file_field :logo, class: "Form__input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <%= f.submit @account.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    <%= link_to t("common.cancel"), superadmin_accounts_path, class: "Button Button--secondary" %>
+  </div>
+<% end %>

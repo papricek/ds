@@ -203,6 +203,30 @@ cs:
     billings_description: "Vyúčtování se generuje za zvolené období na základě dat z EDC portálu. Lze vytvořit jednotlivě nebo hromadně."
     dashboard_title: "Přehled"
     dashboard_description: "Dashboard zobrazuje spotřebu, výrobu a sdílení energie v grafech za zvolené období."
+  superadmin:
+    title: "Superadmin"
+    accounts:
+      title: "Účty"
+      name: "Název"
+      subdomain: "Subdoména"
+      plan: "Plán"
+      users_count: "Uživatelé"
+      addresses_count: "Adresy"
+      created: "Účet byl vytvořen."
+      updated: "Účet byl aktualizován."
+      destroyed: "Účet byl smazán."
+      new_account: "Nový účet"
+      edit_account: "Upravit účet"
+      details: "Detail účtu"
+      plans:
+        light: "Light"
+        full: "Full"
+    users:
+      created: "Uživatel byl vytvořen."
+      updated: "Uživatel byl aktualizován."
+      destroyed: "Uživatel byl smazán."
+      new_user: "Nový uživatel"
+      edit_user: "Upravit uživatele"
   activerecord:
     models:
       user: "Uživatel"

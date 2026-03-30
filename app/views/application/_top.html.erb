@@ -11,7 +11,7 @@
           Přehled
         <% end %>
       </li>
-      <% if Current.user.manager? %>
+      <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to manager_users_path, class: "Nav__link #{active_if('users')}" do %>
             <i class="fa-regular fa-users me-2"></i>
@@ -25,7 +25,7 @@
           Adresy
         <% end %>
       </li>
-      <% if Current.user.manager? %>
+      <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to manager_groups_path, class: "Nav__link #{active_if('groups')}" do %>
             <i class="fa-regular fa-layer-group me-2"></i>
@@ -45,12 +45,17 @@
           Vyúčtování
         <% end %>
       </li>
-      <% if Current.user.manager? %>
+      <% if Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to edit_manager_settings_path, class: "Nav__link #{active_if('settings')}" do %>
             <i class="fa-regular fa-gear me-2"></i>
             Nastavení
           <% end %>
+        </li>
+      <% end %>
+      <% if Current.user.superadmin? %>
+        <li class="Nav__item">
+          <%= link_to "Superadmin", superadmin_accounts_path, class: "Nav__link #{active_if('superadmin')}" %>
         </li>
       <% end %>
     </ul>

@@ -40,6 +40,10 @@ class User < ApplicationRecord
     SUPERADMINS.include?(email)
   end
 
+  def manager_or_superadmin?
+    manager? || superadmin?
+  end
+
   def generate_password_reset_token
     user_tokens.create!(kind: :password_reset,
                         issued_at: Time.current,

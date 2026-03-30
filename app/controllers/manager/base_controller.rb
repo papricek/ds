@@ -4,6 +4,6 @@ class Manager::BaseController < AppController
   private
 
   def require_manager
-    redirect_to dashboards_path, alert: t("common.not_authorized") unless Current.user.manager?
+    redirect_to dashboards_path, alert: t("common.not_authorized") unless Current.user.manager? || Current.user.superadmin?
   end
 end

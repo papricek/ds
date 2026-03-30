@@ -1,0 +1,47 @@
+<% content_for :title, t("superadmin.accounts.title") %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= t("superadmin.accounts.title") %></h1>
+  <%= link_to new_superadmin_account_path, class: "Button Button--primary" do %>
+    <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
+  <% end %>
+</div>
+
+<div class="Listing">
+  <% @accounts.each do |account| %>
+    <div class="Listing__item">
+      <div class="Listing__content">
+        <div class="Listing__info">
+          <div class="Listing__info-primary"><%= account.name %></div>
+          <div class="Listing__info-secondary"><%= account.subdomain %></div>
+        </div>
+        <div class="ms-2">
+          <span class="Badge Badge--<%= account.light? ? 'neutral' : 'info' %> Badge--small">
+            <%= t("superadmin.accounts.plans.#{account.plan || 'light'}") %>
+          </span>
+        </div>
+        <div class="ms-2" style="color: var(--white-5);">
+          <i class="fas fa-users me-1"></i> <%= account.users.count %>
+          <i class="fas fa-location-dot ms-2 me-1"></i> <%= account.addresses.count %>
+        </div>
+      </div>
+      <div class="Listing__action">
+        <%= link_to superadmin_account_path(account), class: "Button Button--secondary Button--small" do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+        <%= link_to edit_superadmin_account_path(account), class: "Button Button--edit Button--small" do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+        <%= link_to superadmin_account_path(account), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @accounts.respond_to?(:total_pages) && @accounts.total_pages > 1 %>
+  <div class="Listing__pagination mt-3">
+    <%= paginate @accounts, theme: "bootstrap-5" %>
+  </div>
+<% end %>
