@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       end
     end
     resource :settings, path: "nastaveni", only: [ :edit, :update ]
+    resource :help, path: "napoveda", only: [ :show ], controller: "help"
   end
 
   get "up" => "rails/health#show", as: :rails_health_check

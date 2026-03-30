@@ -166,13 +166,20 @@ cs:
   settings:
     title: "Nastavení"
     account_name: "Název účtu"
+    account_settings: "Nastavení účtu"
+    billing_settings: "Nastavení vyúčtování"
+    billing_copy_email: "Kopie e-mailu"
     logo: "Logo"
     issue_day: "Den vystavení"
+    supply_day: "Den dodání"
     due_days: "Splatnost (dny)"
     updated: "Nastavení bylo aktualizováno."
     change_password: "Změna hesla"
     current_password: "Současné heslo"
     invalid_current_password: "Současné heslo není správné."
+    edc_sync: "Synchronizace dat"
+    last_sync: "Poslední synchronizace"
+    never_synced: "Zatím nesynchronizováno"
   manager:
     navigation:
       dashboard: "Přehled"
@@ -182,6 +189,20 @@ cs:
       sharings: "Sdílení"
       billings: "Vyúčtování"
       settings: "Nastavení"
+  help:
+    title: "Nápověda"
+    users_title: "Uživatelé"
+    users_description: "Správce vytváří uživatele s rolí správce nebo uživatel. Každý uživatel se přihlašuje e-mailem a heslem."
+    addresses_title: "Adresy (EAN)"
+    addresses_description: "Každá adresa má unikátní EAN kód a roli — odběratel (spotřeba) nebo výrobce (výroba). Jedna osoba může mít více adres."
+    groups_title: "Skupiny"
+    groups_description: "Skupiny organizují odběratele a výrobce do energetických komunit. Ze skupiny lze hromadně vytvořit sdílení."
+    sharings_title: "Sdílení"
+    sharings_description: "Sdílení propojuje výrobce s odběratelem. Každé sdílení má pevnou cenu za kWh."
+    billings_title: "Vyúčtování"
+    billings_description: "Vyúčtování se generuje za zvolené období na základě dat z EDC portálu. Lze vytvořit jednotlivě nebo hromadně."
+    dashboard_title: "Přehled"
+    dashboard_description: "Dashboard zobrazuje spotřebu, výrobu a sdílení energie v grafech za zvolené období."
   activerecord:
     models:
       user: "Uživatel"

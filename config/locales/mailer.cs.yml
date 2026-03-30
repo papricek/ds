@@ -9,3 +9,8 @@ cs:
       greeting: "Dobrý den, %{name}!"
       body: "Obdrželi jsme žádost o obnovení hesla. Klikněte na odkaz níže pro nastavení nového hesla."
       link: "Nastavit nové heslo"
+    receipt_notification:
+      subject: "Vyúčtování %{symbol}"
+      greeting: "Dobrý den, %{name}!"
+      body: "Bylo vytvořeno nové vyúčtování %{symbol} za období %{period}."
+      footer: "Přihlaste se do LiteLink pro zobrazení detailů."

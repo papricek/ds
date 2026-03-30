@@ -19,6 +19,9 @@
       <li class="Nav__item">
         <%= link_to t("manager.navigation.settings"), edit_manager_settings_path, class: "Nav__link #{'active' if active_if('manager/settings')}" %>
       </li>
+      <li class="Nav__item">
+        <%= link_to t("help.title"), manager_help_path, class: "Nav__link #{'active' if active_if('manager/help')}" %>
+      </li>
     </ul>
   </nav>
 </div>

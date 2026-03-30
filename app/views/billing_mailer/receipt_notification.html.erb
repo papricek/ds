@@ -1,0 +1,30 @@
+<h2><%= t("mailer.receipt_notification.greeting", name: @user.name) %></h2>
+
+<p><%= t("mailer.receipt_notification.body",
+  symbol: @billing.variable_symbol,
+  period: "#{@billing.start_at.strftime("%d.%m.%Y")} — #{@billing.end_at.strftime("%d.%m.%Y")}") %></p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+  <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 8px; color: #666;"><%= t("billings.period") %></td>
+    <td style="padding: 8px; font-weight: 600;"><%= @billing.start_at.strftime("%d.%m.%Y") %> — <%= @billing.end_at.strftime("%d.%m.%Y") %></td>
+  </tr>
+  <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 8px; color: #666;">kWh</td>
+    <td style="padding: 8px; font-weight: 600;"><%= @billing.total_kwh.round(2) %> kWh</td>
+  </tr>
+  <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 8px; color: #666;"><%= t("billings.amount") %></td>
+    <td style="padding: 8px; font-weight: 600;"><%= @billing.subtotal.round(2) %> Kč</td>
+  </tr>
+  <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 8px; color: #666;"><%= t("billings.due_date") %></td>
+    <td style="padding: 8px; font-weight: 600;"><%= @billing.due_date&.strftime("%d.%m.%Y") || "—" %></td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; color: #666;"><%= t("billings.variable_symbol") %></td>
+    <td style="padding: 8px; font-weight: 600;"><%= @billing.variable_symbol %></td>
+  </tr>
+</table>
+
+<p><%= t("mailer.receipt_notification.footer") %></p>
