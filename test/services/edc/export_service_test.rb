@@ -17,7 +17,7 @@ class Edc::ExportServiceTest < ActiveSupport::TestCase
       account: @account,
       from_date: Date.new(2026, 2, 1),
       to_date: Date.new(2026, 2, 28),
-      sse_ids: [37183]
+      sse_ids: [ 37183 ]
     )
 
     cmd = service.send(:build_command, credential, "/tmp/test.csv")
@@ -38,7 +38,7 @@ class Edc::ExportServiceTest < ActiveSupport::TestCase
       account: @account,
       from_date: Date.new(2026, 3, 1),
       to_date: Date.new(2026, 3, 31),
-      eans: ["859182400221248415", "859182400221248416"]
+      eans: [ "859182400221248415", "859182400221248416" ]
     )
 
     cmd = service.send(:build_command, credential, "/tmp/test.csv")
