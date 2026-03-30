@@ -1,0 +1,44 @@
+<%= form_with(model: @sharing, url: url, class: "Form") do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :from_address_id, t("sharings.from_ean"), class: "Form__label Form__label--required" %>
+        <%= f.select :from_address_id,
+          Current.account.addresses.supplier.includes(:user).order(:ean).map { |a| ["#{a.ean} (#{a.user.name})", a.id] },
+          { prompt: "—" },
+          class: "Form__input #{error_class_for(@sharing, :from_address_id)}" %>
+        <%= error_message_for(@sharing, :from_address_id) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :to_address_id, t("sharings.to_ean"), class: "Form__label Form__label--required" %>
+        <%= f.select :to_address_id,
+          Current.account.addresses.customer.includes(:user).order(:ean).map { |a| ["#{a.ean} (#{a.user.name})", a.id] },
+          { prompt: "—" },
+          class: "Form__input #{error_class_for(@sharing, :to_address_id)}" %>
+        <%= error_message_for(@sharing, :to_address_id) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :fixed_price, t("sharings.price"), class: "Form__label" %>
+        <%= f.number_field :fixed_price, class: "Form__input", step: 0.01, min: 0 %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :status, t("sharings.status"), class: "Form__label" %>
+        <%= f.select :status, Sharing.statuses.keys.map { |s| [t("sharings.statuses.#{s}"), s] }, {}, class: "Form__input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <%= f.submit @sharing.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    <%= link_to t("common.cancel"), manager_sharings_path, class: "Button Button--secondary" %>
+  </div>
+<% end %>

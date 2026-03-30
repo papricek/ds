@@ -1,0 +1,8 @@
+<% content_for :title, @group.name %>
+<%= render "manager/shared/navigation" %>
+<div class="mb-4">
+  <h1 class="text-white"><%= t("groups.edit_group") %></h1>
+</div>
+<div class="Card">
+  <%= render "form", url: manager_group_path(@group) %>
+</div>

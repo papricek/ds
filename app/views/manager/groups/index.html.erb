@@ -1,0 +1,52 @@
+<% content_for :title, t("navigation.groups") %>
+
+<%= render "manager/shared/navigation" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= t("navigation.groups") %></h1>
+  <%= link_to new_manager_group_path, class: "Button Button--primary" do %>
+    <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
+  <% end %>
+</div>
+
+<div class="Listing">
+  <% @groups.each do |group| %>
+    <div class="Listing__item">
+      <div class="Listing__content">
+        <div class="Listing__status">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <div class="Listing__info">
+          <div class="Listing__info-primary">
+            <%= link_to group.name, manager_group_path(group), style: "color: var(--brand-primary); text-decoration: none;" %>
+          </div>
+          <div class="Listing__info-secondary">
+            <%= group.identifier %>
+          </div>
+        </div>
+        <div class="d-flex gap-2 ms-2">
+          <span class="Badge Badge--consumption Badge--small">
+            <i class="fas fa-users me-1"></i> <%= group.customers_count %>
+          </span>
+          <span class="Badge Badge--production Badge--small">
+            <i class="fas fa-solar-panel me-1"></i> <%= group.suppliers_count %>
+          </span>
+        </div>
+      </div>
+      <div class="Listing__action">
+        <%= link_to edit_manager_group_path(group), class: "Button Button--edit Button--small" do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+        <%= link_to manager_group_path(group), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @groups.respond_to?(:total_pages) && @groups.total_pages > 1 %>
+  <div class="Listing__pagination mt-3">
+    <%= paginate @groups, theme: "bootstrap-5" %>
+  </div>
+<% end %>

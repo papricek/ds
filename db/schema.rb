@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_30_120222) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_30_120303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -68,6 +68,52 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120222) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "group_customers", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.string "ean", null: false
+    t.date "valid_from"
+    t.date "valid_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id", "ean"], name: "index_group_customers_on_group_id_and_ean", unique: true
+    t.index ["group_id"], name: "index_group_customers_on_group_id"
+  end
+
+  create_table "group_supplier_allocations", force: :cascade do |t|
+    t.bigint "group_customer_id", null: false
+    t.string "ean", null: false
+    t.decimal "allocation_ratio", precision: 5, scale: 4, default: "1.0"
+    t.integer "allocation_order", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_customer_id"], name: "index_group_supplier_allocations_on_group_customer_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.string "name", null: false
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_groups_on_account_id"
+  end
+
+  create_table "sharings", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "from_address_id", null: false
+    t.bigint "to_address_id", null: false
+    t.string "from_ean", null: false
+    t.string "to_ean", null: false
+    t.string "status", default: "active", null: false
+    t.decimal "fixed_price", precision: 10, scale: 4
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_sharings_on_account_id"
+    t.index ["from_address_id"], name: "index_sharings_on_from_address_id"
+    t.index ["from_ean", "to_ean", "account_id"], name: "index_sharings_on_from_ean_and_to_ean_and_account_id", unique: true
+    t.index ["to_address_id"], name: "index_sharings_on_to_address_id"
+  end
+
   create_table "user_tokens", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "token", null: false
@@ -98,6 +144,12 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120222) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "accounts"
   add_foreign_key "addresses", "users"
+  add_foreign_key "group_customers", "groups"
+  add_foreign_key "group_supplier_allocations", "group_customers"
+  add_foreign_key "groups", "accounts"
+  add_foreign_key "sharings", "accounts"
+  add_foreign_key "sharings", "addresses", column: "from_address_id"
+  add_foreign_key "sharings", "addresses", column: "to_address_id"
   add_foreign_key "user_tokens", "users"
   add_foreign_key "users", "accounts"
 end

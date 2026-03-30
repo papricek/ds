@@ -1,0 +1,8 @@
+<% content_for :title, t("groups.new_group") %>
+<%= render "manager/shared/navigation" %>
+<div class="mb-4">
+  <h1 class="text-white"><%= t("groups.new_group") %></h1>
+</div>
+<div class="Card">
+  <%= render "form", url: manager_groups_path %>
+</div>

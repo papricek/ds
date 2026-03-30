@@ -12,6 +12,8 @@ class Account < ApplicationRecord
 
   has_many :users, dependent: :destroy
   has_many :addresses, dependent: :destroy
+  has_many :groups, dependent: :destroy
+  has_many :sharings, dependent: :destroy
 
   before_validation { self.subdomain = nil if subdomain.blank? }
 

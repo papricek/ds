@@ -1,0 +1,22 @@
+<%= form_with(model: @group, url: url, class: "Form") do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :name, t("groups.name"), class: "Form__label Form__label--required" %>
+        <%= f.text_field :name, class: "Form__input #{error_class_for(@group, :name)}" %>
+        <%= error_message_for(@group, :name) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :identifier, t("groups.identifier"), class: "Form__label" %>
+        <%= f.text_field :identifier, class: "Form__input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <%= f.submit @group.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    <%= link_to t("common.cancel"), manager_groups_path, class: "Button Button--secondary" %>
+  </div>
+<% end %>

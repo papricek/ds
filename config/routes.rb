@@ -21,7 +21,14 @@ Rails.application.routes.draw do
   namespace :manager, path: "sprava" do
     resources :users, path: "uzivatele"
     resources :addresses, path: "adresy"
-    resources :groups, path: "skupiny"
+    resources :groups, path: "skupiny" do
+      member do
+        post :create_sharings, path: "vytvorit-sdileni"
+      end
+      resources :group_customers, path: "odberatele", only: [:create, :destroy] do
+        resources :group_supplier_allocations, path: "alokace", only: [:create, :destroy]
+      end
+    end
     resources :sharings, path: "sdileni"
     resources :billings, path: "vyuctovani" do
       collection do

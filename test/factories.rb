@@ -37,4 +37,32 @@ FactoryBot.define do
     city { "Praha" }
     zip { "11000" }
   end
+
+  factory :group do
+    account
+    name { "Test Group" }
+    sequence(:identifier) { |n| "GRP-#{n}" }
+  end
+
+  factory :group_customer do
+    group
+    sequence(:ean) { |n| "859182400#{format("%09d", n + 100)}" }
+  end
+
+  factory :group_supplier_allocation do
+    group_customer
+    sequence(:ean) { |n| "859182400#{format("%09d", n + 200)}" }
+    allocation_ratio { 1.0 }
+    allocation_order { 1 }
+  end
+
+  factory :sharing do
+    account
+    from_address { association :address, role: "supplier", account: account }
+    to_address { association :address, role: "customer", account: account }
+    from_ean { from_address.ean }
+    to_ean { to_address.ean }
+    status { "active" }
+    fixed_price { 2.50 }
+  end
 end

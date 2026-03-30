@@ -1,0 +1,62 @@
+<% content_for :title, t("navigation.sharings") %>
+
+<%= render "manager/shared/navigation" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= t("navigation.sharings") %></h1>
+  <%= link_to new_manager_sharing_path, class: "Button Button--primary" do %>
+    <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
+  <% end %>
+</div>
+
+<div class="Card">
+  <div class="Table Table--hoverable">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t("sharings.from_ean") %></th>
+          <th><%= t("sharings.to_ean") %></th>
+          <th><%= t("sharings.price") %></th>
+          <th><%= t("sharings.status") %></th>
+          <th><%= t("common.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sharings.each do |sharing| %>
+          <tr>
+            <td>
+              <div><%= copyable_field(sharing.from_ean) %></div>
+              <small style="color: var(--white-5);"><%= sharing.from_address&.user&.name %></small>
+            </td>
+            <td>
+              <div><%= copyable_field(sharing.to_ean) %></div>
+              <small style="color: var(--white-5);"><%= sharing.to_address&.user&.name %></small>
+            </td>
+            <td><%= sharing.fixed_price ? "#{sharing.fixed_price} Kč/kWh" : "—" %></td>
+            <td>
+              <span class="Badge Badge--<%= sharing.active? ? 'success' : sharing.pending? ? 'warning' : 'neutral' %> Badge--small">
+                <%= t("sharings.statuses.#{sharing.status}") %>
+              </span>
+            </td>
+            <td>
+              <div class="d-flex gap-1">
+                <%= link_to edit_manager_sharing_path(sharing), class: "Button Button--edit Button--small" do %>
+                  <i class="fas fa-pen"></i>
+                <% end %>
+                <%= link_to manager_sharing_path(sharing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% if @sharings.respond_to?(:total_pages) && @sharings.total_pages > 1 %>
+  <div class="Listing__pagination mt-3">
+    <%= paginate @sharings, theme: "bootstrap-5" %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<% content_for :title, t("sharings.new_sharing") %>
+<%= render "manager/shared/navigation" %>
+<div class="mb-4">
+  <h1 class="text-white"><%= t("sharings.new_sharing") %></h1>
+</div>
+<div class="Card">
+  <%= render "form", url: manager_sharings_path %>
+</div>
