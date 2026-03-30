@@ -1,0 +1,42 @@
+<% content_for :title, t("navigation.addresses") %>
+
+<div class="mb-4">
+  <h1 class="text-white"><%= t("navigation.addresses") %></h1>
+</div>
+
+<div class="Card">
+  <% if @addresses.any? %>
+    <div class="Table">
+      <table>
+        <thead>
+          <tr>
+            <th><%= t("addresses.ean") %></th>
+            <th><%= t("addresses.role") %></th>
+            <th><%= t("addresses.label") %></th>
+            <th><%= t("addresses.street") %></th>
+            <th><%= t("addresses.city") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @addresses.each do |address| %>
+            <tr>
+              <td><%= copyable_field(address.ean) %></td>
+              <td>
+                <span class="Badge Badge--<%= address.role %>">
+                  <%= t("addresses.roles.#{address.role}") %>
+                </span>
+              </td>
+              <td><%= address.label %></td>
+              <td><%= address.street %></td>
+              <td><%= address.city %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <div class="p-4 text-center" style="color: var(--white-5);">
+      <%= t("addresses.no_addresses") %>
+    </div>
+  <% end %>
+</div>

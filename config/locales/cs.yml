@@ -57,6 +57,10 @@ cs:
     role: "Role"
     password: "Heslo"
     password_confirmation: "Potvrzení hesla"
+    new_user: "Nový uživatel"
+    edit_user: "Upravit uživatele"
+    details: "Detail uživatele"
+    leave_blank_to_keep: "Ponechte prázdné pro zachování současného hesla."
     created: "Uživatel byl vytvořen."
     updated: "Uživatel byl aktualizován."
     destroyed: "Uživatel byl smazán."
@@ -72,7 +76,10 @@ cs:
     label: "Označení"
     created: "Adresa byla vytvořena."
     updated: "Adresa byla aktualizována."
+    new_address: "Nová adresa"
+    edit_address: "Upravit adresu"
     destroyed: "Adresa byla smazána."
+    no_addresses: "Zatím žádné adresy."
     roles:
       customer: "Odběratel"
       supplier: "Výrobce"
@@ -119,6 +126,7 @@ cs:
     updated: "Nastavení bylo aktualizováno."
     change_password: "Změna hesla"
     current_password: "Současné heslo"
+    invalid_current_password: "Současné heslo není správné."
   manager:
     navigation:
       dashboard: "Přehled"

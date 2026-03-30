@@ -1,0 +1,69 @@
+<% content_for :title, t("settings.title") %>
+
+<div class="mb-4">
+  <h1 class="text-white"><%= t("navigation.profile") %></h1>
+</div>
+
+<div class="Card">
+  <%= form_with(model: @user, url: settings_user_path, method: :patch, class: "Form") do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="Form__group">
+          <%= f.label :name, t("users.name"), class: "Form__label Form__label--required" %>
+          <%= f.text_field :name, class: "Form__input #{error_class_for(@user, :name)}" %>
+          <%= error_message_for(@user, :name) %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="Form__group">
+          <%= f.label :email, t("users.email"), class: "Form__label Form__label--required" %>
+          <%= f.email_field :email, class: "Form__input #{error_class_for(@user, :email)}" %>
+          <%= error_message_for(@user, :email) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="Form__group">
+          <%= f.label :phone, t("users.phone"), class: "Form__label" %>
+          <%= f.text_field :phone, class: "Form__input" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2 mt-3">
+      <%= f.submit t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    </div>
+  <% end %>
+</div>
+
+<div class="Card mt-4">
+  <div class="Card__title"><%= t("settings.change_password") %></div>
+  <%= form_with(url: settings_user_path, method: :patch, class: "Form") do |f| %>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="Form__group">
+          <%= f.label :current_password, t("settings.current_password"), class: "Form__label Form__label--required" %>
+          <%= f.password_field :current_password, class: "Form__input", name: "current_password" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="Form__group">
+          <%= f.label :password, t("password_resets.new_password"), class: "Form__label Form__label--required" %>
+          <%= f.password_field :password, class: "Form__input", name: "user[password]" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="Form__group">
+          <%= f.label :password_confirmation, t("password_resets.confirm_password"), class: "Form__label Form__label--required" %>
+          <%= f.password_field :password_confirmation, class: "Form__input", name: "user[password_confirmation]" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2 mt-3">
+      <%= f.submit t("settings.change_password"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,71 @@
+<%= form_with(model: @address, url: url, class: "Form") do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :user_id, t("users.name"), class: "Form__label Form__label--required" %>
+        <%= f.select :user_id,
+          Current.account.users.order(:name).map { |u| [u.name, u.id] },
+          { prompt: "—" },
+          class: "Form__input #{error_class_for(@address, :user_id)}" %>
+        <%= error_message_for(@address, :user_id) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :ean, t("addresses.ean"), class: "Form__label Form__label--required" %>
+        <%= f.text_field :ean, class: "Form__input #{error_class_for(@address, :ean)}", placeholder: "859182400..." %>
+        <%= error_message_for(@address, :ean) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :role, t("addresses.role"), class: "Form__label Form__label--required" %>
+        <div class="d-flex gap-3 mt-1">
+          <div class="form-check">
+            <%= f.radio_button :role, "customer", class: "form-check-input", id: "role_customer" %>
+            <%= f.label :role, t("addresses.roles.customer"), class: "form-check-label", for: "role_customer" %>
+          </div>
+          <div class="form-check">
+            <%= f.radio_button :role, "supplier", class: "form-check-input", id: "role_supplier" %>
+            <%= f.label :role, t("addresses.roles.supplier"), class: "form-check-label", for: "role_supplier" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="Form__group">
+        <%= f.label :label, t("addresses.label"), class: "Form__label" %>
+        <%= f.text_field :label, class: "Form__input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="Form__group">
+        <%= f.label :street, t("addresses.street"), class: "Form__label" %>
+        <%= f.text_field :street, class: "Form__input" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="Form__group">
+        <%= f.label :city, t("addresses.city"), class: "Form__label" %>
+        <%= f.text_field :city, class: "Form__input" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="Form__group">
+        <%= f.label :zip, t("addresses.zip"), class: "Form__label" %>
+        <%= f.text_field :zip, class: "Form__input" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <%= f.submit @address.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+    <%= link_to t("common.cancel"), manager_addresses_path, class: "Button Button--secondary" %>
+  </div>
+<% end %>

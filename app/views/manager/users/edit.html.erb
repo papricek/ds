@@ -1,0 +1,11 @@
+<% content_for :title, @user.name %>
+
+<%= render "manager/shared/navigation" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= t("users.edit_user") %></h1>
+</div>
+
+<div class="Card">
+  <%= render "form", url: manager_user_path(@user) %>
+</div>

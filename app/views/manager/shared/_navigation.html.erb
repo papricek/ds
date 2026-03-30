@@ -1,0 +1,24 @@
+<div class="mb-4">
+  <nav class="Nav">
+    <ul class="Nav__list">
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.users"), manager_users_path, class: "Nav__link #{'active' if active_if('manager/users')}" %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.addresses"), manager_addresses_path, class: "Nav__link #{'active' if active_if('manager/addresses')}" %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.groups"), manager_groups_path, class: "Nav__link #{'active' if active_if('manager/groups')}" %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.sharings"), manager_sharings_path, class: "Nav__link #{'active' if active_if('manager/sharings')}" %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.billings"), manager_billings_path, class: "Nav__link #{'active' if active_if('manager/billings')}" %>
+      </li>
+      <li class="Nav__item">
+        <%= link_to t("manager.navigation.settings"), edit_manager_settings_path, class: "Nav__link #{'active' if active_if('manager/settings')}" %>
+      </li>
+    </ul>
+  </nav>
+</div>

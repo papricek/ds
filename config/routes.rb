@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :addresses, path: "adresy", only: [ :index ]
+
   namespace :settings, path: "nastaveni" do
     resource :user, path: "uzivatel", only: [ :edit, :update ]
   end

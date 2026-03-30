@@ -1,0 +1,95 @@
+<% content_for :title, @user.name %>
+
+<%= render "manager/shared/navigation" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= @user.name %></h1>
+  <div class="d-flex gap-2">
+    <%= link_to edit_manager_user_path(@user), class: "Button Button--secondary" do %>
+      <i class="fas fa-pen me-1"></i> <%= t("common.edit") %>
+    <% end %>
+    <%= link_to manager_users_path, class: "Button Button--secondary" do %>
+      <i class="fas fa-arrow-left me-1"></i> <%= t("common.back") %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 mb-4">
+    <div class="Card">
+      <div class="Card__title"><%= t("users.details") %></div>
+      <div class="Box">
+        <div class="Box__items">
+          <div class="Box__item">
+            <div class="Box__item-icon"><i class="fas fa-user"></i></div>
+            <div class="Box__item-main">
+              <div class="Box__item-label"><%= t("users.name") %></div>
+              <div class="Box__item-value"><%= @user.name %></div>
+            </div>
+          </div>
+          <div class="Box__item">
+            <div class="Box__item-icon"><i class="fas fa-envelope"></i></div>
+            <div class="Box__item-main">
+              <div class="Box__item-label"><%= t("users.email") %></div>
+              <div class="Box__item-value"><%= copyable_field(@user.email) %></div>
+            </div>
+          </div>
+          <div class="Box__item">
+            <div class="Box__item-icon"><i class="fas fa-phone"></i></div>
+            <div class="Box__item-main">
+              <div class="Box__item-label"><%= t("users.phone") %></div>
+              <div class="Box__item-value"><%= @user.phone.presence || "—" %></div>
+            </div>
+          </div>
+          <div class="Box__item">
+            <div class="Box__item-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="Box__item-main">
+              <div class="Box__item-label"><%= t("users.role") %></div>
+              <div class="Box__item-value">
+                <span class="Badge Badge--<%= @user.manager? ? 'info' : 'neutral' %>">
+                  <%= t("users.roles.#{@user.role}") %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="Card">
+      <div class="Card__title"><%= t("navigation.addresses") %> (<%= @user.addresses.count %>)</div>
+      <% if @user.addresses.any? %>
+        <div class="Table Table--small">
+          <table>
+            <thead>
+              <tr>
+                <th><%= t("addresses.ean") %></th>
+                <th><%= t("addresses.role") %></th>
+                <th><%= t("addresses.city") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user.addresses.each do |address| %>
+                <tr>
+                  <td><%= copyable_field(address.ean) %></td>
+                  <td>
+                    <span class="Badge Badge--<%= address.customer? ? 'consumption' : 'production' %> Badge--small">
+                      <%= t("addresses.roles.#{address.role}") %>
+                    </span>
+                  </td>
+                  <td><%= address.city %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <div class="p-3 text-center" style="color: var(--white-5);">
+          <%= t("addresses.no_addresses") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
