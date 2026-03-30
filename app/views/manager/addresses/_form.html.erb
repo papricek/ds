@@ -1,19 +1,19 @@
 <%= form_with(model: @address, url: url, class: "Form Form--dark") do |f| %>
   <div class="row">
     <div class="col-md-6">
-      <div class="Form__group">
-        <%= f.label :user_id, t("users.name"), class: "Form__label Form__label--required" %>
+      <div class="form-floating Form__group">
         <%= f.select :user_id,
           Current.account.users.order(:name).map { |u| [u.name, u.id] },
           { prompt: "—" },
-          class: "Form__input form-select #{error_class_for(@address, :user_id)}" %>
+          class: "form-select Form__input #{error_class_for(@address, :user_id)}" %>
+        <%= f.label :user_id, t("users.name"), class: "Form__label Form__label--required" %>
         <%= error_message_for(@address, :user_id) %>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="Form__group">
+      <div class="form-floating Form__group">
+        <%= f.text_field :ean, class: "form-control Form__input #{error_class_for(@address, :ean)}", placeholder: "859182400..." %>
         <%= f.label :ean, t("addresses.ean"), class: "Form__label Form__label--required" %>
-        <%= f.text_field :ean, class: "Form__input form-control #{error_class_for(@address, :ean)}", placeholder: "859182400..." %>
         <%= error_message_for(@address, :ean) %>
       </div>
     </div>
@@ -22,50 +22,52 @@
   <div class="row">
     <div class="col-md-6">
       <div class="Form__group">
-        <%= f.label :role, t("addresses.role"), class: "Form__label Form__label--required" %>
-        <div class="d-flex gap-3 mt-1">
-          <div class="form-check">
-            <%= f.radio_button :role, "customer", class: "form-check-input", id: "role_customer" %>
-            <%= f.label :role, t("addresses.roles.customer"), class: "form-check-label", for: "role_customer" %>
-          </div>
-          <div class="form-check">
-            <%= f.radio_button :role, "supplier", class: "form-check-input", id: "role_supplier" %>
-            <%= f.label :role, t("addresses.roles.supplier"), class: "form-check-label", for: "role_supplier" %>
-          </div>
+        <label class="Form__label" style="color: var(--light-gray);"><%= t("addresses.role") %></label>
+        <div class="btn-group w-100" role="group" data-controller="button-selection">
+          <%= f.radio_button :role, "customer", class: "btn-check", id: "role_customer", autocomplete: "off" %>
+          <%= f.label "role_customer", class: "btn btn-outline-primary me-2", for: "role_customer" do %>
+            <i class="fas fa-check me-1 d-none check-icon"></i>
+            <i class="fas fa-house me-1"></i> <%= t("addresses.roles.customer") %>
+          <% end %>
+          <%= f.radio_button :role, "supplier", class: "btn-check", id: "role_supplier", autocomplete: "off" %>
+          <%= f.label "role_supplier", class: "btn btn-outline-primary", for: "role_supplier" do %>
+            <i class="fas fa-check me-1 d-none check-icon"></i>
+            <i class="fas fa-solar-panel me-1"></i> <%= t("addresses.roles.supplier") %>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="Form__group">
+      <div class="form-floating Form__group">
+        <%= f.text_field :label, class: "form-control Form__input", placeholder: t("addresses.label") %>
         <%= f.label :label, t("addresses.label"), class: "Form__label" %>
-        <%= f.text_field :label, class: "Form__input form-control" %>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-4">
-      <div class="Form__group">
+      <div class="form-floating Form__group">
+        <%= f.text_field :street, class: "form-control Form__input", placeholder: t("addresses.street") %>
         <%= f.label :street, t("addresses.street"), class: "Form__label" %>
-        <%= f.text_field :street, class: "Form__input form-control" %>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="Form__group">
+      <div class="form-floating Form__group">
+        <%= f.text_field :city, class: "form-control Form__input", placeholder: t("addresses.city") %>
         <%= f.label :city, t("addresses.city"), class: "Form__label" %>
-        <%= f.text_field :city, class: "Form__input form-control" %>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="Form__group">
+      <div class="form-floating Form__group">
+        <%= f.text_field :zip, class: "form-control Form__input", placeholder: t("addresses.zip") %>
         <%= f.label :zip, t("addresses.zip"), class: "Form__label" %>
-        <%= f.text_field :zip, class: "Form__input form-control" %>
       </div>
     </div>
   </div>
 
-  <div class="d-flex gap-2 mt-3">
-    <%= f.submit @address.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
+  <div class="Form__actions">
     <%= link_to t("common.cancel"), manager_addresses_path, class: "Button Button--secondary" %>
+    <%= f.submit @address.new_record? ? t("common.create") : t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
   </div>
 <% end %>

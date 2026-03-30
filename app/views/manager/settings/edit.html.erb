@@ -7,16 +7,16 @@
   <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form Form--dark") do |f| %>
     <div class="row">
       <div class="col-md-6">
-        <div class="Form__group">
+        <div class="form-floating Form__group">
+          <%= f.text_field :name, class: "form-control Form__input #{error_class_for(@account, :name)}", placeholder: t("settings.account_name") %>
           <%= f.label :name, t("settings.account_name"), class: "Form__label Form__label--required" %>
-          <%= f.text_field :name, class: "Form__input form-control #{error_class_for(@account, :name)}" %>
           <%= error_message_for(@account, :name) %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="Form__group">
           <%= f.label :logo, t("settings.logo"), class: "Form__label" %>
-          <%= f.file_field :logo, class: "Form__input form-control", accept: "image/*" %>
+          <%= f.file_field :logo, class: "form-control Form__input", accept: "image/*" %>
           <% if @account.logo.attached? %>
             <div class="mt-2">
               <%= image_tag @account.logo, style: "max-height: 40px;" %>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="d-flex gap-2 mt-3">
+    <div class="Form__actions">
       <%= f.submit t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
     </div>
   <% end %>
@@ -37,32 +37,32 @@
   <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form Form--dark") do |f| %>
     <div class="row">
       <div class="col-md-3">
-        <div class="Form__group">
+        <div class="form-floating Form__group">
+          <%= f.number_field :settings_issue_day_in_month, class: "form-control Form__input", min: 1, max: 28, placeholder: t("settings.issue_day") %>
           <%= f.label :settings_issue_day_in_month, t("settings.issue_day"), class: "Form__label" %>
-          <%= f.number_field :settings_issue_day_in_month, class: "Form__input form-control", min: 1, max: 28 %>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="Form__group">
+        <div class="form-floating Form__group">
+          <%= f.number_field :settings_supply_day_in_month, class: "form-control Form__input", min: 1, max: 28, placeholder: t("settings.supply_day") %>
           <%= f.label :settings_supply_day_in_month, t("settings.supply_day"), class: "Form__label" %>
-          <%= f.number_field :settings_supply_day_in_month, class: "Form__input form-control", min: 1, max: 28 %>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="Form__group">
+        <div class="form-floating Form__group">
+          <%= f.number_field :settings_due_days, class: "form-control Form__input", min: 1, max: 90, placeholder: t("settings.due_days") %>
           <%= f.label :settings_due_days, t("settings.due_days"), class: "Form__label" %>
-          <%= f.number_field :settings_due_days, class: "Form__input form-control", min: 1, max: 90 %>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="Form__group">
+        <div class="form-floating Form__group">
+          <%= f.email_field :settings_billing_copy_email, class: "form-control Form__input", placeholder: t("settings.billing_copy_email") %>
           <%= f.label :settings_billing_copy_email, t("settings.billing_copy_email"), class: "Form__label" %>
-          <%= f.email_field :settings_billing_copy_email, class: "Form__input form-control" %>
         </div>
       </div>
     </div>
 
-    <div class="d-flex gap-2 mt-3">
+    <div class="Form__actions">
       <%= f.submit t("common.save"), class: "Button Button--primary", data: { disable_with: disable_with } %>
     </div>
   <% end %>
