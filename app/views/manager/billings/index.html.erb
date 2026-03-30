@@ -37,11 +37,11 @@
         </div>
         <div class="Listing__actions">
           <% unless billing.paid? %>
-            <%= link_to mark_paid_manager_billing_path(billing), data: { turbo_method: :patch }, class: "Button Button--secondary" do %>
+            <%= link_to mark_paid_manager_billing_path(billing), data: { turbo_method: :patch }, class: "Button Button--success Button--small" do %>
               <i class="fas fa-check"></i> <%= t("billings.mark_paid") %>
             <% end %>
           <% end %>
-          <%= link_to manager_billing_path(billing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
+          <%= link_to manager_billing_path(billing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--danger Button--small" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>

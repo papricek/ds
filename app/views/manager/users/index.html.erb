@@ -27,10 +27,10 @@
           </div>
         </div>
         <div class="Listing__actions">
-          <%= link_to edit_manager_user_path(user), class: "Button Button--edit" do %>
+          <%= link_to edit_manager_user_path(user), class: "Button Button--secondary Button--small" do %>
             <i class="fas fa-pen"></i> <%= t("common.edit") %>
           <% end %>
-          <%= link_to manager_user_path(user), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
+          <%= link_to manager_user_path(user), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--danger Button--small" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>

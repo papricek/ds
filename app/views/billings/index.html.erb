@@ -23,7 +23,7 @@
         </div>
         <div class="Listing__actions">
           <% if billing.document.attached? %>
-            <%= link_to download_billing_path(billing), class: "Button Button--primary" do %>
+            <%= link_to download_billing_path(billing), class: "Button Button--primary Button--small" do %>
               <i class="fas fa-file-pdf"></i> PDF
             <% end %>
           <% end %>
