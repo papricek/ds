@@ -80,6 +80,30 @@ FactoryBot.define do
     shared_at { Time.current }
   end
 
+  factory :billing do
+    account
+    user
+    kind { "receipt" }
+    status { "active" }
+    period { "monthly" }
+    start_at { 1.month.ago.beginning_of_month.to_date }
+    end_at { 1.month.ago.end_of_month.to_date }
+    issue_date { Date.current }
+    supply_date { 1.month.ago.end_of_month.to_date }
+    due_date { 14.days.from_now.to_date }
+    sequence(:variable_symbol) { |n| "2026#{format('%06d', n)}" }
+  end
+
+  factory :billing_item do
+    billing
+    sharing { nil }
+    kind { "sharings" }
+    transaction_type { "receive" }
+    amount { 100.0 }
+    price { 250.0 }
+    name { "Test User" }
+  end
+
   factory :credential do
     account
     username { "test@example.com" }

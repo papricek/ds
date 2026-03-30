@@ -1,0 +1,52 @@
+<% content_for :title, t("navigation.billings") %>
+
+<div class="mb-4">
+  <h1 class="text-white"><%= t("navigation.billings") %></h1>
+</div>
+
+<div class="Listing">
+  <% @billings.each do |billing| %>
+    <div class="Listing__item">
+      <div class="Listing__content">
+        <div class="Listing__status">
+          <i class="fas fa-file-invoice"></i>
+        </div>
+        <div class="Listing__info">
+          <div class="Listing__info-primary">
+            <%= link_to "#{t("billings.receipt")} #{billing.variable_symbol}", billing_path(billing), style: "color: var(--brand-primary); text-decoration: none;" %>
+          </div>
+          <div class="Listing__info-secondary">
+            <%= billing.start_at.strftime("%d.%m.%Y") %> — <%= billing.end_at.strftime("%d.%m.%Y") %>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 ms-2">
+          <span style="color: var(--white-7);"><%= billing.subtotal.round(2) %> Kč</span>
+          <span class="Badge Badge--<%= billing.paid? ? 'success' : 'warning' %> Badge--small">
+            <%= t("billings.statuses.#{billing.status}") %>
+          </span>
+        </div>
+      </div>
+      <div class="Listing__action">
+        <% if billing.document.attached? %>
+          <%= link_to download_billing_path(billing), class: "Button Button--primary Button--small" do %>
+            <i class="fas fa-file-pdf"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @billings.empty? %>
+  <div class="Card">
+    <div class="p-4 text-center" style="color: var(--white-5);">
+      <%= t("billings.no_billings") %>
+    </div>
+  </div>
+<% end %>
+
+<% if @billings.respond_to?(:total_pages) && @billings.total_pages > 1 %>
+  <div class="Listing__pagination mt-3">
+    <%= paginate @billings, theme: "bootstrap-5" %>
+  </div>
+<% end %>

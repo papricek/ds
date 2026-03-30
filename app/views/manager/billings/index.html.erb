@@ -1,0 +1,70 @@
+<% content_for :title, t("navigation.billings") %>
+
+<%= render "manager/shared/navigation" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="text-white mb-0"><%= t("navigation.billings") %></h1>
+  <div class="d-flex gap-2">
+    <%= link_to export_manager_billings_path(format: :csv), class: "Button Button--secondary" do %>
+      <i class="fas fa-download me-1"></i> CSV
+    <% end %>
+    <%= link_to batch_new_manager_billings_path, class: "Button Button--secondary" do %>
+      <i class="fas fa-layer-group me-1"></i> <%= t("billings.batch") %>
+    <% end %>
+    <%= link_to new_manager_billing_path, class: "Button Button--primary" do %>
+      <i class="fas fa-plus me-1"></i> <%= t("common.create") %>
+    <% end %>
+  </div>
+</div>
+
+<div class="Card">
+  <div class="Table Table--hoverable">
+    <table>
+      <thead>
+        <tr>
+          <th><%= t("billings.variable_symbol") %></th>
+          <th><%= t("users.name") %></th>
+          <th><%= t("billings.period") %></th>
+          <th>kWh</th>
+          <th><%= t("billings.amount") %></th>
+          <th><%= t("billings.status") %></th>
+          <th><%= t("common.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @billings.each do |billing| %>
+          <tr>
+            <td><%= link_to billing.variable_symbol || billing.id, manager_billing_path(billing), style: "color: var(--brand-primary);" %></td>
+            <td><%= billing.user.name %></td>
+            <td><%= billing.start_at.strftime("%d.%m.%Y") %> — <%= billing.end_at.strftime("%d.%m.%Y") %></td>
+            <td><%= billing.total_kwh.round(2) %></td>
+            <td><%= billing.subtotal.round(2) %> Kč</td>
+            <td>
+              <span class="Badge Badge--<%= billing.paid? ? 'success' : 'warning' %> Badge--small">
+                <%= t("billings.statuses.#{billing.status}") %>
+              </span>
+            </td>
+            <td>
+              <div class="d-flex gap-1">
+                <% unless billing.paid? %>
+                  <%= link_to mark_paid_manager_billing_path(billing), data: { turbo_method: :patch }, class: "Button Button--secondary Button--small", title: t("billings.mark_paid") do %>
+                    <i class="fas fa-check"></i>
+                  <% end %>
+                <% end %>
+                <%= link_to manager_billing_path(billing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% if @billings.respond_to?(:total_pages) && @billings.total_pages > 1 %>
+  <div class="Listing__pagination mt-3">
+    <%= paginate @billings, theme: "bootstrap-5" %>
+  </div>
+<% end %>

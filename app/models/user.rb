@@ -8,6 +8,7 @@ class User < ApplicationRecord
   belongs_to :account
   has_many :user_tokens, dependent: :destroy
   has_many :addresses, dependent: :destroy
+  has_many :billings, dependent: :destroy
 
   enum :role, { manager: "manager", user: "user" }, default: :user
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_30_120402) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_30_120501) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -66,6 +66,40 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120402) do
     t.index ["account_id"], name: "index_addresses_on_account_id"
     t.index ["ean", "account_id"], name: "index_addresses_on_ean_and_account_id", unique: true
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "billing_items", force: :cascade do |t|
+    t.bigint "billing_id", null: false
+    t.bigint "sharing_id"
+    t.string "kind", default: "sharings", null: false
+    t.string "transaction_type", null: false
+    t.decimal "amount", precision: 12, scale: 4, default: "0.0"
+    t.decimal "price", precision: 12, scale: 2, default: "0.0"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["billing_id"], name: "index_billing_items_on_billing_id"
+    t.index ["sharing_id"], name: "index_billing_items_on_sharing_id"
+  end
+
+  create_table "billings", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.bigint "user_id", null: false
+    t.string "kind", default: "receipt", null: false
+    t.string "status", default: "active", null: false
+    t.string "period", default: "monthly", null: false
+    t.date "start_at", null: false
+    t.date "end_at", null: false
+    t.date "issue_date"
+    t.date "supply_date"
+    t.date "due_date"
+    t.string "variable_symbol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id", "user_id"], name: "index_billings_on_account_id_and_user_id"
+    t.index ["account_id"], name: "index_billings_on_account_id"
+    t.index ["user_id"], name: "index_billings_on_user_id"
+    t.index ["variable_symbol"], name: "index_billings_on_variable_symbol"
   end
 
   create_table "credentials", force: :cascade do |t|
@@ -178,6 +212,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120402) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "accounts"
   add_foreign_key "addresses", "users"
+  add_foreign_key "billing_items", "billings"
+  add_foreign_key "billing_items", "sharings"
+  add_foreign_key "billings", "accounts"
+  add_foreign_key "billings", "users"
   add_foreign_key "credentials", "accounts"
   add_foreign_key "group_customers", "groups"
   add_foreign_key "group_supplier_allocations", "group_customers"
