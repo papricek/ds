@@ -9,14 +9,14 @@
       <div class="col-md-6">
         <div class="Form__group">
           <%= f.label :name, t("settings.account_name"), class: "Form__label Form__label--required" %>
-          <%= f.text_field :name, class: "Form__input #{error_class_for(@account, :name)}" %>
+          <%= f.text_field :name, class: "Form__input form-control #{error_class_for(@account, :name)}" %>
           <%= error_message_for(@account, :name) %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="Form__group">
           <%= f.label :logo, t("settings.logo"), class: "Form__label" %>
-          <%= f.file_field :logo, class: "Form__input", accept: "image/*" %>
+          <%= f.file_field :logo, class: "Form__input form-control", accept: "image/*" %>
           <% if @account.logo.attached? %>
             <div class="mt-2">
               <%= image_tag @account.logo, style: "max-height: 40px;" %>
@@ -39,25 +39,25 @@
       <div class="col-md-3">
         <div class="Form__group">
           <%= f.label :settings_issue_day_in_month, t("settings.issue_day"), class: "Form__label" %>
-          <%= f.number_field :settings_issue_day_in_month, class: "Form__input", min: 1, max: 28 %>
+          <%= f.number_field :settings_issue_day_in_month, class: "Form__input form-control", min: 1, max: 28 %>
         </div>
       </div>
       <div class="col-md-3">
         <div class="Form__group">
           <%= f.label :settings_supply_day_in_month, t("settings.supply_day"), class: "Form__label" %>
-          <%= f.number_field :settings_supply_day_in_month, class: "Form__input", min: 1, max: 28 %>
+          <%= f.number_field :settings_supply_day_in_month, class: "Form__input form-control", min: 1, max: 28 %>
         </div>
       </div>
       <div class="col-md-3">
         <div class="Form__group">
           <%= f.label :settings_due_days, t("settings.due_days"), class: "Form__label" %>
-          <%= f.number_field :settings_due_days, class: "Form__input", min: 1, max: 90 %>
+          <%= f.number_field :settings_due_days, class: "Form__input form-control", min: 1, max: 90 %>
         </div>
       </div>
       <div class="col-md-3">
         <div class="Form__group">
           <%= f.label :settings_billing_copy_email, t("settings.billing_copy_email"), class: "Form__label" %>
-          <%= f.email_field :settings_billing_copy_email, class: "Form__input" %>
+          <%= f.email_field :settings_billing_copy_email, class: "Form__input form-control" %>
         </div>
       </div>
     </div>

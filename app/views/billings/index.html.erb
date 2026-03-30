@@ -9,7 +9,7 @@
         </div>
         <div class="Listing__info">
           <div class="Listing__info-primary">
-            <%= link_to "#{t("billings.receipt")} #{billing.variable_symbol}", billing_path(billing), style: "color: var(--brand-primary); text-decoration: none;" %>
+            <%= link_to "#{t("billings.receipt")} #{billing.variable_symbol}", billing_path(billing) %>
           </div>
           <div class="Listing__info-secondary">
             <%= billing.start_at.strftime("%d.%m.%Y") %> — <%= billing.end_at.strftime("%d.%m.%Y") %>

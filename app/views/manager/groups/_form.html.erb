@@ -3,14 +3,14 @@
     <div class="col-md-6">
       <div class="Form__group">
         <%= f.label :name, t("groups.name"), class: "Form__label Form__label--required" %>
-        <%= f.text_field :name, class: "Form__input #{error_class_for(@group, :name)}" %>
+        <%= f.text_field :name, class: "Form__input form-control #{error_class_for(@group, :name)}" %>
         <%= error_message_for(@group, :name) %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="Form__group">
         <%= f.label :identifier, t("groups.identifier"), class: "Form__label" %>
-        <%= f.text_field :identifier, class: "Form__input" %>
+        <%= f.text_field :identifier, class: "Form__input form-control" %>
       </div>
     </div>
   </div>

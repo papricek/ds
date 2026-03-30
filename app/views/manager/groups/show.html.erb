@@ -61,15 +61,15 @@
   <%= form_with(url: manager_group_group_customers_path(@group), class: "Form Form--dark d-flex gap-2 align-items-end p-3", style: "border-bottom: 1px solid var(--white-1);") do |f| %>
     <div class="Form__group mb-0 flex-grow-1">
       <%= f.label :ean, t("addresses.ean"), class: "Form__label" %>
-      <%= f.text_field :ean, class: "Form__input", placeholder: "859182400...", name: "group_customer[ean]" %>
+      <%= f.text_field :ean, class: "Form__input form-control", placeholder: "859182400...", name: "group_customer[ean]" %>
     </div>
     <div class="Form__group mb-0">
       <%= f.label :valid_from, t("groups.valid_from"), class: "Form__label" %>
-      <%= f.date_field :valid_from, class: "Form__input", name: "group_customer[valid_from]" %>
+      <%= f.date_field :valid_from, class: "Form__input form-control", name: "group_customer[valid_from]" %>
     </div>
     <div class="Form__group mb-0">
       <%= f.label :valid_to, t("groups.valid_to"), class: "Form__label" %>
-      <%= f.date_field :valid_to, class: "Form__input", name: "group_customer[valid_to]" %>
+      <%= f.date_field :valid_to, class: "Form__input form-control", name: "group_customer[valid_to]" %>
     </div>
     <%= f.submit t("groups.add_customer"), class: "Button Button--primary" %>
   <% end %>
@@ -102,8 +102,8 @@
         <% end %>
 
         <%= form_with(url: manager_group_group_customer_group_supplier_allocations_path(@group, gc), class: "Form Form--dark d-flex gap-2 align-items-end mt-1") do |f| %>
-          <%= f.text_field :ean, class: "Form__input", placeholder: t("groups.supplier_ean"), name: "group_supplier_allocation[ean]", style: "max-width: 250px;" %>
-          <%= f.number_field :allocation_ratio, class: "Form__input", value: 1.0, step: 0.01, min: 0, max: 1, name: "group_supplier_allocation[allocation_ratio]", style: "max-width: 100px;" %>
+          <%= f.text_field :ean, class: "Form__input form-control", placeholder: t("groups.supplier_ean"), name: "group_supplier_allocation[ean]", style: "max-width: 250px;" %>
+          <%= f.number_field :allocation_ratio, class: "Form__input form-control", value: 1.0, step: 0.01, min: 0, max: 1, name: "group_supplier_allocation[allocation_ratio]", style: "max-width: 100px;" %>
           <%= f.submit t("groups.add_supplier"), class: "Button Button--secondary Button--small" %>
         <% end %>
       </div>

@@ -8,19 +8,19 @@
       <div class="col-md-4">
         <div class="Form__group">
           <%= f.label :status, t("billings.status"), class: "Form__label" %>
-          <%= f.select :status, Billing.statuses.keys.map { |s| [t("billings.statuses.#{s}"), s] }, {}, class: "Form__input" %>
+          <%= f.select :status, Billing.statuses.keys.map { |s| [t("billings.statuses.#{s}"), s] }, {}, class: "Form__input form-select" %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="Form__group">
           <%= f.label :issue_date, t("billings.issue_date"), class: "Form__label" %>
-          <%= f.date_field :issue_date, class: "Form__input" %>
+          <%= f.date_field :issue_date, class: "Form__input form-control" %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="Form__group">
           <%= f.label :due_date, t("billings.due_date"), class: "Form__label" %>
-          <%= f.date_field :due_date, class: "Form__input" %>
+          <%= f.date_field :due_date, class: "Form__input form-control" %>
         </div>
       </div>
     </div>
