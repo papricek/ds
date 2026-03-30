@@ -101,10 +101,11 @@ class DashboardChartService
   end
 
   def fill_data(grouped)
+    normalized = grouped.transform_keys { |k| k.is_a?(Date) ? k : k.to_s.to_date }
     if group_format == :week
-      (start_date..end_date).step(7).map { |d| grouped[d.to_s]&.round(2) || 0 }
+      (start_date..end_date).step(7).map { |d| normalized[d]&.round(2) || 0 }
     else
-      (start_date..end_date).map { |d| grouped[d.to_s]&.round(2) || 0 }
+      (start_date..end_date).map { |d| normalized[d]&.round(2) || 0 }
     end
   end
 
