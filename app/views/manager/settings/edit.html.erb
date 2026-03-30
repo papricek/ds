@@ -8,7 +8,7 @@
 
 <div class="Card mb-4">
   <div class="Card__title"><%= t("settings.account_settings") %></div>
-  <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form") do |f| %>
+  <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form Form--dark") do |f| %>
     <div class="row">
       <div class="col-md-6">
         <div class="Form__group">
@@ -38,7 +38,7 @@
 
 <div class="Card mb-4">
   <div class="Card__title"><%= t("settings.billing_settings") %></div>
-  <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form") do |f| %>
+  <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form Form--dark") do |f| %>
     <div class="row">
       <div class="col-md-3">
         <div class="Form__group">

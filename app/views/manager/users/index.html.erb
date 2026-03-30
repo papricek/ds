@@ -12,27 +12,29 @@
 <div class="Listing">
   <% @users.each do |user| %>
     <div class="Listing__item">
-      <div class="Listing__content">
-        <div class="Listing__status">
-          <i class="fas fa-<%= user.manager? ? 'shield-halved' : 'user' %>"></i>
+      <div class="Listing__content Listing__content--single-line">
+        <div class="Listing__main">
+          <div class="Listing__status">
+            <i class="fas fa-<%= user.manager? ? 'shield-halved' : 'user' %>"></i>
+          </div>
+          <div class="Listing__info">
+            <div class="Listing__info-primary"><%= user.name %></div>
+            <div class="Listing__info-secondary"><%= user.email %></div>
+          </div>
+          <div class="ms-2">
+            <span class="Badge Badge--<%= user.manager? ? 'info' : 'neutral' %>">
+              <%= t("users.roles.#{user.role}") %>
+            </span>
+          </div>
         </div>
-        <div class="Listing__info">
-          <div class="Listing__info-primary"><%= user.name %></div>
-          <div class="Listing__info-secondary"><%= user.email %></div>
+        <div class="Listing__actions">
+          <%= link_to edit_manager_user_path(user), class: "Button Button--edit Button--small" do %>
+            <i class="fas fa-pen"></i>
+          <% end %>
+          <%= link_to manager_user_path(user), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
         </div>
-        <div class="ms-2">
-          <span class="Badge Badge--<%= user.manager? ? 'info' : 'neutral' %>">
-            <%= t("users.roles.#{user.role}") %>
-          </span>
-        </div>
-      </div>
-      <div class="Listing__action">
-        <%= link_to edit_manager_user_path(user), class: "Button Button--edit Button--small" do %>
-          <i class="fas fa-pen"></i>
-        <% end %>
-        <%= link_to manager_user_path(user), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy Button--small" do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
       </div>
     </div>
   <% end %>

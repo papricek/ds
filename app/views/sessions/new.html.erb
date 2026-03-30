@@ -3,7 +3,7 @@
 <%= render "layouts/session" do %>
   <h2 class="Sessions__title">Přihlášení</h2>
 
-  <%= form_tag session_path, class: "Form" do %>
+  <%= form_tag session_path, class: "Form Form--dark" do %>
     <div class="Form__group form-floating">
       <%= text_field_tag :email, params[:email], class: "Form__input form-control", placeholder: "E-mail", autofocus: true %>
       <%= label_tag :email, "E-mail", class: "Form__label" %>

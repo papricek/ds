@@ -5,7 +5,7 @@
 
   <p class="Sessions__text">Zadejte své nové heslo.</p>
 
-  <%= form_with model: @user, url: password_reset_path(params[:id]), html: { class: "Form" } do |f| %>
+  <%= form_with model: @user, url: password_reset_path(params[:id]), html: { class: "Form Form--dark" } do |f| %>
     <div class="Form__group form-floating">
       <%= f.password_field :password, class: "Form__input form-control #{error_class_for(@user, :password)}", placeholder: "Heslo" %>
       <%= f.label :password, "Heslo", class: "Form__label" %>
