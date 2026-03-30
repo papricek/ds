@@ -2,10 +2,6 @@
 
 <%= render "manager/shared/navigation" %>
 
-<div class="mb-4">
-  <h1 class="text-white"><%= t("navigation.settings") %></h1>
-</div>
-
 <div class="Card mb-4">
   <div class="Card__title"><%= t("settings.account_settings") %></div>
   <%= form_with(model: @account, url: manager_settings_path, method: :patch, class: "Form Form--dark") do |f| %>

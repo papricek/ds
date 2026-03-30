@@ -2,10 +2,6 @@
 
 <%= render "manager/shared/navigation" %>
 
-<div class="mb-4">
-  <h1 class="text-white"><%= t("billings.edit_billing") %></h1>
-</div>
-
 <div class="Card">
   <%= form_with(model: @billing, url: manager_billing_path(@billing), class: "Form Form--dark") do |f| %>
     <div class="row">

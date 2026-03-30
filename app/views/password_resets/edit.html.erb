@@ -1,25 +1,19 @@
-<% content_for :title, "Nové heslo" %>
+<% content_for :title, t("password_resets.reset_password") %>
 
 <%= render "layouts/session" do %>
-  <h2 class="Sessions__title">Nastavení nového hesla</h2>
+  <h2 class="Sessions__title"><%= t("password_resets.reset_password") %></h2>
 
-  <p class="Sessions__text">Zadejte své nové heslo.</p>
-
-  <%= form_with model: @user, url: password_reset_path(params[:id]), html: { class: "Form Form--dark" } do |f| %>
+  <%= form_tag password_reset_path(params[:id]), method: :patch, html: { class: "Form" } do %>
     <div class="Form__group form-floating">
-      <%= f.password_field :password, class: "Form__input form-control #{error_class_for(@user, :password)}", placeholder: "Heslo" %>
-      <%= f.label :password, "Heslo", class: "Form__label" %>
-      <%= error_message_for(@user, :password) %>
+      <%= password_field_tag :password, "", class: "Form__input form-control", placeholder: t("password_resets.new_password") %>
+      <%= label_tag :password, t("password_resets.new_password"), class: "Form__label" %>
     </div>
-
     <div class="Form__group form-floating">
-      <%= f.password_field :password_confirmation, class: "Form__input form-control #{error_class_for(@user, :password_confirmation)}", placeholder: "Potvrzení hesla" %>
-      <%= f.label :password_confirmation, "Potvrzení hesla", class: "Form__label" %>
-      <%= error_message_for(@user, :password_confirmation) %>
+      <%= password_field_tag :password_confirmation, "", class: "Form__input form-control", placeholder: t("password_resets.confirm_password") %>
+      <%= label_tag :password_confirmation, t("password_resets.confirm_password"), class: "Form__label" %>
     </div>
-
-    <div class="Sessions__submit mt-4">
-      <%= f.submit "Nastavit heslo", class: "Btn__cta Btn__cta--large w-100" %>
+    <div class="Sessions__submit">
+      <%= submit_tag t("password_resets.reset_password"), class: "Button Button--primary", style: "width: 100%; padding: 0.75rem; font-size: 1.1rem; border-radius: 50px;" %>
     </div>
   <% end %>
 <% end %>
