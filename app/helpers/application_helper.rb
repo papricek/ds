@@ -41,7 +41,7 @@ module ApplicationHelper
     if Current.account&.logo&.attached?
       image_tag Current.account.logo, alt: Current.account.name, class: css_class
     else
-      content_tag :span, "LiteLink", class: "#{css_class} fw-bold text-white", style: "font-size: 1.5rem; font-family: Manrope, sans-serif;"
+      image_tag "logo_white.svg", alt: "LiteLink", class: css_class, style: "height: 32px;"
     end
   end
 

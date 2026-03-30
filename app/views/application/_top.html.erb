@@ -56,7 +56,12 @@
           <i class="fas <%= user_icon_class_for_role(Current.user.role) %>"></i>
         </div>
         <div class="dropdown-header__info">
-          <div class="dropdown-header__name"><%= Current.user.name %></div>
+          <div class="dropdown-header__name">
+            <%= Current.user.name %>
+            <% if Rails.env.development? %>
+              <span class="badge bg-secondary"><%= Current.user.id %></span>
+            <% end %>
+          </div>
           <div class="dropdown-header__role"><%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %></div>
         </div>
       </div>
@@ -67,6 +72,14 @@
           <%= t("navigation.profile") %>
         <% end %>
       </li>
+      <% if Current.user.manager_or_superadmin? %>
+        <li>
+          <%= link_to edit_manager_settings_path, class: "dropdown-item" do %>
+            <i class="fas fa-gear"></i>
+            <%= t("navigation.settings") %>
+          <% end %>
+        </li>
+      <% end %>
       <% if Current.user.superadmin? %>
         <li>
           <%= link_to superadmin_accounts_path, class: "dropdown-item" do %>
