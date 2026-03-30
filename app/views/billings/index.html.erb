@@ -11,21 +11,19 @@
           <div class="Listing__info">
             <div class="Listing__info-primary">
               <%= link_to "#{t("billings.receipt")} #{billing.variable_symbol}", billing_path(billing) %>
+              <span class="Listing__badge Listing__badge--<%= billing.paid? ? 'success' : 'warning' %>">
+                <%= t("billings.statuses.#{billing.status}") %>
+              </span>
             </div>
             <div class="Listing__info-secondary">
               <%= billing.start_at.strftime("%d.%m.%Y") %> — <%= billing.end_at.strftime("%d.%m.%Y") %>
             </div>
           </div>
-          <div class="Listing__badges">
-            <span class="Listing__badge Listing__badge--<%= billing.paid? ? 'success' : 'warning' %>">
-              <%= t("billings.statuses.#{billing.status}") %>
-            </span>
-          </div>
           <div class="Listing__amount"><%= billing.subtotal.round(2) %> Kč</div>
         </div>
         <div class="Listing__actions">
           <% if billing.document.attached? %>
-            <%= link_to download_billing_path(billing), class: "Listing__action Listing__action--primary" do %>
+            <%= link_to download_billing_path(billing), class: "Button Button--primary" do %>
               <i class="fas fa-file-pdf"></i> PDF
             <% end %>
           <% end %>

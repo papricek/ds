@@ -9,13 +9,13 @@
             <i class="fas <%= address.customer? ? 'fa-house' : 'fa-solar-panel' %>"></i>
           </div>
           <div class="Listing__info">
-            <div class="Listing__info-primary"><%= copyable_field(address.ean) %></div>
+            <div class="Listing__info-primary">
+              <%= copyable_field(address.ean) %>
+              <span class="Listing__badge Listing__badge--<%= address.customer? ? 'success' : 'warning' %>">
+                <%= t("addresses.roles.#{address.role}") %>
+              </span>
+            </div>
             <div class="Listing__info-secondary"><%= [address.label, address.street, address.city].compact_blank.join(", ") %></div>
-          </div>
-          <div class="Listing__badges">
-            <span class="Listing__badge Listing__badge--<%= address.customer? ? 'success' : 'warning' %>">
-              <%= t("addresses.roles.#{address.role}") %>
-            </span>
           </div>
         </div>
       </div>

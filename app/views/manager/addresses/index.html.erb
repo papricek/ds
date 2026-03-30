@@ -17,20 +17,20 @@
             <i class="fas <%= address.customer? ? 'fa-house' : 'fa-solar-panel' %>"></i>
           </div>
           <div class="Listing__info">
-            <div class="Listing__info-primary"><%= copyable_field(address.ean) %></div>
+            <div class="Listing__info-primary">
+              <%= copyable_field(address.ean) %>
+              <span class="Listing__badge Listing__badge--<%= address.customer? ? 'success' : 'warning' %>">
+                <%= t("addresses.roles.#{address.role}") %>
+              </span>
+            </div>
             <div class="Listing__info-secondary"><%= address.user.name %> · <%= [address.label, address.city].compact_blank.join(", ") %></div>
-          </div>
-          <div class="Listing__badges">
-            <span class="Listing__badge Listing__badge--<%= address.customer? ? 'success' : 'warning' %>">
-              <%= t("addresses.roles.#{address.role}") %>
-            </span>
           </div>
         </div>
         <div class="Listing__actions">
-          <%= link_to edit_manager_address_path(address), class: "Listing__action Listing__action--secondary" do %>
+          <%= link_to edit_manager_address_path(address), class: "Button Button--edit" do %>
             <i class="fas fa-pen"></i> <%= t("common.edit") %>
           <% end %>
-          <%= link_to manager_address_path(address), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Listing__action Listing__action--danger" do %>
+          <%= link_to manager_address_path(address), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>

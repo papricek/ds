@@ -25,25 +25,23 @@
           <div class="Listing__info">
             <div class="Listing__info-primary">
               <%= link_to billing.variable_symbol || billing.id, manager_billing_path(billing) %>
+              <span class="Listing__badge Listing__badge--<%= billing.paid? ? 'success' : 'warning' %>">
+                <%= t("billings.statuses.#{billing.status}") %>
+              </span>
             </div>
             <div class="Listing__info-secondary">
               <%= billing.user.name %> · <%= billing.start_at.strftime("%d.%m.%Y") %> — <%= billing.end_at.strftime("%d.%m.%Y") %>
             </div>
           </div>
-          <div class="Listing__badges">
-            <span class="Listing__badge Listing__badge--<%= billing.paid? ? 'success' : 'warning' %>">
-              <%= t("billings.statuses.#{billing.status}") %>
-            </span>
-          </div>
           <div class="Listing__amount"><%= billing.subtotal.round(2) %> Kč</div>
         </div>
         <div class="Listing__actions">
           <% unless billing.paid? %>
-            <%= link_to mark_paid_manager_billing_path(billing), data: { turbo_method: :patch }, class: "Listing__action Listing__action--success" do %>
+            <%= link_to mark_paid_manager_billing_path(billing), data: { turbo_method: :patch }, class: "Button Button--secondary" do %>
               <i class="fas fa-check"></i> <%= t("billings.mark_paid") %>
             <% end %>
           <% end %>
-          <%= link_to manager_billing_path(billing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Listing__action Listing__action--danger" do %>
+          <%= link_to manager_billing_path(billing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>

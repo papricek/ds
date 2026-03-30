@@ -17,23 +17,21 @@
           <div class="Listing__info">
             <div class="Listing__info-primary">
               <%= link_to account.name, superadmin_account_path(account) %>
+              <span class="Listing__badge Listing__badge--<%= account.light? ? 'info' : 'success' %>">
+                <%= t("superadmin.accounts.plans.#{account.plan}") %>
+              </span>
+              <span class="Listing__badge Listing__badge--secondary">
+                <i class="fas fa-users"></i> <%= account.users.count %>
+              </span>
             </div>
             <div class="Listing__info-secondary"><%= account.subdomain.presence || "—" %></div>
           </div>
-          <div class="Listing__badges">
-            <span class="Listing__badge Listing__badge--<%= account.light? ? 'info' : 'success' %>">
-              <%= t("superadmin.accounts.plans.#{account.plan}") %>
-            </span>
-            <span class="Listing__badge Listing__badge--secondary">
-              <i class="fas fa-users"></i> <%= account.users.count %>
-            </span>
-          </div>
         </div>
         <div class="Listing__actions">
-          <%= link_to edit_superadmin_account_path(account), class: "Listing__action Listing__action--secondary" do %>
+          <%= link_to edit_superadmin_account_path(account), class: "Button Button--edit" do %>
             <i class="fas fa-pen"></i> <%= t("common.edit") %>
           <% end %>
-          <%= link_to superadmin_account_path(account), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Listing__action Listing__action--danger" do %>
+          <%= link_to superadmin_account_path(account), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>

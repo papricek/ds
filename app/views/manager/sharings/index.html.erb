@@ -17,23 +17,23 @@
             <i class="fas fa-share-nodes"></i>
           </div>
           <div class="Listing__info">
-            <div class="Listing__info-primary"><%= sharing.from_ean %> → <%= sharing.to_ean %></div>
+            <div class="Listing__info-primary">
+              <%= sharing.from_ean %> → <%= sharing.to_ean %>
+              <% if sharing.fixed_price %>
+                <span class="Listing__badge Listing__badge--info"><%= sharing.fixed_price %> Kč/kWh</span>
+              <% end %>
+              <span class="Listing__badge Listing__badge--<%= sharing.active? ? 'success' : sharing.pending? ? 'warning' : 'secondary' %>">
+                <%= t("sharings.statuses.#{sharing.status}") %>
+              </span>
+            </div>
             <div class="Listing__info-secondary"><%= sharing.from_address&.user&.name %> → <%= sharing.to_address&.user&.name %></div>
-          </div>
-          <div class="Listing__badges">
-            <% if sharing.fixed_price %>
-              <span class="Listing__badge Listing__badge--info"><%= sharing.fixed_price %> Kč/kWh</span>
-            <% end %>
-            <span class="Listing__badge Listing__badge--<%= sharing.active? ? 'success' : sharing.pending? ? 'warning' : 'secondary' %>">
-              <%= t("sharings.statuses.#{sharing.status}") %>
-            </span>
           </div>
         </div>
         <div class="Listing__actions">
-          <%= link_to edit_manager_sharing_path(sharing), class: "Listing__action Listing__action--secondary" do %>
+          <%= link_to edit_manager_sharing_path(sharing), class: "Button Button--edit" do %>
             <i class="fas fa-pen"></i> <%= t("common.edit") %>
           <% end %>
-          <%= link_to manager_sharing_path(sharing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Listing__action Listing__action--danger" do %>
+          <%= link_to manager_sharing_path(sharing), data: { turbo_method: :delete, turbo_confirm: t("common.confirm_delete") }, class: "Button Button--destroy" do %>
             <i class="fas fa-trash"></i> <%= t("common.delete") %>
           <% end %>
         </div>
