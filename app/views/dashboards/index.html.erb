@@ -1,17 +1,17 @@
-<% content_for :title, "Přehled" %>
+<% content_for :title, t("dashboards.title") %>
 
 <div class="mb-4">
-  <h1 class="text-white">Přehled</h1>
+  <h1 class="text-white"><%= t("dashboards.title") %></h1>
 </div>
 
-<div class="StatCardGrid">
+<div class="StatCardGrid mb-4">
   <div class="StatCard">
     <div class="StatCard__icon StatCard__icon--consumption">
       <i class="fas fa-bolt"></i>
     </div>
     <div class="StatCard__content">
-      <div class="StatCard__label">Spotřeba</div>
-      <div class="StatCard__value">&mdash; kWh</div>
+      <div class="StatCard__label"><%= t("dashboards.consumption") %></div>
+      <div class="StatCard__value"><%= @chart_data[:totals][:consumption] %> kWh</div>
     </div>
   </div>
 
@@ -20,8 +20,8 @@
       <i class="fas fa-solar-panel"></i>
     </div>
     <div class="StatCard__content">
-      <div class="StatCard__label">Výroba</div>
-      <div class="StatCard__value">&mdash; kWh</div>
+      <div class="StatCard__label"><%= t("dashboards.production") %></div>
+      <div class="StatCard__value"><%= @chart_data[:totals][:production] %> kWh</div>
     </div>
   </div>
 
@@ -30,12 +30,42 @@
       <i class="fas fa-share-nodes"></i>
     </div>
     <div class="StatCard__content">
-      <div class="StatCard__label">Sdílení</div>
-      <div class="StatCard__value">&mdash; kWh</div>
+      <div class="StatCard__label"><%= t("dashboards.sharing") %></div>
+      <div class="StatCard__value"><%= @chart_data[:totals][:sharing] %> kWh</div>
     </div>
   </div>
 </div>
 
-<div class="Card mt-4">
-  <div class="Card__title">Zatím žádná data</div>
+<div class="Card mb-4">
+  <div class="Card__title d-flex justify-content-between align-items-center">
+    <span><%= t("dashboards.energy_chart") %></span>
+    <div class="d-flex gap-1">
+      <% %w[week month quarter].each do |range| %>
+        <%= link_to t("dashboards.ranges.#{range}"),
+          dashboards_path(range: range),
+          class: "Button Button--small #{@date_range == range ? 'Button--primary' : 'Button--secondary'}",
+          data: { turbo_action: "replace" } %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="p-3" style="height: 400px;">
+    <% if @chart_data[:labels].any? %>
+      <div data-controller="dashboard-chart"
+           data-dashboard-chart-labels-value="<%= @chart_data[:labels].to_json %>"
+           data-dashboard-chart-consumption-value="<%= @chart_data[:consumption].to_json %>"
+           data-dashboard-chart-production-value="<%= @chart_data[:production].to_json %>"
+           data-dashboard-chart-sharing-value="<%= @chart_data[:sharing].to_json %>"
+           style="height: 100%;">
+        <canvas></canvas>
+      </div>
+    <% else %>
+      <div class="d-flex align-items-center justify-content-center h-100" style="color: var(--white-5);">
+        <div class="text-center">
+          <i class="fas fa-chart-bar fa-3x mb-3" style="opacity: 0.3;"></i>
+          <p><%= t("dashboards.no_data") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

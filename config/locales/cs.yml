@@ -41,6 +41,11 @@ cs:
     production: "Výroba"
     sharing: "Sdílení"
     no_data: "Zatím žádná data"
+    energy_chart: "Přehled energie"
+    ranges:
+      week: "Týden"
+      month: "Měsíc"
+      quarter: "Čtvrtletí"
   navigation:
     dashboard: "Přehled"
     users: "Uživatelé"

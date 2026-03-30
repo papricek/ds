@@ -65,4 +65,24 @@ FactoryBot.define do
     status { "active" }
     fixed_price { 2.50 }
   end
+
+  factory :edc_share, class: "Edc::Share" do
+    sequence(:from_ean) { |n| "859182400#{format("%09d", n + 300)}" }
+    sequence(:to_ean) { |n| "859182400#{format("%09d", n + 400)}" }
+    value { rand(0.5..10.0).round(4) }
+    shared_at { Time.current }
+  end
+
+  factory :edc_reading, class: "Edc::Reading" do
+    sequence(:ean) { |n| "859182400#{format("%09d", n + 500)}" }
+    original { rand(0.0..5.0).round(4) }
+    final { rand(5.0..15.0).round(4) }
+    shared_at { Time.current }
+  end
+
+  factory :credential do
+    account
+    username { "test@example.com" }
+    password { "testpassword" }
+  end
 end

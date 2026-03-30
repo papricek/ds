@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_30_120303) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_30_120402) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -66,6 +66,40 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120303) do
     t.index ["account_id"], name: "index_addresses_on_account_id"
     t.index ["ean", "account_id"], name: "index_addresses_on_ean_and_account_id", unique: true
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "credentials", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.string "username"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_credentials_on_account_id"
+  end
+
+  create_table "edc_readings", force: :cascade do |t|
+    t.string "ean", null: false
+    t.decimal "original", precision: 12, scale: 4
+    t.decimal "final", precision: 12, scale: 4
+    t.datetime "shared_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ean", "shared_at"], name: "index_edc_readings_on_ean_and_shared_at", unique: true
+    t.index ["ean"], name: "index_edc_readings_on_ean"
+    t.index ["shared_at"], name: "index_edc_readings_on_shared_at"
+  end
+
+  create_table "edc_shares", force: :cascade do |t|
+    t.string "from_ean", null: false
+    t.string "to_ean", null: false
+    t.decimal "value", precision: 12, scale: 4, null: false
+    t.datetime "shared_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["from_ean", "to_ean", "shared_at"], name: "index_edc_shares_on_from_ean_and_to_ean_and_shared_at", unique: true
+    t.index ["from_ean"], name: "index_edc_shares_on_from_ean"
+    t.index ["shared_at"], name: "index_edc_shares_on_shared_at"
+    t.index ["to_ean"], name: "index_edc_shares_on_to_ean"
   end
 
   create_table "group_customers", force: :cascade do |t|
@@ -144,6 +178,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_30_120303) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "accounts"
   add_foreign_key "addresses", "users"
+  add_foreign_key "credentials", "accounts"
   add_foreign_key "group_customers", "groups"
   add_foreign_key "group_supplier_allocations", "group_customers"
   add_foreign_key "groups", "accounts"
