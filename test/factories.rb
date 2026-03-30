@@ -17,7 +17,7 @@ FactoryBot.define do
       role { "manager" }
     end
 
-    factory :manager, traits: [:manager]
+    factory :manager, traits: [ :manager ]
   end
 
   factory :user_token do

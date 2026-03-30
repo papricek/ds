@@ -1,5 +1,5 @@
 class Manager::AddressesController < Manager::BaseController
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @addresses = Current.account.addresses.includes(:user).order(created_at: :desc).page(params[:page])

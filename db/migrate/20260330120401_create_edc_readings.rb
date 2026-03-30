@@ -7,7 +7,7 @@ class CreateEdcReadings < ActiveRecord::Migration[8.0]
       t.datetime :shared_at, null: false
       t.timestamps
     end
-    add_index :edc_readings, [:ean, :shared_at], unique: true
+    add_index :edc_readings, [ :ean, :shared_at ], unique: true
     add_index :edc_readings, :ean
     add_index :edc_readings, :shared_at
   end

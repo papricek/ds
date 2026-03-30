@@ -20,7 +20,7 @@ module Litelink
 
     config.time_zone = "Prague"
     config.i18n.default_locale = :cs
-    config.i18n.available_locales = [:cs, :en]
+    config.i18n.available_locales = [ :cs, :en ]
 
     config.active_job.queue_adapter = :sidekiq
 

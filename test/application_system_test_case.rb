@@ -2,7 +2,7 @@ require "test_helper"
 require "capybara/cuprite"
 
 Capybara.register_driver(:cuprite) do |app|
-  Capybara::Cuprite::Driver.new(app, window_size: [1400, 900], headless: true)
+  Capybara::Cuprite::Driver.new(app, window_size: [ 1400, 900 ], headless: true)
 end
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase

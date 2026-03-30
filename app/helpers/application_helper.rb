@@ -64,8 +64,8 @@ module ApplicationHelper
 
   def boolean_options_for_select
     [
-      [t("common.boolean.yes"), true],
-      [t("common.boolean.no"), false]
+      [ t("common.boolean.yes"), true ],
+      [ t("common.boolean.no"), false ]
     ]
   end
 end

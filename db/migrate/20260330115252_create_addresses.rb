@@ -11,6 +11,6 @@ class CreateAddresses < ActiveRecord::Migration[8.0]
       t.string :label
       t.timestamps
     end
-    add_index :addresses, [:ean, :account_id], unique: true
+    add_index :addresses, [ :ean, :account_id ], unique: true
   end
 end

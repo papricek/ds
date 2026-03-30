@@ -7,6 +7,6 @@ class CreateGroupCustomers < ActiveRecord::Migration[8.0]
       t.date :valid_to
       t.timestamps
     end
-    add_index :group_customers, [:group_id, :ean], unique: true
+    add_index :group_customers, [ :group_id, :ean ], unique: true
   end
 end

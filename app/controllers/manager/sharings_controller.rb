@@ -1,5 +1,5 @@
 class Manager::SharingsController < Manager::BaseController
-  before_action :set_sharing, only: [:show, :edit, :update, :destroy]
+  before_action :set_sharing, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @sharings = Current.account.sharings.includes(:from_address, :to_address).order(created_at: :desc).page(params[:page])

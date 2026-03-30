@@ -21,8 +21,8 @@ class BillingsCsvExporter
   private
 
   def headers
-    ["Variabiln\u00ED symbol", "U\u017Eivatel", "E-mail", "Obdob\u00ED od", "Obdob\u00ED do",
-     "Typ", "Stav", "Vystaveno", "Splatnost", "kWh", "\u010C\u00E1stka"]
+    [ "Variabiln\u00ED symbol", "U\u017Eivatel", "E-mail", "Obdob\u00ED od", "Obdob\u00ED do",
+     "Typ", "Stav", "Vystaveno", "Splatnost", "kWh", "\u010C\u00E1stka" ]
   end
 
   def row(billing)

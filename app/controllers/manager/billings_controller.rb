@@ -1,5 +1,5 @@
 class Manager::BillingsController < Manager::BaseController
-  before_action :set_billing, only: [:show, :edit, :update, :destroy, :mark_paid, :download]
+  before_action :set_billing, only: [ :show, :edit, :update, :destroy, :mark_paid, :download ]
 
   def index
     @billings = Current.account.billings.includes(:user, :billing_items).order(created_at: :desc).page(params[:page])

@@ -25,8 +25,8 @@ Rails.application.routes.draw do
       member do
         post :create_sharings, path: "vytvorit-sdileni"
       end
-      resources :group_customers, path: "odberatele", only: [:create, :destroy] do
-        resources :group_supplier_allocations, path: "alokace", only: [:create, :destroy]
+      resources :group_customers, path: "odberatele", only: [ :create, :destroy ] do
+        resources :group_supplier_allocations, path: "alokace", only: [ :create, :destroy ]
       end
     end
     resources :sharings, path: "sdileni"

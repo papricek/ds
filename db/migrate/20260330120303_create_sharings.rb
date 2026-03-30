@@ -10,6 +10,6 @@ class CreateSharings < ActiveRecord::Migration[8.0]
       t.decimal :fixed_price, precision: 10, scale: 4
       t.timestamps
     end
-    add_index :sharings, [:from_ean, :to_ean, :account_id], unique: true
+    add_index :sharings, [ :from_ean, :to_ean, :account_id ], unique: true
   end
 end

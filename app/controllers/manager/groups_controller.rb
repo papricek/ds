@@ -1,5 +1,5 @@
 class Manager::GroupsController < Manager::BaseController
-  before_action :set_group, only: [:show, :edit, :update, :destroy, :create_sharings]
+  before_action :set_group, only: [ :show, :edit, :update, :destroy, :create_sharings ]
 
   def index
     @groups = Current.account.groups.order(created_at: :desc).page(params[:page])

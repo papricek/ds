@@ -37,7 +37,7 @@ class AdminBillingCreator
 
   def issue_date
     day = @account.settings_issue_day_in_month.presence&.to_i || Date.current.day
-    Date.new(Date.current.year, Date.current.month, [day, 28].min)
+    Date.new(Date.current.year, Date.current.month, [ day, 28 ].min)
   rescue ArgumentError
     Date.current
   end

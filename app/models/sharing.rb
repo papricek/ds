@@ -7,7 +7,7 @@ class Sharing < ApplicationRecord
 
   validates :from_ean, presence: true
   validates :to_ean, presence: true
-  validates :from_ean, uniqueness: { scope: [:to_ean, :account_id] }
+  validates :from_ean, uniqueness: { scope: [ :to_ean, :account_id ] }
   validates :fixed_price, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   before_validation :set_eans_from_addresses

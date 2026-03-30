@@ -14,7 +14,7 @@ class CreateBillings < ActiveRecord::Migration[8.0]
       t.string :variable_symbol
       t.timestamps
     end
-    add_index :billings, [:account_id, :user_id]
+    add_index :billings, [ :account_id, :user_id ]
     add_index :billings, :variable_symbol
   end
 end

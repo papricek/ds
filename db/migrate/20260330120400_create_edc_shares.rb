@@ -7,7 +7,7 @@ class CreateEdcShares < ActiveRecord::Migration[8.0]
       t.datetime :shared_at, null: false
       t.timestamps
     end
-    add_index :edc_shares, [:from_ean, :to_ean, :shared_at], unique: true
+    add_index :edc_shares, [ :from_ean, :to_ean, :shared_at ], unique: true
     add_index :edc_shares, :from_ean
     add_index :edc_shares, :to_ean
     add_index :edc_shares, :shared_at
