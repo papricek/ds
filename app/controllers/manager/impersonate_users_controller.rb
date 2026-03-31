@@ -3,7 +3,7 @@ class Manager::ImpersonateUsersController < Manager::BaseController
 
   def update
     user = Current.account.users.find(params[:id])
-    authorize [:manager, user], :impersonate?
+    authorize [ :manager, user ], :impersonate?
 
     session[:original_user_id] = session[:user_id]
     session[:user_id] = user.id
