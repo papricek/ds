@@ -1,4 +1,4 @@
-<%= form_with(model: @contact_form, class: "Form Form--dark", html: { novalidate: true }, data: { turbo: false }) do |f| %>
+<%= form_with(model: @contact_form, class: "Form Form--dark", html: { novalidate: true }, local: false, data: { turbo: false }) do |f| %>
   <p class="Form__text"><%= t("contact_forms.form.description") %></p>
 
   <div style="display: none;">
