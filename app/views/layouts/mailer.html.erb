@@ -10,14 +10,13 @@
         <td class="container">
           <div class="content">
             <div>
-              <div style="margin-top: 10px; margin-bottom: 20px; font-size: 24px; font-weight: 700; color: #151557;">LiteLink</div>
+              <%= image_tag "https://lite.wattlink.cz/logo_full.png", style: "margin-top: 10px; margin-bottom: 20px; ", width: "200px" %>
             </div>
             <table class="main">
               <tbody>
                 <tr>
                   <td class="content-wrap">
                     <%= yield %>
-                    <%= render "layouts/mailer_footer" %>
                   </td>
                 </tr>
               </tbody>

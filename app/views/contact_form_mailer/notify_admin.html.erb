@@ -1,17 +1,20 @@
-<tr>
-  <td class="content-block">
-    <h2><%= t("contact_form_mailer.notify_admin.text") %></h2>
-  </td>
-</tr>
-<tr>
-  <td class="content-block">
-    <strong><%= t("contact_form_mailer.notify_admin.name") %>:</strong> <%= @contact_form.name %><br />
-    <strong><%= t("contact_form_mailer.notify_admin.email") %>:</strong> <%= mail_to @contact_form.email %><br />
-    <strong><%= t("contact_form_mailer.notify_admin.phone") %>:</strong> <%= @contact_form.phone %>
-    <% if @contact_form.message.present? %>
-      <br /><br />
-      <strong><%= t("contact_form_mailer.notify_admin.message") %>:</strong><br />
-      <%= simple_format @contact_form.message %>
-    <% end %>
-  </td>
-</tr>
+<table>
+  <tbody>
+    <tr>
+      <td class="content-block">
+        <%= t("contact_form_mailer.notify_admin.text") %>
+      </td>
+    </tr>
+    <tr>
+      <td class="content-block">
+        <strong><%= t(".name") %>:</strong> <%= @contact_form.name %><br />
+        <strong><%= t(".email") %>:</strong> <%= @contact_form.email %><br />
+        <strong><%= t(".phone") %>:</strong> <%= @contact_form.phone %><br />
+        <% if @contact_form.message.present? %>
+          <strong><%= t(".message") %>:</strong> <%= @contact_form.message %><br />
+        <% end %>
+      </td>
+    </tr>
+    <%= render partial: "layouts/mailer_footer" %>
+  </tbody>
+</table>
