@@ -19,24 +19,24 @@
 
         <div style="border-top: 1px solid var(--white-1); padding-top: 0.75rem;">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.email") %></span>
-            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= copyable_field(@user.email) %></span>
+            <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("users.email") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.9375rem;"><%= copyable_field(@user.email) %></span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.phone") %></span>
-            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.phone.presence || "—" %></span>
+            <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("users.phone") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.9375rem;"><%= @user.phone.presence || "—" %></span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.role") %></span>
+            <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("users.role") %></span>
             <span class="Listing__badge Listing__badge--<%= @user.manager? ? 'info' : 'secondary' %>"><%= t("users.roles.#{@user.role}") %></span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("manager.user_tabs.addresses") %></span>
-            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.addresses.count %> EAN</span>
+            <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("manager.user_tabs.addresses") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.9375rem;"><%= @user.addresses.count %> EAN</span>
           </div>
           <div class="d-flex justify-content-between align-items-center">
-            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("navigation.billings") %></span>
-            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.billings.count %></span>
+            <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("navigation.billings") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.9375rem;"><%= @user.billings.count %></span>
           </div>
         </div>
       </div>
