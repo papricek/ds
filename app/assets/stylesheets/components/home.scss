@@ -233,24 +233,31 @@
     line-height: 1.6;
   }
 
-  // Feature boxes — Wattlink rounded white-shadow pattern (dark variant)
+  // Features section — light background like Wattlink
   &__features-section {
     padding: 4rem 0;
+    background-color: var(--light-bg-color);
+
+    .Home__lead {
+      color: var(--dark-blue);
+    }
+
+    .Home__section-subtitle {
+      color: var(--dark-blue);
+    }
   }
 
   &__box {
-    background: var(--white-03);
-    box-shadow: 0px 4px 20px rgba(var(--brand-accent-rgb), 0.15);
-    border: 1px solid var(--white-08);
+    background: var(--white) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 20px var(--shadow-blue);
     border-radius: 30px;
     margin-bottom: 0;
     padding: 1.5rem;
-    transition: all 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
     height: 100%;
 
     &:hover {
-      box-shadow: 0px 4px 40px rgba(var(--brand-primary-rgb), 0.25);
-      border-color: var(--white-15);
+      box-shadow: 0px 4px 40px var(--orange);
     }
 
     &__icon {
@@ -267,13 +274,13 @@
       text-align: center;
       font-size: var(--fs-md);
       font-weight: 700;
-      color: var(--white);
+      color: var(--dark-blue);
     }
 
     &__text {
       text-align: center;
       font-size: var(--fs-sm);
-      color: var(--white-7);
+      color: var(--dark-blue);
       line-height: 1.6;
     }
   }
