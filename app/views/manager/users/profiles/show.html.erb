@@ -44,40 +44,44 @@
   </div>
 
   <div class="col-lg-8 mb-4">
-    <% [
-      { key: :yesterday, suffix: t("manager.user_stats.yesterday_suffix") },
-      { key: :week, suffix: t("manager.user_stats.week_suffix") },
-      { key: :year, suffix: t("manager.user_stats.year_suffix") }
-    ].each do |period| %>
-      <div class="StatCardGrid mb-3" style="background: var(--white-05, rgba(255,255,255,0.05)); border-radius: 0.75rem; padding: 1rem;">
-        <div class="StatCard StatCard--compact StatCard--border-success" style="background: var(--white-05, rgba(255,255,255,0.05));">
-          <div class="StatCard__icon" style="background-color: var(--semantic-success);">
-            <i class="fas fa-solar-panel"></i>
+    <div class="Card">
+      <div class="p-3">
+        <% [
+          { key: :yesterday, suffix: t("manager.user_stats.yesterday_suffix") },
+          { key: :week, suffix: t("manager.user_stats.week_suffix") },
+          { key: :year, suffix: t("manager.user_stats.year_suffix") }
+        ].each_with_index do |period, idx| %>
+          <div class="StatCardGrid<%= ' mt-3' unless idx.zero? %>">
+            <div class="StatCard StatCard--compact StatCard--border-success" style="background: var(--white-05, rgba(255,255,255,0.05));">
+              <div class="StatCard__icon" style="background-color: var(--semantic-success);">
+                <i class="fas fa-solar-panel"></i>
+              </div>
+              <div class="StatCard__content">
+                <div class="StatCard__label"><%= t("dashboards.production") %> <%= period[:suffix] %></div>
+                <div class="StatCard__value"><%= @stats[period[:key]][:production] %> <span class="StatCard__unit">kWh</span></div>
+              </div>
+            </div>
+            <div class="StatCard StatCard--compact StatCard--border-warning" style="background: var(--white-05, rgba(255,255,255,0.05));">
+              <div class="StatCard__icon" style="background-color: var(--semantic-warning);">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="StatCard__content">
+                <div class="StatCard__label"><%= t("dashboards.consumption") %> <%= period[:suffix] %></div>
+                <div class="StatCard__value"><%= @stats[period[:key]][:consumption] %> <span class="StatCard__unit">kWh</span></div>
+              </div>
+            </div>
+            <div class="StatCard StatCard--compact StatCard--border-info" style="background: var(--white-05, rgba(255,255,255,0.05));">
+              <div class="StatCard__icon" style="background-color: var(--semantic-info);">
+                <i class="fas fa-share-nodes"></i>
+              </div>
+              <div class="StatCard__content">
+                <div class="StatCard__label"><%= t("dashboards.sharing") %> <%= period[:suffix] %></div>
+                <div class="StatCard__value"><%= @stats[period[:key]][:sharing] %> <span class="StatCard__unit">kWh</span></div>
+              </div>
+            </div>
           </div>
-          <div class="StatCard__content">
-            <div class="StatCard__label"><%= t("dashboards.production") %> <%= period[:suffix] %></div>
-            <div class="StatCard__value"><%= @stats[period[:key]][:production] %> <span class="StatCard__unit">kWh</span></div>
-          </div>
-        </div>
-        <div class="StatCard StatCard--compact StatCard--border-warning" style="background: var(--white-05, rgba(255,255,255,0.05));">
-          <div class="StatCard__icon" style="background-color: var(--semantic-warning);">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div class="StatCard__content">
-            <div class="StatCard__label"><%= t("dashboards.consumption") %> <%= period[:suffix] %></div>
-            <div class="StatCard__value"><%= @stats[period[:key]][:consumption] %> <span class="StatCard__unit">kWh</span></div>
-          </div>
-        </div>
-        <div class="StatCard StatCard--compact StatCard--border-info" style="background: var(--white-05, rgba(255,255,255,0.05));">
-          <div class="StatCard__icon" style="background-color: var(--semantic-info);">
-            <i class="fas fa-share-nodes"></i>
-          </div>
-          <div class="StatCard__content">
-            <div class="StatCard__label"><%= t("dashboards.sharing") %> <%= period[:suffix] %></div>
-            <div class="StatCard__value"><%= @stats[period[:key]][:sharing] %> <span class="StatCard__unit">kWh</span></div>
-          </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
