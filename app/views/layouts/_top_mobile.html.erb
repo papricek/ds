@@ -79,6 +79,14 @@
       </li>
     </ul>
     <ul class="Nav__list Nav__list--vertical Nav__list--bottom">
+      <% if impersonated? %>
+        <li class="Nav__item">
+          <%= link_to manager_impersonate_user_path, data: { turbo_method: :delete }, class: "Nav__link Nav__link--muted" do %>
+            <i class="fas fa-arrow-rotate-left"></i>
+            <%= t("manager.impersonate.back") %>
+          <% end %>
+        </li>
+      <% end %>
       <li class="Nav__item">
         <%= link_to session_path, data: { turbo_method: :delete }, class: "Nav__link Nav__link--muted" do %>
           <i class="fas fa-arrow-right-from-bracket"></i>

@@ -6,6 +6,7 @@ class Manager::UserPolicy < ApplicationPolicy
   def update? = user.manager? && same_account?
   def edit? = update?
   def destroy? = user.manager? && same_account? && record != user
+  def impersonate? = user.manager? && same_account? && record != user
 
   class Scope < Scope
     def resolve

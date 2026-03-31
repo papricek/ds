@@ -89,6 +89,14 @@
         </li>
       <% end %>
       <li><hr class="dropdown-divider"></li>
+      <% if impersonated? %>
+        <li>
+          <%= link_to manager_impersonate_user_path, data: { turbo_method: :delete }, class: "dropdown-item dropdown-item--muted" do %>
+            <i class="fas fa-arrow-rotate-left"></i>
+            <%= t("manager.impersonate.back") %>
+          <% end %>
+        </li>
+      <% end %>
       <li>
         <%= link_to session_path, data: { turbo_method: :delete }, class: "dropdown-item dropdown-item--muted" do %>
           <i class="fas fa-arrow-right-from-bracket"></i>

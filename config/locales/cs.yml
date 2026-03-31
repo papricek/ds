@@ -185,6 +185,11 @@ cs:
     last_sync: "Poslední synchronizace"
     never_synced: "Zatím nesynchronizováno"
   manager:
+    impersonate:
+      action: "Převzít roli"
+      started: "Přepnutí na uživatele %{email} bylo úspěšné."
+      stopped: "Přepnutí na původního uživatele bylo úspěšné."
+      back: "Zpět na správce"
     navigation:
       dashboard: "Přehled"
       users: "Uživatelé"
