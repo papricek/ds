@@ -198,6 +198,11 @@ cs:
       sharings: "Sdílení"
       billings: "Vyúčtování"
       settings: "Nastavení"
+    user_settings:
+      danger_zone: "Nebezpečná zóna"
+      destroy_warning: "Smazání uživatele %{name} je nevratné. Budou odstraněny všechny jeho adresy, sdílení a vyúčtování."
+      destroy_confirm: "Opravdu chcete smazat uživatele %{name}? Tato akce je nevratná."
+      destroy_button: "Smazat uživatele"
     user_tabs:
       profile: "Profil"
       details: "Detaily"
