@@ -318,6 +318,12 @@ cs:
       destroyed: "Uživatel byl smazán."
       new_user: "Nový uživatel"
       edit_user: "Upravit uživatele"
+  layouts:
+    mailer_footer:
+      in_case_of_problems: "V případě dotazů nás neváhejte kontaktovat."
+      thanks: "S pozdravem"
+      team: "Tým LiteLink"
+      email: "info@wattlink.cz"
   contact_forms:
     new:
       heading: "Mám zájem o LiteLink"

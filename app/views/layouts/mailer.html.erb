@@ -1,57 +1,32 @@
-<!DOCTYPE html>
-<html lang="cs">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style>
-      body {
-        font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #333333;
-        margin: 0;
-        padding: 0;
-      }
-
-      .email-wrapper {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .email-header {
-        padding: 20px 0;
-        border-bottom: 2px solid #1a1a2e;
-        margin-bottom: 20px;
-      }
-
-      .email-header__logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #1a1a2e;
-        text-decoration: none;
-      }
-
-      .email-footer {
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid #e0e0e0;
-        font-size: 0.875rem;
-        color: #999999;
-      }
-    </style>
+    <%= stylesheet_link_tag "mailer" %>
   </head>
-
   <body>
-    <div class="email-wrapper">
-      <div class="email-header">
-        <span class="email-header__logo">LiteLink</span>
-      </div>
-
-      <%= yield %>
-
-      <div class="email-footer">
-        LiteLink
-      </div>
-    </div>
+    <table class="body-wrap">
+      <tbody>
+      <tr>
+        <td></td>
+        <td class="container">
+          <div class="content">
+            <div>
+              <div style="margin-top: 10px; margin-bottom: 20px; font-size: 24px; font-weight: 700; color: #151557;">LiteLink</div>
+            </div>
+            <table class="main">
+              <tbody>
+                <tr>
+                  <td class="content-wrap">
+                    <%= yield %>
+                    <%= render "layouts/mailer_footer" %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
   </body>
 </html>
