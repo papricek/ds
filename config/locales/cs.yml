@@ -49,7 +49,7 @@ cs:
         groups: "Skupiny a alokace"
         billings: "Hromadné vyúčtování s PDF"
         edc: "Automatická synchronizace dat z EDC"
-        chrome: "Chrome plugin pro snadný export z EDC portálu"
+        chrome: "Chrome extension pro EDC"
         support: "E-mailová podpora"
       cta: "Mám zájem"
     cta:
