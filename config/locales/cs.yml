@@ -199,6 +199,10 @@ cs:
       billings: "Vyúčtování"
       settings: "Nastavení"
       settings_placeholder: "Nastavení uživatele bude brzy k dispozici."
+    user_stats:
+      yesterday: "Včera"
+      week: "Posledních 7 dní"
+      year: "Tento rok"
   help:
     title: "Nápověda"
     users_title: "Uživatelé"

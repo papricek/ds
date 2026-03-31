@@ -3,84 +3,86 @@
 <%= render "manager/shared/navigation" %>
 <%= render "manager/users/tab_navigation", active_tab: "profile" %>
 
-<div class="mt-3">
-  <div class="row">
-    <div class="col-lg-6 mb-4">
-      <div class="Card">
-        <div class="Card__title"><%= t("users.details") %></div>
-        <div class="Box">
-          <div class="Box__items">
-            <div class="Box__item">
-              <div class="Box__item-icon"><i class="fas fa-user"></i></div>
-              <div class="Box__item-main">
-                <div class="Box__item-label"><%= t("users.name") %></div>
-                <div class="Box__item-value"><%= @user.name %></div>
-              </div>
-            </div>
-            <div class="Box__item">
-              <div class="Box__item-icon"><i class="fas fa-envelope"></i></div>
-              <div class="Box__item-main">
-                <div class="Box__item-label"><%= t("users.email") %></div>
-                <div class="Box__item-value"><%= copyable_field(@user.email) %></div>
-              </div>
-            </div>
-            <div class="Box__item">
-              <div class="Box__item-icon"><i class="fas fa-phone"></i></div>
-              <div class="Box__item-main">
-                <div class="Box__item-label"><%= t("users.phone") %></div>
-                <div class="Box__item-value"><%= @user.phone.presence || "—" %></div>
-              </div>
-            </div>
-            <div class="Box__item">
-              <div class="Box__item-icon"><i class="fas fa-shield-halved"></i></div>
-              <div class="Box__item-main">
-                <div class="Box__item-label"><%= t("users.role") %></div>
-                <div class="Box__item-value">
-                  <span class="Badge Badge--<%= @user.manager? ? 'info' : 'neutral' %>">
-                    <%= t("users.roles.#{@user.role}") %>
-                  </span>
-                </div>
-              </div>
-            </div>
+<div class="row mt-3">
+  <div class="col-lg-4 mb-4">
+    <div class="Card">
+      <div class="p-3">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="Listing__status Listing__status--<%= @user.manager? ? 'admin' : 'user' %>" style="width: 3.5rem; height: 3.5rem; font-size: 1.5rem;">
+            <i class="fas <%= @user.manager? ? 'fa-shield-halved' : 'fa-user' %>"></i>
+          </div>
+          <div>
+            <div style="color: var(--neutral-white); font-weight: 600; font-size: 1.1rem;"><%= @user.name %></div>
+            <div style="color: var(--white-5); font-size: 0.875rem;"><%= @user.email %></div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--white-1); padding-top: 0.75rem;">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.email") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= copyable_field(@user.email) %></span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.phone") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.phone.presence || "—" %></span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("users.role") %></span>
+            <span class="Listing__badge Listing__badge--<%= @user.manager? ? 'info' : 'secondary' %>"><%= t("users.roles.#{@user.role}") %></span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("manager.user_tabs.addresses") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.addresses.count %> EAN</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span style="color: var(--white-5); font-size: 0.8125rem;"><%= t("navigation.billings") %></span>
+            <span style="color: var(--neutral-white); font-size: 0.8125rem;"><%= @user.billings.count %></span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="col-lg-6 mb-4">
-      <div class="Card">
-        <div class="Card__title"><%= t("manager.user_tabs.addresses") %> (<%= @user.addresses.count %>)</div>
-        <% if @user.addresses.any? %>
-          <div class="Table Table--small">
-            <table>
-              <thead>
-                <tr>
-                  <th><%= t("addresses.ean") %></th>
-                  <th><%= t("addresses.role") %></th>
-                  <th><%= t("addresses.city") %></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @user.addresses.each do |address| %>
-                  <tr>
-                    <td><%= copyable_field(address.ean) %></td>
-                    <td>
-                      <span class="Badge Badge--<%= address.customer? ? 'consumption' : 'production' %> Badge--small">
-                        <%= t("addresses.roles.#{address.role}") %>
-                      </span>
-                    </td>
-                    <td><%= address.city %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
+  <div class="col-lg-8 mb-4">
+    <% [
+      { key: :yesterday, label: t("manager.user_stats.yesterday"), icon_period: "fa-clock" },
+      { key: :week, label: t("manager.user_stats.week"), icon_period: "fa-calendar-week" },
+      { key: :year, label: t("manager.user_stats.year"), icon_period: "fa-calendar" }
+    ].each do |period| %>
+      <div class="mb-3">
+        <div style="color: var(--white-5); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+          <i class="fas <%= period[:icon_period] %> me-1"></i> <%= period[:label] %>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+          <div class="StatCard StatCard--compact StatCard--border-success">
+            <div class="StatCard__icon" style="background-color: var(--semantic-success);">
+              <i class="fas fa-solar-panel"></i>
+            </div>
+            <div class="StatCard__content">
+              <div class="StatCard__label"><%= t("dashboards.production") %></div>
+              <div class="StatCard__value"><%= @stats[period[:key]][:production] %> <span class="StatCard__unit">kWh</span></div>
+            </div>
           </div>
-        <% else %>
-          <div class="p-3 text-center" style="color: var(--white-5);">
-            <%= t("addresses.no_addresses") %>
+          <div class="StatCard StatCard--compact StatCard--border-warning">
+            <div class="StatCard__icon" style="background-color: var(--semantic-warning);">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="StatCard__content">
+              <div class="StatCard__label"><%= t("dashboards.consumption") %></div>
+              <div class="StatCard__value"><%= @stats[period[:key]][:consumption] %> <span class="StatCard__unit">kWh</span></div>
+            </div>
           </div>
-        <% end %>
+          <div class="StatCard StatCard--compact StatCard--border-info">
+            <div class="StatCard__icon" style="background-color: var(--semantic-info);">
+              <i class="fas fa-share-nodes"></i>
+            </div>
+            <div class="StatCard__content">
+              <div class="StatCard__label"><%= t("dashboards.sharing") %></div>
+              <div class="StatCard__value"><%= @stats[period[:key]][:sharing] %> <span class="StatCard__unit">kWh</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
