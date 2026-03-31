@@ -203,6 +203,9 @@ cs:
       yesterday: "Včera"
       week: "Posledních 7 dní"
       year: "Tento rok"
+      yesterday_suffix: "včera"
+      week_suffix: "tento týden"
+      year_suffix: "tento rok"
   help:
     title: "Nápověda"
     users_title: "Uživatelé"

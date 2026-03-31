@@ -45,21 +45,18 @@
 
   <div class="col-lg-8 mb-4">
     <% [
-      { key: :yesterday, label: t("manager.user_stats.yesterday"), icon_period: "fa-clock" },
-      { key: :week, label: t("manager.user_stats.week"), icon_period: "fa-calendar-week" },
-      { key: :year, label: t("manager.user_stats.year"), icon_period: "fa-calendar" }
+      { key: :yesterday, suffix: t("manager.user_stats.yesterday_suffix") },
+      { key: :week, suffix: t("manager.user_stats.week_suffix") },
+      { key: :year, suffix: t("manager.user_stats.year_suffix") }
     ].each do |period| %>
-      <div class="mb-3">
-        <div style="color: var(--white-5); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
-          <i class="fas <%= period[:icon_period] %> me-1"></i> <%= period[:label] %>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+      <div class="Card mb-3">
+        <div class="StatCardGrid p-3">
           <div class="StatCard StatCard--compact StatCard--border-success">
             <div class="StatCard__icon" style="background-color: var(--semantic-success);">
               <i class="fas fa-solar-panel"></i>
             </div>
             <div class="StatCard__content">
-              <div class="StatCard__label"><%= t("dashboards.production") %></div>
+              <div class="StatCard__label"><%= t("dashboards.production") %> <%= period[:suffix] %></div>
               <div class="StatCard__value"><%= @stats[period[:key]][:production] %> <span class="StatCard__unit">kWh</span></div>
             </div>
           </div>
@@ -68,7 +65,7 @@
               <i class="fas fa-bolt"></i>
             </div>
             <div class="StatCard__content">
-              <div class="StatCard__label"><%= t("dashboards.consumption") %></div>
+              <div class="StatCard__label"><%= t("dashboards.consumption") %> <%= period[:suffix] %></div>
               <div class="StatCard__value"><%= @stats[period[:key]][:consumption] %> <span class="StatCard__unit">kWh</span></div>
             </div>
           </div>
@@ -77,7 +74,7 @@
               <i class="fas fa-share-nodes"></i>
             </div>
             <div class="StatCard__content">
-              <div class="StatCard__label"><%= t("dashboards.sharing") %></div>
+              <div class="StatCard__label"><%= t("dashboards.sharing") %> <%= period[:suffix] %></div>
               <div class="StatCard__value"><%= @stats[period[:key]][:sharing] %> <span class="StatCard__unit">kWh</span></div>
             </div>
           </div>
