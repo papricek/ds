@@ -27,13 +27,13 @@
           </div>
         </div>
         <div class="Listing__actions">
+          <%= link_to manager_user_details_path(user), class: "Button Button--primary Button--small" do %>
+            <i class="fas fa-pen"></i> <%= t("common.edit") %>
+          <% end %>
           <% if user != Current.user %>
             <%= link_to manager_impersonate_user_path(id: user), data: { turbo_method: :patch }, class: "Button Button--secondary Button--small" do %>
               <i class="fas fa-user-secret"></i> <%= t("manager.impersonate.action") %>
             <% end %>
-          <% end %>
-          <%= link_to manager_user_details_path(user), class: "Button Button--secondary Button--small" do %>
-            <i class="fas fa-pen"></i> <%= t("common.edit") %>
           <% end %>
         </div>
       </div>

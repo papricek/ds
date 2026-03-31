@@ -120,6 +120,20 @@ end
 | `kaminari` | Pagination |
 | `rqrcode` | QR codes on billing receipts |
 
+### Release Flow
+
+- **Commit** after each meaningful change automatically — don't wait for the user to ask.
+- **Push** only when explicitly asked: `git push origin main`
+- **Deploy** only when explicitly asked: `ssh deploy@litelink.wattlink.cz 'cd /var/www/litelink && git pull && RAILS_ENV=production bundle install && RAILS_ENV=production bin/rails db:migrate && RAILS_ENV=production bin/rails assets:precompile && sudo systemctl restart litelink'`
+
+### Playwright / System Tests
+
+When running Playwright or browser-based tests, start the Rails server on port 3001 (not 3000) to avoid killing the user's running dev server:
+
+```bash
+chruby-exec ruby-3.2.2 -- bin/rails server -p 3001
+```
+
 ### Architecture Rules
 
 - Multi-tenant via `Account` — always scope queries to `Current.account`
