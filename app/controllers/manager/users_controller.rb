@@ -6,6 +6,7 @@ class Manager::UsersController < Manager::BaseController
   end
 
   def show
+    redirect_to manager_user_profile_path(@user)
   end
 
   def new

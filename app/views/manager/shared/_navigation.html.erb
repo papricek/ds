@@ -1,15 +1,9 @@
 <div class="Tabs mb-4">
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-      <%= link_to manager_users_path, class: "nav-link #{'active' if controller_path == 'manager/users'}" do %>
+      <%= link_to manager_users_path, class: "nav-link #{'active' if controller_path.start_with?('manager/users')}" do %>
         <%= icon("users", font_style: "fas") %>
         <%= t("manager.navigation.users") %>
-      <% end %>
-    </li>
-    <li class="nav-item" role="presentation">
-      <%= link_to manager_addresses_path, class: "nav-link #{'active' if controller_path == 'manager/addresses'}" do %>
-        <%= icon("location-dot", font_style: "fas") %>
-        <%= t("manager.navigation.addresses") %>
       <% end %>
     </li>
     <li class="nav-item" role="presentation">

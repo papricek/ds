@@ -18,8 +18,19 @@ Rails.application.routes.draw do
     resource :user, path: "uzivatel", only: [ :edit, :update ]
   end
 
+  resources :sharings, path: "sdileni", only: [ :index ]
+
   namespace :manager, path: "sprava" do
-    resources :users, path: "uzivatele"
+    resources :users, path: "uzivatele" do
+      scope module: :users do
+        resource :profile, only: [ :show ], controller: "profiles", path: "profil"
+        resource :details, only: [ :show, :update ], controller: "details", path: "detaily"
+        resources :addresses, path: "eany", only: [ :index, :new, :create, :edit, :update, :destroy ]
+        resource :user_sharings, only: [ :show ], controller: "sharings", path: "sdileni"
+        resource :user_billings, only: [ :show ], controller: "billings", path: "vyuctovani"
+        resource :user_settings, only: [ :show ], controller: "settings", path: "nastaveni-uzivatele"
+      end
+    end
     resources :addresses, path: "adresy"
     resources :groups, path: "skupiny" do
       member do

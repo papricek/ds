@@ -1,0 +1,12 @@
+<% content_for :title, @user.name %>
+
+<%= render "manager/shared/navigation" %>
+<%= render "manager/users/tab_navigation", active_tab: "settings" %>
+
+<div class="mt-3">
+  <div class="Card">
+    <div class="p-3 text-center" style="color: var(--white-5);">
+      <%= t("manager.user_tabs.settings_placeholder") %>
+    </div>
+  </div>
+</div>

@@ -12,9 +12,9 @@ class Manager::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "show displays user" do
+  test "show redirects to profile" do
     get manager_user_path(@user)
-    assert_response :success
+    assert_redirected_to manager_user_profile_path(@user)
   end
 
   test "new renders form" do

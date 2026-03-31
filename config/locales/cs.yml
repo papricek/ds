@@ -55,7 +55,7 @@ cs:
     billings: "Vyúčtování"
     settings: "Nastavení"
     profile: "Profil"
-    manager: "Správa"
+    manager: "Admin"
   users:
     name: "Jméno"
     email: "E-mail"
@@ -160,6 +160,7 @@ cs:
     destroyed: "Sdílení bylo smazáno."
     new_sharing: "Nové sdílení"
     edit_sharing: "Upravit sdílení"
+    no_sharings: "Zatím žádná sdílení."
     statuses:
       pending: "Čekající"
       active: "Aktivní"
@@ -190,6 +191,14 @@ cs:
       sharings: "Sdílení"
       billings: "Vyúčtování"
       settings: "Nastavení"
+    user_tabs:
+      profile: "Profil"
+      details: "Detaily"
+      addresses: "EANy"
+      sharings: "Sdílení"
+      billings: "Vyúčtování"
+      settings: "Nastavení"
+      settings_placeholder: "Nastavení uživatele bude brzy k dispozici."
   help:
     title: "Nápověda"
     users_title: "Uživatelé"

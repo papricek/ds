@@ -13,9 +13,9 @@
       </li>
       <% unless Current.user.manager_or_superadmin? %>
         <li class="Nav__item">
-          <%= link_to addresses_path, class: "Nav__link #{'active' if controller_path == 'addresses'}" do %>
-            <i class="fas fa-location-dot me-2"></i>
-            <%= t("navigation.addresses") %>
+          <%= link_to sharings_path, class: "Nav__link #{'active' if controller_path == 'sharings'}" do %>
+            <i class="fas fa-share-nodes me-2"></i>
+            <%= t("navigation.sharings") %>
           <% end %>
         </li>
         <li class="Nav__item">
@@ -29,7 +29,7 @@
         <li class="Nav__item">
           <%= link_to manager_users_path, class: "Nav__link #{'active' if controller_path.start_with?('manager')}" do %>
             <i class="fas fa-shield-halved me-2"></i>
-            <%= t("navigation.manager") %>
+            Admin
           <% end %>
         </li>
       <% end %>

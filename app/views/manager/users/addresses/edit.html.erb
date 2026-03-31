@@ -1,0 +1,10 @@
+<% content_for :title, @user.name %>
+
+<%= render "manager/shared/navigation" %>
+<%= render "manager/users/tab_navigation", active_tab: "addresses" %>
+
+<div class="mt-3">
+  <div class="Card">
+    <%= render "form", url: manager_user_address_path(@user, @address) %>
+  </div>
+</div>

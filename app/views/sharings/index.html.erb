@@ -1,0 +1,34 @@
+<% content_for :title, t("navigation.sharings") %>
+
+<div class="Listing Listing--responsive">
+  <% @sharings.each do |sharing| %>
+    <div class="Listing__item">
+      <div class="Listing__content Listing__content--single-line">
+        <div class="Listing__main">
+          <div class="Listing__status Listing__status--combined">
+            <i class="fas fa-share-nodes"></i>
+          </div>
+          <div class="Listing__info">
+            <div class="Listing__info-primary">
+              <%= sharing.from_ean %> → <%= sharing.to_ean %>
+              <% if sharing.fixed_price %>
+                <span class="Listing__badge Listing__badge--info"><%= sharing.fixed_price %> Kč/kWh</span>
+              <% end %>
+              <span class="Listing__badge Listing__badge--<%= sharing.active? ? 'success' : sharing.pending? ? 'warning' : 'secondary' %>">
+                <%= t("sharings.statuses.#{sharing.status}") %>
+              </span>
+            </div>
+            <div class="Listing__info-secondary"><%= sharing.from_address&.user&.name %> → <%= sharing.to_address&.user&.name %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @sharings.empty? %>
+  <div class="Listing__empty">
+    <div class="Listing__empty-icon"><i class="fas fa-share-nodes"></i></div>
+    <div class="Listing__empty-description"><%= t("sharings.no_sharings") %></div>
+  </div>
+<% end %>
