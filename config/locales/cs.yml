@@ -318,6 +318,26 @@ cs:
       destroyed: "Uživatel byl smazán."
       new_user: "Nový uživatel"
       edit_user: "Upravit uživatele"
+  contact_forms:
+    new:
+      heading: "Mám zájem o LiteLink"
+    form:
+      description: "Vyplňte prosím následující údaje a my se vám brzy ozveme."
+      name: "Jméno"
+      email: "E-mail"
+      phone: "Telefon"
+      message: "Vaše zpráva"
+      submit: "Odeslat"
+    create:
+      notice_success: "Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme."
+  contact_form_mailer:
+    notify_admin:
+      subject: "Nová zpráva z kontaktního formuláře LiteLink"
+      text: "Byla odeslána nová zpráva z kontaktního formuláře."
+      name: "Jméno"
+      email: "E-mail"
+      phone: "Telefon"
+      message: "Zpráva"
   activerecord:
     models:
       user: "Uživatel"

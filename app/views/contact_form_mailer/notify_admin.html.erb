@@ -1,0 +1,22 @@
+<h2><%= t("contact_form_mailer.notify_admin.text") %></h2>
+
+<table>
+  <tr>
+    <td><strong><%= t("contact_form_mailer.notify_admin.name") %>:</strong></td>
+    <td><%= @contact_form.name %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("contact_form_mailer.notify_admin.email") %>:</strong></td>
+    <td><%= mail_to @contact_form.email %></td>
+  </tr>
+  <tr>
+    <td><strong><%= t("contact_form_mailer.notify_admin.phone") %>:</strong></td>
+    <td><%= @contact_form.phone %></td>
+  </tr>
+  <% if @contact_form.message.present? %>
+    <tr>
+      <td><strong><%= t("contact_form_mailer.notify_admin.message") %>:</strong></td>
+      <td><%= simple_format @contact_form.message %></td>
+    </tr>
+  <% end %>
+</table>

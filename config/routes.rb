@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resource :session, path: "prihlaseni", only: [ :new, :create, :destroy ]
   resources :password_resets, path: "obnova-hesla", only: [ :new, :create, :edit, :update ]
+  resources :contact_forms, only: [ :new, :create ]
 
   resources :dashboards, path: "prehled", only: [ :index ]
 

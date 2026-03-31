@@ -136,7 +136,7 @@
               <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.chrome") %></li>
               <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.support") %></li>
             </ul>
-            <a href="#contact" class="Home__cta-btn Home__cta-btn--large"><%= t("home.pricing.cta") %></a>
+            <%= link_to t("home.pricing.cta"), new_contact_form_path, remote: true, data: { turbo: false }, class: "Home__cta-btn Home__cta-btn--large" %>
           </div>
         </div>
       </div>
@@ -148,9 +148,9 @@
       <%= image_tag "logo_white.svg", style: "width: 200px;" %>
       <h2 class="Home__message__title"><%= t("home.cta.title") %></h2>
       <p class="Home__message__lead"><%= t("home.cta.description") %></p>
-      <a href="mailto:info@wattlink.cz" class="Home__cta-btn Home__cta-btn--large">
+      <%= link_to new_contact_form_path, remote: true, data: { turbo: false }, class: "Home__cta-btn Home__cta-btn--large" do %>
         <i class="fas fa-envelope me-2"></i><%= t("home.cta.button") %>
-      </a>
+      <% end %>
     </div>
   </div>
 

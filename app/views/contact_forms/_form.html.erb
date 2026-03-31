@@ -1,0 +1,34 @@
+<%= form_with(model: @contact_form, class: "Form Form--dark", html: { novalidate: true }, data: { turbo: false }) do |f| %>
+  <p class="Form__text"><%= t("contact_forms.form.description") %></p>
+
+  <div style="display: none;">
+    <%= f.text_field :website_url, tabindex: -1, autocomplete: "off" %>
+  </div>
+
+  <div class="form-floating Form__group">
+    <%= f.text_field :name, class: "form-control Form__input #{error_class_for(@contact_form, :name)}", placeholder: t("contact_forms.form.name") %>
+    <%= f.label :name, t("contact_forms.form.name"), class: "Form__label Form__label--required" %>
+    <%= error_message_for(@contact_form, :name) %>
+  </div>
+
+  <div class="form-floating Form__group">
+    <%= f.email_field :email, class: "form-control Form__input #{error_class_for(@contact_form, :email)}", placeholder: t("contact_forms.form.email") %>
+    <%= f.label :email, t("contact_forms.form.email"), class: "Form__label Form__label--required" %>
+    <%= error_message_for(@contact_form, :email) %>
+  </div>
+
+  <div class="form-floating Form__group">
+    <%= f.text_field :phone, class: "form-control Form__input #{error_class_for(@contact_form, :phone)}", placeholder: t("contact_forms.form.phone") %>
+    <%= f.label :phone, t("contact_forms.form.phone"), class: "Form__label Form__label--required" %>
+    <%= error_message_for(@contact_form, :phone) %>
+  </div>
+
+  <div class="form-floating Form__group">
+    <%= f.text_area :message, class: "form-control Form__input", placeholder: t("contact_forms.form.message"), style: "height: 100px;" %>
+    <%= f.label :message, t("contact_forms.form.message"), class: "Form__label" %>
+  </div>
+
+  <div class="Form__actions">
+    <%= f.submit t("contact_forms.form.submit"), class: "Form__btn w-100", data: { disable_with: disable_with } %>
+  </div>
+<% end %>
