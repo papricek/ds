@@ -124,7 +124,42 @@ end
 
 - **Commit** after each meaningful change automatically — don't wait for the user to ask.
 - **Push** only when explicitly asked: `git push origin main`
-- **Deploy** only when explicitly asked: `ssh deploy@litelink.wattlink.cz 'cd /var/www/litelink && git pull && RAILS_ENV=production bundle install && RAILS_ENV=production bin/rails db:migrate && RAILS_ENV=production bin/rails assets:precompile && sudo systemctl restart litelink'`
+- **Deploy** only when explicitly asked. See deployment section below.
+
+### Deployment
+
+**Server:** cuketa (home server) — see `/Users/patrikjira/Work/claude/server.md` for full docs.
+
+| Network | SSH | Usage |
+|---------|-----|-------|
+| LAN | `ssh 192.168.1.111` | Preferred — faster transfers |
+| WAN | `ssh 89.203.217.139` | Fallback when not on home network |
+
+**Architecture:** `Browser → Traefik (TLS/Let's Encrypt) → Thruster (port 80) → Puma (port 3000)`
+
+**URL:** `https://lite.wattlink.cz`
+
+**Server paths:**
+- App: `~/projects/apps/litelink/docker-compose.yml`
+- Traefik routes: `~/projects/traefik/conf.d/routes.yml`
+- PostgreSQL: shared `postgres` container on `web` network (user: `litelink`, password: `litelink`)
+
+**Redeploy steps:**
+
+```bash
+# 1. Build image (amd64 for the server)
+docker build --platform linux/amd64 -t litelink:latest .
+
+# 2. Transfer to server (use LAN address)
+docker save litelink:latest | gzip > /tmp/litelink.tar.gz
+scp /tmp/litelink.tar.gz patrikjira@192.168.1.111:/tmp/
+ssh patrikjira@192.168.1.111 "docker load < /tmp/litelink.tar.gz"
+
+# 3. Restart container
+ssh patrikjira@192.168.1.111 "cd ~/projects/apps/litelink && docker compose up -d"
+```
+
+Database migrations run automatically on boot via `db:prepare` in Docker entrypoint.
 
 ### Playwright / System Tests
 
