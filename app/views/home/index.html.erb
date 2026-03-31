@@ -1,0 +1,150 @@
+<div class="Home">
+  <nav class="Home__nav">
+    <div class="Home__nav-inner">
+      <div class="Home__nav-logo">
+        <%= image_tag "logo_white.svg", alt: "LiteLink", style: "height: 28px;" %>
+      </div>
+      <div class="Home__nav-links">
+        <a href="#features"><%= t("home.nav.features") %></a>
+        <a href="#pricing"><%= t("home.nav.pricing") %></a>
+        <a href="#contact"><%= t("home.nav.contact") %></a>
+        <%= link_to t("home.nav.login"), new_session_path, class: "Home__nav-btn" %>
+      </div>
+    </div>
+  </nav>
+
+  <section class="Home__hero">
+    <div class="Home__hero-content">
+      <div class="Home__hero-badge"><%= t("home.hero.badge") %></div>
+      <h1 class="Home__hero-title"><%= t("home.hero.title") %></h1>
+      <p class="Home__hero-lead"><%= t("home.hero.lead") %></p>
+      <div class="Home__hero-actions">
+        <%= link_to new_session_path, class: "Home__btn Home__btn--primary" do %>
+          <i class="fas fa-arrow-right me-2"></i><%= t("home.hero.cta") %>
+        <% end %>
+        <a href="#features" class="Home__btn Home__btn--secondary">
+          <i class="fas fa-chevron-down me-2"></i><%= t("home.hero.learn_more") %>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="Home__features" id="features">
+    <div class="Home__section-inner">
+      <h2 class="Home__section-title"><%= t("home.features.title") %></h2>
+      <p class="Home__section-subtitle"><%= t("home.features.subtitle") %></p>
+
+      <div class="Home__features-grid">
+        <div class="Home__feature">
+          <div class="Home__feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3><%= t("home.features.simple.title") %></h3>
+          <p><%= t("home.features.simple.description") %></p>
+        </div>
+        <div class="Home__feature">
+          <div class="Home__feature-icon Home__feature-icon--teal"><i class="fas fa-coins"></i></div>
+          <h3><%= t("home.features.cheap.title") %></h3>
+          <p><%= t("home.features.cheap.description") %></p>
+        </div>
+        <div class="Home__feature">
+          <div class="Home__feature-icon Home__feature-icon--blue"><i class="fas fa-shield-halved"></i></div>
+          <h3><%= t("home.features.solid.title") %></h3>
+          <p><%= t("home.features.solid.description") %></p>
+        </div>
+        <div class="Home__feature">
+          <div class="Home__feature-icon Home__feature-icon--green"><i class="fas fa-leaf"></i></div>
+          <h3><%= t("home.features.green.title") %></h3>
+          <p><%= t("home.features.green.description") %></p>
+        </div>
+        <div class="Home__feature">
+          <div class="Home__feature-icon Home__feature-icon--purple"><i class="fas fa-chart-line"></i></div>
+          <h3><%= t("home.features.dashboard.title") %></h3>
+          <p><%= t("home.features.dashboard.description") %></p>
+        </div>
+        <div class="Home__feature">
+          <div class="Home__feature-icon Home__feature-icon--red"><i class="fas fa-file-invoice"></i></div>
+          <h3><%= t("home.features.billing.title") %></h3>
+          <p><%= t("home.features.billing.description") %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Home__how" id="how">
+    <div class="Home__section-inner">
+      <h2 class="Home__section-title"><%= t("home.how.title") %></h2>
+      <div class="Home__steps">
+        <div class="Home__step">
+          <div class="Home__step-number">1</div>
+          <h3><%= t("home.how.step1.title") %></h3>
+          <p><%= t("home.how.step1.description") %></p>
+        </div>
+        <div class="Home__step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="Home__step">
+          <div class="Home__step-number">2</div>
+          <h3><%= t("home.how.step2.title") %></h3>
+          <p><%= t("home.how.step2.description") %></p>
+        </div>
+        <div class="Home__step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="Home__step">
+          <div class="Home__step-number">3</div>
+          <h3><%= t("home.how.step3.title") %></h3>
+          <p><%= t("home.how.step3.description") %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Home__pricing" id="pricing">
+    <div class="Home__section-inner">
+      <h2 class="Home__section-title"><%= t("home.pricing.title") %></h2>
+      <p class="Home__section-subtitle"><%= t("home.pricing.subtitle") %></p>
+
+      <div class="Home__pricing-card">
+        <div class="Home__pricing-badge"><%= t("home.pricing.badge") %></div>
+        <div class="Home__pricing-price">
+          <span class="Home__pricing-amount">490</span>
+          <span class="Home__pricing-currency"><%= t("home.pricing.currency") %></span>
+        </div>
+        <div class="Home__pricing-period"><%= t("home.pricing.period") %></div>
+        <ul class="Home__pricing-features">
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.users") %></li>
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.addresses") %></li>
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.groups") %></li>
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.billings") %></li>
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.edc") %></li>
+          <li><i class="fas fa-check"></i> <%= t("home.pricing.includes.support") %></li>
+        </ul>
+        <a href="#contact" class="Home__btn Home__btn--primary" style="width: 100%;"><%= t("home.pricing.cta") %></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="Home__cta" id="contact">
+    <div class="Home__section-inner">
+      <div class="Home__cta-content">
+        <%= image_tag "logo_white.svg", alt: "LiteLink", style: "height: 36px; margin-bottom: 1.5rem;" %>
+        <h2><%= t("home.cta.title") %></h2>
+        <p><%= t("home.cta.description") %></p>
+        <a href="mailto:info@wattlink.cz" class="Home__btn Home__btn--primary">
+          <i class="fas fa-envelope me-2"></i><%= t("home.cta.button") %>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="Home__footer">
+    <div class="Home__section-inner">
+      <div class="Home__footer-content">
+        <div class="Home__footer-brand">
+          <%= image_tag "logo_white.svg", alt: "LiteLink", style: "height: 24px; opacity: 0.7;" %>
+          <p><%= t("home.footer.tagline") %></p>
+        </div>
+        <div class="Home__footer-links">
+          <a href="mailto:info@wattlink.cz">info@wattlink.cz</a>
+          <span>|</span>
+          <a href="https://wattlink.cz" target="_blank">wattlink.cz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

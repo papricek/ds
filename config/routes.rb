@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "sessions#new"
+  root "home#index"
 
   resource :session, path: "prihlaseni", only: [ :new, :create, :destroy ]
   resources :password_resets, path: "obnova-hesla", only: [ :new, :create, :edit, :update ]
