@@ -85,9 +85,9 @@ class DashboardChartService
 
   def totals
     {
-      consumption: readings_in_period.where(ean: customer_eans).sum("COALESCE(final, 0) - COALESCE(original, 0)").round(2),
-      production: readings_in_period.where(ean: supplier_eans).sum("COALESCE(final, 0) - COALESCE(original, 0)").round(2),
-      sharing: shares_in_period.where(to_ean: customer_eans).sum(:value).round(2)
+      consumption: readings_in_period.where(ean: customer_eans).sum("ABS(COALESCE(final, 0) - COALESCE(original, 0))").round(2),
+      production: readings_in_period.where(ean: supplier_eans).sum("ABS(COALESCE(final, 0) - COALESCE(original, 0))").round(2),
+      sharing: shares_in_period.where(to_ean: customer_eans).sum(:value).abs.round(2)
     }
   end
 

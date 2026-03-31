@@ -18,9 +18,9 @@ class Manager::Users::ProfilesController < Manager::Users::BaseController
     shares = Edc::Share.where(shared_at: period)
 
     {
-      production: readings.where(ean: @supplier_eans).sum("COALESCE(final, 0) - COALESCE(original, 0)").round(2),
-      consumption: readings.where(ean: @customer_eans).sum("COALESCE(final, 0) - COALESCE(original, 0)").round(2),
-      sharing: shares.where(to_ean: @customer_eans).sum(:value).round(2)
+      production: readings.where(ean: @supplier_eans).sum("ABS(COALESCE(final, 0) - COALESCE(original, 0))").round(2),
+      consumption: readings.where(ean: @customer_eans).sum("ABS(COALESCE(final, 0) - COALESCE(original, 0))").round(2),
+      sharing: shares.where(to_ean: @customer_eans).sum(:value).abs.round(2)
     }
   end
 end

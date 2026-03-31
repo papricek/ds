@@ -40,7 +40,7 @@ export default class extends Controller {
 
     if (this.hasProductionValue && this.productionValue.some(v => v > 0)) {
       datasets.push({
-        label: "Výroba",
+        label: "Přetoky",
         data: this.productionValue,
         backgroundColor: "rgba(34, 197, 94, 0.6)",
         borderColor: "rgba(34, 197, 94, 1)",

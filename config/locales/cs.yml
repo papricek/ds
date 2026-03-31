@@ -38,7 +38,7 @@ cs:
   dashboards:
     title: "Přehled"
     consumption: "Spotřeba"
-    production: "Výroba"
+    production: "Přetoky"
     sharing: "Sdílení"
     no_data: "Zatím žádná data"
     energy_chart: "Přehled energie"
