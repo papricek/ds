@@ -5,7 +5,7 @@
 
 <div class="mt-3">
   <div class="Card">
-    <%= form_with(model: @user, url: manager_user_details_path(@user), method: :patch, class: "Form Form--dark") do |f| %>
+    <%= form_with(model: @user, url: manager_user_details_path(@user), method: :patch, class: "Form Form--dark", html: { novalidate: true }) do |f| %>
       <div class="row">
         <div class="col-md-6">
           <div class="form-floating Form__group">

@@ -1,7 +1,7 @@
 <% content_for :title, t("settings.title") %>
 
 <div class="Card">
-  <%= form_with(model: @user, url: settings_user_path, method: :patch, class: "Form Form--dark") do |f| %>
+  <%= form_with(model: @user, url: settings_user_path, method: :patch, class: "Form Form--dark", html: { novalidate: true }) do |f| %>
     <div class="row">
       <div class="col-md-6">
         <div class="form-floating Form__group">
@@ -36,7 +36,7 @@
 
 <div class="Card mt-4">
   <div class="Card__title"><%= t("settings.change_password") %></div>
-  <%= form_with(url: settings_user_path, method: :patch, class: "Form Form--dark") do |f| %>
+  <%= form_with(url: settings_user_path, method: :patch, class: "Form Form--dark", html: { novalidate: true }) do |f| %>
     <div class="row">
       <div class="col-md-4">
         <div class="form-floating Form__group">

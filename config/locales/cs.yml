@@ -259,12 +259,17 @@ cs:
       group: "Skupina"
       sharing: "Sdílení"
     errors:
+      messages:
+        blank: "je povinné"
+        taken: "je již používán"
+        invalid: "není platný"
       models:
         user:
           attributes:
             email:
               taken: "je již používán"
               invalid: "není platný e-mail"
+              blank: "je povinné"
             name:
               blank: "je povinné"
         address:

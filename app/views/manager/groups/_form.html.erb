@@ -1,4 +1,4 @@
-<%= form_with(model: @group, url: url, class: "Form Form--dark") do |f| %>
+<%= form_with(model: @group, url: url, class: "Form Form--dark", html: { novalidate: true }) do |f| %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-floating Form__group">
