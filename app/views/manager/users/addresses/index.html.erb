@@ -25,7 +25,7 @@
                   <%= t("addresses.roles.#{address.role}") %>
                 </span>
               </div>
-              <div class="Listing__info-secondary"><%= [address.label, address.city].compact_blank.join(", ") %></div>
+              <div class="Listing__info-secondary"><%= [address.label, address.street].compact_blank.join(" · ") %></div>
             </div>
           </div>
           <div class="Listing__actions">

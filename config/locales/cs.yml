@@ -80,6 +80,8 @@ cs:
     city: "Město"
     zip: "PSČ"
     label: "Označení"
+    description: "Popisek"
+    address: "Adresa"
     created: "Adresa byla vytvořena."
     updated: "Adresa byla aktualizována."
     new_address: "Nová adresa"
