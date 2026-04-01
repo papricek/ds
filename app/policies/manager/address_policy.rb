@@ -1,11 +1,11 @@
 class Manager::AddressPolicy < ApplicationPolicy
-  def index? = user.manager?
-  def show? = user.manager? && same_account?
-  def create? = user.manager?
+  def index? = user.admin?
+  def show? = user.admin? && same_account?
+  def create? = user.admin?
   def new? = create?
-  def update? = user.manager? && same_account?
+  def update? = user.admin? && same_account?
   def edit? = update?
-  def destroy? = user.manager? && same_account?
+  def destroy? = user.admin? && same_account?
 
   class Scope < Scope
     def resolve

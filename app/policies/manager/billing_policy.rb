@@ -1,16 +1,16 @@
 class Manager::BillingPolicy < ApplicationPolicy
-  def index? = user.manager?
-  def show? = user.manager? && record.account == user.account
-  def create? = user.manager?
+  def index? = user.admin?
+  def show? = user.admin? && record.account == user.account
+  def create? = user.admin?
   def new? = create?
-  def update? = user.manager? && record.account == user.account
+  def update? = user.admin? && record.account == user.account
   def edit? = update?
-  def destroy? = user.manager? && record.account == user.account
-  def mark_paid? = user.manager? && record.account == user.account
-  def download? = user.manager? && record.account == user.account
-  def batch_new? = user.manager?
-  def batch_create? = user.manager?
-  def export? = user.manager?
+  def destroy? = user.admin? && record.account == user.account
+  def mark_paid? = user.admin? && record.account == user.account
+  def download? = user.admin? && record.account == user.account
+  def batch_new? = user.admin?
+  def batch_create? = user.admin?
+  def export? = user.admin?
 
   class Scope < Scope
     def resolve

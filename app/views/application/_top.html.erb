@@ -11,7 +11,7 @@
           <%= t("navigation.dashboard") %>
         <% end %>
       </li>
-      <% unless Current.user.manager_or_superadmin? %>
+      <% unless Current.user.admin_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to sharings_path, class: "Nav__link #{'active' if controller_path == 'sharings'}" do %>
             <i class="fas fa-share-nodes me-2"></i>
@@ -25,7 +25,7 @@
           <% end %>
         </li>
       <% end %>
-      <% if Current.user.manager_or_superadmin? %>
+      <% if Current.user.admin_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to manager_users_path, class: "Nav__link #{'active' if controller_path.start_with?('manager')}" do %>
             <i class="fas fa-shield-halved me-2"></i>
@@ -62,7 +62,7 @@
               <span class="badge bg-secondary"><%= Current.user.id %></span>
             <% end %>
           </div>
-          <div class="dropdown-header__role"><%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %></div>
+          <div class="dropdown-header__role"><%= t("users.roles.#{Current.user.role}") %></div>
         </div>
       </div>
       <li><hr class="dropdown-divider"></li>
@@ -72,7 +72,7 @@
           <%= t("navigation.profile") %>
         <% end %>
       </li>
-      <% if Current.user.manager_or_superadmin? %>
+      <% if Current.user.admin_or_superadmin? %>
         <li>
           <%= link_to edit_manager_settings_path, class: "dropdown-item" do %>
             <i class="fas fa-gear"></i>

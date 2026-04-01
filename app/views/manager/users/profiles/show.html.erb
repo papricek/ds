@@ -8,8 +8,8 @@
     <div class="Card">
       <div class="p-3">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <div class="Listing__status Listing__status--<%= @user.manager? ? 'admin' : 'user' %>" style="width: 3.5rem; height: 3.5rem; font-size: 1.5rem;">
-            <i class="fas <%= @user.manager? ? 'fa-shield-halved' : 'fa-user' %>"></i>
+          <div class="Listing__status Listing__status--<%= @user.admin? ? 'admin' : 'user' %>" style="width: 3.5rem; height: 3.5rem; font-size: 1.5rem;">
+            <i class="fas <%= @user.admin? ? 'fa-shield-halved' : 'fa-user' %>"></i>
           </div>
           <div>
             <div style="color: var(--neutral-white); font-weight: 600; font-size: 1.1rem;"><%= @user.name %></div>
@@ -28,7 +28,7 @@
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("users.role") %></span>
-            <span class="Listing__badge Listing__badge--<%= @user.manager? ? 'info' : 'secondary' %>"><%= t("users.roles.#{@user.role}") %></span>
+            <span class="Listing__badge Listing__badge--<%= @user.admin? ? 'info' : 'secondary' %>"><%= t("users.roles.#{@user.role}") %></span>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span style="color: var(--white-5); font-size: 0.9375rem;"><%= t("manager.user_tabs.addresses") %></span>

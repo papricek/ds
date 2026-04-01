@@ -51,7 +51,7 @@ module ApplicationHelper
 
   def user_icon_class_for_role(role)
     case role
-    when "manager" then "fa-shield-halved"
+    when "admin" then "fa-shield-halved"
     when "user" then "fa-user"
     else "fa-circle-user"
     end

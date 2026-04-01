@@ -73,7 +73,7 @@
                   <td><%= user.name %></td>
                   <td><%= copyable_field(user.email) %></td>
                   <td>
-                    <span class="Badge Badge--<%= user.manager? ? 'info' : 'neutral' %> Badge--small">
+                    <span class="Badge Badge--<%= user.admin? ? 'info' : 'neutral' %> Badge--small">
                       <%= t("users.roles.#{user.role}") %>
                     </span>
                   </td>

@@ -2,7 +2,7 @@ class BillingPolicy < ApplicationPolicy
   def index? = true
 
   def show?
-    user.manager? || record.user == user
+    user.admin? || record.user == user
   end
 
   def download?
@@ -11,7 +11,7 @@ class BillingPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      return scope.where(account: user.account) if user.manager?
+      return scope.where(account: user.account) if user.admin?
       scope.where(user: user)
     end
   end

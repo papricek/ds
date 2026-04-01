@@ -8,7 +8,7 @@ class DashboardsController < AppController
   private
 
   def scoped_addresses
-    if Current.user.manager?
+    if Current.user.admin?
       Current.account.addresses
     else
       Current.user.addresses

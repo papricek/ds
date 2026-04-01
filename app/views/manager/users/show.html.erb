@@ -46,7 +46,7 @@
             <div class="Box__item-main">
               <div class="Box__item-label"><%= t("users.role") %></div>
               <div class="Box__item-value">
-                <span class="Badge Badge--<%= @user.manager? ? 'info' : 'neutral' %>">
+                <span class="Badge Badge--<%= @user.admin? ? 'info' : 'neutral' %>">
                   <%= t("users.roles.#{@user.role}") %>
                 </span>
               </div>

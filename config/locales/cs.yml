@@ -133,7 +133,7 @@ cs:
     updated: "Uživatel byl aktualizován."
     destroyed: "Uživatel byl smazán."
     roles:
-      manager: "Správce"
+      admin: "Admin"
       user: "Uživatel"
   addresses:
     ean: "EAN"

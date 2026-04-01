@@ -6,7 +6,7 @@
       </div>
       <div class="dropdown-header__info">
         <div class="dropdown-header__name"><%= Current.user.name %></div>
-        <div class="dropdown-header__role"><%= Current.user.manager? ? t("users.roles.manager") : t("users.roles.user") %></div>
+        <div class="dropdown-header__role"><%= t("users.roles.#{Current.user.role}") %></div>
       </div>
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -19,7 +19,7 @@
           <%= t("navigation.dashboard") %>
         <% end %>
       </li>
-      <% unless Current.user.manager_or_superadmin? %>
+      <% unless Current.user.admin_or_superadmin? %>
         <li class="Nav__item">
           <%= link_to sharings_path, class: "Nav__link #{'active' if controller_path == 'sharings'}" do %>
             <i class="fas fa-share-nodes"></i>
@@ -34,7 +34,7 @@
         </li>
       <% end %>
     </ul>
-    <% if Current.user.manager_or_superadmin? %>
+    <% if Current.user.admin_or_superadmin? %>
       <hr class="Nav__divider">
       <ul class="Nav__list Nav__list--vertical">
         <li class="Nav__item">

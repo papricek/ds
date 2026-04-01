@@ -1,5 +1,5 @@
 class Manager::ImpersonateUsersController < Manager::BaseController
-  skip_before_action :require_manager, only: :destroy
+  skip_before_action :require_admin, only: :destroy
 
   def update
     user = Current.account.users.find(params[:id])

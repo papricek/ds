@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :billings, dependent: :destroy
 
-  enum :role, { manager: "manager", user: "user" }, default: :user
+  enum :role, { admin: "admin", user: "user" }, default: :user
 
   validates :name, presence: true
   validates :email, presence: true
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :email, format: {
     with: %r{\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z}i
   }
-  validates :role, inclusion: { in: %w[manager user] }
+  validates :role, inclusion: { in: %w[admin user] }
 
   scope :confirmed, -> { where(confirmed: true) }
   scope :unconfirmed, -> { where(confirmed: false) }
@@ -40,8 +40,8 @@ class User < ApplicationRecord
     SUPERADMINS.include?(email)
   end
 
-  def manager_or_superadmin?
-    manager? || superadmin?
+  def admin_or_superadmin?
+    admin? || superadmin?
   end
 
   def generate_password_reset_token
