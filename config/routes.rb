@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :addresses, path: "adresy", only: [ :index ]
 
   namespace :settings, path: "nastaveni" do
-    resource :user, path: "uzivatel", only: [ :edit, :update ]
+    resource :profile, path: "profil", only: [ :show, :update ]
+    resource :password, path: "heslo", only: [ :show, :update ]
+    resources :addresses, path: "eany", only: [ :index, :new, :create, :edit, :update, :destroy ]
   end
 
   resources :sharings, path: "sdileni", only: [ :index ]

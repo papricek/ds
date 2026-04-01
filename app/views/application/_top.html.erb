@@ -67,9 +67,9 @@
       </div>
       <li><hr class="dropdown-divider"></li>
       <li>
-        <%= link_to edit_settings_user_path, class: "dropdown-item" do %>
+        <%= link_to settings_profile_path, class: "dropdown-item" do %>
           <i class="fas fa-pen-to-square"></i>
-          <%= t("navigation.profile") %>
+          <%= t("navigation.edit_profile") %>
         <% end %>
       </li>
       <% if Current.user.admin_or_superadmin? %>

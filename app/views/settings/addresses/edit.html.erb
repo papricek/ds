@@ -1,0 +1,7 @@
+<% content_for :title, t("addresses.edit_address") %>
+
+<%= render "settings/tab_navigation", active_tab: "addresses" %>
+
+<div class="Card">
+  <%= render "form", url: settings_address_path(@address) %>
+</div>

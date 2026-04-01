@@ -117,6 +117,7 @@ cs:
     billings: "Vyúčtování"
     settings: "Nastavení"
     profile: "Profil"
+    edit_profile: "Upravit profil"
     manager: "Admin"
   users:
     name: "Jméno"
@@ -240,7 +241,12 @@ cs:
     supply_day: "Den dodání"
     due_days: "Splatnost (dny)"
     updated: "Nastavení bylo aktualizováno."
-    change_password: "Změna hesla"
+    tabs:
+      profile: "Profil"
+      password: "Změnit heslo"
+      addresses: "EANy"
+    change_password: "Změnit heslo"
+    password_updated: "Heslo bylo změněno."
     current_password: "Současné heslo"
     invalid_current_password: "Současné heslo není správné."
     credentials:
