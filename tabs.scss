@@ -49,18 +49,24 @@
   }
 
   .nav-tabs-secondary {
-    border-top: 1px solid var(--white-2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
     background-color: var(--black-05);
-    padding: 0.5rem 0rem;
+    padding: 0.5rem 0.5rem;
 
     .nav-link {
+      display: inline-flex;
+      align-items: center;
       border: none;
       border-radius: 0.25rem;
       color: var(--neutral-white);
-      padding: 0.25rem 0.5rem;
+      padding: 0.375rem 0.75rem;
       font-size: var(--fs-xs);
-      margin-right: 0.5rem;
       font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
 
       &:hover {
         background-color: var(--white-1);

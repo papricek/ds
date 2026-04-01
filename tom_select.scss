@@ -25,6 +25,13 @@
     }
   }
 
+  &.ts-wrapper--inline {
+    &.single .ts-control,
+    &.multi .ts-control {
+      min-height: calc(3.5rem + 2px) !important;
+    }
+  }
+
   .ts-control {
     background-color: transparent !important;
     border: none !important;
