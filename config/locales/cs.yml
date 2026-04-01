@@ -245,6 +245,12 @@ cs:
       profile: "Profil"
       password: "Změnit heslo"
       addresses: "EANy"
+    profile:
+      title: "Osobní údaje"
+      text: "Aktualizujte své jméno, e-mail a telefonní číslo."
+    password:
+      title: "Změna hesla"
+      text: "Pro změnu hesla zadejte současné heslo a nové heslo."
     change_password: "Změnit heslo"
     password_updated: "Heslo bylo změněno."
     current_password: "Současné heslo"

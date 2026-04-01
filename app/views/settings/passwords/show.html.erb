@@ -2,31 +2,28 @@
 
 <%= render "settings/tab_navigation", active_tab: "password" %>
 
-<div class="Card">
+<div class="Box">
+  <h1 class="Form__title"><%= t("settings.password.title") %></h1>
+  <p class="Form__text"><%= t("settings.password.text") %></p>
+
   <%= form_with(url: settings_password_path, method: :patch, class: "Form Form--dark", html: { novalidate: true }) do |f| %>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-floating Form__group">
-          <%= f.password_field :current_password, class: "form-control Form__input", name: "current_password", placeholder: t("settings.current_password"), autocomplete: "current-password" %>
-          <%= f.label :current_password, t("settings.current_password"), class: "Form__label Form__label--required" %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-floating Form__group">
-          <%= f.password_field :password, class: "form-control Form__input", name: "user[password]", placeholder: t("password_resets.new_password"), autocomplete: "new-password" %>
-          <%= f.label :password, t("password_resets.new_password"), class: "Form__label Form__label--required" %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-floating Form__group">
-          <%= f.password_field :password_confirmation, class: "form-control Form__input", name: "user[password_confirmation]", placeholder: t("password_resets.confirm_password"), autocomplete: "new-password" %>
-          <%= f.label :password_confirmation, t("password_resets.confirm_password"), class: "Form__label Form__label--required" %>
-        </div>
-      </div>
+    <div class="form-floating Form__group">
+      <%= f.password_field :current_password, class: "form-control Form__input", name: "current_password", placeholder: t("settings.current_password"), autocomplete: "current-password" %>
+      <%= f.label :current_password, t("settings.current_password"), class: "Form__label" %>
+    </div>
+
+    <div class="form-floating Form__group">
+      <%= f.password_field :password, class: "form-control Form__input", name: "user[password]", placeholder: t("password_resets.new_password"), autocomplete: "new-password" %>
+      <%= f.label :password, t("password_resets.new_password"), class: "Form__label" %>
+    </div>
+
+    <div class="form-floating Form__group">
+      <%= f.password_field :password_confirmation, class: "form-control Form__input", name: "user[password_confirmation]", placeholder: t("password_resets.confirm_password"), autocomplete: "new-password" %>
+      <%= f.label :password_confirmation, t("password_resets.confirm_password"), class: "Form__label" %>
     </div>
 
     <div class="Form__actions">
-      <%= f.submit t("settings.change_password"), class: "Form__btn", data: { disable_with: disable_with } %>
+      <%= f.submit t("settings.change_password"), class: "Form__btn w-100" %>
     </div>
   <% end %>
 </div>
