@@ -13,11 +13,11 @@ FactoryBot.define do
     role { "user" }
     confirmed { true }
 
-    trait :manager do
-      role { "manager" }
+    trait :admin do
+      role { "admin" }
     end
 
-    factory :manager, traits: [ :manager ]
+    factory :admin, traits: [ :admin ]
   end
 
   factory :user_token do

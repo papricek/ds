@@ -2,10 +2,10 @@ require "test_helper"
 
 class Manager::AddressesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @manager = create(:manager, account: @account, email: "manager@example.com", password: "password123")
+    @admin = create(:admin, account: @account, email: "manager@example.com", password: "password123")
     @user = create(:user, account: @account)
     @address = create(:address, user: @user, account: @account)
-    login_as(@manager)
+    login_as(@admin)
   end
 
   test "index lists addresses" do

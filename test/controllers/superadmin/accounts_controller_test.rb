@@ -2,7 +2,7 @@ require "test_helper"
 
 class Superadmin::AccountsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @superadmin = create(:user, account: @account, email: "patrikjira@gmail.com", password: "password123", role: "manager")
+    @superadmin = create(:user, account: @account, email: "patrikjira@gmail.com", password: "password123", role: "admin")
     @other_account = create(:account, name: "Other Account")
     login_as(@superadmin)
   end
@@ -49,7 +49,7 @@ class Superadmin::AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "non-superadmin cannot access" do
     delete session_path
-    regular = create(:manager, account: @account, email: "regular_mgr@example.com", password: "password123")
+    regular = create(:admin, account: @account, email: "regular_mgr@example.com", password: "password123")
     login_as(regular)
     get "/superadmin/ucty"
     assert_response :not_found

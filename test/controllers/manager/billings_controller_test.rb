@@ -2,10 +2,10 @@ require "test_helper"
 
 class Manager::BillingsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @manager = create(:manager, account: @account, email: "manager@example.com", password: "password123")
+    @admin = create(:admin, account: @account, email: "manager@example.com", password: "password123")
     @user = create(:user, account: @account)
     @billing = create(:billing, account: @account, user: @user)
-    login_as(@manager)
+    login_as(@admin)
   end
 
   test "index lists billings" do

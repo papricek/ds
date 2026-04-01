@@ -2,7 +2,7 @@ require "test_helper"
 
 class Superadmin::UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @superadmin = create(:user, account: @account, email: "patrikjira@gmail.com", password: "password123", role: "manager")
+    @superadmin = create(:user, account: @account, email: "patrikjira@gmail.com", password: "password123", role: "admin")
     @target_account = create(:account, name: "Target Account")
     @target_user = create(:user, account: @target_account)
     login_as(@superadmin)

@@ -21,10 +21,10 @@ class DashboardsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "manager sees account-wide data" do
+  test "admin sees account-wide data" do
     delete session_path
-    manager = create(:manager, account: @account, email: "manager@example.com", password: "password123")
-    login_as(manager)
+    admin = create(:admin, account: @account, email: "admin@example.com", password: "password123")
+    login_as(admin)
     get dashboards_path
     assert_response :success
   end

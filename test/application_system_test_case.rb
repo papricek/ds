@@ -10,7 +10,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   setup do
     @account = create(:account)
-    @manager = create(:manager, account: @account)
+    @admin = create(:admin, account: @account)
   end
 
   private

@@ -2,9 +2,9 @@ require "test_helper"
 
 class Manager::GroupsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @manager = create(:manager, account: @account, email: "manager@example.com", password: "password123")
+    @admin = create(:admin, account: @account, email: "manager@example.com", password: "password123")
     @group = create(:group, account: @account)
-    login_as(@manager)
+    login_as(@admin)
   end
 
   test "index lists groups" do

@@ -33,16 +33,16 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.authenticate("wrong")
   end
 
-  test "manager role" do
-    user = create(:manager, account: @account)
-    assert user.manager?
+  test "admin role" do
+    user = create(:admin, account: @account)
+    assert user.admin?
     assert_not user.user?
   end
 
   test "user role by default" do
     user = create(:user, account: @account)
     assert user.user?
-    assert_not user.manager?
+    assert_not user.admin?
   end
 
   test "generate password reset token" do

@@ -2,8 +2,8 @@ require "test_helper"
 
 class Manager::HelpControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @manager = create(:manager, account: @account, email: "manager@example.com", password: "password123")
-    login_as(@manager)
+    @admin = create(:admin, account: @account, email: "manager@example.com", password: "password123")
+    login_as(@admin)
   end
 
   test "show renders help" do
