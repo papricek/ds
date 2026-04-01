@@ -1,8 +1,0 @@
-<% if @contact_form.persisted? %>
-  var modalElement = document.getElementById("modal-window");
-  var modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) { modalInstance.hide(); }
-  Turbo.visit("<%= root_path %>");
-<% else %>
-  document.getElementById("contact-form").outerHTML = "<%= j(render 'new') %>";
-<% end %>

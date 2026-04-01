@@ -1,7 +1,0 @@
-<% content_for :title, @address.label.presence || @address.ean %>
-
-<%= render "manager/shared/navigation" %>
-
-<div class="Card">
-  <%= render "form", url: manager_address_path(@address) %>
-</div>

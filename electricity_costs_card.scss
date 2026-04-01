@@ -1,0 +1,52 @@
+.ElectricityCostsCard {
+  &__metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+  }
+
+  &__metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  &__metric-value {
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+
+  &__kwh-value {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.7;
+  }
+
+  &__sharing-total {
+    padding: 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 0.375rem;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+  }
+
+  &__sharing-total-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__sharing-total-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  &__sharing-total-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+}

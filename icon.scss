@@ -1,0 +1,164 @@
+.Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    color: var(--neutral-white);
+  }
+
+  &--circular {
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &--small {
+    width: 2rem;
+    height: 2rem;
+
+    i {
+      font-size: 0.9rem;
+    }
+
+    &.Icon--circular {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &--medium {
+    width: 3rem;
+    height: 3rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    &.Icon--circular {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &--large {
+    width: 4rem;
+    height: 4rem;
+
+    i {
+      font-size: 2rem;
+    }
+
+    &.Icon--circular {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &--xlarge {
+    width: 5rem;
+    height: 5rem;
+
+    i {
+      font-size: 2.5rem;
+    }
+
+    &.Icon--circular {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  &--production {
+    background-color: var(--brand-primary);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--consumption {
+    background-color: var(--brand-secondary);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--sharing {
+    background-color: var(--navy-blue);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--success {
+    background-color: var(--semantic-success);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--warning {
+    background-color: var(--semantic-warning);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--danger {
+    background-color: var(--semantic-danger);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  &--info {
+    background-color: var(--semantic-info);
+
+    i {
+      color: var(--neutral-white);
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--small {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      i {
+        font-size: 0.7rem;
+      }
+    }
+
+    &--medium {
+      width: 2.5rem;
+      height: 2.5rem;
+
+      i {
+        font-size: 1.25rem;
+      }
+    }
+
+    &--large {
+      width: 3.5rem;
+      height: 3.5rem;
+
+      i {
+        font-size: 1.75rem;
+      }
+    }
+
+    &--xlarge {
+      width: 4rem;
+      height: 4rem;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}

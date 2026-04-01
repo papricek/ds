@@ -1,9 +1,0 @@
-<% content_for :title, t("superadmin.users.edit_user") %>
-
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="text-white mb-0"><%= t("superadmin.users.edit_user") %></h1>
-</div>
-
-<div class="Card">
-  <%= render "form", url: superadmin_account_user_path(@account, @user) %>
-</div>

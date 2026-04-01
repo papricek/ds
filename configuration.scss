@@ -1,0 +1,235 @@
+:root {
+  --brand-primary: var(--theme-brand-primary, hsla(33, 100%, 61%, 1));
+  --brand-secondary: var(--theme-brand-secondary, hsla(169, 47%, 49%, 1));
+  --brand-dark: var(--theme-brand-dark, hsla(240, 75%, 13%, 1));
+  --brand-accent: var(--theme-brand-accent, hsla(240, 93%, 29%, 1));
+
+  --neutral-white: #ffffff;
+  --neutral-black: #000000;
+  --neutral-transparent: transparent;
+
+  --semantic-success: hsla(142, 76%, 36%, 1);
+  --semantic-warning: hsla(39, 85%, 40%, 1);
+  --semantic-danger: hsla(0, 84%, 48%, 1);
+  --semantic-info: hsla(213, 97%, 27%, 1);
+
+  --brand-primary-h: var(--theme-brand-primary-h, 33);
+  --brand-primary-s: var(--theme-brand-primary-s, 100%);
+  --brand-primary-l: var(--theme-brand-primary-l, 61%);
+  --brand-primary-rgb: var(--theme-brand-primary-rgb, 255, 156, 0);
+
+  --brand-secondary-h: var(--theme-brand-secondary-h, 169);
+  --brand-secondary-s: var(--theme-brand-secondary-s, 47%);
+  --brand-secondary-l: var(--theme-brand-secondary-l, 49%);
+  --brand-secondary-rgb: var(--theme-brand-secondary-rgb, 67, 187, 162);
+
+  --brand-dark-h: var(--theme-brand-dark-h, 240);
+  --brand-dark-s: var(--theme-brand-dark-s, 75%);
+  --brand-dark-l: var(--theme-brand-dark-l, 13%);
+  --brand-dark-rgb: var(--theme-brand-dark-rgb, 21, 21, 87);
+
+  --brand-accent-h: var(--theme-brand-accent-h, 240);
+  --brand-accent-s: var(--theme-brand-accent-s, 93%);
+  --brand-accent-l: var(--theme-brand-accent-l, 29%);
+  --brand-accent-rgb: var(--theme-brand-accent-rgb, 14, 42, 149);
+
+  --semantic-success-h: 142;
+  --semantic-success-s: 76%;
+  --semantic-success-l: 36%;
+  --semantic-success-rgb: 22, 163, 74;
+
+  --semantic-warning-h: 39;
+  --semantic-warning-s: 85%;
+  --semantic-warning-l: 40%;
+  --semantic-warning-rgb: 189, 130, 25;
+
+  --semantic-danger-h: 0;
+  --semantic-danger-s: 84%;
+  --semantic-danger-l: 48%;
+  --semantic-danger-rgb: 225, 37, 37;
+
+  --semantic-info-h: 213;
+  --semantic-info-s: 97%;
+  --semantic-info-l: 27%;
+  --semantic-info-rgb: 2, 66, 152;
+
+  --neutral-white-rgb: 255, 255, 255;
+  --neutral-black-rgb: 0, 0, 0;
+
+  --bs-link-color: rgba(255, 255, 255, 0.7);
+  --bs-link-hover-color: rgba(255, 255, 255, 1);
+  --bs-link-color-rgb: 255, 255, 255;
+  --bs-nav-link-color: rgba(255, 255, 255, 0.7);
+  --bs-nav-link-hover-color: rgba(255, 255, 255, 1);
+
+  --cta-base-color: var(--brand-primary);
+  --cta-secondary-color: var(--brand-secondary);
+  --orange: var(--brand-primary);
+  --dark-bg-color: var(--brand-dark);
+  --navy-blue: var(--brand-accent);
+
+  --white: var(--neutral-white);
+  --black: var(--neutral-black);
+  --transparent: var(--neutral-transparent);
+
+  --dark-nav-bg: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) + 7%));
+  --dark-header-bg: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) - 2%));
+
+  --dark-blue: hsl(var(--brand-dark-h), calc(var(--brand-dark-s) - 20%), calc(var(--brand-dark-l) + 9%));
+
+  --light-bg-color: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) * 0.2), 98%);
+  --light-gray: hsla(var(--brand-primary-h), 10%, 95%, 0.58);
+
+  --white-02: rgba(var(--neutral-white-rgb), 0.02);
+  --white-03: rgba(var(--neutral-white-rgb), 0.03);
+  --white-05: rgba(var(--neutral-white-rgb), 0.05);
+  --white-08: rgba(var(--neutral-white-rgb), 0.08);
+  --white-1: rgba(var(--neutral-white-rgb), 0.1);
+  --white-15: rgba(var(--neutral-white-rgb), 0.15);
+  --white-2: rgba(var(--neutral-white-rgb), 0.2);
+  --white-25: rgba(var(--neutral-white-rgb), 0.25);
+  --white-3: rgba(var(--neutral-white-rgb), 0.3);
+  --white-5: rgba(var(--neutral-white-rgb), 0.5);
+  --white-6: rgba(var(--neutral-white-rgb), 0.6);
+  --white-7: rgba(var(--neutral-white-rgb), 0.7);
+  --white-75: rgba(var(--neutral-white-rgb), 0.75);
+  --white-85: rgba(var(--neutral-white-rgb), 0.85);
+
+  --black-05: rgba(var(--neutral-black-rgb), 0.05);
+  --black-1: rgba(var(--neutral-black-rgb), 0.1);
+  --black-15: rgba(var(--neutral-black-rgb), 0.15);
+  --black-2: rgba(var(--neutral-black-rgb), 0.2);
+  --black-5: rgba(var(--neutral-black-rgb), 0.5);
+
+  --cta-base-color-1: rgba(var(--brand-primary-rgb), 0.1);
+  --cta-base-color-2: rgba(var(--brand-primary-rgb), 0.2);
+  --cta-base-color-25: rgba(var(--brand-primary-rgb), 0.25);
+  --cta-base-color-3: rgba(var(--brand-primary-rgb), 0.3);
+  --orange-25: rgba(var(--brand-primary-rgb), 0.25);
+  --orange-transparent: rgba(var(--brand-primary-rgb), 0.55);
+
+  --navy-blue-rgb: var(--brand-accent-rgb);
+  --navy-blue-3: rgba(var(--brand-accent-rgb), 0.3);
+  --navy-blue-4: rgba(var(--brand-accent-rgb), 0.4);
+  --navy-blue-transparent: rgba(var(--brand-accent-rgb), 0.08);
+  --navy-blue-dark: #05058D;
+
+  --starter-bg-color: #F0F0F495;
+  --starter-nav-link-color: #05058D;
+  --starter-nav-border-color: #05058D;
+
+  --dark-blue-transparent: rgba(var(--brand-dark-rgb), 0.2);
+
+  --chart-bg-orange: rgba(var(--brand-primary-rgb), 0.2);
+  --chart-bg-navy: rgba(var(--brand-accent-rgb), 0.2);
+  --chart-bg-teal: rgba(var(--brand-secondary-rgb), 0.2);
+  --chart-bg-dark: rgba(var(--brand-dark-rgb), 0.2);
+  --chart-bg-dark-nav: rgba(var(--brand-dark-rgb), 0.2);
+  --chart-bg-mid: rgba(var(--brand-accent-rgb), 0.2);
+
+  --chart-border-orange: var(--brand-primary);
+  --chart-border-navy: var(--brand-accent);
+  --chart-border-teal: var(--brand-secondary);
+  --chart-border-dark: var(--brand-dark);
+  --chart-border-dark-nav: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) + 7%));
+  --chart-border-mid: hsl(var(--brand-accent-h), calc(var(--brand-accent-s) - 15%), calc(var(--brand-accent-l) - 2%));
+
+  --success-green: var(--semantic-success);
+  --success-green-8: rgba(var(--semantic-success-rgb), 0.8);
+  --success-color: hsl(var(--semantic-success-h), var(--semantic-success-s), calc(var(--semantic-success-l) + 2%));
+  --success-pulse: rgba(var(--semantic-success-rgb), 0.7);
+
+  --warning-orange: var(--semantic-warning);
+  --warning-orange-dark: hsl(var(--semantic-warning-h), var(--semantic-warning-s), calc(var(--semantic-warning-l) - 8%));
+  --warning-orange-3: rgba(var(--semantic-warning-rgb), 0.3);
+  --warning-color: hsl(var(--semantic-warning-h), calc(var(--semantic-warning-s) + 15%), calc(var(--semantic-warning-l) + 12%));
+  --warning-color-1: rgba(var(--semantic-warning-rgb), 0.1);
+
+  --danger-red: var(--semantic-danger);
+  --danger-red-25: rgba(var(--semantic-danger-rgb), 0.25);
+  --danger-color: var(--semantic-danger);
+
+  --info-blue: var(--semantic-info);
+  --info-blue-8: rgba(var(--semantic-info-rgb), 0.8);
+  --info-color: hsl(var(--semantic-info-h), calc(var(--semantic-info-s) - 20%), calc(var(--semantic-info-l) + 14%));
+
+  --primary-blue: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) + 1%), calc(var(--brand-primary-l) - 10%));
+  --primary-blue-1: rgba(var(--brand-primary-rgb), 0.1);
+  --primary-blue-15: rgba(var(--brand-primary-rgb), 0.15);
+  --primary-blue-2: rgba(var(--brand-primary-rgb), 0.2);
+
+  --light-blue: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) + 10%), calc(var(--brand-primary-l) + 10%));
+  --light-blue-variant: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) + 10%), calc(var(--brand-primary-l) + 15%));
+  --light-blue-1: rgba(var(--brand-primary-rgb), 0.1);
+
+  --consumption-red: hsl(var(--semantic-danger-h), var(--semantic-danger-s), calc(var(--semantic-danger-l) - 10%));
+  --consumption-red-8: rgba(var(--semantic-danger-rgb), 0.8);
+  --light-green: hsl(var(--semantic-success-h), calc(var(--semantic-success-s) + 20%), calc(var(--semantic-success-l) + 10%));
+  --light-orange: hsl(var(--semantic-warning-h), calc(var(--semantic-warning-s) + 10%), calc(var(--semantic-warning-l) + 13%));
+
+  --custom-blue: hsl(var(--brand-dark-h), calc(var(--brand-dark-s) - 10%), calc(var(--brand-dark-l) + 10%));
+  --custom-orange: var(--brand-primary);
+  --custom-brown: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) * 0.4), calc(var(--brand-primary-l) * 0.5));
+  --custom-brown-2: hsl(var(--brand-accent-h), calc(var(--brand-accent-s) * 0.6), calc(var(--brand-accent-l) * 0.7));
+
+  --gray-secondary: hsl(var(--brand-accent-h), 8%, 47%);
+  --dark-gray: hsl(var(--brand-dark-h), 5%, 10%);
+  --medium-gray: hsl(var(--brand-dark-h), 5%, 20%);
+  --border-light: hsl(var(--brand-primary-h), 5%, 87%);
+  --dark-overlay: hsla(var(--brand-dark-h), 20%, 12%, 0.95);
+
+  --shadow-light: rgba(var(--neutral-black-rgb), 0.15);
+  --shadow-medium: rgba(var(--neutral-black-rgb), 0.2);
+  --shadow-dark: rgba(var(--neutral-black-rgb), 0.3);
+  --shadow-text: rgba(var(--neutral-black-rgb), 0.39);
+  --shadow-blue: rgba(var(--brand-accent-rgb), 0.25);
+  --shadow-dark-blue: rgba(var(--brand-dark-rgb), 0.2);
+
+  --info-text: hsl(var(--semantic-info-h), var(--semantic-info-s), var(--semantic-info-l));
+  --info-bg: hsl(var(--semantic-info-h), calc(var(--semantic-info-s) - 60%), calc(var(--semantic-info-l) + 60%));
+  --info-border: hsl(var(--semantic-info-h), calc(var(--semantic-info-s) - 40%), calc(var(--semantic-info-l) + 50%));
+
+  --orange-hover: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) - 10%), calc(var(--brand-primary-l) - 8%));
+
+  --fs-xxl: 3.5rem;
+  --fs-xl: 2.75rem;
+  --fs-lgx: 2.25rem;
+  --fs-lg: 1.75rem;
+  --fs-md: 1.25rem;
+  --fs-sm: 1rem;
+  --fs-xs: 0.875rem;
+  --fs-xxs: 0.75rem;
+}
+
+.fs-xxl { font-size: var(--fs-xxl); }
+.fs-xl { font-size: var(--fs-xl); }
+.fs-lg { font-size: var(--fs-lg); }
+.fs-md { font-size: var(--fs-md); }
+.fs-sm { font-size: var(--fs-sm); }
+.fs-xs { font-size: var(--fs-xs); }
+
+$font-family-base: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+.mt-n2 { margin-top: -0.5rem; }
+.mb-n2 { margin-bottom: -0.5rem; }
+.mt-n3 { margin-top: -1rem; }
+.mb-n3 { margin-bottom: -1rem; }
+.mt-n4 { margin-top: -1.5rem; }
+.mb-n4 { margin-bottom: -1.5rem; }
+.mt-n5 { margin-top: -2rem; }
+.mb-n5 { margin-bottom: -2rem; }
+
+:root {
+  --bs-body-font-family: #{$font-family-base};
+}
+
+body {
+  font-family: $font-family-base;
+}
+
+.Dashboard-stat--milp {
+  .Dashboard__stat-icon {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: rgba(139, 92, 246, 1);
+  }
+}

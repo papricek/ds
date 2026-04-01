@@ -1,0 +1,335 @@
+.Badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: var(--fs-xxs);
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+
+  i {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  &--small {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.65rem;
+
+    i {
+      font-size: 0.6rem;
+    }
+  }
+
+  &--large {
+    padding: 0.35rem 0.65rem;
+    font-size: var(--fs-xs);
+
+    i {
+      font-size: 0.85rem;
+    }
+  }
+
+  &--pill {
+    border-radius: 50rem;
+  }
+
+  &--success {
+    background-color: var(--semantic-success);
+    color: var(--neutral-white);
+  }
+
+  &--warning {
+    background-color: var(--semantic-warning);
+    color: var(--neutral-white);
+  }
+
+  &--info {
+    background-color: var(--semantic-info);
+    color: var(--neutral-white);
+  }
+
+  &--danger {
+    background-color: var(--semantic-danger);
+    color: var(--neutral-white);
+  }
+
+  &--primary {
+    background-color: var(--brand-primary);
+    color: var(--neutral-white);
+  }
+
+  &--secondary {
+    background-color: var(--gray-secondary);
+    color: var(--neutral-white);
+  }
+
+  &--production {
+    background-color: var(--brand-primary);
+    color: var(--neutral-white);
+  }
+
+  &--consumption {
+    background-color: var(--brand-secondary);
+    color: var(--neutral-white);
+  }
+
+  &--sharing {
+    background-color: var(--navy-blue);
+    color: var(--neutral-white);
+  }
+
+  &--supplier {
+    background-color: var(--brand-primary);
+    color: var(--neutral-white);
+  }
+
+  &--customer {
+    background-color: var(--brand-secondary);
+    color: var(--neutral-white);
+  }
+
+  &--admin {
+    background-color: var(--semantic-danger);
+    color: var(--neutral-white);
+  }
+
+  &--user {
+    background-color: var(--brand-secondary);
+    color: var(--neutral-white);
+  }
+
+  &--active {
+    background-color: var(--semantic-success);
+    color: var(--neutral-white);
+  }
+
+  &--inactive {
+    background-color: var(--gray-secondary);
+    color: var(--neutral-white);
+  }
+
+  &--pending {
+    background-color: var(--semantic-warning);
+    color: var(--neutral-white);
+  }
+
+  &--paid {
+    background-color: var(--success-color);
+    color: var(--neutral-white);
+  }
+
+  &--overdue {
+    background-color: var(--danger-color);
+    color: var(--neutral-white);
+  }
+
+  &--neutral {
+    background-color: transparent;
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+    opacity: 0.8;
+  }
+
+  &--icon-only {
+    padding: 0.25rem;
+    gap: 0;
+
+    i {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0.2rem;
+
+      i {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+.badge {
+  &.Badge--success {
+    @extend .Badge--success;
+  }
+
+  &.Badge--warning {
+    @extend .Badge--warning;
+  }
+
+  &.Badge--info {
+    @extend .Badge--info;
+  }
+
+  &.Badge--danger {
+    @extend .Badge--danger;
+  }
+
+  &.Badge--primary {
+    @extend .Badge--primary;
+  }
+
+  &.Badge--secondary {
+    @extend .Badge--secondary;
+  }
+
+  &.Badge--pill {
+    @extend .Badge--pill;
+  }
+
+  &.Badge--small {
+    @extend .Badge--small;
+  }
+
+  &.Badge--large {
+    @extend .Badge--large;
+  }
+}
+
+.bg-success {
+  background-color: var(--semantic-success);
+  color: var(--neutral-white);
+}
+
+.bg-warning {
+  background-color: var(--semantic-warning);
+  color: var(--neutral-white);
+}
+
+.bg-danger {
+  background-color: var(--semantic-danger);
+  color: var(--neutral-white);
+}
+
+.bg-info {
+  background-color: var(--semantic-info);
+  color: var(--neutral-white);
+}
+
+.bg-primary {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+}
+
+.bg-secondary {
+  background-color: var(--gray-secondary);
+  color: var(--neutral-white);
+}
+
+.Admin__summary-badge {
+  @extend .Badge;
+
+  &--production {
+    @extend .Badge--production;
+  }
+
+  &--consumption {
+    @extend .Badge--consumption;
+  }
+
+  &--sharing {
+    @extend .Badge--sharing;
+  }
+
+  &--neutral {
+    @extend .Badge--neutral;
+  }
+}
+
+.Admin__filter-badge {
+  @extend .Badge;
+  @extend .Badge--primary;
+}
+
+.Admin__status-badge {
+  @extend .Badge;
+  @extend .Badge--info;
+  border: 1px solid var(--light-gray);
+}
+
+.Dashboard-badge {
+  @extend .Badge;
+  @extend .Badge--info;
+  border: 1px solid var(--light-gray);
+
+  &--filter {
+    @extend .Badge--info;
+  }
+
+  &--status {
+    @extend .Badge--info;
+  }
+}
+
+.Listing__badge {
+  @extend .Badge;
+
+  &--success {
+    @extend .Badge--success;
+  }
+
+  &--warning {
+    @extend .Badge--warning;
+  }
+
+  &--info {
+    @extend .Badge--info;
+  }
+
+  &--danger {
+    @extend .Badge--danger;
+  }
+
+  &--secondary {
+    @extend .Badge--neutral;
+  }
+
+  &--icon-only {
+    @extend .Badge--icon-only;
+  }
+}
+
+.Billing__badge {
+  @extend .Badge;
+  @extend .Badge--primary;
+  @extend .Badge--pill;
+}
+
+.Billing__status-badge {
+  @extend .Badge;
+  @extend .Badge--pill;
+
+  &--paid {
+    @extend .Badge--paid;
+  }
+
+  &--overdue {
+    @extend .Badge--overdue;
+  }
+}
+
+.Offer__badge {
+  @extend .Badge;
+  @extend .Badge--small;
+
+  &--edc {
+    @extend .Badge--consumption;
+  }
+
+  &--new {
+    @extend .Badge--production;
+  }
+}
+
+.Home__term-badge {
+  @extend .Badge;
+  background-color: var(--orange);
+  color: var(--neutral-white);
+  font-size: var(--fs-xs);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
