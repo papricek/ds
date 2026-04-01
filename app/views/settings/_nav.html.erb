@@ -1,0 +1,36 @@
+<nav class="App__subnav">
+  <div class="App__subnav-header">
+    <div class="App__subnav-header-avatar">
+      <i class="fa-solid <%= user_icon_class_for_role(Current.user.role) %>"></i>
+    </div>
+    <div class="App__subnav-header-info">
+      <div class="App__subnav-header-name"><%= Current.user.name %></div>
+      <div class="App__subnav-header-email text-break"><%= Current.user.email %></div>
+    </div>
+  </div>
+
+  <hr class="App__subnav-divider">
+
+  <ul class="App__subnav-list">
+    <li class="App__subnav-item">
+      <%= link_to settings_profile_path, class: "App__subnav-link #{active_if('settings/profiles')}" do %>
+        <i class="fa-solid fa-user"></i>
+        <%= t("settings.tabs.profile") %>
+      <% end %>
+    </li>
+    <li class="App__subnav-item">
+      <%= link_to settings_password_path, class: "App__subnav-link #{active_if('settings/passwords')}" do %>
+        <i class="fa-solid fa-lock"></i>
+        <%= t("settings.tabs.password") %>
+      <% end %>
+    </li>
+    <% unless Current.user.admin_or_superadmin? %>
+      <li class="App__subnav-item">
+        <%= link_to settings_addresses_path, class: "App__subnav-link #{active_if('settings/addresses')}" do %>
+          <i class="fa-solid fa-location-dot"></i>
+          <%= t("settings.tabs.addresses") %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

@@ -72,22 +72,6 @@
           <%= t("navigation.edit_profile") %>
         <% end %>
       </li>
-      <% if Current.user.admin_or_superadmin? %>
-        <li>
-          <%= link_to edit_manager_settings_path, class: "dropdown-item" do %>
-            <i class="fas fa-gear"></i>
-            <%= t("navigation.settings") %>
-          <% end %>
-        </li>
-      <% end %>
-      <% if Current.user.superadmin? %>
-        <li>
-          <%= link_to superadmin_accounts_path, class: "dropdown-item" do %>
-            <i class="fas fa-crown"></i>
-            Superadmin
-          <% end %>
-        </li>
-      <% end %>
       <li><hr class="dropdown-divider"></li>
       <% if impersonated? %>
         <li>
