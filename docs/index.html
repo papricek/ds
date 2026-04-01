@@ -1902,6 +1902,38 @@
         </div>
       </div>
 
+      <!-- Listing with Info Primary / Secondary -->
+      <h3>Listing with Info Lines</h3>
+      <p>Use <code>Listing__info-primary</code> and <code>Listing__info-secondary</code> for two-line item descriptions with emphasis hierarchy.</p>
+      <div class="example-box">
+        <div class="Listing">
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--supplier">S</div>
+                <div class="Listing__info">
+                  <div class="Listing__info-primary">Solar Park Moravsko</div>
+                  <div class="Listing__info-secondary">Moravsk&#225; Energetika s.r.o. &middot; Brno</div>
+                </div>
+              </div>
+              <div class="Listing__amount">12,840 kWh</div>
+            </div>
+          </div>
+          <div class="Listing__item">
+            <div class="Listing__content Listing__content--single-line">
+              <div class="Listing__main">
+                <div class="Listing__status Listing__status--customer">C</div>
+                <div class="Listing__info">
+                  <div class="Listing__info-primary"><a href="#">Bytov&#253; d&#367;m Vinohrady</a></div>
+                  <div class="Listing__info-secondary">Obec &#352;itbo&#345;ice &middot; Member since 2024</div>
+                </div>
+              </div>
+              <div class="Listing__amount">4,210 kWh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- 13. Responsive Listing Usage -->
       <h3>Responsive Listing Usage</h3>
       <div class="example-box" style="background-color: var(--white-1);">
@@ -4012,6 +4044,39 @@
           <div class="Calendar__event Calendar__event--info" style="position: relative;">
             <span class="Calendar__event-title">Info (blue)</span>
           </div>
+          <div class="Calendar__event Calendar__event--purple" style="position: relative;">
+            <span class="Calendar__event-title">Purple</span>
+          </div>
+          <div class="Calendar__event Calendar__event--dark" style="position: relative;">
+            <span class="Calendar__event-title">Dark (brand dark)</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Calendar Filters</h3>
+      <p>Toggle buttons for filtering event types on the calendar. Each filter has a colored dot indicator.</p>
+      <div class="example-box">
+        <div class="CalendarFilter" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          <button class="CalendarFilter__btn CalendarFilter__btn--success active">
+            <span class="CalendarFilter__dot"></span>
+            Production
+          </button>
+          <button class="CalendarFilter__btn CalendarFilter__btn--purple active">
+            <span class="CalendarFilter__dot"></span>
+            Maintenance
+          </button>
+          <button class="CalendarFilter__btn CalendarFilter__btn--danger">
+            <span class="CalendarFilter__dot"></span>
+            Outages
+          </button>
+          <button class="CalendarFilter__btn CalendarFilter__btn--dark">
+            <span class="CalendarFilter__dot"></span>
+            Contracts
+          </button>
+          <button class="CalendarFilter__btn CalendarFilter__btn--info active">
+            <span class="CalendarFilter__dot"></span>
+            Billing
+          </button>
         </div>
       </div>
 
@@ -4068,7 +4133,89 @@
 Events must respond to:
   .starts_on  (Date)
   .ends_on    (Date)
-  .color      (optional: "primary" | "secondary" | "accent" | "success" | "warning" | "danger" | "info")</code></pre>
+  .color      (optional: "primary" | "secondary" | "accent" | "success" | "warning" | "danger" | "info" | "purple" | "dark")</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FILE UPLOAD                                    -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>File Upload</h2>
+      <p>Drag-and-drop file upload area with states for empty, has-file, and current file display.</p>
+
+      <h3>Empty State (Upload Prompt)</h3>
+      <div class="example-box">
+        <div class="FileUpload">
+          <div class="FileUpload__container">
+            <label class="FileUpload__upload-button">
+              <div class="FileUpload__upload-icon">&#128206;</div>
+              <div class="FileUpload__upload-text">Click or drag file here</div>
+              <p class="FileUpload__upload-help">Supported formats: PDF, XLSX, CSV (max 10 MB)</p>
+              <input type="file" class="FileUpload__hidden-input">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <h3>File Selected</h3>
+      <div class="example-box">
+        <div class="FileUpload">
+          <div class="FileUpload__container FileUpload__container--has-file">
+            <div class="FileUpload__file-info">
+              <div class="FileUpload__file-icon">&#128196;</div>
+              <div class="FileUpload__file-name">vyuctovani-2026-03.pdf</div>
+              <div class="FileUpload__file-actions">
+                <button class="Button Button--primary Button--small">Change</button>
+                <button class="Button Button--outlined Button--small" style="border-color: var(--semantic-danger); color: var(--semantic-danger);">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Current File Display</h3>
+      <div class="example-box">
+        <div class="FileUpload">
+          <div class="FileUpload__current-file">
+            <span class="FileUpload__current-label">Current file:</span>
+            <span class="FileUpload__current-name">faktura-2026-02.pdf</span>
+            <a href="#" class="FileUpload__download-link">&#11015; Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PERIOD RANGE                                   -->
+    <!-- ============================================= -->
+    <section class="showcase-section">
+      <h2>Period Range</h2>
+      <p>Toggle buttons for selecting time period ranges. Active state highlights the selected period.</p>
+
+      <h3>Period Selector</h3>
+      <div class="example-box">
+        <div class="PeriodRange__buttons">
+          <button class="PeriodRange__btn">Day</button>
+          <button class="PeriodRange__btn active">
+            <span class="PeriodRange__check">&#10003;</span>
+            Week
+          </button>
+          <button class="PeriodRange__btn">Month</button>
+          <button class="PeriodRange__btn">Year</button>
+        </div>
+      </div>
+
+      <h3>Usage Example</h3>
+      <div class="example-box" style="background-color: var(--white-1);">
+        <pre><code>&lt;div class="PeriodRange__buttons"&gt;
+  &lt;button class="PeriodRange__btn"&gt;Day&lt;/button&gt;
+  &lt;button class="PeriodRange__btn active"&gt;
+    &lt;span class="PeriodRange__check"&gt;&amp;#10003;&lt;/span&gt;
+    Week
+  &lt;/button&gt;
+  &lt;button class="PeriodRange__btn"&gt;Month&lt;/button&gt;
+&lt;/div&gt;</code></pre>
       </div>
     </section>
 
@@ -4106,6 +4253,9 @@ Events must respond to:
           <li><code>.PricingCard</code> - Pricing tiers</li>
           <li><code>.Timeline</code> - Activity feeds</li>
           <li><code>.Calendar</code> - Month calendar</li>
+          <li><code>.CalendarFilter</code> - Calendar event filters</li>
+          <li><code>.FileUpload</code> - File upload area</li>
+          <li><code>.PeriodRange</code> - Period selectors</li>
         </ul>
       </div>
 
@@ -4151,9 +4301,20 @@ Events must respond to:
 
 .Calendar / .Calendar__header / __title / __nav / __nav--placeholder
 .Calendar__day--outside / --today / --weekend
-.Calendar__event--primary / --secondary / --accent / --success / --warning / --danger / --info
+.Calendar__event--primary / --secondary / --accent / --success / --warning / --danger / --info / --purple / --dark
 .Calendar__event--continues-before / --continues-after
-.Calendar__event-title / .Calendar__event-actions / .Calendar__event-action</code></pre>
+.Calendar__event-title / .Calendar__event-actions / .Calendar__event-action
+.CalendarFilter__btn--success / --purple / --danger / --dark / --info
+.CalendarFilter__dot
+
+.Listing__info-primary / .Listing__info-secondary
+
+.FileUpload__container / --has-file / --drag-over
+.FileUpload__upload-button / __upload-icon / __upload-text / __upload-help
+.FileUpload__file-info / __file-icon / __file-name / __file-actions
+.FileUpload__current-file / __current-label / __current-name / __download-link
+
+.PeriodRange__buttons / .PeriodRange__btn / .PeriodRange__check</code></pre>
       </div>
     </section>
 
