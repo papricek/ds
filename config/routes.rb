@@ -58,6 +58,7 @@ Rails.application.routes.draw do
       end
     end
     resource :settings, path: "nastaveni", only: [ :edit, :update ]
+    resource :credential, path: "pristupove-udaje", only: [ :update ]
     resource :help, path: "napoveda", only: [ :show ], controller: "help"
     resource :impersonate_user, path: "prevzit-roli", only: [ :update, :destroy ]
   end

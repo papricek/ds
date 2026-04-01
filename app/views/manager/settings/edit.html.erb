@@ -68,6 +68,36 @@
   <% end %>
 </div>
 
+<div class="Card mb-4">
+  <div class="Card__title"><%= t("settings.credentials.title") %></div>
+  <%= form_with(model: @credential, url: manager_credential_path, method: :patch, class: "Form Form--dark", html: { novalidate: true, autocomplete: "off" }) do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating Form__group">
+          <%= f.text_field :username, class: "form-control Form__input", placeholder: t("settings.credentials.username"), autocomplete: "off" %>
+          <%= f.label :username, t("settings.credentials.username"), class: "Form__label" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating Form__group">
+          <%= f.password_field :password, class: "form-control Form__input", placeholder: t("settings.credentials.password"), autocomplete: "new-password" %>
+          <%= f.label :password, t("settings.credentials.password"), class: "Form__label" %>
+        </div>
+      </div>
+    </div>
+
+    <% if @credential.persisted? && @credential.updated_at.present? %>
+      <div class="mb-3" style="color: var(--white-5); font-size: var(--fs-xs);">
+        <%= t("settings.credentials.last_updated", date: l(@credential.updated_at, format: :default)) %>
+      </div>
+    <% end %>
+
+    <div class="Form__actions">
+      <%= f.submit t("common.save"), class: "Form__btn", data: { disable_with: disable_with } %>
+    </div>
+  <% end %>
+</div>
+
 <div class="Card">
   <div class="Card__title"><%= t("settings.edc_sync") %></div>
   <div class="Box">

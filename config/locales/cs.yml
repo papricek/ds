@@ -243,6 +243,12 @@ cs:
     change_password: "Změna hesla"
     current_password: "Současné heslo"
     invalid_current_password: "Současné heslo není správné."
+    credentials:
+      title: "Přístupové údaje EDC"
+      username: "E-mail (EDC portál)"
+      password: "Heslo (EDC portál)"
+      updated: "Přístupové údaje byly aktualizovány."
+      last_updated: "Poslední změna: %{date}"
     edc_sync: "Synchronizace dat"
     last_sync: "Poslední synchronizace"
     never_synced: "Zatím nesynchronizováno"
