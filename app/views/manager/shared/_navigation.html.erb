@@ -30,11 +30,5 @@
         <%= t("manager.navigation.settings") %>
       <% end %>
     </li>
-    <li class="nav-item" role="presentation">
-      <%= link_to manager_help_path, class: "nav-link #{'active' if controller_path == 'manager/help'}" do %>
-        <%= icon("circle-question", font_style: "fas") %>
-        <%= t("help.title") %>
-      <% end %>
-    </li>
   </ul>
 </div>
