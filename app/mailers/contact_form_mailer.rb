@@ -1,5 +1,5 @@
 class ContactFormMailer < ApplicationMailer
-  ADMINS = ["patrikjira@gmail.com"].freeze
+  ADMINS = [ "patrikjira@gmail.com" ].freeze
 
   def notify_admin(contact_form)
     @contact_form = contact_form
