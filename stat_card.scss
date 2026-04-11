@@ -149,38 +149,48 @@
   }
 
   &--production {
-    background-color: var(--chart-bg-orange);
-    border: 2px solid var(--chart-border-orange);
+    background-color: var(--chart-bg-production);
+    border: 2px solid var(--chart-border-production);
 
     .StatCard__icon {
-      background-color: var(--chart-border-orange);
+      background-color: var(--chart-border-production);
     }
   }
 
   &--consumption {
-    background-color: var(--chart-bg-teal);
-    border: 2px solid var(--chart-border-teal);
+    background-color: var(--chart-bg-consumption);
+    border: 2px solid var(--chart-border-consumption);
 
     .StatCard__icon {
-      background-color: var(--chart-border-teal);
+      background-color: var(--chart-border-consumption);
     }
   }
 
-  &--sharing {
-    background-color: var(--chart-bg-navy);
-    border: 2px solid var(--chart-border-navy);
+  &--sharing,
+  &--sharing-production {
+    background-color: var(--chart-bg-sharing-production);
+    border: 2px solid var(--chart-border-sharing-production);
 
     .StatCard__icon {
-      background-color: var(--chart-border-navy);
+      background-color: var(--chart-border-sharing-production);
+    }
+  }
+
+  &--sharing-consumption {
+    background-color: var(--chart-bg-sharing-consumption);
+    border: 2px solid var(--chart-border-sharing-consumption);
+
+    .StatCard__icon {
+      background-color: var(--chart-border-sharing-consumption);
     }
   }
 
   &--potential-sharing {
-    background-color: var(--chart-bg-dark);
-    border: 2px solid var(--chart-border-dark);
+    background-color: var(--chart-bg-potential-sharing);
+    border: 2px solid var(--chart-border-potential-sharing);
 
     .StatCard__icon {
-      background-color: var(--chart-border-dark);
+      background-color: var(--chart-border-potential-sharing);
     }
   }
 

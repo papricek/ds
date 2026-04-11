@@ -126,6 +126,9 @@
   --chart-bg-dark: rgba(var(--brand-dark-rgb), 0.2);
   --chart-bg-dark-nav: rgba(var(--brand-dark-rgb), 0.2);
   --chart-bg-mid: rgba(var(--brand-accent-rgb), 0.2);
+  --chart-bg-purple: rgba(167, 139, 250, 0.2);
+  --chart-bg-sky: hsla(213, 90%, 55%, 0.2);
+  --chart-bg-grid: rgba(148, 163, 184, 0.2);
 
   --chart-border-orange: var(--brand-primary);
   --chart-border-navy: var(--brand-accent);
@@ -133,6 +136,21 @@
   --chart-border-dark: var(--brand-dark);
   --chart-border-dark-nav: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) + 7%));
   --chart-border-mid: hsl(var(--brand-accent-h), calc(var(--brand-accent-s) - 15%), calc(var(--brand-accent-l) - 2%));
+  --chart-border-purple: hsl(258, 90%, 66%);
+  --chart-border-sky: hsl(213, 90%, 55%);
+  --chart-border-grid: hsl(215, 20%, 55%);
+
+  --chart-bg-production: var(--chart-bg-teal);
+  --chart-bg-consumption: var(--chart-bg-orange);
+  --chart-bg-sharing-production: var(--chart-bg-navy);
+  --chart-bg-sharing-consumption: var(--chart-bg-sky);
+  --chart-bg-potential-sharing: var(--chart-bg-purple);
+
+  --chart-border-production: var(--chart-border-teal);
+  --chart-border-consumption: var(--chart-border-orange);
+  --chart-border-sharing-production: var(--chart-border-navy);
+  --chart-border-sharing-consumption: var(--chart-border-sky);
+  --chart-border-potential-sharing: var(--chart-border-purple);
 
   --success-green: var(--semantic-success);
   --success-green-8: rgba(var(--semantic-success-rgb), 0.8);
