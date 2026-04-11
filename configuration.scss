@@ -140,16 +140,24 @@
   --chart-border-sky: hsl(213, 90%, 55%);
   --chart-border-grid: hsl(215, 20%, 55%);
 
-  --chart-bg-production: var(--chart-bg-teal);
-  --chart-bg-consumption: var(--chart-bg-orange);
-  --chart-bg-sharing-production: var(--chart-bg-navy);
-  --chart-bg-sharing-consumption: var(--chart-bg-sky);
+  --prehled-green: #28A745;
+  --prehled-blue: #07078F;
+  --prehled-amber: #FFA538;
+  --prehled-production-card-bg: #173450;
+  --prehled-consumption-card-bg: #0A104E;
+  --prehled-sharing-production-card-bg: #472C2F;
+  --prehled-sharing-consumption-card-bg: #92764A;
+
+  --chart-bg-production: var(--prehled-production-card-bg);
+  --chart-bg-consumption: var(--prehled-consumption-card-bg);
+  --chart-bg-sharing-production: var(--prehled-sharing-production-card-bg);
+  --chart-bg-sharing-consumption: var(--prehled-sharing-consumption-card-bg);
   --chart-bg-potential-sharing: var(--chart-bg-purple);
 
-  --chart-border-production: var(--chart-border-teal);
-  --chart-border-consumption: var(--chart-border-orange);
-  --chart-border-sharing-production: var(--chart-border-navy);
-  --chart-border-sharing-consumption: var(--chart-border-sky);
+  --chart-border-production: var(--prehled-green);
+  --chart-border-consumption: var(--prehled-blue);
+  --chart-border-sharing-production: var(--prehled-amber);
+  --chart-border-sharing-consumption: var(--prehled-amber);
   --chart-border-potential-sharing: var(--chart-border-purple);
 
   --success-green: var(--semantic-success);
