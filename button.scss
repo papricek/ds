@@ -616,7 +616,8 @@
   }
 }
 
-.btn-check:checked + .btn-outline-primary {
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary.active {
   background: var(--cta-base-color);
   border-color: var(--cta-base-color);
   color: var(--neutral-white);
