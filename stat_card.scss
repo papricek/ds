@@ -237,5 +237,32 @@
   &--border-purple {
     border-left: 3px solid hsl(270, 73%, 62%);
   }
+
+  &--filled-info {
+    background-color: rgba(var(--semantic-info-rgb, 37, 99, 235), 0.15);
+    border: 2px solid var(--semantic-info);
+
+    .StatCard__icon {
+      background-color: var(--semantic-info);
+    }
+  }
+
+  &--filled-warning {
+    background-color: rgba(var(--semantic-warning-rgb), 0.18);
+    border: 2px solid var(--semantic-warning);
+
+    .StatCard__icon {
+      background-color: var(--semantic-warning);
+    }
+  }
+
+  &--filled-success {
+    background-color: rgba(var(--semantic-success-rgb), 0.18);
+    border: 2px solid var(--semantic-success);
+
+    .StatCard__icon {
+      background-color: var(--semantic-success);
+    }
+  }
 }
 
