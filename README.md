@@ -19,7 +19,7 @@ Design system for the Wattlink family of energy management applications. Dark-th
 - **Icons** - Circular icon containers in 4 sizes with 7 semantic color variants
 - **Stat Cards** - Dashboard metric cards with compact and border variants
 - **Status Buttons** - Process state indicators (pending, running, success, error)
-- **Box** - Content boxes with items, icons, actions, and compact/supercompact/accent variants
+- **Box** - Content boxes with items, icons, actions, compact/supercompact/accent variants, and a loading overlay (`.Box__overlay` shown when container has `.is-loading`)
 - **Listings** - List items with status indicators, badges, actions, and empty states
 - **Filter Panel** - Sidebar filters with toggles, groups, and search
 
