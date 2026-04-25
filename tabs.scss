@@ -168,4 +168,59 @@
   &__content {
     padding: 1.5rem 0;
   }
+
+  &--icon-pills {
+    margin: -1rem 0 0;
+
+    @media (min-width: 1200px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .nav-tabs {
+      border-bottom: 1px solid var(--white-05);
+      gap: 0;
+
+      .nav-item {
+        margin-bottom: 0;
+      }
+
+      .nav-link {
+        color: var(--light-gray);
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 0;
+        padding: 0.875rem 1.125rem;
+        font-size: var(--fs-sm);
+        font-weight: 600;
+        transition: color 0.15s ease, border-color 0.15s ease;
+
+        i {
+          margin-right: 0.5rem;
+        }
+
+        &:hover, &:focus {
+          color: var(--neutral-white);
+          background-color: transparent;
+          border-color: transparent transparent var(--white-2);
+        }
+
+        &.active {
+          color: var(--neutral-white);
+          background-color: transparent;
+          border-color: transparent transparent var(--brand-primary);
+        }
+      }
+    }
+
+    &.Tabs--sub {
+      margin-top: 0.25rem;
+
+      .nav-tabs .nav-link {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+      }
+    }
+  }
 }

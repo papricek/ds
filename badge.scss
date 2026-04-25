@@ -150,6 +150,54 @@
       }
     }
   }
+
+  &--cloud {
+    text-decoration: none;
+    border-radius: 50rem;
+    padding: 0.35rem 0.7rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+
+    i {
+      font-size: 0.75em;
+      opacity: 0.85;
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+  }
+
+  &--cloud-xl {
+    font-size: 1.25rem;
+    padding: 0.5rem 0.95rem;
+    font-weight: 800;
+    opacity: 1;
+  }
+
+  &--cloud-lg {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    opacity: 0.95;
+  }
+
+  &--cloud-md {
+    font-size: 0.875rem;
+    padding: 0.3rem 0.65rem;
+    font-weight: 600;
+    opacity: 0.88;
+  }
+
+  &--cloud-sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+    font-weight: 500;
+    opacity: 0.78;
+  }
 }
 
 .badge {
