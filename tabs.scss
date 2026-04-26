@@ -222,5 +222,36 @@
         font-size: 0.8125rem;
       }
     }
+
+    .nav-tabs-secondary,
+    .nav-tabs-secondary-section .nav-tabs {
+      background-color: transparent;
+      padding: 0;
+      margin-top: 0.25rem;
+
+      .nav-link {
+        background-color: transparent;
+        color: var(--light-gray);
+        border: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 0;
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+
+        &:hover, &:focus {
+          color: var(--neutral-white);
+          background-color: transparent;
+          border-color: transparent transparent var(--white-2);
+        }
+
+        &.active {
+          color: var(--neutral-white);
+          background-color: transparent;
+          border-color: transparent transparent var(--brand-primary);
+          font-weight: 600;
+        }
+      }
+    }
   }
 }
