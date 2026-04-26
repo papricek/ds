@@ -277,4 +277,44 @@
     font-weight: 600;
     margin-left: 0.5rem;
   }
+
+  .ts-wrapper {
+    &.single .ts-control,
+    &.multi .ts-control {
+      background-color: var(--white-05) !important;
+      border: 1px solid var(--white-15) !important;
+      border-radius: 8px !important;
+      min-height: 40px !important;
+      padding: 0.375rem 0.75rem !important;
+      font-size: 0.8125rem !important;
+
+      &:focus,
+      &.focus {
+        background-color: var(--white-05) !important;
+        border-color: var(--brand-primary) !important;
+        box-shadow: none !important;
+      }
+    }
+
+    &.ts-wrapper--inline {
+      &.single .ts-control,
+      &.multi .ts-control {
+        min-height: 40px !important;
+      }
+    }
+
+    .ts-control input {
+      font-size: 0.8125rem !important;
+    }
+
+    .ts-control .item {
+      background-color: var(--brand-accent) !important;
+      border: none !important;
+      border-radius: 20px !important;
+      padding: 0.1875rem 0.625rem !important;
+      font-size: 0.6875rem !important;
+      font-weight: 600 !important;
+      line-height: 1 !important;
+    }
+  }
 }
