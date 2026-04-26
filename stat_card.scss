@@ -264,5 +264,14 @@
       background-color: var(--semantic-success);
     }
   }
+
+  &--filled-danger {
+    background-color: rgba(var(--semantic-danger-rgb), 0.18);
+    border: 2px solid var(--semantic-danger);
+
+    .StatCard__icon {
+      background-color: var(--semantic-danger);
+    }
+  }
 }
 
