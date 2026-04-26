@@ -1,0 +1,115 @@
+.Stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--white-05);
+  border: 1px solid var(--white-15);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  &__step {
+    padding: 0.875rem 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-right: 1px solid var(--white-1);
+    background: transparent;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &--active {
+      background: rgba(var(--brand-primary-rgb), 0.1);
+
+      .Stepper__index {
+        background: var(--brand-primary);
+        color: var(--white);
+      }
+
+      .Stepper__title {
+        color: var(--white);
+      }
+    }
+
+    &--done {
+      .Stepper__index {
+        background: var(--success-green);
+        color: var(--white);
+      }
+
+      .Stepper__title {
+        color: var(--white);
+      }
+    }
+
+    &--skipped {
+      .Stepper__index {
+        background: var(--white-1);
+        color: var(--white-5);
+      }
+
+      .Stepper__title,
+      .Stepper__subtitle {
+        color: var(--white-5);
+      }
+    }
+
+    &--todo {
+      .Stepper__index {
+        background: var(--white-1);
+        color: var(--white-7);
+      }
+
+      .Stepper__title {
+        color: var(--white-7);
+      }
+    }
+  }
+
+  &__index {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    flex-shrink: 0;
+
+    i {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 0.6875rem;
+    color: var(--light-gray);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    &__step {
+      border-right: none;
+      border-bottom: 1px solid var(--white-1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

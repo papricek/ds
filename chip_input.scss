@@ -1,0 +1,105 @@
+.ChipInput {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  background: var(--white-05);
+  border: 1px solid var(--white-15);
+  border-radius: 8px;
+  padding: 0.375rem;
+  min-height: 40px;
+  cursor: text;
+
+  &:focus-within {
+    border-color: var(--brand-primary);
+  }
+
+  &__select {
+    display: none;
+  }
+
+  &__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--brand-accent);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 0.1875rem 0.25rem 0.1875rem 0.625rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__chip-remove {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(var(--neutral-white-rgb), 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--white);
+    padding: 0;
+
+    &:hover {
+      background: rgba(var(--neutral-white-rgb), 0.32);
+    }
+
+    i {
+      font-size: 0.5625rem;
+    }
+  }
+
+  &__entry {
+    flex: 1;
+    min-width: 120px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.375rem;
+
+    &::placeholder {
+      color: var(--light-gray);
+    }
+  }
+
+  &__suggestions {
+    position: absolute;
+    margin-top: 0.25rem;
+    background: var(--dark-header-bg);
+    border: 1px solid var(--white-15);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow-dark);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 30;
+    min-width: 180px;
+  }
+
+  &__suggestion {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover,
+    &--active {
+      background: var(--white-08);
+    }
+
+    &--create {
+      border-top: 1px solid var(--white-1);
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+  }
+}
+
+.ChipInput__wrapper {
+  position: relative;
+}
