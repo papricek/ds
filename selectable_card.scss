@@ -1,0 +1,91 @@
+.SelectableCardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.SelectableCard {
+  position: relative;
+  display: block;
+  padding: 1.125rem;
+  border-radius: 10px;
+  border: 2px solid var(--white-15);
+  background: var(--white-05);
+  color: var(--white);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  margin: 0;
+
+  &:hover {
+    border-color: rgba(var(--brand-primary-rgb), 0.4);
+  }
+
+  &--selected {
+    border-color: var(--brand-primary);
+    background: rgba(var(--brand-primary-rgb), 0.08);
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+
+  &__check {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--white-2);
+    background: transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  &--selected &__check {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 4px;
+      height: 8px;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__icon {
+    display: block;
+    font-size: 1.375rem;
+    color: var(--brand-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  &__title {
+    margin: 0 0 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--white-5);
+  }
+}
