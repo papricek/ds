@@ -56,4 +56,84 @@
     cursor: grab;
     font-size: 0.75rem;
   }
+
+  &__index-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(255, 156, 0, 0.15);
+    color: var(--cta-base-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    color: var(--white-5);
+  }
+
+  &__legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+  }
+
+  &__legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: var(--white-05);
+    border: 1px solid var(--white-1);
+    border-left: 3px solid var(--white-2);
+    border-radius: 8px;
+    padding: 0.625rem 0.875rem;
+  }
+
+  &__swatch {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  &__legend-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__legend-label {
+    color: var(--white);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.125rem;
+  }
+
+  &__legend-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    font-size: 0.6875rem;
+    color: var(--white-5);
+
+    b {
+      color: var(--white);
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 600;
+    }
+  }
+
+  &__chart {
+    position: relative;
+    min-height: 320px;
+  }
 }
