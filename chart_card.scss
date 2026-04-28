@@ -1,0 +1,59 @@
+.ChartCard {
+  background: var(--white-05);
+  border: 1px solid var(--white-1);
+  border-radius: 12px;
+  padding: 1.125rem;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  &__title-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0;
+    font-family: inherit;
+    outline: none;
+
+    &::placeholder {
+      color: var(--light-gray);
+      font-weight: 600;
+    }
+
+    &:focus {
+      color: var(--white);
+    }
+  }
+
+  &__quick-range {
+    margin-bottom: 0.875rem;
+  }
+
+  &__series-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    background: var(--white-05);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__series-grip {
+    color: var(--light-gray);
+    cursor: grab;
+    font-size: 0.75rem;
+  }
+}
