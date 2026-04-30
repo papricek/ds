@@ -199,8 +199,8 @@
   &__input,
   textarea.FormField__input {
     width: 100%;
-    background: var(--white-05);
-    border: 1px solid var(--white-15);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--white-25);
     border-radius: 8px;
     padding: 0.5rem 0.75rem;
     color: var(--white);
