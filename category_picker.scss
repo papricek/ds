@@ -32,11 +32,11 @@
     }
 
     &--selected {
-      background: color-mix(in srgb, var(--cat-color, var(--brand-primary)) 22%, transparent);
-      border-color: var(--cat-color, var(--brand-primary));
+      background: color-mix(in srgb, var(--brand-primary) 22%, transparent);
+      border-color: var(--brand-primary);
 
       i {
-        color: var(--cat-color, var(--brand-primary));
+        color: var(--brand-primary);
       }
     }
 

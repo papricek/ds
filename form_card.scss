@@ -81,6 +81,20 @@
       font-weight: 600;
       color: var(--light-gray);
     }
+
+    &--text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.125rem;
+
+      .FormCard__amount-value {
+        font-size: 1rem;
+        font-weight: 700;
+        font-variant-numeric: normal;
+        line-height: 1.3;
+        word-break: break-word;
+      }
+    }
   }
 
   &__hint {
