@@ -59,5 +59,20 @@
         color: var(--semantic-danger);
       }
     }
+
+    &--status {
+      cursor: default;
+      color: var(--white-7);
+
+      &:hover {
+        background: transparent;
+        color: var(--white-7);
+      }
+
+      i {
+        color: var(--brand-primary);
+        opacity: 1;
+      }
+    }
   }
 }
