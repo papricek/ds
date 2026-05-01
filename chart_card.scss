@@ -136,4 +136,56 @@
     position: relative;
     min-height: 320px;
   }
+
+  &__controls {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  &__controls-group {
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--white-1);
+    border-radius: 8px;
+    padding: 2px;
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+  }
+
+  &__control-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--white-85);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background: var(--white-1);
+      color: var(--white);
+    }
+
+    &:focus {
+      outline: none;
+      background: var(--white-1);
+      color: var(--white);
+    }
+
+    &.is-active {
+      background: rgba(255, 156, 0, 0.2);
+      color: var(--cta-base-color);
+    }
+  }
 }
