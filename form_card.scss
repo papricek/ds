@@ -5,6 +5,11 @@
   padding: 1.125rem;
   margin-bottom: 0.875rem;
 
+  @include media-breakpoint-down(md) {
+    padding: 0.875rem;
+    border-radius: 10px;
+  }
+
   &--flush {
     padding: 0;
     overflow: hidden;

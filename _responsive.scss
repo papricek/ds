@@ -1,0 +1,173 @@
+// Shared mobile responsive patches.
+// Targets common patterns that appear across many views so we don't have
+// to touch every individual SCSS file.
+
+// Mobile breadcrumb shown in place of hidden sub-navigation
+.Page__breadcrumb {
+  background: var(--white-05);
+  border: 1px solid var(--white-1);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.875rem;
+  color: var(--light-gray);
+
+  i { color: var(--light-gray); font-size: 0.85rem; }
+
+  &-parent {
+    color: var(--light-gray);
+    font-weight: 500;
+  }
+
+  &-active {
+    color: var(--neutral-white);
+    font-weight: 700;
+  }
+}
+
+// Native date inputs — dark scheme so the calendar picker indicator is
+// visible against dark backgrounds, and cursor reflects clickability.
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"] {
+  color-scheme: dark;
+  cursor: pointer;
+
+  // Make the entire input area open the picker, not just the icon (Chrome).
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.7);
+    opacity: 0.85;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+
+  // Listing/index toolbars (filter + "New" button) — stack vertically
+  .Toolbar,
+  .UsersToolbar,
+  .GroupsToolbar,
+  .SharingsToolbar,
+  .BillingsToolbar {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.5rem;
+
+    > * { width: 100%; }
+
+    .Button { width: 100%; justify-content: center; }
+  }
+
+  // Action button groups that wrap header sections (DocHead, page headers)
+  .DocHead__actions,
+  .Page__actions,
+  .Detail__actions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .Btn,
+    .Button,
+    form { flex: 1 1 auto; }
+    .Btn, .Button { justify-content: center; }
+  }
+
+  // Two-column grids → single column
+  .Grid,
+  .Grid--2col,
+  .TwoCol {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+
+  // Box and inner content must shrink to fit container — no horizontal overflow
+  .Box {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .Box__items,
+  .Box__item,
+  .Box__item-content,
+  .Box__item-main {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  // Bootstrap's .table-responsive becomes the horizontal scroll context;
+  // make sure it always works inside Box
+  .Box .table-responsive,
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  // Tables inside Box: smaller cell padding/font so they fit better; scroll comes from .table-responsive
+  .Box .Admin__table--transparent,
+  .Box .Table--scroll,
+  .Group__table {
+    white-space: nowrap;
+
+    th, td {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      font-size: 0.825rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+
+  // Forms — single column, full-width
+  .Form .row > [class*="col-"] {
+    margin-bottom: 0.75rem;
+  }
+
+  // Tab navigations — allow horizontal scroll, hide overflow indicator subtle
+  .Tabs .nav-tabs,
+  .nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+
+    .nav-item { flex-shrink: 0; }
+    .nav-link { white-space: nowrap; }
+  }
+
+  // Sub-tab navigation (Tabs--sub / icon-pills) — wrap into 2-col grid instead of horizontal scroll
+  .Tabs--sub .nav-tabs,
+  .Tabs--icon-pills .nav-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    overflow-x: visible !important;
+
+    .nav-item { flex-shrink: 1; min-width: 0; }
+
+    .nav-link {
+      width: 100%;
+      justify-content: center;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // Modal dialogs — full-screen on small phones
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+
+  // Card padding tighter
+  .Card,
+  .Box {
+    padding: 0.875rem 1rem;
+  }
+}
