@@ -117,6 +117,21 @@ input[type="time"] {
       font-size: 0.825rem;
     }
   }
+
+  // Card-wrapped tables (superadmin detail, etc.) — the .Table wrapper div scrolls
+  .Card .Table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+
+    table { white-space: nowrap; }
+
+    th, td {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      font-size: 0.825rem;
+    }
+  }
 }
 
 @include media-breakpoint-down(md) {
