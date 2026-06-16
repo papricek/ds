@@ -475,6 +475,50 @@
     }
   }
 
+  &__metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--white-05);
+    border: 1px solid var(--white-1);
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.7rem;
+    flex-shrink: 0;
+
+    i {
+      font-size: 0.95rem;
+
+      &.text-teal { color: var(--brand-secondary); }
+      &.text-orange { color: var(--brand-primary); }
+    }
+  }
+
+  &__metric-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--neutral-white);
+    line-height: 1;
+  }
+
+  &__metric-label {
+    font-size: var(--fs-xxs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white-5);
+  }
+
+  &__metacol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 110px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
   &__actions {
     display: flex;
     flex-wrap: wrap;

@@ -199,6 +199,15 @@
     }
   }
 
+  &--surface {
+    background-color: var(--white-05);
+    border: 1px solid var(--white-1);
+  }
+
+  &__icon--primary { background-color: var(--brand-primary); }
+  &__icon--secondary { background-color: var(--brand-secondary); }
+  &__icon--accent { background-color: var(--brand-accent); }
+
   &--production {
     background-color: var(--chart-bg-production);
     border: 2px solid var(--chart-border-production);
