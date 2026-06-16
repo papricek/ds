@@ -45,6 +45,23 @@
     border-top: 2px solid var(--neutral-white);
   }
 
+  &__section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem 0.25rem;
+    color: var(--gray-secondary, var(--gray));
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    i {
+      width: 1.25rem;
+      opacity: 0.7;
+    }
+  }
+
   &--vertical {
     .Nav__list {
       flex-direction: column;

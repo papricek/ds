@@ -94,6 +94,11 @@
       transform: translateX(4px);
     }
 
+    // Static info rows (no interaction) — no hover shift
+    &--static:hover {
+      transform: none;
+    }
+
     &--spaced {
       margin-top: 1.5rem;
     }
