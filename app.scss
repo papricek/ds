@@ -65,15 +65,8 @@
   &__header {
     // Same width rules as App__content so the navbar lines up with the page.
     &-container {
-      max-width: 1600px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 1rem;
-
-      @include media-breakpoint-up(lg) {
-        padding: 1rem 1.5rem;
-      }
-
+      @extend .container-lg;
+      padding: 1rem 0;
       position: relative;
       z-index: 1030;
     }
@@ -199,16 +192,7 @@
   }
 
   &__content {
-    max-width: 1600px;
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    @include media-breakpoint-up(lg) {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+    @extend .container-lg;
   }
 
   &__nav-toggle {
