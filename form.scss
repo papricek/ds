@@ -944,6 +944,25 @@ input[name="custom_date_range"] {
   }
 }
 
+// Laborator day picker (chart page) — the flatpickr input lives outside .Form,
+// so dark-theme its visible (alt) input to match the calendar popup.
+.LaboratorDayPicker {
+  .form-control {
+    background-color: var(--navy-blue) !important;
+    border-color: var(--light-gray) !important;
+    color: var(--neutral-white) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease-in-out !important;
+
+    &:focus {
+      background-color: var(--navy-blue) !important;
+      border-color: var(--cta-base-color) !important;
+      color: var(--neutral-white) !important;
+      box-shadow: 0 0 0 0.2rem var(--orange-transparent) !important;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .Form__group {
     &.d-flex {
