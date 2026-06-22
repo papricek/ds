@@ -1,3 +1,12 @@
+@keyframes scenarioFlowDash {
+  to { stroke-dashoffset: -28; }
+}
+
+@keyframes scenarioFillGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 .ScenarioOptimizer {
   display: flex;
   flex-direction: column;
@@ -483,6 +492,20 @@
 
   &__svg { display: block; width: 100%; }
 
+  &__link {
+    stroke: var(--chart-border-sharing-production);
+    stroke-linecap: round;
+    fill: none;
+    animation: scenarioFlowDash 1.4s linear infinite;
+  }
+
+  &__guide {
+    stroke: var(--white-1);
+    stroke-width: 2;
+    stroke-dasharray: 2 6;
+    fill: none;
+  }
+
   &__warning {
     margin: 6px 12px 0;
     padding: 12px 16px;
@@ -549,6 +572,8 @@
     inset: 0;
     background: linear-gradient(90deg, rgba(var(--semantic-success-rgb), 0.5), var(--semantic-success));
     border-radius: 7px;
+    transform-origin: left;
+    animation: scenarioFillGrow 0.8s ease-out;
   }
 }
 
