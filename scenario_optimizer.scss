@@ -90,26 +90,40 @@
   }
 }
 
-.StatusPill {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--semantic-success);
-  background: rgba(var(--semantic-success-rgb), 0.16);
-  border: 1px solid rgba(var(--semantic-success-rgb), 0.4);
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
+.ColorKeyBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--white-15);
+  background: var(--white-05);
+  color: var(--white-7);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 
-  &--running {
+  &:hover {
+    border-color: var(--brand-primary);
     color: var(--brand-primary);
-    background: rgba(var(--brand-primary-rgb), 0.14);
-    border-color: rgba(var(--brand-primary-rgb), 0.4);
+    background: var(--white-08);
+  }
+}
+
+.ColorKeyModal {
+  background: var(--brand-dark);
+  border: 1px solid var(--white-15);
+  border-radius: 16px;
+  color: var(--neutral-white);
+
+  .modal-header {
+    border-bottom: 1px solid var(--white-1);
   }
 
-  &--failed {
-    color: #ff8080;
-    background: rgba(var(--semantic-danger-rgb), 0.14);
-    border-color: rgba(var(--semantic-danger-rgb), 0.4);
+  .modal-title {
+    font-size: 1rem;
+    font-weight: 700;
   }
 }
 
