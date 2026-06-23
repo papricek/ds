@@ -890,14 +890,6 @@
   color: var(--neutral-white);
 }
 
-.MaticeIntro {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--white-7);
-  margin: 0 0 18px;
-  max-width: 860px;
-}
-
 .ScenarioSubheader {
   margin-bottom: 24px;
   color: var(--neutral-white);
@@ -941,8 +933,21 @@
 .PrimaryTabs {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   border-bottom: 1px solid var(--white-1);
+
+  &__group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__info {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    align-self: center;
+  }
 
   &__tab {
     display: inline-flex;
