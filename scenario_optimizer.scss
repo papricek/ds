@@ -890,8 +890,7 @@
   color: var(--neutral-white);
 }
 
-.MaticeIntro,
-.RunsIntro {
+.MaticeIntro {
   font-size: 14px;
   line-height: 1.55;
   color: var(--white-7);
@@ -1109,23 +1108,6 @@
 }
 
 .RunDetail {
-  &__back {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 7px 13px;
-    border: 1px solid var(--white-15);
-    border-radius: var(--radius-pill);
-    background: transparent;
-    color: var(--white-7);
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 16px;
-
-    &:hover { border-color: var(--brand-primary); color: #fff; }
-  }
-
   &__header {
     display: flex;
     align-items: center;
