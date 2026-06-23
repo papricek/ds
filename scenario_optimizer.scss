@@ -7,6 +7,15 @@
   to { transform: scaleX(1); }
 }
 
+.Tabs__content {
+  --scn-prod: var(--chart-border-production);
+  --scn-prod-rgb: 40, 167, 69;
+  --scn-cons: var(--chart-border-consumption);
+  --scn-cons-rgb: 7, 7, 143;
+  --scn-share: var(--chart-border-sharing-production);
+  --scn-share-rgb: 255, 165, 56;
+}
+
 .ScenarioOptimizer {
   display: flex;
   flex-direction: column;
@@ -162,24 +171,18 @@
   }
 
   &--surplus {
-    background: rgba(var(--brand-primary-rgb), 0.08);
-    border-color: rgba(var(--brand-primary-rgb), 0.28);
-
-    .StatPill__value { color: var(--brand-primary); }
+    background: rgba(var(--scn-prod-rgb), 0.1);
+    border-color: rgba(var(--scn-prod-rgb), 0.45);
   }
 
   &--consumption {
-    background: rgba(var(--brand-secondary-rgb), 0.08);
-    border-color: rgba(var(--brand-secondary-rgb), 0.28);
-
-    .StatPill__value { color: var(--brand-secondary); }
+    background: rgba(var(--scn-cons-rgb), 0.18);
+    border-color: rgba(var(--scn-cons-rgb), 0.7);
   }
 
   &--optimized {
-    background: rgba(var(--semantic-success-rgb), 0.1);
-    border-color: rgba(var(--semantic-success-rgb), 0.4);
-
-    .StatPill__value { color: var(--semantic-success); }
+    background: rgba(var(--scn-share-rgb), 0.1);
+    border-color: rgba(var(--scn-share-rgb), 0.45);
   }
 }
 
@@ -393,7 +396,7 @@
     padding: 11px 10px;
     border-right: 1px solid var(--white-08);
     border-bottom: 1px solid var(--white-15);
-    background: rgba(var(--brand-secondary-rgb), 0.06);
+    background: rgba(var(--scn-cons-rgb), 0.14);
   }
 
   &__rowhead {
@@ -402,7 +405,7 @@
     padding: 12px 14px;
     border-right: 1px solid var(--white-15);
     border-bottom: 1px solid var(--white-08);
-    background: rgba(var(--brand-primary-rgb), 0.06);
+    background: rgba(var(--scn-prod-rgb), 0.08);
   }
 
   &__cell {
@@ -425,7 +428,7 @@
       color: var(--white-2);
       font-size: 17px;
 
-      &:hover { background: var(--white-05); color: var(--brand-secondary); }
+      &:hover { background: var(--white-05); color: var(--scn-cons); }
     }
   }
 
@@ -450,8 +453,8 @@
   flex: none;
   display: inline-block;
 
-  &--producer { width: 9px; height: 9px; background: var(--brand-primary); }
-  &--consumer { width: 8px; height: 8px; background: var(--brand-secondary); }
+  &--producer { width: 9px; height: 9px; background: var(--scn-prod); }
+  &--consumer { width: 8px; height: 8px; background: var(--scn-cons); }
 }
 
 .MatrixCell {
@@ -516,8 +519,8 @@
   color: var(--white-85);
 
   &--first {
-    background: #1a1303;
-    color: var(--brand-primary);
+    background: #06210f;
+    color: var(--scn-prod);
   }
 }
 
@@ -581,7 +584,7 @@
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(var(--semantic-success-rgb), 0.06));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(var(--scn-share-rgb), 0.06));
 
   &__col {
     text-align: center;
@@ -603,7 +606,7 @@
     line-height: 1;
 
     &--muted { color: var(--white-5); }
-    &--success { color: var(--semantic-success); }
+    &--success { color: var(--scn-share); }
 
     span { font-size: 0.45em; opacity: 0.7; }
   }
@@ -625,7 +628,7 @@
   &__fill {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(var(--semantic-success-rgb), 0.5), var(--semantic-success));
+    background: linear-gradient(90deg, rgba(var(--scn-share-rgb), 0.5), var(--scn-share));
     border-radius: 7px;
     transform-origin: left;
     animation: scenarioFillGrow 0.8s ease-out;
@@ -663,9 +666,9 @@
   &__delta {
     font-size: 13px;
     font-weight: 700;
-    color: var(--semantic-success);
-    background: rgba(var(--semantic-success-rgb), 0.14);
-    border: 1px solid rgba(var(--semantic-success-rgb), 0.35);
+    color: var(--scn-share);
+    background: rgba(var(--scn-share-rgb), 0.14);
+    border: 1px solid rgba(var(--scn-share-rgb), 0.35);
     padding: 4px 12px;
     border-radius: var(--radius-pill);
   }
@@ -744,13 +747,13 @@
   &__fill {
     display: block;
     height: 100%;
-    background: var(--semantic-success);
+    background: var(--scn-share);
     border-radius: 4px;
   }
   &__kwh {
     font-size: 13px;
     font-weight: 700;
-    color: var(--semantic-success);
+    color: var(--scn-share);
     min-width: 74px;
     text-align: right;
   }
@@ -1218,9 +1221,9 @@
   &__label { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--light-gray); font-weight: 700; white-space: nowrap; }
   &__value { font-size: 16px; font-weight: 800; line-height: 1; color: #fff; }
 
-  &--production { background: rgba(var(--brand-primary-rgb), 0.08); border-color: rgba(var(--brand-primary-rgb), 0.28); .IntervalChip__value { color: var(--brand-primary); } }
-  &--shared { background: rgba(var(--semantic-success-rgb), 0.1); border-color: rgba(var(--semantic-success-rgb), 0.4); .IntervalChip__value { color: var(--semantic-success); } }
-  &--consumption { background: rgba(var(--brand-secondary-rgb), 0.08); border-color: rgba(var(--brand-secondary-rgb), 0.28); .IntervalChip__value { color: var(--brand-secondary); } }
+  &--production { background: rgba(var(--scn-prod-rgb), 0.1); border-color: rgba(var(--scn-prod-rgb), 0.45); }
+  &--shared { background: rgba(var(--scn-share-rgb), 0.1); border-color: rgba(var(--scn-share-rgb), 0.45); }
+  &--consumption { background: rgba(var(--scn-cons-rgb), 0.18); border-color: rgba(var(--scn-cons-rgb), 0.7); }
 }
 
 .IntervalLegend {
@@ -1232,9 +1235,9 @@
   color: var(--white-7);
 
   &__item { display: inline-flex; align-items: center; gap: 7px; }
-  &__line { width: 14px; height: 0; border-top: 2px solid var(--brand-primary); }
-  &__line--production { border-top-color: var(--brand-primary); }
-  &__line--consumption { border-top: 2px dashed var(--brand-secondary); }
-  &__swatch { width: 14px; height: 10px; border-radius: 2px; background: rgba(var(--semantic-success-rgb), 0.5); }
+  &__line { width: 14px; height: 0; border-top: 2px solid var(--scn-prod); }
+  &__line--production { border-top-color: var(--scn-prod); }
+  &__line--consumption { border-top: 2px dashed var(--scn-cons); }
+  &__swatch { width: 14px; height: 10px; border-radius: 2px; background: rgba(var(--scn-share-rgb), 0.5); }
   &__note { margin-left: auto; color: var(--white-3); }
 }
