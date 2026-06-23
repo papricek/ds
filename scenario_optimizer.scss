@@ -1171,6 +1171,32 @@
   &__canvas { height: 300px; border: 1px solid var(--white-1); border-radius: 12px; padding: 14px 10px 8px; background: rgba(0, 0, 0, 0.18); }
 }
 
+.ScenarioWorkspace .ChartTypeToggle {
+  display: flex;
+  background: var(--brand-accent);
+  border: 1px solid var(--white-1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  button {
+    background: transparent;
+    color: var(--white-7);
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 32px;
+    transition: background 0.12s ease, color 0.12s ease;
+
+    &:hover { color: var(--neutral-white); }
+    &.active { background: var(--brand-primary); color: var(--neutral-white); }
+  }
+}
+
 .IntervalDay { width: auto; max-width: 220px; }
 
 .IntervalChips {
