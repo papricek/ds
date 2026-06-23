@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  color: var(--neutral-white);
 }
 
 .OptiSection {
@@ -707,6 +708,7 @@
   z-index: 1080;
   width: 324px;
   background: #181468;
+  color: var(--neutral-white);
   border: 1px solid var(--white-2);
   border-radius: 14px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
