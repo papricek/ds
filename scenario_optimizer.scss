@@ -14,25 +14,6 @@
   color: var(--neutral-white);
 }
 
-.OptiSection {
-  &__eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  &__subtitle {
-    font-size: 13px;
-    color: var(--white-5);
-    margin-top: 3px;
-  }
-
-  &__head {
-    margin-bottom: 14px;
-  }
-}
-
 .OptiCard {
   background: var(--brand-dark);
   border: 1px solid var(--white-1);
