@@ -210,8 +210,37 @@
     flex-wrap: wrap;
   }
 
-  &__cta {
+  &__actions {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__cta {
+    display: inline-flex;
+  }
+
+  &__edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--white-15);
+    border-radius: var(--radius-pill);
+    background: var(--white-05);
+    color: var(--white-85);
+    font-size: 15px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      border-color: var(--brand-primary);
+      color: #fff;
+      background: var(--white-08);
+      transform: translateY(-1px);
+    }
   }
 }
 
@@ -246,27 +275,54 @@
 .OptiButton {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
+  gap: 9px;
+  padding: 12px 28px;
   border: none;
   border-radius: var(--radius-pill);
-  background: var(--brand-primary);
+  background: linear-gradient(135deg, hsl(33, 100%, 58%), var(--brand-primary));
   color: #1a1303;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(var(--brand-primary-rgb), 0.35);
+  box-shadow: 0 6px 20px rgba(var(--brand-primary-rgb), 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 
-  &:hover { background: hsl(33, 100%, 55%); }
-  &:disabled { opacity: 0.6; cursor: default; box-shadow: none; }
+  i { font-size: 0.95em; }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(var(--brand-primary-rgb), 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 14px rgba(var(--brand-primary-rgb), 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+    filter: none;
+  }
 
   &--ghost {
     background: transparent;
     border: 1px solid var(--white-15);
     color: var(--white-85);
+    font-weight: 700;
     box-shadow: none;
 
-    &:hover { background: var(--white-05); border-color: var(--brand-primary); color: #fff; }
+    &:hover {
+      background: var(--white-05);
+      border-color: var(--brand-primary);
+      color: #fff;
+      filter: none;
+      box-shadow: none;
+    }
   }
 }
 
