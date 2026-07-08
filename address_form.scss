@@ -120,7 +120,7 @@
     display: flex;
     align-items: stretch;
 
-    .Input { padding-left: 2.4rem; }
+    .Input { padding-left: calc(0.85rem + 6ch + 0.2rem); }
 
     .prefix {
       position: absolute;
@@ -128,9 +128,11 @@
       top: 50%;
       transform: translateY(-50%);
       color: var(--light-gray);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       pointer-events: none;
       font-family: ui-monospace, Menlo, monospace;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
     }
 
     .suffix {
