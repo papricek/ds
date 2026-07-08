@@ -184,6 +184,11 @@
     background: rgba(var(--scn-share-rgb), 0.1);
     border-color: rgba(var(--scn-share-rgb), 0.45);
   }
+
+  &--real {
+    background: var(--white-08);
+    border-color: var(--white-15);
+  }
 }
 
 .RunStrip {
