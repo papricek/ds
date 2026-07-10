@@ -459,6 +459,15 @@
     overflow: hidden;
     display: flex;
   }
+
+  &__colhead--producer { background: rgba(var(--scn-prod-rgb), 0.08); }
+  &__rowhead--consumer { background: rgba(var(--scn-cons-rgb), 0.14); }
+}
+
+.MatrixToolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
 
 .SubBadge {
@@ -1274,6 +1283,21 @@
     &:hover { color: var(--neutral-white); }
     &.active { background: var(--brand-primary); color: var(--neutral-white); }
   }
+}
+
+.ScenarioWorkspace .ChartTypeToggle--labels a {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  color: var(--white-7);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.12s ease, color 0.12s ease;
+
+  &:hover { color: var(--neutral-white); }
+  &.active { background: var(--brand-primary); color: var(--neutral-white); }
 }
 
 .IntervalDay { width: auto; max-width: 220px; }
