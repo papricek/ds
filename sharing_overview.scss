@@ -1,3 +1,40 @@
+.SharingOverview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__unplanned {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid rgba(var(--semantic-warning-rgb), 0.5);
+    color: var(--semantic-warning);
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.Matrix__cell--static {
+  cursor: default;
+}
+
+.Matrix__cell--planned {
+  outline: 1px dashed var(--white-2);
+  outline-offset: -4px;
+}
+
+.MatrixCell__plan {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--white-5);
+  margin-top: 0.2rem;
+}
+
+.MatrixCell__pct--planned {
+  color: var(--white-5);
+}
+
 .AddressCards__head {
   display: flex;
   align-items: center;
