@@ -4,6 +4,18 @@
   gap: 1rem;
   color: var(--neutral-white);
 
+  .SubTabs {
+    flex-wrap: wrap;
+  }
+
+  .SubTabs__aside {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   &__unplanned {
     display: inline-block;
     padding: 0.1rem 0.45rem;
