@@ -64,6 +64,17 @@
     gap: 0.25rem;
   }
 
+  &__units {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__units-more {
+    color: var(--white-5);
+  }
+
   &__actions {
     display: flex;
     gap: 0.375rem;

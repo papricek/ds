@@ -22,6 +22,11 @@ Design system for the Wattlink family of energy management applications. Dark-th
 - **Box** - Content boxes with items, icons, actions, compact/supercompact/accent variants, and a loading overlay (`.Box__overlay` shown when container has `.is-loading`)
 - **Listings** - List items with status indicators, badges, actions, and empty states
 - **Filter Panel** - Sidebar filters with toggles, groups, and search
+- **Flash toasts** - Floating dismissible notifications (`.FlashStack` > `.Flash--success|warning|danger|info`, in `alert.scss`)
+- **Form helpers** - `.Form__btn--primary` / `--ghost` compact action buttons, `.ToggleField` (label + hint + switch), `.IconPicker` (radio icon tiles)
+- **Table variants** - `.Table--panel` and `.Table--surface` (inside `.TableSurface`), `.Table__code`
+- **Chart editor pieces** - `Chip`, `Segment`, `Swatch`, `Skeleton`, `InlineTitle`, `SeriesRow`, `PickerRow`, `SeriesPicker`, plus `--series-1…8` palette tokens
+- **Other components** - `ChartCard`, `ChartPreview`, `ComparisonCard`, `CoverageBar`, `FormCard`, `SelectableCard`, `Stepper`, `QuickActions`, `CategoryPicker`, `ChipInput`, `ConfidenceMeter`, `AutoBadge`, `PeriodRange`, `FileUpload`, `Calendar`
 
 ## Color System
 
@@ -64,6 +69,13 @@ All colors are customizable via CSS custom properties for per-tenant theming.
 ├── app.scss                 # Application layout
 └── tom_select.scss          # Tom Select overrides
 ```
+
+## What belongs here
+
+Only reusable components and elements. Styles for one page or one app live in the app's own
+stylesheets (`app/assets/stylesheets/components/`), and an app that wants a component to look
+different overrides it in `components/ds_overrides.scss` rather than editing `ds/`.
+Changing an existing rule here changes every app, so prefer adding a modifier.
 
 ## Usage in Rails
 

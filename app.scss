@@ -63,21 +63,23 @@
   }
 
   &__header {
+    // Same width rules as App__content so the navbar lines up with the page.
     &-container {
       @extend .container-lg;
-      padding: 1rem 0;
+      padding-block: 1rem;
       position: relative;
       z-index: 1030;
+
+      @include media-breakpoint-down(lg) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
     }
 
     &-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      @include media-breakpoint-down(lg) {
-        padding: 0 1rem;
-      }
     }
 
     .dropdown-toggle {
@@ -221,6 +223,7 @@
       padding: 1rem;
       .btn-close {
         filter: invert(1);
+        margin-right: 0.5rem;
       }
     }
 

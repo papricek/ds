@@ -1,0 +1,33 @@
+.Swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  &--sm {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+  }
+
+  &--lg {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &.is-active {
+      box-shadow: 0 0 0 2px var(--brand-dark), 0 0 0 3.5px var(--neutral-white);
+    }
+  }
+
+  &--1 { background: var(--series-1); }
+  &--2 { background: var(--series-2); }
+  &--3 { background: var(--series-3); }
+  &--4 { background: var(--series-4); }
+  &--5 { background: var(--series-5); }
+  &--6 { background: var(--series-6); }
+  &--7 { background: var(--series-7); }
+  &--8 { background: var(--series-8); }
+}

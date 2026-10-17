@@ -4,6 +4,11 @@
   border-radius: 12px;
   padding: 1.125rem;
 
+  @include media-breakpoint-down(md) {
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+
   &__header {
     display: flex;
     align-items: flex-start;
@@ -61,7 +66,7 @@
     width: 28px;
     height: 28px;
     border-radius: 6px;
-    background: rgba(255, 156, 0, 0.15);
+    background: rgba(var(--brand-primary-rgb), 0.15);
     color: var(--cta-base-color);
     display: inline-flex;
     align-items: center;
@@ -135,6 +140,10 @@
   &__chart {
     position: relative;
     min-height: 320px;
+
+    @include media-breakpoint-down(md) {
+      min-height: 240px;
+    }
   }
 
   &__controls {
@@ -184,8 +193,61 @@
     }
 
     &.is-active {
-      background: rgba(255, 156, 0, 0.2);
+      background: rgba(var(--brand-primary-rgb), 0.2);
       color: var(--cta-base-color);
     }
+  }
+
+  &__chart--tall {
+    min-height: 520px;
+  }
+
+  &__controls--ghost {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  &__chart:hover &__controls--ghost,
+  &__chart:focus-within &__controls--ghost {
+    opacity: 1;
+  }
+
+  &__empty {
+    flex: 1;
+    min-height: 320px;
+    border: 1.5px dashed var(--white-15);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  &__empty-illustration {
+    color: var(--white-2);
+  }
+
+  &__empty-dot {
+    opacity: 0.8;
+
+    &--1 { fill: var(--series-1); }
+    &--2 { fill: var(--series-2); }
+  }
+
+  &__empty-title {
+    font-size: 1.0625rem;
+    font-weight: 800;
+    color: var(--neutral-white);
+  }
+
+  &__empty-text {
+    font-size: 0.8125rem;
+    color: var(--white-5);
+    max-width: 320px;
+    line-height: 1.5;
+    margin-top: -0.5rem;
   }
 }

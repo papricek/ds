@@ -178,7 +178,8 @@
       }
     }
 
-    .ts-dropdown-input {
+    .ts-dropdown-input,
+    .dropdown-input-wrap .dropdown-input {
       background-color: var(--navy-blue) !important;
       border: none !important;
       border-bottom: 1px solid var(--light-gray) !important;

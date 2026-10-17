@@ -6,6 +6,12 @@
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &--2 {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 .SelectableCard {
@@ -25,9 +31,14 @@
     border-color: rgba(var(--brand-primary-rgb), 0.4);
   }
 
-  &--selected {
+  &--selected,
+  &:has(.SelectableCard__input:checked) {
     border-color: var(--brand-primary);
     background: rgba(var(--brand-primary-rgb), 0.08);
+  }
+
+  &__input:focus-visible + .SelectableCard__check {
+    box-shadow: 0 0 0 0.2rem var(--orange-transparent);
   }
 
   &__input {
@@ -50,7 +61,8 @@
     transition: background-color 0.15s ease, border-color 0.15s ease;
   }
 
-  &--selected &__check {
+  &--selected &__check,
+  &:has(.SelectableCard__input:checked) &__check {
     background: var(--brand-primary);
     border-color: var(--brand-primary);
 

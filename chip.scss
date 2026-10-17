@@ -1,0 +1,51 @@
+.Chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white-7);
+  background: var(--white-05);
+  border: 1px solid var(--white-1);
+  border-radius: 50rem;
+  padding: 0.38rem 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: var(--white-08);
+    color: var(--neutral-white);
+  }
+
+  &.is-active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--neutral-white);
+    font-weight: 700;
+  }
+
+  &--ghost {
+    background: transparent;
+    border-style: dashed;
+  }
+
+  &--sm {
+    font-size: 0.78125rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  &--static {
+    cursor: default;
+
+    &:hover {
+      background: var(--white-05);
+      color: var(--white-7);
+    }
+
+    &.is-active:hover {
+      background: var(--brand-primary);
+      color: var(--neutral-white);
+    }
+  }
+}
