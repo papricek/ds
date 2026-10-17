@@ -4,11 +4,6 @@
   border-radius: 12px;
   padding: 1.125rem;
 
-  @include media-breakpoint-down(md) {
-    padding: 0.75rem;
-    border-radius: 10px;
-  }
-
   &__header {
     display: flex;
     align-items: flex-start;
@@ -140,10 +135,6 @@
   &__chart {
     position: relative;
     min-height: 320px;
-
-    @include media-breakpoint-down(md) {
-      min-height: 240px;
-    }
   }
 
   &__controls {

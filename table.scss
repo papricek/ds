@@ -1,44 +1,8 @@
-.TableSurface {
-  background-color: var(--white-05);
-  border: 1px solid var(--white-15);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
 .Table {
   width: 100%;
   margin-bottom: 1rem;
   border-collapse: collapse;
   background-color: var(--dark-bg-color);
-
-  &--surface {
-    margin-bottom: 0;
-    background-color: transparent;
-
-    thead {
-      background-color: hsl(240, 78%, 14%);
-
-      th {
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        letter-spacing: 0.04em;
-        color: var(--light-gray);
-        font-weight: 600;
-        border-bottom: none;
-        padding: 0.7rem 1.1rem;
-      }
-    }
-
-    tbody tr {
-      border-bottom: none;
-
-      td {
-        border-top: 1px solid var(--white-1);
-        padding: 0.6rem 1.1rem;
-      }
-    }
-  }
   color: var(--white-85);
 
   .text-muted {

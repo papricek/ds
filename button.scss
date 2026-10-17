@@ -750,55 +750,58 @@
 }
 
 .Form {
-  &__actions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+  &__btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--cta-base-color);
+    color: var(--neutral-white);
+    font-weight: 600;
+
+    &:hover {
+      color: var(--neutral-white);
+      background-color: var(--orange);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px var(--orange-transparent);
+    }
   }
 
-  &__btn {
-    font-family: inherit;
-    border: 1px solid transparent;
+  &__btn-link {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: var(--fs-sm);
-    font-weight: 700;
-    padding: 0.65rem 1.1rem;
-    border-radius: 0.5rem;
-    transition: all 0.15s;
-    line-height: 1;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: transparent;
+    border-color: transparent;
     text-decoration: none;
+    font-weight: 500;
+    color: var(--cta-base-color);
 
-    i { font-size: 0.9rem; }
-
-    &--primary {
-      background: var(--brand-primary);
-      color: #fff;
-      box-shadow: 0 2px 4px rgba(var(--brand-primary-rgb), 0.25);
-
-      &:hover {
-        background: var(--orange-hover);
-        transform: translateY(-1px);
-        box-shadow: 0 3px 6px rgba(var(--brand-primary-rgb), 0.4);
-        color: #fff;
-      }
+    &:hover {
+      color: var(--orange-hover);
+      text-decoration: none;
     }
 
-    &--ghost {
-      background: transparent;
-      color: var(--light-gray);
-      border-color: var(--white-15);
-
-      &:hover {
-        color: #fff;
-        border-color: var(--white-25);
-        background: var(--white-05);
-      }
+    &--warning {
+      color: var(--warning-color);
     }
   }
 }

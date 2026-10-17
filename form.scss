@@ -1,23 +1,3 @@
-// Native selects on the dark theme — without this the browser draws the
-// dropdown list white (OS default) and Bootstrap's dark chevron is invisible.
-select.form-select,
-select.form-control {
-  color-scheme: dark;
-
-  option {
-    background-color: var(--dark-blue);
-    color: var(--neutral-white);
-  }
-}
-
-.Form select.form-select,
-.form-floating select.form-select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 16px 12px;
-}
-
 .Form {
   &__title {
     color: var(--white);
@@ -121,8 +101,8 @@ select.form-control {
   &__actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   &__toggle-password {
@@ -944,25 +924,6 @@ input[name="custom_date_range"] {
   }
 }
 
-// Laborator day picker (chart page) — the flatpickr input lives outside .Form,
-// so dark-theme its visible (alt) input to match the calendar popup.
-.LaboratorDayPicker {
-  .form-control {
-    background-color: var(--navy-blue) !important;
-    border-color: var(--light-gray) !important;
-    color: var(--neutral-white) !important;
-    border-radius: 8px !important;
-    transition: all 0.2s ease-in-out !important;
-
-    &:focus {
-      background-color: var(--navy-blue) !important;
-      border-color: var(--cta-base-color) !important;
-      color: var(--neutral-white) !important;
-      box-shadow: 0 0 0 0.2rem var(--orange-transparent) !important;
-    }
-  }
-}
-
 @media (max-width: 767px) {
   .Form__group {
     &.d-flex {
@@ -986,134 +947,6 @@ input[name="custom_date_range"] {
         margin-right: 0 !important;
         font-weight: 500;
       }
-    }
-  }
-}
-
-// ── Icon picker (superadmin account form) ─────────────────────────
-.IconPicker {
-display: flex;
-flex-wrap: wrap;
-gap: 0.5rem;
-
-&__option {
-  margin: 0;
-  cursor: pointer;
-
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-}
-
-&__tile {
-  width: 3rem;
-  height: 3rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  background: var(--white-05);
-  border: 2px solid var(--white-15);
-  color: var(--light-gray);
-  font-size: 1.15rem;
-  transition: all 0.15s ease;
-
-  &:hover {
-    border-color: var(--white-25);
-    color: var(--white);
-  }
-}
-
-input[type="radio"]:checked + &__tile {
-  background: rgba(var(--brand-primary-rgb), 0.18);
-  border-color: var(--brand-primary);
-  color: var(--brand-primary);
-}
-}
-
-// Account detail header icon tile
-.AccountHead__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  flex-shrink: 0;
-  border-radius: 0.75rem;
-  background: rgba(var(--brand-primary-rgb), 0.15);
-  border: 2px solid var(--brand-primary);
-  color: var(--brand-primary);
-  font-size: 1.5rem;
-}
-
-// ── Toggle field (label + hint on the left, switch on the right) ──
-.ToggleField {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 0;
-  padding: 1rem 1.125rem;
-  border-radius: 10px;
-  border: 2px solid var(--white-15);
-  background: var(--white-05);
-  cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-
-  &:hover {
-    border-color: rgba(var(--brand-primary-rgb), 0.4);
-  }
-
-  &:has(.form-check-input:checked) {
-    border-color: var(--brand-primary);
-    background: rgba(var(--brand-primary-rgb), 0.08);
-  }
-
-  &__text {
-    flex: 1;
-    min-width: 0;
-  }
-
-  &__title {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  &__hint {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1.45;
-    color: var(--white-5);
-  }
-
-  .form-check {
-    flex-shrink: 0;
-    min-height: auto;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  .form-check-input {
-    width: 2.75rem;
-    height: 1.5rem;
-    margin: 0;
-    cursor: pointer;
-    background-color: var(--white-15);
-    border-color: var(--white-2);
-
-    &:checked {
-      background-color: var(--brand-primary);
-      border-color: var(--brand-primary);
-    }
-
-    &:focus {
-      border-color: var(--brand-primary);
-      box-shadow: 0 0 0 0.2rem var(--orange-transparent);
     }
   }
 }

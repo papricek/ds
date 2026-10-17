@@ -120,10 +120,6 @@
   border-bottom: 1px solid var(--light-gray);
   padding: 1.5rem;
 
-  @include media-breakpoint-down(md) {
-    padding: 1rem;
-  }
-
   .modal-title {
     color: var(--light-bg-color);
     font-weight: 600;
@@ -145,10 +141,6 @@
   padding: 2rem;
   background-color: var(--dark-blue);
   color: var(--light-bg-color);
-
-  @include media-breakpoint-down(md) {
-    padding: 1rem;
-  }
 
   &--scrollable {
     max-height: 70vh;
@@ -260,15 +252,6 @@
   background-color: var(--dark-blue);
   border-top: 1px solid var(--light-gray);
   padding: 1rem 2rem;
-
-  @include media-breakpoint-down(md) {
-    padding: 0.75rem 1rem;
-    flex-direction: column-reverse;
-    align-items: stretch;
-
-    > .btn { width: 100%; margin: 0; }
-    > .btn + .btn { margin-top: 0.5rem; }
-  }
 
   .btn-outline-secondary {
     border-color: var(--light-gray);
