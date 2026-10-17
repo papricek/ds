@@ -11,6 +11,17 @@
     border-radius: 0.75rem;
   }
 
+  &--flush {
+    padding: 0;
+    overflow: hidden;
+
+    > .Box__header,
+    > .Box__title {
+      padding: 1rem 1rem 0.75rem;
+      margin-bottom: 0;
+    }
+  }
+
   &__overlay {
     position: absolute;
     inset: 0;
@@ -92,6 +103,11 @@
 
     &:hover {
       transform: translateX(4px);
+    }
+
+    // Static info rows (no interaction) — no hover shift
+    &--static:hover {
+      transform: none;
     }
 
     &--spaced {

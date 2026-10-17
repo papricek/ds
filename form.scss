@@ -1,3 +1,15 @@
+// Native selects on the dark theme — without this the browser draws the
+// dropdown list white (OS default).
+select.form-select,
+select.form-control {
+  color-scheme: dark;
+
+  option {
+    background-color: var(--dark-blue);
+    color: var(--neutral-white);
+  }
+}
+
 .Form {
   &__title {
     color: var(--white);
@@ -947,6 +959,119 @@ input[name="custom_date_range"] {
         margin-right: 0 !important;
         font-weight: 500;
       }
+    }
+  }
+}
+
+// ── Icon picker (radio tiles with an icon each) ─────────────────────
+.IconPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  &__option {
+    margin: 0;
+    cursor: pointer;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__tile {
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: var(--white-05);
+    border: 2px solid var(--white-15);
+    color: var(--light-gray);
+    font-size: 1.15rem;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: var(--white-25);
+      color: var(--white);
+    }
+  }
+
+  input[type="radio"]:checked + &__tile {
+    background: rgba(var(--brand-primary-rgb), 0.18);
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+  }
+}
+
+// ── Toggle field (label + hint on the left, switch on the right) ──
+.ToggleField {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem 1.125rem;
+  border-radius: 10px;
+  border: 2px solid var(--white-15);
+  background: var(--white-05);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    border-color: rgba(var(--brand-primary-rgb), 0.4);
+  }
+
+  &:has(.form-check-input:checked) {
+    border-color: var(--brand-primary);
+    background: rgba(var(--brand-primary-rgb), 0.08);
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  &__hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--white-5);
+  }
+
+  .form-check {
+    flex-shrink: 0;
+    min-height: auto;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .form-check-input {
+    width: 2.75rem;
+    height: 1.5rem;
+    margin: 0;
+    cursor: pointer;
+    background-color: var(--white-15);
+    border-color: var(--white-2);
+
+    &:checked {
+      background-color: var(--brand-primary);
+      border-color: var(--brand-primary);
+    }
+
+    &:focus {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 0.2rem var(--orange-transparent);
     }
   }
 }

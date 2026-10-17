@@ -1,0 +1,139 @@
+.PickerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--white-08);
+
+    .PickerRow__check {
+      visibility: visible;
+    }
+  }
+
+  &--nested {
+    padding-left: 1.6rem;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: var(--neutral-white);
+    flex-shrink: 0;
+
+    &--measurement { background: var(--series-1); }
+    &--distribution { background: var(--series-2); }
+    &--manual { background: var(--series-5); }
+    &--sharing { background: var(--series-3); }
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 0.84375rem;
+    font-weight: 700;
+    color: var(--neutral-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__meta {
+    display: block;
+    font-size: 0.71875rem;
+    color: var(--white-5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__meta-place {
+    display: none;
+  }
+
+  &__hint {
+    font-size: 0.71875rem;
+    color: var(--warning-color);
+  }
+
+  &__resolution {
+    width: 52px;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 0.6875rem;
+    color: var(--white-5);
+    white-space: nowrap;
+  }
+
+  &__check {
+    visibility: hidden;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--white-3);
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--neutral-white);
+
+    &--on {
+      visibility: visible;
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+    }
+  }
+
+  &__added {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.71875rem;
+    font-weight: 600;
+    color: var(--white-5);
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    i {
+      color: var(--success-color-light);
+    }
+  }
+
+  &__pending {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--warning-color);
+    border: 1px solid rgba(var(--semantic-warning-rgb), 0.5);
+    border-radius: 0.3rem;
+    padding: 0.12rem 0.45rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &.is-selected {
+    background: rgba(var(--brand-primary-rgb), 0.1);
+    box-shadow: inset 0 0 0 1px rgba(var(--brand-primary-rgb), 0.5);
+  }
+
+  &.is-added,
+  &.is-disabled {
+    opacity: 0.45;
+    cursor: default;
+
+    .PickerRow__check {
+      visibility: hidden;
+    }
+  }
+}

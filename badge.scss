@@ -381,3 +381,14 @@
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
+
+.Badge--unit {
+  background: var(--white-08);
+  border: 1px solid var(--white-1);
+  color: var(--white-85);
+  border-radius: 0.3rem;
+  padding: 0.12rem 0.45rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,61 @@
+.InlineTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 2px 8px;
+  margin: -2px -8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+
+  &__input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    min-width: 0;
+    width: 100%;
+    font: inherit;
+    color: var(--neutral-white);
+
+    &::placeholder {
+      color: var(--light-gray);
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    color: var(--white-3);
+    font-size: 0.75em;
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+  }
+
+  &:hover {
+    background: var(--white-05);
+
+    .InlineTitle__icon {
+      color: var(--white-5);
+    }
+  }
+
+  &:focus-within {
+    background: var(--surface-inset);
+    border-color: var(--brand-primary);
+
+    .InlineTitle__icon {
+      color: var(--brand-primary);
+    }
+  }
+
+  &--page {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  &--chart {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}

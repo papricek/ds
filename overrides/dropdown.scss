@@ -73,3 +73,20 @@
     }
   }
 }
+
+.dropdown-item--danger {
+  color: var(--danger-color-light);
+
+  i {
+    color: var(--danger-color-light);
+  }
+
+  &:hover {
+    color: var(--danger-color-light);
+    background-color: rgba(var(--semantic-danger-rgb), 0.12);
+
+    i {
+      color: var(--danger-color-light);
+    }
+  }
+}

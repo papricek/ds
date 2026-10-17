@@ -467,11 +467,35 @@
       color: var(--neutral-white);
     }
 
+    &--danger {
+      background-color: var(--danger-color);
+      color: var(--neutral-white);
+    }
+
     &--secondary {
       background-color: transparent;
       color: var(--light-gray);
       border: 1px solid var(--light-gray);
       opacity: 0.8;
+    }
+  }
+
+  &__metric-label {
+    font-size: var(--fs-xxs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white-5);
+  }
+
+  &__metacol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 110px;
+
+    @media (max-width: 767px) {
+      display: none;
     }
   }
 

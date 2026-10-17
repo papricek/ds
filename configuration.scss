@@ -140,13 +140,45 @@
   --chart-border-sky: hsl(213, 90%, 55%);
   --chart-border-grid: hsl(215, 20%, 55%);
 
+  --series-1: var(--brand-primary);
+  --series-2: hsl(224, 100%, 65%);
+  --series-3: var(--brand-secondary);
+  --series-4: hsl(352, 70%, 62%);
+  --series-5: hsl(255, 100%, 74%);
+  --series-6: var(--prehled-green);
+  --series-7: var(--prehled-amber);
+  --series-8: hsl(240, 20%, 62%);
+
+  --series-1-soft: rgba(var(--brand-primary-rgb), 0.2);
+  --series-2-soft: hsla(224, 100%, 65%, 0.2);
+  --series-3-soft: rgba(var(--brand-secondary-rgb), 0.2);
+  --series-4-soft: hsla(352, 70%, 62%, 0.2);
+  --series-5-soft: hsla(255, 100%, 74%, 0.2);
+  --series-6-soft: rgba(40, 167, 69, 0.2);
+  --series-7-soft: rgba(255, 165, 56, 0.2);
+  --series-8-soft: hsla(240, 20%, 62%, 0.2);
+
+  --surface-inset: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) - 4%));
+  --surface-raised: hsl(var(--brand-dark-h), var(--brand-dark-s), calc(var(--brand-dark-l) + 4%));
+
+  --danger-color-light: hsl(var(--semantic-danger-h), var(--semantic-danger-s), calc(var(--semantic-danger-l) + 22%));
+  --success-color-light: hsl(var(--semantic-success-h), calc(var(--semantic-success-s) - 10%), calc(var(--semantic-success-l) + 22%));
+
   --prehled-green: #28A745;
   --prehled-blue: #07078F;
   --prehled-amber: #FFA538;
-  --prehled-production-card-bg: #173450;
+  --prehled-production-card-bg: hsl(
+    calc(var(--brand-dark-h) - 31),
+    calc(var(--brand-dark-s) * 0.733),
+    calc(var(--brand-dark-l) * 1.538)
+  );
   --prehled-consumption-card-bg: #0A104E;
   --prehled-sharing-production-card-bg: #472C2F;
-  --prehled-sharing-consumption-card-bg: #92764A;
+  --prehled-sharing-consumption-card-bg: hsl(
+    calc(var(--brand-primary-h) + 3),
+    calc(var(--brand-primary-s) * 0.33),
+    calc(var(--brand-primary-l) * 0.705)
+  );
 
   --chart-bg-production: var(--prehled-production-card-bg);
   --chart-bg-consumption: var(--prehled-consumption-card-bg);
@@ -157,8 +189,11 @@
   --chart-border-production: var(--prehled-green);
   --chart-border-consumption: var(--prehled-blue);
   --chart-border-sharing-production: var(--prehled-amber);
-  --chart-border-sharing-consumption: var(--prehled-amber);
+  --chart-border-sharing-consumption: var(--prehled-sharing-consumption-card-bg);
   --chart-border-potential-sharing: var(--chart-border-purple);
+
+  --chart-border-pair-share: var(--prehled-amber);
+  --chart-border-pair-other: var(--prehled-production-card-bg);
 
   --success-green: var(--semantic-success);
   --success-green-8: rgba(var(--semantic-success-rgb), 0.8);

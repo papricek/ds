@@ -3,7 +3,15 @@
   justify-content: center;
   margin-top: 1.5rem;
 
+  @include media-breakpoint-down(md) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+
   .pagination {
+    flex-wrap: nowrap;
+
     .page-item {
       margin: 0 0.25rem;
 
@@ -15,6 +23,11 @@
         font-weight: 500;
         padding: 0.5rem 0.75rem;
         transition: all 0.2s ease;
+
+        @include media-breakpoint-down(md) {
+          padding: 0.4rem 0.6rem;
+          font-size: 0.875rem;
+        }
 
         &:hover {
           background-color: var(--cta-base-color);
