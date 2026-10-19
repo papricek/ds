@@ -1,0 +1,77 @@
+// Showcase build of the design system: Bootstrap + every ds/ component, in the
+// order the apps import them (see voltlink app/assets/stylesheets/application.scss).
+// Compiled to docs/css/ds.css by docs/build.sh — do not edit the CSS by hand.
+@import "bootstrap";
+@import "configuration";
+@import "alert";
+@import "app";
+@import "badge";
+@import "box";
+@import "button";
+@import "calendar";
+@import "card";
+@import "electricity_costs_card";
+@import "weather_forecast_card";
+@import "filter_panel";
+@import "form";
+@import "icon";
+@import "listing";
+@import "modal";
+@import "nav";
+@import "pagination";
+@import "stat_card";
+@import "status_button";
+@import "table";
+@import "tabs";
+@import "period_range";
+@import "tom_select";
+@import "file_upload";
+@import "stepper";
+@import "form_card";
+@import "category_picker";
+@import "selectable_card";
+@import "coverage_bar";
+@import "comparison_card";
+@import "chart_preview";
+@import "chart_card";
+@import "chip";
+@import "segment";
+@import "swatch";
+@import "skeleton";
+@import "inline_title";
+@import "series_row";
+@import "picker_row";
+@import "series_picker";
+@import "chip_input";
+@import "confidence_meter";
+@import "auto_badge";
+@import "quick_actions";
+// Patterns and page blocks moved here from the apps (voltlink, litelink).
+@import "app_switcher";
+@import "provoz_segment_bar";
+@import "category_icon";
+@import "expense_state";
+@import "expense_overview";
+@import "coverage_gantt";
+@import "document_list";
+@import "building_listing";
+@import "dashboard";
+@import "cockpit";
+@import "matrix";
+@import "ledger";
+@import "prehled";
+@import "users_toolbar";
+@import "list_row";
+@import "action_card";
+@import "opti_card";
+@import "stat_pill";
+@import "sub_tabs";
+@import "energy_flow";
+@import "run_detail";
+@import "allocation_matrix";
+@import "sharing_overview";
+@import "month_stepper";
+@import "overrides/dropdown";
+
+// Showcase only: what each app overrides in ds/, for the app demos.
+@import "app_overrides";

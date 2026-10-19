@@ -1,0 +1,201 @@
+// From voltlink admin/expense_overview.scss.
+$coverage-kinds: (
+  "regular": var(--brand-secondary),
+  "settlement": var(--brand-primary),
+  "advance": hsl(var(--semantic-info-h), var(--semantic-info-s), 48%),
+  "payment-calendar": var(--gray-secondary),
+  "corrective": var(--semantic-warning),
+  "feed-in": var(--semantic-success),
+  "other": var(--white-25)
+);
+
+.CoverageGantt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(150px, 200px) 1fr 150px;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__ticks {
+    position: relative;
+    height: 20px;
+    border-bottom: 1px solid var(--white-15);
+  }
+
+  &__tick {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--white-15);
+    padding-left: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--white-6);
+    white-space: nowrap;
+
+    &--minor {
+      border-left-style: dashed;
+      font-weight: 400;
+      color: var(--white-3);
+    }
+  }
+
+  &__label-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--neutral-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__label-meta {
+    font-size: 0.6875rem;
+    color: var(--light-gray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__track {
+    position: relative;
+    height: 22px;
+    border-radius: 5px;
+    background: var(--white-03);
+  }
+
+  &__bar {
+    position: absolute;
+    top: 5px;
+    height: 12px;
+    min-width: 3px;
+    border-radius: 3px;
+
+    @each $kind, $color in $coverage-kinds {
+      &--#{$kind} { background: $color; }
+    }
+
+    &--corrective {
+      top: 2px;
+      height: 6px;
+    }
+
+    &--non-cost { opacity: 0.8; }
+  }
+
+  &__gap {
+    position: absolute;
+    top: 3px;
+    height: 16px;
+    min-width: 3px;
+    border-radius: 3px;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(var(--semantic-danger-rgb), 0.35) 0 3px,
+      transparent 3px 6px
+    );
+    border: 1px dashed rgba(var(--semantic-danger-rgb), 0.6);
+  }
+
+  &__overlap {
+    position: absolute;
+    top: 2px;
+    height: 18px;
+    min-width: 3px;
+    border-radius: 3px;
+    background: rgba(var(--semantic-danger-rgb), 0.75);
+  }
+
+  &__badge-cell {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    i { font-size: 0.6rem; }
+
+    &--danger {
+      background: rgba(var(--semantic-danger-rgb), 0.16);
+      border: 1px solid rgba(var(--semantic-danger-rgb), 0.5);
+      color: var(--semantic-danger);
+    }
+
+    &--warning {
+      background: rgba(var(--semantic-warning-rgb), 0.16);
+      border: 1px solid rgba(var(--semantic-warning-rgb), 0.5);
+      color: var(--semantic-warning);
+    }
+
+    &--muted { color: var(--light-gray); }
+  }
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.6875rem;
+    color: var(--white-7);
+  }
+
+  &__legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  &__legend-swatch {
+    width: 14px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+
+    @each $kind, $color in $coverage-kinds {
+      &--#{$kind} { background: $color; }
+    }
+
+    &--gap {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(var(--semantic-danger-rgb), 0.35) 0 3px,
+        transparent 3px 6px
+      );
+      border: 1px dashed rgba(var(--semantic-danger-rgb), 0.6);
+    }
+
+    &--overlap { background: rgba(var(--semantic-danger-rgb), 0.75); }
+  }
+
+  &__footer {
+    margin-top: 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--white-1);
+    font-size: 0.75rem;
+    color: var(--white-7);
+  }
+
+  &__more {
+    font-size: 0.6875rem;
+    color: var(--light-gray);
+  }
+
+  @media (max-width: 767px) {
+    &__row { grid-template-columns: 110px 1fr; }
+    &__badge-cell { display: none; }
+  }
+}

@@ -1,0 +1,42 @@
+// From litelink components/scenario_optimizer.scss.
+@keyframes scenarioFlowDash {
+  to { stroke-dashoffset: -28; }
+}
+
+@keyframes scenarioFillGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.EnergyFlow {
+  padding: 8px 10px 18px;
+
+  &__svg { display: block; width: 100%; }
+
+  &__link {
+    stroke: var(--chart-border-sharing-production);
+    stroke-linecap: round;
+    fill: none;
+    animation: scenarioFlowDash 1.4s linear infinite;
+  }
+
+  &__guide {
+    stroke: var(--white-1);
+    stroke-width: 2;
+    stroke-dasharray: 2 6;
+    fill: none;
+  }
+
+  &__warning {
+    margin: 6px 12px 0;
+    padding: 12px 16px;
+    background: rgba(var(--semantic-warning-rgb), 0.1);
+    border: 1px solid rgba(var(--semantic-warning-rgb), 0.35);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--white-85);
+  }
+}

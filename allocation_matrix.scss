@@ -1,0 +1,284 @@
+// From litelink components/scenario_optimizer.scss + sharing_overview.scss (.Matrix renamed to .AllocationMatrix, .Legend to .MatrixLegend).
+.ColorKey {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--white-05);
+  border: 1px solid var(--white-1);
+  border-radius: 12px;
+  width: fit-content;
+
+  &__title {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    font-weight: 700;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--white-85);
+  }
+
+  &__swatch {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+  }
+}
+
+.AllocationMatrix {
+  overflow-x: auto;
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--white-15);
+    border-radius: 12px;
+    overflow: hidden;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  &__row { display: flex; }
+
+  &__corner {
+    flex: none;
+    width: 236px;
+    padding: 12px 14px;
+    border-right: 1px solid var(--white-15);
+    border-bottom: 1px solid var(--white-15);
+    background: var(--white-05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--white-3);
+    font-weight: 700;
+  }
+
+  &__colhead {
+    flex: none;
+    width: 200px;
+    padding: 11px 10px;
+    border-right: 1px solid var(--white-08);
+    border-bottom: 1px solid var(--white-15);
+    background: rgba(var(--scn-cons-rgb, 7, 7, 143), 0.14);
+    word-break: break-word;
+  }
+
+  &__rowhead {
+    flex: none;
+    width: 236px;
+    padding: 12px 14px;
+    border-right: 1px solid var(--white-15);
+    border-bottom: 1px solid var(--white-08);
+    background: rgba(var(--scn-prod-rgb, 40, 167, 69), 0.08);
+  }
+
+  &__cell {
+    flex: none;
+    width: 200px;
+    min-height: 96px;
+    cursor: pointer;
+    border-right: 1px solid var(--white-08);
+    border-bottom: 1px solid var(--white-08);
+    background: transparent;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+
+    &--empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-2);
+      font-size: 17px;
+
+      &:hover { background: var(--white-05); color: var(--scn-cons, var(--chart-border-consumption)); }
+    }
+  }
+
+  &__ean {
+    font-family: var(--font-mono, ui-monospace, Menlo, monospace);
+    font-size: 10px;
+    color: var(--white-3);
+    margin-top: 3px;
+    word-break: break-all;
+  }
+
+  &__keybar {
+    height: 7px;
+    border-radius: 4px;
+    background: var(--white-1);
+    overflow: hidden;
+    display: flex;
+  }
+
+  &__colhead--producer { background: rgba(var(--scn-prod-rgb, 40, 167, 69), 0.08); }
+  &__rowhead--consumer { background: rgba(var(--scn-cons-rgb, 7, 7, 143), 0.14); }
+}
+
+.MatrixToolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.SubBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 4px 9px;
+  max-width: 100%;
+  border: 1px dashed var(--white-15);
+  border-radius: var(--radius-pill, 50rem);
+  background: transparent;
+  color: var(--white-5);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    border-color: var(--brand-secondary);
+    color: var(--brand-secondary);
+    background: var(--white-05);
+  }
+
+  &.is-active {
+    border-style: solid;
+    border-color: rgba(var(--brand-secondary-rgb), 0.5);
+    background: rgba(var(--brand-secondary-rgb), 0.12);
+    color: var(--brand-secondary);
+  }
+
+  &--warn {
+    border-color: rgba(var(--semantic-danger-rgb), 0.5);
+    color: #ff8080;
+  }
+}
+
+.MatrixCell {
+  padding: 10px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__pct {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+
+    span { font-size: 12px; }
+  }
+
+  &__kwh {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white-85);
+
+    span { font-size: 10px; opacity: 0.6; }
+  }
+
+  &__flags {
+    display: flex;
+    gap: 5px;
+    margin-top: auto;
+  }
+
+  &--forbidden {
+    height: 100%;
+    min-height: 96px;
+    background: repeating-linear-gradient(45deg, rgba(var(--semantic-danger-rgb), 0.12), rgba(var(--semantic-danger-rgb), 0.12) 7px, transparent 7px, transparent 14px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #ff8080;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+
+.OrderBadge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill, 50rem);
+  background: var(--white-1);
+  color: var(--white-85);
+
+  &--first {
+    background: #06210f;
+    color: var(--scn-prod, var(--chart-border-production));
+  }
+}
+
+.MatrixLegend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--white-5);
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__hint {
+    margin-left: auto;
+    color: var(--brand-primary);
+    font-weight: 600;
+  }
+}
+
+.AllocationMatrix__cell--static {
+  cursor: default;
+}
+
+.AllocationMatrix__cell--planned {
+  outline: 1px dashed var(--white-2);
+  outline-offset: -4px;
+}
+
+.MatrixCell__plan {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--white-5);
+  margin-top: 0.2rem;
+}
+
+.MatrixCell__pct--planned {
+  color: var(--white-5);
+}

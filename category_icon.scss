@@ -1,0 +1,32 @@
+// From voltlink admin/expense_overview.scss.
+.CategoryIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 6px;
+  color: var(--neutral-white);
+  font-size: 11px;
+  width: 26px;
+  height: 26px;
+
+  &--sm {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.CategoryDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.GroupHeader__divider {
+  flex-grow: 1;
+  height: 1px;
+  background: var(--white-1);
+  margin: 0 4px;
+}

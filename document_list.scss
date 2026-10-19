@@ -1,0 +1,245 @@
+// From voltlink admin/documents.scss.
+// ─── Listing — list view ──────────────────────────────────────
+
+.DocumentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.DocumentGroup {
+  background: var(--white-03);
+  border: 1px solid var(--white-1);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.DocumentGroup__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: var(--white-05);
+  border-bottom: 1px solid var(--white-05);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--neutral-white);
+
+  > i {
+    color: var(--brand-primary);
+    font-size: 0.875rem;
+  }
+}
+
+.DocumentGroup__name {
+  white-space: nowrap;
+}
+
+.DocumentGroup__divider {
+  flex-grow: 1;
+  height: 1px;
+  background: var(--white-1);
+  margin: 0 0.25rem;
+}
+
+.DocumentGroup__count {
+  font-size: 0.6875rem;
+  color: var(--light-gray);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.DocumentGroup__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.DocumentRow {
+  display: grid;
+  grid-template-columns: 38px 1fr 240px auto;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--white-05);
+  color: var(--neutral-white);
+  transition: background 0.12s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--white-03);
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: 38px 1fr;
+    row-gap: 0.5rem;
+  }
+}
+
+.DocumentRow__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.DocumentRow__main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+}
+
+.DocumentRow__title-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.DocumentRow__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--neutral-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.DocumentRow__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  font-size: 0.6875rem;
+  color: var(--light-gray);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    i {
+      opacity: 0.7;
+    }
+  }
+}
+
+.DocumentRow__validity {
+  font-size: 0.75rem;
+  color: var(--white-7);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+
+  @media (max-width: 991px) {
+    grid-column: 2 / -1;
+  }
+}
+
+.DocumentRow__validity-label {
+  font-size: 0.625rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.DocumentRow__validity-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+
+  i {
+    font-size: 0.75rem;
+  }
+}
+
+.DocumentRow__validity-detail {
+  margin-left: 0.25rem;
+  opacity: 0.85;
+  font-size: 0.6875rem;
+}
+
+.DocumentRow__validity--expired .DocumentRow__validity-value {
+  color: var(--semantic-danger);
+  font-weight: 700;
+}
+
+.DocumentRow__validity--expiring-30 .DocumentRow__validity-value {
+  color: var(--semantic-warning);
+  font-weight: 700;
+}
+
+.DocumentRow__validity--expiring-90 .DocumentRow__validity-value {
+  color: var(--semantic-info);
+}
+
+.DocumentRow__validity--ok .DocumentRow__validity-value {
+  color: var(--semantic-success);
+}
+
+.DocumentRow__actions {
+  justify-content: flex-end;
+
+  @media (max-width: 991px) {
+    grid-column: 2 / -1;
+    justify-content: flex-start;
+  }
+}
+
+// ─── Badges & tags ────────────────────────────────────────────
+
+.DocumentBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--white-1);
+  color: var(--neutral-white);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  i {
+    font-size: 0.625rem;
+  }
+
+  &--subtle {
+    text-transform: none;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+
+.DocumentTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--white-1);
+  color: var(--white-7);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  i {
+    font-size: 0.5rem;
+    opacity: 0.7;
+  }
+}
