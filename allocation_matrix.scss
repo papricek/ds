@@ -142,7 +142,7 @@
   padding: 4px 9px;
   max-width: 100%;
   border: 1px dashed var(--white-15);
-  border-radius: var(--radius-pill, 50rem);
+  border-radius: var(--radius-pill);
   background: transparent;
   color: var(--white-5);
   font-size: 10px;
@@ -232,7 +232,7 @@
   font-size: 10px;
   font-weight: 800;
   padding: 2px 7px;
-  border-radius: var(--radius-pill, 50rem);
+  border-radius: var(--radius-pill);
   background: var(--white-1);
   color: var(--white-85);
 
