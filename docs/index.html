@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Icon fonts the apps use: Font Awesome (voltlink, litelink), Bootstrap Icons (older markup) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/ds.css">
+  <link rel="stylesheet" href="css/apps.css">
+  <link rel="stylesheet" href="css/showcase.css">
 </head>
 <body>
   <div class="showcase-container">
@@ -426,89 +431,94 @@
 
       <h3>Dark Form Inputs</h3>
       <div class="example-box">
-        <div class="Form">
-          <div class="Form__title">Account Settings</div>
-          <div class="Form__text">Update your account information below.</div>
-          <div class="Form__group">
-            <label class="Form__label Form__label--required">Full Name</label>
-            <input type="text" class="Form__input" placeholder="Enter your full name" value="Jan Novak">
-          </div>
-          <div class="Form__group">
-            <label class="Form__label Form__label--required">Email Address</label>
-            <input type="email" class="Form__input" placeholder="Enter your email">
-          </div>
-          <div class="Form__group">
-            <label class="Form__label">Company</label>
-            <input type="text" class="Form__input" placeholder="Company name (optional)">
-          </div>
-          <div class="Form__group">
-            <label class="Form__label">Role</label>
-            <select class="Form__input">
-              <option>Administrator</option>
-              <option>Manager</option>
-              <option>User</option>
-            </select>
-          </div>
-          <div class="Form__group">
-            <label class="Form__label">Notes</label>
-            <textarea class="Form__input" placeholder="Additional notes..." style="min-height: 80px; resize: vertical;"></textarea>
-          </div>
+        <div class="Box">
+          <h1 class="Form__title">Nastavení účtu</h1>
+          <p class="Form__text">Upravte své kontaktní údaje.</p>
+          <form class="Form Form--dark" novalidate>
+            <div class="form-floating Form__group">
+              <input type="text" class="form-control Form__input" id="demo-name" placeholder="Jméno" value="Jana Dvořáková">
+              <label for="demo-name" class="Form__label Form__label--required">Jméno a příjmení</label>
+            </div>
+            <div class="form-floating Form__group">
+              <input type="email" class="form-control Form__input" id="demo-email" placeholder="E-mail">
+              <label for="demo-email" class="Form__label Form__label--required">E-mail</label>
+            </div>
+            <div class="form-floating Form__group">
+              <select class="form-select Form__input" id="demo-role">
+                <option>Správce</option>
+                <option>Uživatel</option>
+              </select>
+              <label for="demo-role" class="Form__label">Role</label>
+            </div>
+            <div class="form-floating Form__group">
+              <textarea class="form-control Form__input" id="demo-note" placeholder="Poznámka" style="height: 96px">Kontaktní osoba pro revize.</textarea>
+              <label for="demo-note" class="Form__label">Poznámka</label>
+            </div>
+            <div class="Form__actions">
+              <a href="#" class="Form__btn Form__btn--ghost"><i class="fas fa-xmark"></i> Zrušit</a>
+              <button type="button" class="Form__btn Form__btn--primary"><i class="fas fa-check"></i> Uložit</button>
+            </div>
+          </form>
         </div>
       </div>
 
       <h3>Granularity Buttons</h3>
       <div class="example-box">
-        <div class="Form__filter-label">Time Period</div>
+        <div class="Form__filter-label">Granularita</div>
         <div class="Form__granularity-buttons" style="margin-top: 0.5rem;">
-          <label class="Form__granularity-btn active">Hourly</label>
-          <label class="Form__granularity-btn">Daily</label>
-          <label class="Form__granularity-btn">Weekly</label>
-          <label class="Form__granularity-btn">Monthly</label>
-          <label class="Form__granularity-btn">Yearly</label>
+          <input type="radio" class="Form__granularity-input" name="demo-gran" id="demo-gran-1m"><input type="radio" class="Form__granularity-input" name="legacy-granularity-group1" id="legacy-granularity-4"><label class="Form__granularity-btn" for="legacy-granularity-4" for="demo-gran-1m">1m</label>
+          <input type="radio" class="Form__granularity-input" name="demo-gran" id="demo-gran-1d" checked><input type="radio" class="Form__granularity-input" name="legacy-granularity-group1" id="legacy-granularity-5"><label class="Form__granularity-btn" for="legacy-granularity-5" for="demo-gran-1d">1d</label>
+          <input type="radio" class="Form__granularity-input" name="demo-gran" id="demo-gran-1h"><input type="radio" class="Form__granularity-input" name="legacy-granularity-group1" id="legacy-granularity-6"><label class="Form__granularity-btn" for="legacy-granularity-6" for="demo-gran-1h">1h</label>
+          <input type="radio" class="Form__granularity-input" name="demo-gran" id="demo-gran-15"><input type="radio" class="Form__granularity-input" name="legacy-granularity-group1" id="legacy-granularity-7"><label class="Form__granularity-btn" for="legacy-granularity-7" for="demo-gran-15">0.25h</label>
         </div>
       </div>
 
       <h3>Role Selector</h3>
       <div class="example-box">
         <div class="Form__role-buttons">
-          <button class="Form__role-btn active">Admin</button>
-          <button class="Form__role-btn">Manager</button>
-          <button class="Form__role-btn">User</button>
-          <button class="Form__role-btn">Viewer</button>
+          <input type="radio" class="Form__role-input" name="demo-role-btn" id="demo-role-admin" checked><label class="Form__role-btn" for="demo-role-admin"><i class="fas fa-shield-halved me-2"></i>Admin</label>
+          <input type="radio" class="Form__role-input" name="demo-role-btn" id="demo-role-supplier"><label class="Form__role-btn" for="demo-role-supplier"><i class="fas fa-solar-panel me-2"></i>Dodavatel</label>
+          <input type="radio" class="Form__role-input" name="demo-role-btn" id="demo-role-customer"><label class="Form__role-btn" for="demo-role-customer"><i class="fas fa-plug me-2"></i>Odběratel</label>
         </div>
       </div>
 
       <h3>Checkbox Group</h3>
       <div class="example-box">
-        <div class="Form__filter-label" style="margin-bottom: 0.5rem;">Notifications</div>
+        <div class="Form__filter-label">Upozornění</div>
         <div class="Form__checkbox-group">
-          <label><input type="checkbox" checked> Email notifications</label>
-          <label><input type="checkbox" checked> Push notifications</label>
-          <label><input type="checkbox"> SMS alerts</label>
-          <label><input type="checkbox"> Weekly digest</label>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="demo-cb-1" checked><label class="form-check-label" for="demo-cb-1">E-mail při nové faktuře</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="demo-cb-2" checked><label class="form-check-label" for="demo-cb-2">Výpadek zdroje dat</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="demo-cb-3"><label class="form-check-label" for="demo-cb-3">Týdenní souhrn</label></div>
         </div>
       </div>
 
-      <h3>Form Actions</h3>
+      <h3>Toggle Field</h3>
       <div class="example-box">
-        <div class="Form__actions">
-          <button class="Button Button--outlined Button--primary">Cancel</button>
-          <button class="Button Button--primary">Save Changes</button>
-        </div>
+        <label class="ToggleField">
+          <span class="ToggleField__text">
+            <span class="ToggleField__title">Zobrazit potenciál sdílení</span>
+            <span class="ToggleField__hint">V grafech se ukáže, kolik by šlo sdílet při ideálním klíči.</span>
+          </span>
+          <span class="form-check form-switch m-0"><input class="form-check-input" type="checkbox" role="switch" checked></span>
+        </label>
       </div>
 
       <h3>Usage Example</h3>
       <div class="example-box" style="background-color: var(--white-1);">
-        <pre><code>&lt;div class="Form"&gt;
-  &lt;div class="Form__group"&gt;
-    &lt;label class="Form__label Form__label--required"&gt;Name&lt;/label&gt;
-    &lt;input type="text" class="Form__input" placeholder="..."&gt;
+        <pre><code>&lt;form class="Form Form--dark"&gt;
+  &lt;div class="form-floating Form__group"&gt;
+    &lt;input class="form-control Form__input" id="name" placeholder="Jméno"&gt;
+    &lt;label for="name" class="Form__label Form__label--required"&gt;Jméno&lt;/label&gt;
   &lt;/div&gt;
   &lt;div class="Form__granularity-buttons"&gt;
-    &lt;label class="Form__granularity-btn active"&gt;Daily&lt;/label&gt;
-    &lt;label class="Form__granularity-btn"&gt;Monthly&lt;/label&gt;
+    &lt;input type="radio" class="Form__granularity-input" id="g-1d" name="g" checked&gt;
+    &lt;label class="Form__granularity-btn" for="g-1d"&gt;1d&lt;/label&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  &lt;div class="Form__actions"&gt;
+    &lt;a class="Form__btn Form__btn--ghost"&gt;Zrušit&lt;/a&gt;
+    &lt;button class="Form__btn Form__btn--primary"&gt;Uložit&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
       </div>
     </section>
 
@@ -544,21 +554,21 @@
             <button class="modal-close">&times;</button>
           </div>
           <div class="modal-body">
-            <div class="Form">
+            <div class="Form Form--dark">
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Name</label>
-                <input type="text" class="Form__input" placeholder="Member name">
+                <input type="text" class="form-control Form__input" placeholder="Member name">
               </div>
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Email</label>
-                <input type="email" class="Form__input" placeholder="member@example.com">
+                <input type="email" class="form-control Form__input" placeholder="member@example.com">
               </div>
               <div class="Form__group">
                 <label class="Form__label">Role</label>
                 <div class="Form__role-buttons" style="height: 44px;">
-                  <button class="Form__role-btn active">Admin</button>
-                  <button class="Form__role-btn">User</button>
-                  <button class="Form__role-btn">Viewer</button>
+                  <input type="radio" class="Form__role-input" name="legacy-role-group2" id="legacy-role-1" checked><label class="Form__role-btn" for="legacy-role-1">Admin</label>
+                  <input type="radio" class="Form__role-input" name="legacy-role-group2" id="legacy-role-2"><label class="Form__role-btn" for="legacy-role-2">User</label>
+                  <input type="radio" class="Form__role-input" name="legacy-role-group2" id="legacy-role-3"><label class="Form__role-btn" for="legacy-role-3">Viewer</label>
                 </div>
               </div>
             </div>
@@ -615,7 +625,7 @@
       <h3>Primary Tabs</h3>
       <div class="example-box">
         <div class="Tabs">
-          <nav class="nav-tabs">
+          <nav class="nav nav-tabs">
             <a class="nav-link active">Overview</a>
             <a class="nav-link">Production</a>
             <a class="nav-link">Consumption</a>
@@ -630,7 +640,7 @@
       <h3>Secondary Tabs</h3>
       <div class="example-box">
         <div class="Tabs">
-          <nav class="nav-tabs-secondary">
+          <nav class="nav nav-tabs-secondary">
             <a class="nav-link active">All</a>
             <a class="nav-link">Active</a>
             <a class="nav-link">Pending</a>
@@ -642,7 +652,7 @@
       <h3>Tabs with Content</h3>
       <div class="example-box">
         <div class="Tabs">
-          <nav class="nav-tabs">
+          <nav class="nav nav-tabs">
             <a class="nav-link active">Members</a>
             <a class="nav-link">Invoices</a>
             <a class="nav-link">Settings</a>
@@ -708,7 +718,8 @@
         </nav>
       </div>
 
-      <h3>Vertical Navigation</h3>
+      <h3>Vertical Navigation <span class="showcase-note">no app uses it</span></h3>
+      <p>No app view uses <code>.Nav--vertical</code> today. Note that from the <code>lg</code> breakpoint up its active link inherits the brand background from <code>.Nav__link.active</code> while the vertical variant also paints the text in the brand colour, so the active label disappears.</p>
       <div class="example-box">
         <nav class="Nav Nav--vertical" style="max-width: 280px;">
           <ul class="Nav__list">
@@ -718,7 +729,7 @@
             <li class="Nav__item"><a class="Nav__link">Partners</a></li>
             <div class="Nav__divider"></div>
             <li class="Nav__item"><a class="Nav__link">Settings</a></li>
-            <li class="Nav__item"><a class="Nav__link" style="color: var(--semantic-danger);">Logout</a></li>
+            <li class="Nav__item"><a class="Nav__link Nav__link--muted"><i class="fas fa-right-from-bracket"></i> Odhlásit</a></li>
           </ul>
         </nav>
       </div>
@@ -828,22 +839,22 @@
       <h3>Stat Card Grid</h3>
       <div class="example-box">
         <div class="StatCardGrid">
-          <div class="StatCard">
-            <div class="StatCard__icon" style="background-color: var(--brand-primary);">&#9889;</div>
+          <div class="StatCard StatCard--surface">
+            <div class="StatCard__icon" style="background-color: var(--brand-primary);"><i class="fas fa-solar-panel"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Total Production</div>
               <div class="StatCard__value">1,234 <span class="StatCard__unit">kWh</span></div>
             </div>
           </div>
-          <div class="StatCard">
-            <div class="StatCard__icon" style="background-color: var(--brand-secondary);">&#8595;</div>
+          <div class="StatCard StatCard--surface">
+            <div class="StatCard__icon" style="background-color: var(--brand-secondary);"><i class="fas fa-plug"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Total Consumption</div>
               <div class="StatCard__value">987 <span class="StatCard__unit">kWh</span></div>
             </div>
           </div>
-          <div class="StatCard">
-            <div class="StatCard__icon" style="background-color: var(--brand-accent);">&#8596;</div>
+          <div class="StatCard StatCard--surface">
+            <div class="StatCard__icon" style="background-color: var(--brand-accent);"><i class="fas fa-share-nodes"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Energy Shared</div>
               <div class="StatCard__value">456 <span class="StatCard__unit">kWh</span></div>
@@ -855,22 +866,22 @@
       <h3>Compact Stat Cards</h3>
       <div class="example-box">
         <div class="StatCardGrid">
-          <div class="StatCard StatCard--compact">
-            <div class="StatCard__icon" style="background-color: var(--semantic-success);">&#10003;</div>
+          <div class="StatCard StatCard--surface StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-success);"><i class="fas fa-check"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Active</div>
               <div class="StatCard__value">24</div>
             </div>
           </div>
-          <div class="StatCard StatCard--compact">
-            <div class="StatCard__icon" style="background-color: var(--semantic-warning);">&#8987;</div>
+          <div class="StatCard StatCard--surface StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-warning);"><i class="fas fa-hourglass-half"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Pending</div>
               <div class="StatCard__value">7</div>
             </div>
           </div>
-          <div class="StatCard StatCard--compact">
-            <div class="StatCard__icon" style="background-color: var(--semantic-danger);">&#10005;</div>
+          <div class="StatCard StatCard--surface StatCard--compact">
+            <div class="StatCard__icon" style="background-color: var(--semantic-danger);"><i class="fas fa-xmark"></i></div>
             <div class="StatCard__content">
               <div class="StatCard__label">Errors</div>
               <div class="StatCard__value">2</div>
@@ -920,10 +931,10 @@
       <h3>Status Button States</h3>
       <div class="example-box">
         <div class="showcase-flex-row">
-          <button class="StatusButton StatusButton--pending">&#9679; Pending</button>
-          <button class="StatusButton StatusButton--running">&#9654; Running</button>
-          <button class="StatusButton StatusButton--success">&#10003; Success</button>
-          <button class="StatusButton StatusButton--error">&#10005; Error</button>
+          <button class="StatusButton StatusButton--pending"><i class="fas fa-clock"></i> Čeká</button>
+          <button class="StatusButton StatusButton--running"><i class="fas fa-spinner fa-spin"></i> Běží</button>
+          <button class="StatusButton StatusButton--success"><i class="fas fa-check"></i> Hotovo</button>
+          <button class="StatusButton StatusButton--error"><i class="fas fa-xmark"></i> Chyba</button>
         </div>
       </div>
 
@@ -1097,7 +1108,7 @@
               </div>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="Listing__badges">
-                  <span class="Listing__badge Listing__badge--warning">&#8987; Awaiting contract</span>
+                  <span class="Listing__badge Listing__badge--warning"><i class="fas fa-hourglass-half"></i> Awaiting contract</span>
                   <span class="Listing__badge Listing__badge--secondary">Standard</span>
                 </div>
                 <div class="Listing__actions">
@@ -1462,7 +1473,7 @@
           <div class="Listing__item">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__status Listing__status--pending"><i class="fas fa-hourglass-half"></i></div>
                 <div class="Listing__info">
                   <div class="Listing__name">Data import &mdash; February 2026</div>
                 </div>
@@ -1665,7 +1676,7 @@
           <div class="Listing__item">
             <div class="Listing__content Listing__content--single-line">
               <div class="Listing__main">
-                <div class="Listing__status Listing__status--pending">&#8987;</div>
+                <div class="Listing__status Listing__status--pending"><i class="fas fa-hourglass-half"></i></div>
                 <div class="Listing__info">
                   <div class="Listing__name"><code>--pending</code> &mdash; Awaiting action</div>
                 </div>
@@ -2291,7 +2302,7 @@
         </div>
 
         <div class="Tabs" style="margin-bottom: 1rem;">
-          <nav class="nav-tabs">
+          <nav class="nav nav-tabs">
             <a class="nav-link active">Members</a>
             <a class="nav-link">Invoices</a>
             <a class="nav-link">Activity</a>
@@ -2410,7 +2421,7 @@
     <!-- ENERGY DASHBOARD MOCKUP                       -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Energy Dashboard Mockup</h2>
+      <h2>Energy Dashboard Mockup <span class="showcase-note">mockup · KPICard, Toolbar not in ds/</span></h2>
       <p>A full dashboard page layout combining Toolbar, KPI cards, tabs, data table, and pagination into a realistic energy management view.</p>
 
       <h3>Complete Dashboard</h3>
@@ -2423,7 +2434,7 @@
             <span class="Badge Badge--success Badge--pill">Live</span>
           </div>
           <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            <input type="text" class="Form__input" placeholder="&#128269; Search metering points..." style="width: 240px; padding: 0.5rem 0.75rem; font-size: var(--fs-xs); margin: 0;">
+            <input type="text" class="form-control Form__input" placeholder="&#128269; Search metering points..." style="width: 240px; padding: 0.5rem 0.75rem; font-size: var(--fs-xs); margin: 0;">
             <button class="Button Button--outlined Button--primary Button--small">&#8635; Refresh</button>
             <button class="Button Button--primary Button--small">+ Add Source</button>
           </div>
@@ -2463,7 +2474,7 @@
 
         <!-- Tabs -->
         <div class="Tabs" style="margin-bottom: 0;">
-          <nav class="nav-tabs">
+          <nav class="nav nav-tabs">
             <a class="nav-link active">Overview</a>
             <a class="nav-link">Details</a>
           </nav>
@@ -2558,7 +2569,7 @@
     <!-- SETTINGS PAGE MOCKUP                          -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Settings Page Mockup</h2>
+      <h2>Settings Page Mockup <span class="showcase-note">mockup · Avatar not in ds/</span></h2>
       <p>A settings page layout combining navigation, avatar, form inputs, checkbox preferences, and action buttons.</p>
 
       <h3>Account Settings</h3>
@@ -2580,22 +2591,22 @@
           <!-- Left column: Form in a Card -->
           <div class="Card">
             <div class="Card__title">Profile Information</div>
-            <div class="Form">
+            <div class="Form Form--dark">
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Full Name</label>
-                <input type="text" class="Form__input" value="Jan Novak">
+                <input type="text" class="form-control Form__input" value="Jan Novak">
               </div>
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Email Address</label>
-                <input type="email" class="Form__input" value="jan.novak@wattlink.cz">
+                <input type="email" class="form-control Form__input" value="jan.novak@wattlink.cz">
               </div>
               <div class="Form__group">
                 <label class="Form__label">Company</label>
-                <input type="text" class="Form__input" value="Solar Community Prague s.r.o.">
+                <input type="text" class="form-control Form__input" value="Solar Community Prague s.r.o.">
               </div>
               <div class="Form__group">
                 <label class="Form__label">Role in Community</label>
-                <select class="Form__input">
+                <select class="form-select Form__input">
                   <option>Community Administrator</option>
                   <option>Energy Manager</option>
                   <option>Member</option>
@@ -2656,7 +2667,7 @@
     <!-- ONBOARDING WIZARD MOCKUP                      -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Onboarding Wizard</h2>
+      <h2>Onboarding Wizard <span class="showcase-note">mockup · ProgressBar, StepIndicator not in ds/</span></h2>
       <p>A step-by-step wizard for onboarding new energy community members, showing step indicators, progress, and form content.</p>
 
       <h3>Community Registration Wizard</h3>
@@ -2708,34 +2719,34 @@
           <div class="Card__title">&#9728; Step 2: Configure Energy Sources</div>
           <p style="color: var(--light-gray); margin-bottom: 1.5rem;">Register the solar panels and other generation assets for your energy community.</p>
 
-          <div class="Form">
+          <div class="Form Form--dark">
             <div class="Form__group">
               <label class="Form__label Form__label--required">Source Name</label>
-              <input type="text" class="Form__input" value="Rooftop Solar Array - Building A">
+              <input type="text" class="form-control Form__input" value="Rooftop Solar Array - Building A">
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Installed Capacity</label>
-                <input type="text" class="Form__input" placeholder="e.g. 12.5 kWp" value="12.5 kWp">
+                <input type="text" class="form-control Form__input" placeholder="e.g. 12.5 kWp" value="12.5 kWp">
               </div>
               <div class="Form__group">
                 <label class="Form__label Form__label--required">Metering Point EAN</label>
-                <input type="text" class="Form__input" placeholder="859182400..." value="859182400712345678">
+                <input type="text" class="form-control Form__input" placeholder="859182400..." value="859182400712345678">
               </div>
             </div>
             <div class="Form__group">
               <label class="Form__label">Source Type</label>
               <div class="Form__granularity-buttons">
-                <label class="Form__granularity-btn active">&#9728; Solar</label>
-                <label class="Form__granularity-btn">&#127744; Wind</label>
-                <label class="Form__granularity-btn">&#128267; Hydro</label>
-                <label class="Form__granularity-btn">&#128267; Biomass</label>
-                <label class="Form__granularity-btn">&#9879; Other</label>
+                <input type="radio" class="Form__granularity-input" name="legacy-granularity-group3" id="legacy-granularity-8" checked><label class="Form__granularity-btn" for="legacy-granularity-8">&#9728; Solar</label>
+                <input type="radio" class="Form__granularity-input" name="legacy-granularity-group3" id="legacy-granularity-9"><label class="Form__granularity-btn" for="legacy-granularity-9">&#127744; Wind</label>
+                <input type="radio" class="Form__granularity-input" name="legacy-granularity-group3" id="legacy-granularity-10"><label class="Form__granularity-btn" for="legacy-granularity-10">&#128267; Hydro</label>
+                <input type="radio" class="Form__granularity-input" name="legacy-granularity-group3" id="legacy-granularity-11"><label class="Form__granularity-btn" for="legacy-granularity-11">&#128267; Biomass</label>
+                <input type="radio" class="Form__granularity-input" name="legacy-granularity-group3" id="legacy-granularity-12"><label class="Form__granularity-btn" for="legacy-granularity-12">&#9879; Other</label>
               </div>
             </div>
             <div class="Form__group">
               <label class="Form__label">Expected Annual Production</label>
-              <input type="text" class="Form__input" placeholder="Estimated kWh per year" value="11,200 kWh">
+              <input type="text" class="form-control Form__input" placeholder="Estimated kWh per year" value="11,200 kWh">
             </div>
           </div>
 
@@ -2761,7 +2772,7 @@
     <!-- PROGRESS BARS                                 -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Progress Bars</h2>
+      <h2>Progress Bars <span class="showcase-note">mockup · ProgressBar not in ds/</span></h2>
       <p>Progress bars visualize completion, data import status, and energy usage levels.</p>
 
       <h3>Basic Progress Levels</h3>
@@ -3054,7 +3065,7 @@
     <!-- KPI DASHBOARD CARDS                           -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>KPI Dashboard Cards</h2>
+      <h2>KPI Dashboard Cards <span class="showcase-note">mockup · KPICard not in ds/</span></h2>
       <p>Specialized cards for key performance indicators with trend arrows and compact layouts.</p>
 
       <h3>KPI Card Row</h3>
@@ -3170,7 +3181,7 @@
     <!-- TOOLBARS                                      -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Toolbars</h2>
+      <h2>Toolbars <span class="showcase-note">mockup · Toolbar not in ds/</span></h2>
       <p>Toolbars group actions, search, and controls in a horizontal bar above content areas.</p>
 
       <h3>Basic Toolbar</h3>
@@ -3193,7 +3204,7 @@
         <div class="Toolbar">
           <div class="Toolbar__group" style="flex: 1;">
             <div style="position: relative; flex: 1; max-width: 320px;">
-              <input type="text" class="Form__input" placeholder="&#128269; Search partners..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
+              <input type="text" class="form-control Form__input" placeholder="&#128269; Search partners..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
             </div>
           </div>
           <div class="Toolbar__group">
@@ -3220,7 +3231,7 @@
           </div>
         </div>
         <div class="Tabs" style="margin-bottom: 0;">
-          <nav class="nav-tabs">
+          <nav class="nav nav-tabs">
             <a class="nav-link active">Production</a>
             <a class="nav-link">Consumption</a>
             <a class="nav-link">Sharing</a>
@@ -3237,15 +3248,15 @@
         <div class="Toolbar">
           <div class="Toolbar__group" style="flex: 1;">
             <div style="position: relative; flex: 1; max-width: 280px;">
-              <input type="text" class="Form__input" placeholder="&#128269; Search meters, sites..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
+              <input type="text" class="form-control Form__input" placeholder="&#128269; Search meters, sites..." style="padding: 0.5rem 0.75rem; font-size: var(--fs-xs);">
             </div>
           </div>
           <div class="Toolbar__group">
             <div class="Form__granularity-buttons" style="margin: 0;">
-              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Hourly</label>
-              <label class="Form__granularity-btn active" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Daily</label>
-              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Monthly</label>
-              <label class="Form__granularity-btn" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Yearly</label>
+              <input type="radio" class="Form__granularity-input" name="legacy-granularity-group4" id="legacy-granularity-13"><label class="Form__granularity-btn" for="legacy-granularity-13" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Hourly</label>
+              <input type="radio" class="Form__granularity-input" name="legacy-granularity-group4" id="legacy-granularity-14" checked><label class="Form__granularity-btn" for="legacy-granularity-14" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Daily</label>
+              <input type="radio" class="Form__granularity-input" name="legacy-granularity-group4" id="legacy-granularity-15"><label class="Form__granularity-btn" for="legacy-granularity-15" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Monthly</label>
+              <input type="radio" class="Form__granularity-input" name="legacy-granularity-group4" id="legacy-granularity-16"><label class="Form__granularity-btn" for="legacy-granularity-16" style="padding: 0.375rem 0.625rem; font-size: 0.75rem;">Yearly</label>
             </div>
           </div>
           <div class="Toolbar__separator"></div>
@@ -3358,7 +3369,7 @@
     <!-- PRICING PLANS                                 -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Pricing Plans</h2>
+      <h2>Pricing Plans <span class="showcase-note">mockup · PricingCard not in ds/</span></h2>
       <p>Pricing card patterns for energy service tiers with feature comparison and call-to-action buttons.</p>
 
       <h3>Three-Tier Pricing</h3>
@@ -3470,7 +3481,7 @@
     <!-- ACTIVITY TIMELINE                             -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Activity Timeline</h2>
+      <h2>Activity Timeline <span class="showcase-note">mockup · Avatar, Timeline not in ds/</span></h2>
       <p>Chronological activity feed for energy community events, combining timeline markers with badges and avatars.</p>
 
       <h3>Energy Community Feed</h3>
@@ -3557,7 +3568,7 @@
     <!-- TEAM / USER PROFILES                          -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Team / User Profiles</h2>
+      <h2>Team / User Profiles <span class="showcase-note">mockup · Avatar not in ds/</span></h2>
       <p>User profile patterns combining avatars, cards, badges, and listing components for team management views.</p>
 
       <h3>Avatar Sizes &amp; Status</h3>
@@ -3739,7 +3750,7 @@
     <!-- NOTIFICATION CENTER                           -->
     <!-- ============================================= -->
     <section class="showcase-section">
-      <h2>Notification Center</h2>
+      <h2>Notification Center <span class="showcase-note">mockup · Avatar not in ds/</span></h2>
       <p>Notification panel patterns with categorized items, read/unread states, and quick actions.</p>
 
       <h3>Notification Panel</h3>

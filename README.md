@@ -45,9 +45,10 @@ All colors are customizable via CSS custom properties for per-tenant theming.
 
 ```
 .
-├── docs/                    # Showcase site (GitHub Pages)
-│   ├── css/styles.css       # Standalone showcase CSS
-│   ├── index.html           # Component showcase
+├── docs/                    # Showcase site (GitHub Pages), see docs/README.md
+│   ├── build.sh             # Compiles css/ds.css and css/apps.css from SCSS
+│   ├── css/                 # ds.css + apps.css (compiled), showcase.css (hand-written)
+│   ├── index.html           # Components, app patterns and whole app pages
 │   └── logo_white.svg
 ├── configuration.scss       # CSS variables and theme
 ├── button.scss              # Button component
@@ -95,6 +96,12 @@ Changing an existing rule here changes every app, so prefer adding a modifier.
 - **Block**: `.Button`, `.Card`, `.Badge`
 - **Element**: `.Card__title`, `.Listing__action`
 - **Modifier**: `.Button--primary`, `.StatCard--compact`, `.Table__row--success`
+
+## Showcase
+
+`docs/index.html` shows every component, then patterns and whole pages taken from the apps
+(Wattlink EnMS, Wattlink Air) with invented data. Its CSS is compiled from this repo, so after
+changing a component run `docs/build.sh` (details in `docs/README.md`).
 
 ## GitHub Pages
 
