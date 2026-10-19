@@ -46,4 +46,32 @@
 @import "confidence_meter";
 @import "auto_badge";
 @import "quick_actions";
+// Patterns and page blocks moved here from the apps (voltlink, litelink).
+@import "app_switcher";
+@import "provoz_segment_bar";
+@import "category_icon";
+@import "expense_state";
+@import "expense_overview";
+@import "coverage_gantt";
+@import "document_list";
+@import "building_listing";
+@import "dashboard";
+@import "cockpit";
+@import "matrix";
+@import "ledger";
+@import "prehled";
+@import "users_toolbar";
+@import "list_row";
+@import "action_card";
+@import "opti_card";
+@import "stat_pill";
+@import "sub_tabs";
+@import "energy_flow";
+@import "run_detail";
+@import "allocation_matrix";
+@import "sharing_overview";
+@import "month_stepper";
 @import "overrides/dropdown";
+
+// Showcase only: what each app overrides in ds/, for the app demos.
+@import "app_overrides";

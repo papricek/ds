@@ -1,0 +1,160 @@
+// From voltlink admin/expense_overview.scss.
+.ExpenseOverview__layout {
+  --series-1: var(--brand-primary);
+  --series-2: hsl(var(--brand-secondary-h), var(--brand-secondary-s), 55%);
+  --series-3: hsl(var(--semantic-info-h), var(--semantic-info-s), 55%);
+  --series-4: hsl(var(--semantic-success-h), var(--semantic-success-s), 48%);
+  --series-5: hsl(var(--semantic-warning-h), var(--semantic-warning-s), 55%);
+  --series-6: hsl(var(--semantic-danger-h), var(--semantic-danger-s), 58%);
+  --series-7: hsl(var(--brand-accent-h), var(--brand-accent-s), 58%);
+  --series-8: var(--gray-secondary);
+
+  .ExpenseOverview__sidebar {
+    flex: 0 0 300px;
+    max-width: 300px;
+    overflow: hidden;
+    transition: max-width 0.25s ease, opacity 0.2s ease, margin 0.25s ease, flex-basis 0.25s ease;
+    opacity: 1;
+    position: sticky;
+    top: 1rem;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 2rem);
+
+    @media (max-width: 1199px) {
+      display: flex;
+    }
+  }
+}
+
+.is-collapsed .ExpenseOverview__layout .ExpenseOverview__sidebar {
+  flex: 0 0 0;
+  max-width: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.ExpenseHint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 11px;
+  background: rgba(var(--brand-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.35);
+
+  &__icon {
+    color: var(--brand-primary);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: var(--fs-xs);
+    line-height: 1.55;
+    color: var(--white-85);
+  }
+
+  &__action {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}
+
+// Below the large breakpoint there is no room for a rail next to the list, so an open filter
+// is a full-screen sheet above it; its own close button already toggles the panel.
+@media (max-width: 991.98px) {
+  .ExpenseOverview__layout .ExpenseOverview__sidebar {
+    position: fixed;
+    inset: 0;
+    // The desktop rail's align-self: flex-start also sizes a fixed box to its content, so a
+    // long filter grew past the screen and its Filtrovat button could not be reached.
+    align-self: stretch;
+    z-index: 1045;
+    flex: none;
+    max-width: none;
+    max-height: none;
+    padding: 0.75rem 0.75rem calc(4.5rem + env(safe-area-inset-bottom, 0));
+    background: var(--dark-bg-color);
+    overflow-y: auto;
+    transition: none;
+
+    .FilterPanel__container {
+      flex: 1 1 auto;
+    }
+  }
+
+  .is-collapsed .ExpenseOverview__layout .ExpenseOverview__sidebar {
+    display: none;
+  }
+}
+
+.ExpenseHint--danger {
+  background: rgba(var(--semantic-danger-rgb), 0.1);
+  border-color: rgba(var(--semantic-danger-rgb), 0.35);
+
+  .ExpenseHint__icon { color: var(--semantic-danger); }
+}
+
+// On a phone an invoice row is two lines: icon, number and amount on the first, the
+// category, supplier and period on the second. Listing__info dissolves so its two children
+// can sit on separate grid rows.
+@media (max-width: 767.98px) {
+  .ExpenseOverview__content .Listing--compact {
+    .Listing__main {
+      display: grid !important;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas:
+        "icon name amount"
+        "meta meta meta";
+      column-gap: 0.5rem;
+      row-gap: 0.15rem;
+      align-items: center;
+    }
+
+    .Listing__main > .CategoryIcon { grid-area: icon; }
+
+    .Listing__info { display: contents; }
+
+    .Listing__primary-line {
+      grid-area: name;
+      min-width: 0;
+    }
+
+    .Listing__name {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .Listing__meta {
+      grid-area: meta;
+      margin-top: 0;
+
+      &-item { font-size: 0.75rem; }
+    }
+
+    .Listing__main > .ms-auto {
+      grid-area: amount;
+      margin-left: 0 !important;
+    }
+
+    // The whole row is the tap target on a phone, so the two buttons under every invoice
+    // (50 per page) go away and the list is a third of its former height. Editing is one tap
+    // further, on the invoice itself.
+    .Listing__item {
+      position: relative;
+    }
+
+    .ExpenseRow__tap {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .Listing__actions {
+      display: none;
+    }
+  }
+}

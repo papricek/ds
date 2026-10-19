@@ -49,3 +49,15 @@
     }
   }
 }
+
+.Chip--warning {
+  background: hsla(var(--semantic-warning-h), var(--semantic-warning-s), var(--semantic-warning-l), 0.18);
+  border-color: hsla(var(--semantic-warning-h), var(--semantic-warning-s), calc(var(--semantic-warning-l) + 20%), 0.45);
+  color: hsl(var(--semantic-warning-h), var(--semantic-warning-s), calc(var(--semantic-warning-l) + 32%));
+
+  &:hover {
+    background: hsla(var(--semantic-warning-h), var(--semantic-warning-s), var(--semantic-warning-l), 0.3);
+    border-color: hsl(var(--semantic-warning-h), var(--semantic-warning-s), calc(var(--semantic-warning-l) + 20%));
+    color: hsl(var(--semantic-warning-h), var(--semantic-warning-s), calc(var(--semantic-warning-l) + 38%));
+  }
+}

@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/ds.css">
-  <link rel="stylesheet" href="css/apps.css">
   <link rel="stylesheet" href="css/showcase.css">
 </head>
 <body>
@@ -69,6 +68,7 @@
       <a href="#components-navigation">Navigation and filters</a>
       <a href="#components-feedback">Feedback</a>
       <strong>Patterns from the apps</strong>
+      <a href="#page-blocks">Page blocks in ds/</a>
       <a href="#patterns">Patterns from the apps</a>
       <strong>Wattlink EnMS pages</strong>
       <a href="#page-vl-prehled">Wattlink EnMS — Přehled</a>
@@ -4764,7 +4764,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">ds <code>weather_forecast_card.scss</code> (hourly strip) + <code>card.scss</code> metrics, inside voltlink's app-local <code>Dashboard__section</code> (<code>components/dashboard.scss</code>, hence the <code>AppPage--voltlink</code> wrapper) · used in voltlink (point detail). <code>WeatherForecastCard__source-label</code> is unused.</p>
+  <p class="showcase-source">ds <code>weather_forecast_card.scss</code> (hourly strip) + <code>card.scss</code> metrics, inside <code>Dashboard__section</code> (ds <code>dashboard.scss</code>) · used in voltlink (point detail). <code>WeatherForecastCard__source-label</code> is unused.</p>
 
   <h3>ElectricityCostsCard <span class="showcase-note">not used by any app</span></h3>
   <div class="example-box">
@@ -5298,7 +5298,7 @@ Events must respond to:
       </div>
     </form>
   </div>
-  <p class="showcase-source">ds <code>form_card.scss</code> (FormPage, FormCard <code>--compact</code>, FormGrid <code>--cols-2/3</code>, FormField with <code>__input--low-confidence</code>, <code>__amount-input</code>, <code>__error</code>, FormActions), <code>confidence_meter.scss</code> (ConfidenceMeter, SummaryRow, FileChip), <code>chip_input.scss</code>, <code>category_picker.scss</code>, <code>quick_actions.scss</code>, <code>auto_badge.scss</code> · voltlink tweaks FormCard in <code>admin/documents.scss</code>, so the demo sits in <code>AppPage--voltlink</code> · used in voltlink (expense/document forms); FormCard/FormField/FormGrid also in litelink. The rail's calendar icon is <code>fa-calendar-range</code> in the app (a Font Awesome Pro icon that renders blank with the free set); <code>fa-calendar-days</code> here. <code>FormCard--flush</code>, <code>FormCard__hint</code> and the <code>Checklist</code> block are unused.</p>
+  <p class="showcase-source">ds <code>form_card.scss</code> (FormPage, FormCard <code>--compact</code>, FormGrid <code>--cols-2/3</code>, FormField with <code>__input--low-confidence</code>, <code>__amount-input</code>, <code>__error</code>, FormActions), <code>confidence_meter.scss</code> (ConfidenceMeter, SummaryRow, FileChip), <code>chip_input.scss</code>, <code>category_picker.scss</code>, <code>quick_actions.scss</code>, <code>auto_badge.scss</code> · voltlink tweaks FormCard in <code>admin/documents.scss</code> (copied into the showcase's <code>src/app_overrides.scss</code>, applied by the <code>AppPage--voltlink</code> wrapper) · used in voltlink (expense/document forms); FormCard/FormField/FormGrid also in litelink. The rail's calendar icon is <code>fa-calendar-range</code> in the app (a Font Awesome Pro icon that renders blank with the free set); <code>fa-calendar-days</code> here. <code>FormCard--flush</code>, <code>FormCard__hint</code> and the <code>Checklist</code> block are unused.</p>
 
   <h3>SelectableCard + SelectableCardGrid</h3>
   <div class="example-box AppPage AppPage--litelink">
@@ -5354,7 +5354,7 @@ Events must respond to:
       </div>
     </form>
   </div>
-  <p class="showcase-source">ds <code>selectable_card.scss</code> (selection via <code>:has(:checked)</code>; <code>SelectableCardGrid--2</code>) inside litelink's app-local <code>ActionCard</code> (<code>components/users.scss</code>) · used in litelink (billing settings), voltlink (credential kind; voltlink's <code>ds_overrides.scss</code> forces all cards into one row), wattlink</p>
+  <p class="showcase-source">ds <code>selectable_card.scss</code> (selection via <code>:has(:checked)</code>; <code>SelectableCardGrid--2</code>) inside <code>ActionCard</code> (ds <code>action_card.scss</code>) · used in litelink (billing settings), voltlink (credential kind; voltlink's <code>ds_overrides.scss</code> forces all cards into one row), wattlink</p>
 
   <h3>ToggleField</h3>
   <div class="example-box AppPage AppPage--litelink">
@@ -5446,7 +5446,7 @@ Events must respond to:
       </ul>
     </div>
   </div>
-  <p class="showcase-source">ds <code>tabs.scss</code> (<code>Tabs--icon-pills</code>, <code>Tabs--sub</code>) · used in voltlink (all section navigations: Energie, Ekonomika, Provoz, EnMS, building tabs), litelink (Laboratoř sub-navigation). <code>Nav__badge</code> is not defined in ds (voltlink-local).</p>
+  <p class="showcase-source">ds <code>tabs.scss</code> (<code>Tabs--icon-pills</code>, <code>Tabs--sub</code>) · used in voltlink (all section navigations: Energie, Ekonomika, Provoz, EnMS, building tabs), litelink (Laboratoř sub-navigation). The count is <code>Nav__badge</code> (ds <code>nav.scss</code>); voltlink restyles the tab pill in <code>components/provoz.scss</code>.</p>
 
   <h3>Tabs-&zwnj;-secondary</h3>
   <div class="example-box">
@@ -5638,12 +5638,166 @@ Events must respond to:
 </section>
 
 
+<section class="showcase-section" id="page-blocks">
+  <h2>Page blocks in ds/</h2>
+  <p>The larger blocks the app pages are built from, moved into ds/ from voltlink and litelink so any app can use them. An app imports a file and uses the classes; the apps still carry their own copies until they switch over. The link in the last column goes to the demo.</p>
+  <div class="example-box">
+    <table class="Table Table--panel">
+      <thead>
+        <tr><th>Block</th><th>File</th><th>Classes</th><th>From</th><th>Shown in</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Filter bar</td>
+          <td><code>expense_state.scss</code></td>
+          <td>ExpenseState, FilterChip</td>
+          <td>voltlink</td>
+          <td><a href="#patterns">Patterns</a></td>
+        </tr>
+        <tr>
+          <td>Filter sidebar layout</td>
+          <td><code>expense_overview.scss</code></td>
+          <td>ExpenseOverview__layout, ExpenseHint</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-faktury">Faktury</a></td>
+        </tr>
+        <tr>
+          <td>Category icons</td>
+          <td><code>category_icon.scss</code></td>
+          <td>CategoryIcon, CategoryDot, GroupHeader__divider</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-faktury">Faktury</a></td>
+        </tr>
+        <tr>
+          <td>Coverage chart</td>
+          <td><code>coverage_gantt.scss</code></td>
+          <td>CoverageGantt</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-pokryti">Pokrytí</a></td>
+        </tr>
+        <tr>
+          <td>Cost ledger</td>
+          <td><code>ledger.scss</code></td>
+          <td>Ledger, LedgerYears, LedgerCard, PairedBars</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-ekonomika">Ekonomika</a></td>
+        </tr>
+        <tr>
+          <td>Overview tiles</td>
+          <td><code>cockpit.scss</code></td>
+          <td>Cockpit</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-prehled">Přehled</a></td>
+        </tr>
+        <tr>
+          <td>Building matrix</td>
+          <td><code>matrix.scss</code></td>
+          <td>Matrix</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-prehled">Přehled</a></td>
+        </tr>
+        <tr>
+          <td>Dashboard sections</td>
+          <td><code>dashboard.scss</code></td>
+          <td>Dashboard, Sparkline__tooltip</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-prehled">Přehled</a></td>
+        </tr>
+        <tr>
+          <td>App switcher</td>
+          <td><code>app_switcher.scss</code></td>
+          <td>AppSwitcher</td>
+          <td>voltlink, litelink</td>
+          <td><a href="#page-vl-prehled">Přehled</a></td>
+        </tr>
+        <tr>
+          <td>Building list</td>
+          <td><code>building_listing.scss</code></td>
+          <td>BuildingListing</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-provoz-budovy">Provoz — budovy</a></td>
+        </tr>
+        <tr>
+          <td>Document list</td>
+          <td><code>document_list.scss</code></td>
+          <td>DocumentList, DocumentGroup, DocumentRow, DocumentBadge, DocumentTag</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-provoz-dokumenty">Provoz — dokumenty</a></td>
+        </tr>
+        <tr>
+          <td>Provoz segment bar</td>
+          <td><code>provoz_segment_bar.scss</code></td>
+          <td>ProvozSegmentBar</td>
+          <td>voltlink</td>
+          <td><a href="#page-vl-provoz-dokumenty">Provoz — dokumenty</a></td>
+        </tr>
+        <tr>
+          <td>Energy overview</td>
+          <td><code>prehled.scss</code></td>
+          <td>Prehled, FilterMaster, TreeNode, DateSelect, GranularityRow, ChartLegend</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-prehled">Air Přehled</a></td>
+        </tr>
+        <tr>
+          <td>User toolbar</td>
+          <td><code>users_toolbar.scss</code></td>
+          <td>UsersToolbar, RoleTabs, Filters, Search</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-uzivatele">Air Uživatelé</a></td>
+        </tr>
+        <tr>
+          <td>User and list rows</td>
+          <td><code>list_row.scss</code></td>
+          <td>UserList, UserRow, ListRow, RoleBadge, EAN, Dates</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-uzivatele">Air Uživatelé</a></td>
+        </tr>
+        <tr>
+          <td>Action card</td>
+          <td><code>action_card.scss</code></td>
+          <td>ActionCard</td>
+          <td>litelink</td>
+          <td><a href="#components-forms">Form building blocks</a></td>
+        </tr>
+        <tr>
+          <td>Sharing overview</td>
+          <td><code>sharing_overview.scss</code></td>
+          <td>SharingOverview, AddressCard</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-sdileni">Air Sdílení</a></td>
+        </tr>
+        <tr>
+          <td>Month stepper, sub-tabs</td>
+          <td><code>month_stepper.scss, sub_tabs.scss</code></td>
+          <td>MonthStepper, SubTabs</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-sdileni">Air Sdílení</a></td>
+        </tr>
+        <tr>
+          <td>Optimizer cards</td>
+          <td><code>opti_card.scss, stat_pill.scss, energy_flow.scss, run_detail.scss</code></td>
+          <td>OptiCard, StatPill, EnergyFlow, RunDetail</td>
+          <td>litelink</td>
+          <td><a href="#page-ll-sdileni">Air Sdílení</a></td>
+        </tr>
+        <tr>
+          <td>Allocation matrix</td>
+          <td><code>allocation_matrix.scss</code></td>
+          <td>AllocationMatrix, MatrixCell, MatrixLegend, ColorKey (litelink's .Matrix)</td>
+          <td>litelink</td>
+          <td><a href="#patterns">Patterns</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
     <!-- ============================================= -->
     <!-- PATTERNS FROM THE APPS                      -->
     <!-- ============================================= -->
 <section class="showcase-section" id="patterns">
   <h2>Patterns from the apps</h2>
-  <p>Recurring building blocks of the app pages, cut out of the full pages further down. Most of them are app-local today (the line under each demo says where the styles live); the ones marked "candidate for ds/" are used on several pages and generic enough to move into the design system.</p>
+  <p>Recurring building blocks of the app pages, cut out of the full pages further down. Their styles now live in ds/ (moved from voltlink and litelink; the line under each demo names the file), so any app can use them.</p>
 
   <h3>Filter bar — collapsed</h3>
   <p>One line above every filtered list: the active filter as a chip, a readout of what is shown, and the toggle for the sidebar. Faktury, Pokrytí and Dokumenty share it through <code>shared/filter/_state_bar</code>.</p>
@@ -5671,7 +5825,7 @@ Events must respond to:
   </span>
 </div>
 </div>
-  <p class="showcase-source">voltlink <code>admin/expense_overview.scss</code> (<code>ExpenseState</code>, app-local) + ds <code>chip.scss</code> · candidate for ds/</p>
+  <p class="showcase-source">ds <code>expense_state.scss</code> (<code>ExpenseState</code>, <code>FilterChip</code>) + <code>chip.scss</code> · from voltlink (invoices, coverage, documents, provoz)</p>
   <h3>Filter bar — open, with the sidebar</h3>
   <p>Opening the filter docks a <code>FilterPanel--fit</code> on the right of the list: search, option grids (single choice), facets with search and chips, and a sticky footer with the result meter.</p>
 <div class="example-box App AppPage AppPage--voltlink">
@@ -5898,7 +6052,7 @@ Events must respond to:
   </div>
 </aside></div>
 </div>
-  <p class="showcase-source">ds <code>filter_panel.scss</code> (<code>FilterPanel--fit</code>) · voltlink <code>admin/expense_overview.scss</code> (<code>ExpenseOverview__layout</code>), <code>components/ds_overrides.scss</code></p>
+  <p class="showcase-source">ds <code>filter_panel.scss</code> (<code>FilterPanel--fit</code>), <code>expense_overview.scss</code> (<code>ExpenseOverview__layout</code>, sticky collapsible sidebar), <code>expense_state.scss</code> · voltlink's <code>ds_overrides.scss</code> adjusts the panel flex (showcase: <code>src/app_overrides.scss</code>)</p>
   <h3>Grouped listing — invoices</h3>
   <p>A group header (category icon, name, counts and sum, hairline divider) above compact <code>Listing</code> rows. Each row: category icon, number, carrier dot, kind badge, attachment, supplier and period, amount, actions.</p>
 <div class="example-box App AppPage AppPage--voltlink">
@@ -6034,7 +6188,7 @@ Events must respond to:
   </div>
 </div>
 </div>
-  <p class="showcase-source">ds <code>listing.scss</code>, <code>badge.scss</code> · voltlink <code>admin/expense_overview.scss</code> (<code>CategoryIcon</code>, <code>CategoryDot</code>, <code>GroupHeader__divider</code>)</p>
+  <p class="showcase-source">ds <code>listing.scss</code>, <code>badge.scss</code>, <code>category_icon.scss</code> (<code>CategoryIcon</code>, <code>CategoryDot</code>, <code>GroupHeader__divider</code>) · from voltlink (invoices)</p>
   <h3>Grouped listing — documents</h3>
   <p>The same grammar for documents, with the validity column and the expiry states (<code>DocumentRow--ok</code>, <code>--expiring-90</code>, <code>--expiring-30</code>, <code>--expired</code>).</p>
 <div class="example-box App AppPage AppPage--voltlink">
@@ -6083,7 +6237,7 @@ Events must respond to:
   </div>
 </div>
 </div>
-  <p class="showcase-source">voltlink <code>admin/documents.scss</code> (<code>DocumentGroup</code>, <code>DocumentRow</code>, <code>DocumentBadge</code>, app-local)</p>
+  <p class="showcase-source">ds <code>document_list.scss</code> (<code>DocumentList</code>, <code>DocumentGroup</code>, <code>DocumentRow</code>, <code>DocumentBadge</code>, <code>DocumentTag</code>) · from voltlink (documents, provoz)</p>
   <h3>Building rows</h3>
   <p>A site header and building rows with data-source health (fresh / stale / error dot), this month's kWh and cost figures, attention badges and the primary action.</p>
 <div class="example-box App AppPage AppPage--voltlink">
@@ -6174,7 +6328,7 @@ Events must respond to:
 </div>
 </div>
 </div>
-  <p class="showcase-source">voltlink <code>admin/buildings_index.scss</code> (<code>BuildingListing</code>, app-local) + ds <code>badge.scss</code>, <code>button.scss</code></p>
+  <p class="showcase-source">ds <code>building_listing.scss</code> (<code>BuildingListing</code>) + <code>badge.scss</code>, <code>button.scss</code> · from voltlink (buildings)</p>
   <h3>Attention chips and period bar</h3>
   <p>Warning chips that link to what needs fixing, and the period segment that drives the whole dashboard.</p>
 <div class="example-box App AppPage AppPage--voltlink">
@@ -6206,7 +6360,7 @@ Events must respond to:
     <span class="Matrix__period-range">1.–19. října 2026</span>
   </div></div>
 </div>
-  <p class="showcase-source">ds <code>chip.scss</code>, <code>segment.scss</code> · voltlink <code>components/dashboard.scss</code> (<code>Matrix__attention</code>, <code>Matrix__period</code>)</p>
+  <p class="showcase-source">ds <code>chip.scss</code> (<code>Chip--warning</code>), <code>segment.scss</code>, <code>matrix.scss</code> (<code>Matrix__attention</code>, <code>Matrix__period</code>) · from voltlink (Přehled)</p>
   <h3>Role tabs, filter row and user rows (Wattlink Air)</h3>
   <p>Litelink's admin list grammar: role tabs with counts, a labelled filter row, and rows with avatar, role badge, EAN chips and date boxes (normal / warning / never).</p>
 <div class="example-box App AppPage AppPage--litelink">
@@ -6280,7 +6434,145 @@ Events must respond to:
       </div>
     </div>
 </div>
-  <p class="showcase-source">litelink <code>components/users.scss</code> (<code>UsersToolbar</code>, <code>RoleTabs</code>, <code>Filters</code>, <code>UserRow</code>, app-local)</p>
+  <p class="showcase-source">ds <code>users_toolbar.scss</code> (<code>UsersToolbar</code>, <code>RoleTabs</code>, <code>Filters</code>), <code>list_row.scss</code> (<code>UserRow</code>, <code>ListRow</code>, <code>RoleBadge</code>, <code>EAN</code>, <code>Dates</code>) · from litelink (users, groups)</p>
+
+  <h3>Allocation matrix</h3>
+  <p>Wattlink Air, Sdílení → Matice and Laboratoř: producers down, consumers across. Each cell is the share of the producer's key (with the order in which consumers are served), the kWh actually shared and the plan; dashed cells are planned allocations with no metered sharing yet.</p>
+<div class="example-box App AppPage AppPage--litelink">
+  <div class="OptiCard">
+    <div class="OptiCard__body">
+      <div class="AllocationMatrix">
+        <div class="AllocationMatrix__grid">
+          <div class="AllocationMatrix__row">
+            <div class="AllocationMatrix__corner">Výrobce ↓ / Odběratel →</div>
+              <div class="AllocationMatrix__colhead">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="fas fa-plug" style="color:var(--scn-cons, var(--chart-border-consumption))"></i>
+                  <span style="font-size:12px;font-weight:700;line-height:1.15">Mateřská škola</span>
+                </div>
+                <div class="AllocationMatrix__ean">859182400100411203</div>
+                <div style="font-size:11px;margin-top:5px;font-weight:600;color:var(--semantic-success)">pokryto 64 %</div>
+              </div>
+              <div class="AllocationMatrix__colhead">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="fas fa-plug" style="color:var(--scn-cons, var(--chart-border-consumption))"></i>
+                  <span style="font-size:12px;font-weight:700;line-height:1.15">Sokolovna</span>
+                </div>
+                <div class="AllocationMatrix__ean">859182400100411227</div>
+                <div style="font-size:11px;margin-top:5px;font-weight:600;color:var(--semantic-warning)">pokryto 38 %</div>
+              </div>
+              <div class="AllocationMatrix__colhead">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="fas fa-plug" style="color:var(--scn-cons, var(--chart-border-consumption))"></i>
+                  <span style="font-size:12px;font-weight:700;line-height:1.15">Hasičská zbrojnice</span>
+                </div>
+                <div class="AllocationMatrix__ean">859182400100411241</div>
+                <div style="font-size:11px;margin-top:5px;font-weight:600;color:var(--white-3)">bez sdílení</div>
+              </div>
+              <div class="AllocationMatrix__colhead">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="fas fa-plug" style="color:var(--scn-cons, var(--chart-border-consumption))"></i>
+                  <span style="font-size:12px;font-weight:700;line-height:1.15">Knihovna</span>
+                </div>
+                <div class="AllocationMatrix__ean">859182400100411265</div>
+                <div style="font-size:11px;margin-top:5px;font-weight:600;color:var(--semantic-success)">pokryto 81 %</div>
+              </div>
+          </div>
+            <div class="AllocationMatrix__row">
+              <div class="AllocationMatrix__rowhead">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fas fa-solar-panel" style="color:var(--scn-prod, var(--chart-border-production))"></i>
+                  <span style="font-size:13px;font-weight:700">FVE ZŠ Lipová Lhota</span>
+                </div>
+                <div class="AllocationMatrix__ean">…100398 · 4 120 kWh</div>
+                <div style="margin-top:9px">
+                  <div class="d-flex justify-content-between" style="font-size:10px;color:var(--white-5);margin-bottom:3px">
+                    <span>Rozdělení</span>
+                    <span style="color:var(--chart-border-sharing-production);font-weight:700">90 %</span>
+                  </div>
+                  <div class="AllocationMatrix__keybar"><i style="width:45%;background:var(--brand-secondary)"></i><i style="width:30%;background:var(--brand-primary)"></i><i style="width:15%;background:#7280ff"></i></div>
+                </div>
+              </div>
+              <div class="AllocationMatrix__cell AllocationMatrix__cell--static" style="background:rgba(255,165,56,0.45)">
+                <span class="MatrixCell">
+                  <span class="MatrixCell__top">
+                    <span class="MatrixCell__pct">45<span>%</span></span>
+                    <span class="OrderBadge OrderBadge--first">#1</span>
+                  </span>
+                  <span class="MatrixCell__kwh">1 210 <span>kWh</span></span>
+                  <span class="MatrixCell__plan">plán 45 %</span>
+                </span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static" style="background:rgba(255,165,56,0.32)">
+                <span class="MatrixCell">
+                  <span class="MatrixCell__top">
+                    <span class="MatrixCell__pct">30<span>%</span></span>
+                    <span class="OrderBadge">#2</span>
+                  </span>
+                  <span class="MatrixCell__kwh">640 <span>kWh</span></span>
+                  <span class="MatrixCell__plan">plán 30 %</span>
+                </span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static AllocationMatrix__cell--planned">
+                <span class="MatrixCell">
+                  <span class="MatrixCell__top">
+                    <span class="MatrixCell__pct MatrixCell__pct--planned">15<span>%</span></span>
+                    <span class="OrderBadge">#3</span>
+                  </span>
+                  <span class="MatrixCell__plan">plán</span>
+                </span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static">
+                <span style="height:100%;min-height:96px;display:flex;align-items:center;justify-content:center;color:var(--white-2);font-size:17px">·</span>
+              </div>
+            </div>
+            <div class="AllocationMatrix__row">
+              <div class="AllocationMatrix__rowhead">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fas fa-solar-panel" style="color:var(--scn-prod, var(--chart-border-production))"></i>
+                  <span style="font-size:13px;font-weight:700">FVE Obecní úřad</span>
+                </div>
+                <div class="AllocationMatrix__ean">…100412 · 1 380 kWh</div>
+                <div style="margin-top:9px">
+                  <div class="d-flex justify-content-between" style="font-size:10px;color:var(--white-5);margin-bottom:3px">
+                    <span>Rozdělení</span>
+                    <span style="color:var(--chart-border-sharing-production);font-weight:700">80 %</span>
+                  </div>
+                  <div class="AllocationMatrix__keybar"><i style="width:20%;background:var(--brand-primary)"></i><i style="width:60%;background:var(--semantic-success)"></i></div>
+                </div>
+              </div>
+              <div class="AllocationMatrix__cell AllocationMatrix__cell--static">
+                <span style="height:100%;min-height:96px;display:flex;align-items:center;justify-content:center;color:var(--white-2);font-size:17px">·</span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static" style="background:rgba(255,165,56,0.2)">
+                <span class="MatrixCell">
+                  <span class="MatrixCell__top">
+                    <span class="MatrixCell__pct">20<span>%</span></span>
+                    <span class="OrderBadge OrderBadge--first">#1</span>
+                  </span>
+                  <span class="MatrixCell__kwh">190 <span>kWh</span></span>
+                  <span class="MatrixCell__plan">mimo plán</span>
+                </span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static">
+                <span style="height:100%;min-height:96px;display:flex;align-items:center;justify-content:center;color:var(--white-2);font-size:17px">·</span>
+              </div><div class="AllocationMatrix__cell AllocationMatrix__cell--static" style="background:rgba(255,165,56,0.55)">
+                <span class="MatrixCell">
+                  <span class="MatrixCell__top">
+                    <span class="MatrixCell__pct">60<span>%</span></span>
+                    <span class="OrderBadge OrderBadge--first">#1</span>
+                  </span>
+                  <span class="MatrixCell__kwh">410 <span>kWh</span></span>
+                  <span class="MatrixCell__plan">plán 60 %</span>
+                </span>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="MatrixLegend">
+        <span class="MatrixLegend__item"><span class="ColorKey__swatch" style="background:rgba(255,165,56,.5)"></span> Naměřené sdílení</span>
+        <span class="MatrixLegend__item"><span class="ColorKey__swatch" style="background:transparent;border:1px dashed var(--white-3)"></span> Plánovaná alokace bez naměřeného sdílení</span>
+        <span class="MatrixLegend__item"><i class="fas fa-triangle-exclamation" style="color:#ff8080"></i> EAN bez adresy</span>
+      </div>
+    </div>
+  </div>
+</div>
+  <p class="showcase-source">ds <code>allocation_matrix.scss</code> (<code>AllocationMatrix</code> = litelink's <code>.Matrix</code>, renamed because voltlink's building <code>.Matrix</code> owns the name; <code>MatrixCell</code>, <code>OrderBadge</code>, <code>MatrixLegend</code> = litelink's <code>.Legend</code>, <code>ColorKey</code>), <code>opti_card.scss</code> · from litelink (<code>manager/sharings/_tab_matrix</code>, Laboratoř matrices). The inline styles are the app's own.</p>
 </section>
 
 
@@ -7016,12 +7308,12 @@ Events must respond to:
 </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>chip.scss</code>, <code>segment.scss</code>, <code>badge.scss</code>, <code>nav.scss</code>, <code>app.scss</code> · voltlink <code>components/dashboard.scss</code> (Cockpit, Matrix, CoverageBar, Dashboard__spark — app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>cockpit.scss</code>, <code>matrix.scss</code>, <code>dashboard.scss</code>, <code>coverage_bar.scss</code>, <code>chip.scss</code>, <code>segment.scss</code>, <code>badge.scss</code>, <code>nav.scss</code>, <code>app.scss</code>, <code>app_switcher.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-vl-ekonomika">
   <h2>Wattlink EnMS — Ekonomika</h2>
-  <p>The cost ledger at <code>/ekonomika</code>: every building's energy costs month by month over a 13-month window, invoiced amounts in solid type and gaps filled with hatched, italic estimates from metering, plus the costs that could not be assigned to a building and a year-by-year summary. Shows the icon-pill sub-tabs, the Segment mode switch with carrier chips, and the app-local <code>Ledger</code> matrix with all of its cell states.</p>
+  <p>The cost ledger at <code>/ekonomika</code>: every building's energy costs month by month over a 13-month window, invoiced amounts in solid type and gaps filled with hatched, italic estimates from metering, plus the costs that could not be assigned to a building and a year-by-year summary. Shows the icon-pill sub-tabs, the Segment mode switch with carrier chips, and the <code>Ledger</code> matrix (ds <code>ledger.scss</code>) with all of its cell states.</p>
   <div class="showcase-page">
     <div class="showcase-page__bar">
       <div class="showcase-page__dots"><span></span><span></span><span></span></div>
@@ -7193,7 +7485,7 @@ Events must respond to:
 </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>tabs.scss</code>, <code>segment.scss</code>, <code>chip.scss</code>, <code>button.scss</code>, <code>badge.scss</code> · voltlink <code>admin/cost_ledger.scss</code> (app-local <code>Ledger</code>, <code>LedgerYears</code>; not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>ledger.scss</code> (<code>Ledger</code>, <code>LedgerYears</code>, <code>LedgerCard</code>, <code>PairedBars</code>), <code>tabs.scss</code>, <code>segment.scss</code>, <code>chip.scss</code>, <code>button.scss</code>, <code>badge.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-vl-faktury">
@@ -7844,7 +8136,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>app.scss</code>, <code>nav.scss</code>, <code>tabs.scss</code>, <code>button.scss</code>, <code>chip.scss</code>, <code>listing.scss</code>, <code>badge.scss</code>, <code>filter_panel.scss</code>, <code>pagination.scss</code> · voltlink <code>admin/expense_overview.scss</code> (<code>ExpenseOverview</code>, <code>ExpenseState</code>, <code>CategoryIcon</code>, <code>CategoryDot</code>, <code>GroupHeader__divider</code>, <code>ExpenseRow__tap</code>; app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>expense_overview.scss</code>, <code>expense_state.scss</code>, <code>category_icon.scss</code>, <code>filter_panel.scss</code>, <code>listing.scss</code>, <code>badge.scss</code>, <code>chip.scss</code>, <code>tabs.scss</code>, <code>button.scss</code>, <code>pagination.scss</code>, <code>nav.scss</code>, <code>app.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-vl-pokryti">
@@ -8216,7 +8508,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>app.scss</code>, <code>nav.scss</code>, <code>tabs.scss</code>, <code>button.scss</code>, <code>chip.scss</code>, <code>stat_card.scss</code>, <code>box.scss</code> · voltlink <code>admin/expense_overview.scss</code> (<code>ExpenseState</code>, <code>CoverageGantt</code>; app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>coverage_gantt.scss</code>, <code>expense_state.scss</code>, <code>stat_card.scss</code>, <code>box.scss</code>, <code>chip.scss</code>, <code>tabs.scss</code>, <code>button.scss</code>, <code>nav.scss</code>, <code>app.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-vl-provoz-budovy">
@@ -8506,7 +8798,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>tabs.scss</code>, <code>nav.scss</code>, <code>badge.scss</code>, <code>category_icon.scss</code>, <code>listing.scss</code> (<code>Listing__action</code>) · voltlink <code>admin/buildings_index.scss</code> (<code>BuildingListing</code>), <code>components/common.scss</code> (<code>GroupHeader__divider</code>) (app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>building_listing.scss</code>, <code>category_icon.scss</code>, <code>listing.scss</code>, <code>badge.scss</code>, <code>tabs.scss</code>, <code>nav.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-vl-provoz-dokumenty">
@@ -8821,7 +9113,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>tabs.scss</code>, <code>button.scss</code>, <code>segment.scss</code>, <code>chip.scss</code>, <code>listing.scss</code> (<code>Listing__action</code>) · voltlink <code>components/provoz.scss</code> (<code>ProvozSegmentBar</code>), <code>admin/expense_overview.scss</code> (<code>ExpenseState</code>), <code>admin/documents.scss</code> (<code>DocumentGroup</code>, <code>DocumentRow</code>, <code>DocumentBadge</code>, <code>DocumentTag</code>) (app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>provoz_segment_bar.scss</code>, <code>document_list.scss</code>, <code>expense_state.scss</code>, <code>listing.scss</code>, <code>segment.scss</code>, <code>chip.scss</code>, <code>tabs.scss</code>, <code>button.scss</code></p>
 </section>
 
 
@@ -9197,7 +9489,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>app.scss</code> (App header), <code>nav.scss</code>, <code>chip.scss</code>, <code>button.scss</code> · litelink <code>components/dashboard.scss</code> (<code>.Prehled</code>, <code>.ChartLegend</code>, <code>.ChartTypeToggle</code>, <code>.FilterMaster</code>, <code>.TreeNode</code>, <code>.DateSelect</code>, <code>.GranularityRow</code>; app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>prehled.scss</code> (<code>.Prehled</code> with <code>FilterMaster</code>, <code>TreeNode</code>, <code>DateSelect</code>, <code>GranularityRow</code>, <code>ChartTypeToggle</code>, <code>ChartLegend</code>), <code>app.scss</code>, <code>nav.scss</code>, <code>chip.scss</code>, <code>button.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-ll-uzivatele">
@@ -9456,7 +9748,7 @@ Events must respond to:
 </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>tabs.scss</code>, <code>button.scss</code> · litelink <code>components/users.scss</code> (<code>.UsersToolbar</code>, <code>.RoleTab</code>, <code>.Filters</code>, <code>.UserRow</code>, <code>.RoleBadge</code>, <code>.EAN</code>, <code>.Dates</code>), <code>components/groups.scss</code> (<code>.ListRow</code>; app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>users_toolbar.scss</code>, <code>list_row.scss</code>, <code>action_card.scss</code>, <code>tabs.scss</code>, <code>button.scss</code></p>
 </section>
 
 <section class="showcase-section" id="page-ll-sdileni">
@@ -9649,7 +9941,7 @@ Events must respond to:
       </div>
     </div>
   </div>
-  <p class="showcase-source">Styles: ds <code>tabs.scss</code> · litelink <code>components/sharing_overview.scss</code> (<code>.SharingOverview</code>, <code>.SubTabs</code>, <code>.MonthStepper</code>), <code>components/scenario_optimizer.scss</code> (<code>.RunDetail</code>, <code>.StatPill</code>, <code>.OptiCard</code>, <code>.EnergyFlow</code>; app-local, not in ds/)</p>
+  <p class="showcase-source">Styles: ds <code>sharing_overview.scss</code>, <code>sub_tabs.scss</code>, <code>month_stepper.scss</code>, <code>run_detail.scss</code>, <code>stat_pill.scss</code>, <code>opti_card.scss</code>, <code>energy_flow.scss</code>, <code>tabs.scss</code></p>
 </section>
 
     <footer style="text-align: center; padding: 3rem 0; border-top: 2px solid var(--light-gray); margin-top: 3rem; color: var(--light-gray);">

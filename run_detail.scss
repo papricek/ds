@@ -1,0 +1,17 @@
+// From litelink components/scenario_optimizer.scss.
+.RunDetail {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 18px 22px;
+    background: var(--brand-dark);
+    border: 1px solid var(--white-1);
+    border-radius: 14px;
+    margin-bottom: 18px;
+  }
+
+  &__title { font-size: 20px; font-weight: 800; margin: 0; }
+  &__meta { font-size: 12px; color: var(--white-5); margin-top: 5px; }
+}

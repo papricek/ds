@@ -26,6 +26,13 @@ Design system for the Wattlink family of energy management applications. Dark-th
 - **Form helpers** - `.Form__btn--primary` / `--ghost` compact action buttons, `.ToggleField` (label + hint + switch), `.IconPicker` (radio icon tiles)
 - **Table variants** - `.Table--panel` and `.Table--surface` (inside `.TableSurface`), `.Table__code`
 - **Chart editor pieces** - `Chip`, `Segment`, `Swatch`, `Skeleton`, `InlineTitle`, `SeriesRow`, `PickerRow`, `SeriesPicker`, plus `--series-1…8` palette tokens
+- **App patterns and page blocks** (moved from voltlink and litelink, not imported by any app yet):
+  - filtering - `ExpenseState` + `FilterChip` (filter state bar), `ExpenseOverview__layout` (collapsible filter sidebar)
+  - listings - `CategoryIcon`/`CategoryDot`/`GroupHeader__divider`, `DocumentList`/`DocumentGroup`/`DocumentRow`, `BuildingListing`, `UserList`/`UserRow`/`ListRow` (`list_row.scss`), `UsersToolbar`/`RoleTabs`/`Filters`
+  - overviews - `Dashboard`, `Cockpit` (Přehled tiles), `Matrix` (building matrix), `Prehled` (Air energy overview with `TreeNode` filter), `AppSwitcher`
+  - economics - `Ledger`, `LedgerYears`, `LedgerCard`, `PairedBars` (cost table), `CoverageGantt` (invoice coverage)
+  - sharing - `AllocationMatrix` + `MatrixCell` (litelink's `.Matrix`, renamed: voltlink owns `.Matrix`), `SharingOverview`/`AddressCard`, `MonthStepper`, `SubTabs`, `StatPill`, `OptiCard`, `EnergyFlow`, `RunDetail`
+  - other - `ActionCard`, `ProvozSegmentBar`, `Chip--warning`, `Nav__badge`
 - **Other components** - `ChartCard`, `ChartPreview`, `ComparisonCard`, `CoverageBar`, `FormCard`, `SelectableCard`, `Stepper`, `QuickActions`, `CategoryPicker`, `ChipInput`, `ConfidenceMeter`, `AutoBadge`, `PeriodRange`, `FileUpload`, `Calendar`
 
 ## Color System
@@ -46,8 +53,8 @@ All colors are customizable via CSS custom properties for per-tenant theming.
 ```
 .
 ├── docs/                    # Showcase site (GitHub Pages), see docs/README.md
-│   ├── build.sh             # Compiles css/ds.css and css/apps.css from SCSS
-│   ├── css/                 # ds.css + apps.css (compiled), showcase.css (hand-written)
+│   ├── build.sh             # Compiles css/ds.css from SCSS
+│   ├── css/                 # ds.css (compiled), showcase.css (hand-written)
 │   ├── index.html           # Components, app patterns and whole app pages
 │   └── logo_white.svg
 ├── configuration.scss       # CSS variables and theme
@@ -73,8 +80,10 @@ All colors are customizable via CSS custom properties for per-tenant theming.
 
 ## What belongs here
 
-Only reusable components and elements. Styles for one page or one app live in the app's own
-stylesheets (`app/assets/stylesheets/components/`), and an app that wants a component to look
+Reusable components and elements, plus the app patterns and page blocks worth sharing across the
+suite (filter bar and sidebar, listings, overview tiles, cost ledger, coverage chart…). Each app
+imports only the files it uses. Styles only one page needs stay in the app's own stylesheets
+(`app/assets/stylesheets/components/`), and an app that wants a component to look
 different overrides it in `components/ds_overrides.scss` rather than editing `ds/`.
 Changing an existing rule here changes every app, so prefer adding a modifier.
 

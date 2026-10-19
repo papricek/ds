@@ -1,0 +1,42 @@
+// From litelink components/scenario_optimizer.scss.
+.OptiCard {
+  background: var(--brand-dark);
+  border: 1px solid var(--white-1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+  &__header {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--white-08);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__heading {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: var(--light-gray);
+    font-size: 13px;
+  }
+
+  &__body {
+    padding: 16px 22px 22px;
+  }
+}

@@ -1,0 +1,117 @@
+// From voltlink admin/expense_overview.scss.
+.FilterChip {
+  flex: 0 1 auto;
+}
+
+.ExpenseState {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--white-03);
+  border: 1px solid var(--white-1);
+  border-radius: 0.75rem;
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  &__label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--light-gray);
+  }
+
+  &__value {
+    color: var(--white-85);
+    font-weight: 700;
+  }
+
+  &__divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--white-1);
+  }
+
+  &--filtered {
+    border-left: 3px solid var(--brand-primary);
+    background: rgba(var(--brand-primary-rgb), 0.06);
+  }
+
+  &__readout {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: var(--fs-xs);
+    color: var(--light-gray);
+
+    b {
+      color: var(--neutral-white);
+      font-weight: 700;
+    }
+  }
+
+  &__meter {
+    display: inline-block;
+    width: 56px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--white-15);
+    overflow: hidden;
+  }
+
+  &__meter-fill {
+    display: block;
+    height: 100%;
+    background: var(--brand-primary);
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--brand-primary);
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--brand-primary);
+      text-decoration: none;
+    }
+  }
+
+  &__reset {
+    font-size: var(--fs-xs);
+    color: var(--light-gray);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--neutral-white);
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__divider { display: none; }
+    &__actions { margin-left: 0; }
+  }
+}
