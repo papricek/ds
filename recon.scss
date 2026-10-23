@@ -1,0 +1,106 @@
+// From voltlink admin/building_dashboard.scss.
+.text-status-ok    { color: var(--status-ok); }
+.text-status-warn  { color: var(--status-warn); }
+.text-status-error { color: var(--status-error); }
+.text-trend-up     { color: var(--trend-up); }
+.text-trend-down   { color: var(--trend-down); }
+
+.LegendBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--white-7);
+
+  &__spacer { margin-left: auto; color: var(--white-5); }
+}
+
+.LegendDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 0.3rem;
+}
+
+.LegendDot--lg {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0.3rem;
+}
+
+.ReconLegend__dot--metered { background: var(--brand-primary); }
+.ReconLegend__dot--invoice { background: var(--brand-secondary); }
+
+.ReconHead {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 110px 90px;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.6rem;
+  color: var(--white-5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+
+  > *:nth-child(n+4) { text-align: right; }
+
+  @media (max-width: 767.98px) { display: none; }
+}
+
+.ReconRow {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 110px 90px;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.6rem;
+  font-size: var(--fs-xs);
+  border-bottom: 1px solid var(--white-08);
+
+  &:last-child { border-bottom: none; }
+
+  @media (max-width: 767.98px) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 0.3rem;
+
+    &__bar, &__num { grid-column: 1 / -1; }
+    &__delta { text-align: right; }
+  }
+
+  &__period { color: var(--white-7); font-family: "JetBrains Mono", monospace; }
+  &__bar {
+    position: relative;
+    height: 8px;
+    border-radius: 50rem;
+    background: var(--white-05);
+    overflow: hidden;
+  }
+  &__bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 50rem;
+
+    &--metered { background: var(--brand-primary); }
+    &--invoice { background: var(--brand-secondary); }
+  }
+  &__num {
+    text-align: right;
+    color: var(--white-85);
+    font-family: "JetBrains Mono", monospace;
+    font-feature-settings: "tnum";
+    font-weight: 600;
+  }
+  &__delta {
+    text-align: right;
+    font-weight: 700;
+
+    &--ok   { color: var(--trend-down); }
+    &--warn { color: var(--status-warn); }
+    &--bad  { color: var(--status-error); }
+  }
+}

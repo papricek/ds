@@ -251,3 +251,29 @@
     margin-top: -0.5rem;
   }
 }
+
+// The × in the top right corner of a touch-opened chart tooltip (charts/touch_tooltip.js
+// positions it; the tooltip keeps 28px of padding on its right for it).
+.ChartTooltipClose {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white-85);
+  font-size: 0.95rem;
+
+  &:active {
+    background: var(--white-1);
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}

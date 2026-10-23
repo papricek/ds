@@ -31,6 +31,7 @@ Design system for the Wattlink family of energy management applications. Dark-th
   - listings - `CategoryIcon`/`CategoryDot`/`GroupHeader__divider`, `DocumentList`/`DocumentGroup`/`DocumentRow`, `BuildingListing`, `UserList`/`UserRow`/`ListRow` (`list_row.scss`), `UsersToolbar`/`RoleTabs`/`Filters`
   - overviews - `Dashboard`, `Cockpit` (Přehled tiles), `Matrix` (building matrix), `Prehled` (Air energy overview with `TreeNode` filter), `AppSwitcher`
   - economics - `Ledger`, `LedgerYears`, `LedgerCard`, `PairedBars` (cost table), `CoverageGantt` (invoice coverage)
+  - reconciliation - `ReconHead`/`ReconRow`/`ReconLegend`, `LegendBar`/`LegendDot` (billed vs measured, from voltlink building dashboard)
   - sharing - `AllocationMatrix` + `MatrixCell` (litelink's `.Matrix`, renamed: voltlink owns `.Matrix`), `SharingOverview`/`AddressCard`, `MonthStepper`, `SubTabs`, `StatPill`, `OptiCard`, `EnergyFlow`, `RunDetail`
   - other - `ActionCard`, `ProvozSegmentBar`, `Chip--warning`, `Nav__badge`
 - **Other components** - `ChartCard`, `ChartPreview`, `ComparisonCard`, `CoverageBar`, `FormCard`, `SelectableCard`, `Stepper`, `QuickActions`, `CategoryPicker`, `ChipInput`, `ConfidenceMeter`, `AutoBadge`, `PeriodRange`, `FileUpload`, `Calendar`

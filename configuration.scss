@@ -85,6 +85,7 @@
   --white-05: rgba(var(--neutral-white-rgb), 0.05);
   --white-08: rgba(var(--neutral-white-rgb), 0.08);
   --white-1: rgba(var(--neutral-white-rgb), 0.1);
+  --white-10: rgba(var(--neutral-white-rgb), 0.1);
   --white-15: rgba(var(--neutral-white-rgb), 0.15);
   --white-2: rgba(var(--neutral-white-rgb), 0.2);
   --white-25: rgba(var(--neutral-white-rgb), 0.25);
@@ -163,6 +164,12 @@
 
   --danger-color-light: hsl(var(--semantic-danger-h), var(--semantic-danger-s), calc(var(--semantic-danger-l) + 22%));
   --success-color-light: hsl(var(--semantic-success-h), calc(var(--semantic-success-s) - 10%), calc(var(--semantic-success-l) + 22%));
+
+  --status-ok: hsl(142, 70%, 55%);
+  --status-warn: hsl(39, 95%, 60%);
+  --status-error: hsl(0, 80%, 65%);
+  --trend-up: hsl(0, 80%, 70%);
+  --trend-down: hsl(142, 70%, 60%);
 
   --prehled-green: #28A745;
   --prehled-blue: #07078F;
