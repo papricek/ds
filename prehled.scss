@@ -495,6 +495,93 @@
     }
   }
 
+  // Same look as ChartTypeToggle, without overflow: hidden so the hint bubble can stick out
+  .ChartZoomToolbar {
+    position: relative;
+    display: inline-flex;
+    background: var(--brand-accent);
+    border: 1px solid var(--white-1);
+    border-radius: 0.5rem;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 32px;
+      padding: 0.4rem 0.6rem;
+      background: transparent;
+      border: none;
+      color: var(--white-7);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.12s ease, color 0.12s ease;
+
+      &:last-of-type {
+        border-radius: 0 0.45rem 0.45rem 0;
+      }
+
+      &:hover:not(:disabled) {
+        background: var(--white-1);
+        color: var(--neutral-white);
+      }
+
+      &:disabled {
+        color: var(--white-25);
+        cursor: default;
+      }
+    }
+
+    & .ChartZoomToolbar__hint {
+      border-radius: 0.45rem 0 0 0.45rem;
+    }
+
+    &:not(.is-zoomed) .ChartZoomToolbar__hint {
+      border-radius: 0.45rem;
+    }
+
+    &__bubble {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.4rem);
+      right: 0;
+      z-index: 20;
+      width: max-content;
+      max-width: 18rem;
+      padding: 0.5rem 0.65rem;
+      background: var(--dark-nav-bg);
+      border: 1px solid var(--white-15);
+      border-radius: 0.5rem;
+      color: var(--white-85);
+      font-size: var(--fs-xxs);
+      line-height: 1.4;
+      white-space: normal;
+
+      @media (max-width: 400px) {
+        max-width: calc(100vw - 3rem);
+      }
+    }
+
+    &.is-hint-open .ChartZoomToolbar__bubble {
+      display: block;
+    }
+
+    @media (hover: hover) {
+      .ChartZoomToolbar__hint:hover + .ChartZoomToolbar__bubble {
+        display: block;
+      }
+    }
+
+    // Panning and resetting only make sense once the chart is zoomed in
+    [data-zoom-only] {
+      display: none;
+    }
+
+    &.is-zoomed [data-zoom-only] {
+      display: inline-flex;
+    }
+  }
+
   .ChartLegend {
     display: flex;
     flex-wrap: wrap;
@@ -531,6 +618,8 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    // Stays top right even when the header wraps on a phone
+    margin-left: auto;
   }
 
   &__chart-body {
