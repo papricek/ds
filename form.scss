@@ -885,13 +885,21 @@ select.form-control {
       }
 
       &.today {
-        border-color: var(--cta-secondary-color) !important;
+        border: 1px solid var(--cta-secondary-color) !important;
       }
 
       &.prevMonthDay,
       &.nextMonthDay {
         color: var(--light-gray) !important;
         opacity: 0.5 !important;
+      }
+
+      // Days without data cannot be picked
+      &.flatpickr-disabled,
+      &.flatpickr-disabled:hover {
+        background: transparent !important;
+        color: var(--white-25) !important;
+        cursor: not-allowed;
       }
     }
   }
