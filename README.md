@@ -34,7 +34,7 @@ Design system for the Wattlink family of energy management applications. Dark-th
   - reconciliation - `ReconHead`/`ReconRow`/`ReconLegend`, `LegendBar`/`LegendDot` (billed vs measured, from voltlink building dashboard)
   - sharing - `AllocationMatrix` + `MatrixCell` (litelink's `.Matrix`, renamed: voltlink owns `.Matrix`), `SharingOverview`/`AddressCard`, `MonthStepper`, `SubTabs`, `StatPill`, `OptiCard`, `EnergyFlow`, `RunDetail`
   - other - `ActionCard`, `ProvozSegmentBar`, `Chip--warning`, `Nav__badge`, `ExpenseBatch` (bulk upload)
-- **Other components** - `ChartCard`, `ChartPreview`, `ComparisonCard`, `CoverageBar`, `FormCard`, `SelectableCard`, `Stepper`, `QuickActions`, `CategoryPicker`, `ChipInput`, `ConfidenceMeter`, `AutoBadge`, `PeriodRange`, `FileUpload`, `Calendar`, `EventRail`, `MonthStats`, `CalendarLegend`
+- **Other components** - `ChartCard`, `ChartPreview`, `ComparisonCard`, `CoverageBar`, `FormCard`, `SelectableCard`, `Stepper`, `QuickActions`, `CategoryPicker`, `ChipInput`, `ConfidenceMeter`, `AutoBadge`, `PeriodRange`, `FileUpload`, `Calendar`, `EventRail`, `MonthStats`, `CalendarLegend`, `LifecycleStrip`
 
 ## Color System
 
