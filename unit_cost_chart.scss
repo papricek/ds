@@ -1,0 +1,116 @@
+// From voltlink admin/expense_overview.scss.
+.UnitCostChart {
+  &__degraded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 180px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px dashed var(--white-2);
+    border-radius: 10px;
+    color: var(--light-gray);
+  }
+
+  &__degraded-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--white-85);
+  }
+
+  &__degraded-text {
+    max-width: 32rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(110px, 150px) 1fr 56px;
+    gap: 0.6rem;
+    align-items: center;
+
+    &--axis { margin-bottom: 0.5rem; }
+  }
+
+  &__axis {
+    position: relative;
+    height: 16px;
+
+    &--stacked { height: 30px; }
+  }
+
+  &__ref-label {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    white-space: nowrap;
+    color: var(--neutral-white);
+    font-weight: 700;
+
+    &--spot {
+      color: var(--white-5);
+      font-weight: 400;
+    }
+
+    &--stacked { top: 14px; }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--neutral-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__track {
+    position: relative;
+    height: 16px;
+    border-radius: 3px;
+    background: var(--white-05);
+  }
+
+  &__bar {
+    display: block;
+    height: 100%;
+    min-width: 2px;
+    border-radius: 3px;
+    background: var(--brand-primary);
+
+    &--worst { background: var(--semantic-danger); }
+    &--best { background: var(--brand-secondary); }
+  }
+
+  &__ref {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    border-left: 1px solid var(--white-6);
+
+    &--spot { border-left-style: dashed; border-left-color: var(--white-3); }
+  }
+
+  &__value {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--neutral-white);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  &__scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.625rem;
+    color: var(--white-3);
+  }
+}
