@@ -67,6 +67,7 @@
       <a href="#components-forms">Form building blocks</a>
       <a href="#components-navigation">Navigation and filters</a>
       <a href="#components-feedback">Feedback</a>
+      <a href="#components-assistant">AI assistant</a>
       <strong>Patterns from the apps</strong>
       <a href="#page-blocks">Page blocks in ds/</a>
       <a href="#patterns">Patterns from the apps</a>
@@ -5589,6 +5590,63 @@ Events must respond to:
     </div>
   </div>
   <p class="showcase-source">ds <code>filter_panel.scss</code> (<code>--fit</code>, <code>__section/__label/__grid/__option-input+__option-label</code>, <code>__facet</code> with trigger/panel/search/list/chips and <code>.is-set</code>, <code>__readout/__meter</code>, <code>__footer</code>; <code>__toggle</code>) · voltlink's <code>ds_overrides.scss</code> adjusts header/body flex, hence <code>AppPage--voltlink</code>. The panel is sticky, viewport-tall and hidden below 1200 px in the app; inline <code>position: static; height: auto</code> is demo glue. Used in voltlink (invoices, documents, buildings, provoz), wattlink (dashboard: <code>__toggle</code>). <code>FilterPanel__facet-group</code> (voltlink) is not defined in ds; <code>__grid--wide</code> and <code>__potential-sharing-switch</code> are unused.</p>
+</section>
+
+<section class="showcase-section" id="components-assistant">
+  <h2>AI assistant</h2>
+  <p>Launcher in the bottom-right corner and the chat panel it opens: docked (default, pushes the page from 1280px), floating (400 × 680) or a full-screen sheet below 768px. The same chat renders full page as <code>.AssistantChat--expanded</code>. In the app the launcher and panel are <code>position: fixed</code>; here they are <code>position: relative</code> demo glue.</p>
+
+  <h3>Launcher states</h3>
+  <div class="example-box d-flex flex-wrap gap-4 align-items-center">
+    <div class="AssistantDock"><button type="button" class="AssistantLauncher" style="position: relative; right: auto; bottom: auto;"><span class="AssistantLauncher__ring"></span><span class="AssistantLauncher__label">Asistent</span><i class="fas fa-wand-magic-sparkles AssistantLauncher__icon"></i><i class="fas fa-xmark AssistantLauncher__close"></i></button></div>
+    <div class="AssistantDock is-thinking"><button type="button" class="AssistantLauncher" style="position: relative; right: auto; bottom: auto;"><span class="AssistantLauncher__ring"></span><span class="AssistantLauncher__label">Asistent</span><i class="fas fa-wand-magic-sparkles AssistantLauncher__icon"></i></button></div>
+    <div class="AssistantDock has-attention"><button type="button" class="AssistantLauncher" style="position: relative; right: auto; bottom: auto;"><span class="AssistantLauncher__label">Asistent</span><i class="fas fa-wand-magic-sparkles AssistantLauncher__icon"></i><span class="AssistantLauncher__badge AssistantLauncher__badge--attention"><i class="fas fa-bolt"></i></span></button></div>
+    <div class="AssistantDock has-unread"><button type="button" class="AssistantLauncher" style="position: relative; right: auto; bottom: auto;"><span class="AssistantLauncher__label">Asistent</span><i class="fas fa-wand-magic-sparkles AssistantLauncher__icon"></i><span class="AssistantLauncher__badge AssistantLauncher__badge--count">2</span></button></div>
+    <div class="AssistantDock is-open AssistantDock--floating"><button type="button" class="AssistantLauncher" style="position: relative; right: auto; bottom: auto;"><i class="fas fa-wand-magic-sparkles AssistantLauncher__icon"></i><i class="fas fa-xmark AssistantLauncher__close"></i></button></div>
+  </div>
+  <p class="showcase-source">Idle (hover expands the label) · <code>.is-thinking</code> · <code>.has-attention</code> (a proposal waits) · <code>.has-unread</code> · <code>.is-open</code> on <code>.AssistantDock</code>.</p>
+
+  <h3>Panel with thread, action card and composer</h3>
+  <div class="example-box">
+    <div class="AssistantPanel AssistantPanel--floating" style="position: relative; right: auto; bottom: auto; animation: none;">
+      <div class="AssistantChat">
+        <div class="AssistantChat__main">
+          <div class="AssistantChat__header">
+            <button type="button" class="AssistantChat__icon-btn"><i class="fas fa-clock-rotate-left"></i></button>
+            <div class="AssistantChat__title"><div class="AssistantChat__title-text">Ceny pro rok 2027</div><div class="AssistantChat__subtitle">Obec Buk</div></div>
+            <button type="button" class="AssistantChat__icon-btn"><i class="fas fa-plus"></i></button>
+            <button type="button" class="AssistantChat__icon-btn"><i class="fas fa-table-columns"></i></button>
+            <button type="button" class="AssistantChat__icon-btn"><i class="fas fa-up-right-and-down-left-from-center"></i></button>
+            <button type="button" class="AssistantChat__icon-btn"><i class="fas fa-xmark"></i></button>
+          </div>
+          <div class="AssistantChat__viewport">
+            <div class="AssistantChat__thread">
+              <div class="AssistantChat__thread-inner">
+                <div class="AssistantMessage AssistantMessage--user"><div class="AssistantMessage__bubble">Navrhni zvýšení párů pod ceníkem na 2 090 Kč/MWh.</div></div>
+                <div class="AssistantMessage AssistantMessage--assistant"><div class="AssistantMessage__avatar"><i class="fas fa-wand-magic-sparkles"></i></div><div class="AssistantMessage__answer">Návrh se týká 3 párů. Ceny se změní od 1. 1. 2027.</div></div>
+                <div class="AssistantMessage AssistantMessage--card"><div class="AssistantMessage__card">
+                  <div class="AssistantCard">
+                    <div class="AssistantCard__header"><span class="AssistantCard__icon"><i class="fas fa-tags"></i></span><span class="AssistantCard__title">Změna cen sdílení</span><span class="AssistantCard__badge"><i class="fas fa-hourglass-half"></i>Čeká</span></div>
+                    <div class="AssistantCard__body"><div class="AssistantCard__rows"><table class="AssistantCard__table"><tbody>
+                      <tr><td><div>FVE Novák</div><div class="AssistantCard__sub">→ Svoboda Petr</div></td><td class="text-end"><span class="AssistantCard__old">1 900</span><i class="fas fa-arrow-right AssistantCard__arrow"></i><span class="AssistantCard__new">2 090 Kč/MWh</span></td></tr>
+                      <tr><td><div>Horák s.r.o.</div><div class="AssistantCard__sub">→ Král Tomáš</div></td><td class="text-end"><span class="AssistantCard__old">1 900</span><i class="fas fa-arrow-right AssistantCard__arrow"></i><span class="AssistantCard__new">2 090 Kč/MWh</span></td></tr>
+                    </tbody></table></div></div>
+                    <div class="AssistantCard__footer"><span class="AssistantCard__expiry"><i class="fas fa-clock"></i> Platnost 15 min</span><button type="button" class="Button Button--small Button--cancel">Zrušit</button><button type="button" class="Button Button--small Button--primary">Provést</button></div>
+                  </div>
+                </div></div>
+                <div class="AssistantMessage AssistantMessage--assistant"><div class="AssistantMessage__avatar"><i class="fas fa-wand-magic-sparkles"></i></div><div class="AssistantMessage__thinking"><span class="AssistantMessage__dot"></span><span class="AssistantMessage__shimmer">Načítám sdílení…</span></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="AssistantComposer">
+            <div class="AssistantComposer__box"><label class="AssistantComposer__attach"><i class="fas fa-paperclip"></i></label><textarea class="AssistantComposer__input" rows="1" placeholder="Napište odpověď…"></textarea><button type="button" class="AssistantComposer__send" disabled><i class="fas fa-arrow-up"></i></button></div>
+            <div class="AssistantComposer__hint"><i class="fas fa-hourglass-half"></i>Odeslat můžete, až asistent dokončí odpověď.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="showcase-source">ds <code>assistant.scss</code> · <code>AssistantLauncher</code>, <code>AssistantPanel--docked|--floating</code>, <code>AssistantChat</code> (+ <code>--expanded</code>, <code>.is-history</code>), <code>AssistantMessage--user|assistant|note|card</code>, <code>AssistantCard</code> (<code>--success|--danger|--muted</code>, <code>__warning</code>, <code>__progress</code>, <code>__details</code>), <code>AssistantComposer</code>, <code>AssistantHistory</code>, <code>AssistantEmpty</code> · used in litelink (the AI asistent). Card tables stack below a 520px container.</p>
 </section>
 
 <section class="showcase-section" id="components-feedback">

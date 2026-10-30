@@ -23,6 +23,7 @@ Design system for the Wattlink family of energy management applications. Dark-th
 - **Listings** - List items with status indicators, badges, actions, and empty states
 - **Filter Panel** - Sidebar filters with toggles, groups, and search
 - **Flash toasts** - Floating dismissible notifications (`.FlashStack` > `.Flash--success|warning|danger|info`, in `alert.scss`)
+- **AI assistant** - `AssistantLauncher` (idle / thinking / attention / unread / open), `AssistantPanel` (docked, floating, mobile sheet), `AssistantChat` with messages, action cards (`AssistantCard`), composer, history and a full-page `--expanded` variant (`assistant.scss`)
 - **Form helpers** - `.Form__btn--primary` / `--ghost` compact action buttons, `.ToggleField` (label + hint + switch), `.IconPicker` (radio icon tiles)
 - **Table variants** - `.Table--panel` and `.Table--surface` (inside `.TableSurface`), `.Table__code`
 - **Chart editor pieces** - `Chip`, `Segment`, `Swatch`, `Skeleton`, `InlineTitle`, `SeriesRow`, `PickerRow`, `SeriesPicker`, plus `--series-1…8` palette tokens
