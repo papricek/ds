@@ -259,6 +259,25 @@
 
   --orange-hover: hsl(var(--brand-primary-h), calc(var(--brand-primary-s) - 10%), calc(var(--brand-primary-l) - 8%));
 
+  // Light surfaces (documents, print/PDF, marketing light sections). The apps are dark;
+  // these tokens are for paper-like pages. Ground = brand manual "světlý podklad" #F3F3FF.
+  // Orange and teal are too pale for text on light: use them as fills/borders only and
+  // the *-ink variants for text (all >= 4.3:1 on the ground, higher on white).
+  --light-ground: hsl(var(--brand-dark-h), 100%, 97.6%);
+  --light-surface: var(--neutral-white);
+  --light-ink: var(--brand-dark);
+  --light-ink-body: rgba(var(--brand-dark-rgb), 0.85);
+  --light-ink-muted: rgba(var(--brand-dark-rgb), 0.72);
+  --light-ink-faint: rgba(var(--brand-dark-rgb), 0.3);
+  --light-edge: rgba(var(--brand-dark-rgb), 0.12);
+  --light-rule: rgba(var(--brand-dark-rgb), 0.2);
+  --light-tint: rgba(var(--brand-dark-rgb), 0.05);
+  --brand-primary-ink: hsl(var(--brand-primary-h), var(--brand-primary-s), 34%);
+  --brand-secondary-ink: hsl(var(--brand-secondary-h), 60%, 28%);
+  --semantic-success-ink: hsl(var(--semantic-success-h), var(--semantic-success-s), 28%);
+  --semantic-warning-ink: hsl(var(--semantic-warning-h), var(--semantic-warning-s), 30%);
+  --semantic-danger-ink: hsl(var(--semantic-danger-h), 75%, 42%);
+
   --fs-xxl: 3.5rem;
   --fs-xl: 2.75rem;
   --fs-lgx: 2.25rem;

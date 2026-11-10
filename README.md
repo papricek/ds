@@ -50,6 +50,14 @@ Design system for the Wattlink family of energy management applications. Dark-th
 
 All colors are customizable via CSS custom properties for per-tenant theming.
 
+### Light surfaces
+The apps are dark-only. For paper-like pages (hub documents, print/PDF, marketing light
+sections) use the `--light-*` tokens: ground `--light-ground` (#F3F3FF, brand manual),
+cards `--light-surface` (white), text `--light-ink` / `--light-ink-body` / `--light-ink-muted`
+(brand dark at 100/85/72 %), lines `--light-edge` / `--light-rule`. Orange and teal fail
+contrast as text on light, so they stay fills and borders; text uses `--brand-primary-ink`
+(#AD5F00), `--brand-secondary-ink` (#1D7263) and `--semantic-*-ink`.
+
 ## Project Structure
 
 ```
