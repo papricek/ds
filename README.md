@@ -56,7 +56,16 @@ sections) use the `--light-*` tokens: ground `--light-ground` (#F3F3FF, brand ma
 cards `--light-surface` (white), text `--light-ink` / `--light-ink-body` / `--light-ink-muted`
 (brand dark at 100/85/72 %), lines `--light-edge` / `--light-rule`. Orange and teal fail
 contrast as text on light, so they stay fills and borders; text uses `--brand-primary-ink`
-(#AD5F00), `--brand-secondary-ink` (#1D7263) and `--semantic-*-ink`.
+(#AD5F00), `--brand-secondary-ink` (#1D7263) and `--semantic-*-ink`. For print/PDF, `--paper-*` is the
+superwhite variant: white ground and cards, slightly stronger lines.
+
+### Report (documents and print)
+`report.scss` is a paper-like document page, not an app screen: hub.wattlink.cz documents,
+account reports, print/PDF. Root `.Report` on `<body>` (dark), `.Report--light` (#F3F3FF ground)
+or `.Report--superwhite` (white); print always uses superwhite. Blocks: `ReportKpi(s)`,
+`ReportChart`, `ReportBars`, `ReportTable` (`--matrix` for allocation keys), `ReportPair`,
+`ReportTimeline`, `ReportRec(s)`, `ReportTag`. Apps import it only for a report/print view.
+The wattlink-report skill (skillslink) builds its standalone stylesheet from this file.
 
 ## Project Structure
 

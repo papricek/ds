@@ -277,6 +277,11 @@
   --semantic-success-ink: hsl(var(--semantic-success-h), var(--semantic-success-s), 28%);
   --semantic-warning-ink: hsl(var(--semantic-warning-h), var(--semantic-warning-s), 30%);
   --semantic-danger-ink: hsl(var(--semantic-danger-h), 75%, 42%);
+  // Paper (superwhite): print/PDF palette — white page and cards, slightly stronger lines.
+  --paper-ground: var(--neutral-white);
+  --paper-edge: rgba(var(--brand-dark-rgb), 0.15);
+  --paper-rule: rgba(var(--brand-dark-rgb), 0.25);
+  --paper-line: rgba(var(--brand-dark-rgb), 0.1);
 
   --fs-xxl: 3.5rem;
   --fs-xl: 2.75rem;
